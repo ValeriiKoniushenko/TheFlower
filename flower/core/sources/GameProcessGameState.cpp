@@ -45,4 +45,30 @@ void GameProcessGameState::Draw(sf::RenderWindow& Window)
 
 void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 {
+	if (HaveToPlant(Window))
+	{
+		sf::Mouse Mouse;
+		PlantAt(Mouse.getPosition(Window));
+	}
+
+}
+
+bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
+{
+	sf::Mouse Mouse;
+	sf::Vector2i MousePosition = Mouse.getPosition(Window);
+	if (MousePosition.x > 0 && MousePosition.y > 0 && MousePosition.x < Window.getSize().x && MousePosition.y < Window.getSize().y)
+	{
+		if (Mouse.isButtonPressed(sf::Mouse::Button::Right))	// TODO: move\create to InputMapping : public Serializer
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
+{
+
 }

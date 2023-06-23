@@ -34,6 +34,10 @@ public:
 	void UpdateUi(sf::RenderWindow& Window) override;
 
 private:
+	bool HaveToPlant(sf::RenderWindow& Window);
+	void PlantAt(const sf::Vector2i& PositionAtWindow);
+
+private:
 	sf::Texture MapBackground_;
 
 	Player Player_;
