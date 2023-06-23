@@ -9,4 +9,4 @@ target_include_directories(
 	headers/
 )
 
-target_link_libraries(Map PUBLIC Utils)
+target_link_libraries(Map PUBLIC Utils Core)

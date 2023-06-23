@@ -21,3 +21,27 @@
 // SOFTWARE.
 
 #include "Map.h"
+
+Map::Map() : Serializer("Map.json")
+{
+}
+
+Canvas& Map::GetMapBackground()
+{
+	return MapBackground_;
+}
+
+void Map::Serialize()
+{
+	Serializer::Serialize();
+}
+
+void Map::Deserialize()
+{
+	Serializer::Deserialize();
+}
+
+void Map::Draw(sf::RenderWindow& Window)
+{
+	Window.draw(MapBackground_);
+}

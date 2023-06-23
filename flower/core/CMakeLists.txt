@@ -21,5 +21,5 @@ target_include_directories(
 )
 
 target_link_libraries(Core PUBLIC
-    Utils sfml-graphics Player
+    Utils sfml-graphics Player Map
 )

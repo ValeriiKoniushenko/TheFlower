@@ -23,6 +23,7 @@
 #pragma once
 
 #include "GameStateBase.h"
+#include "Map.h"
 #include "Player.h"
 
 class GameProcessGameState : public GameStateBase
@@ -33,5 +34,8 @@ public:
 	void UpdateUi(sf::RenderWindow& Window) override;
 
 private:
+	sf::Texture MapBackground_;
+
 	Player Player_;
+	Map Map_;
 };

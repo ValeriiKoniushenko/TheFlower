@@ -26,12 +26,19 @@ void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
 
+	MapBackground_.loadFromFile("assets/images/grass.jpg");
+	MapBackground_.setRepeated(true);
+
 	Player_.Deserialize();
+	Map_.Deserialize();
+	Map_.GetMapBackground().setTexture(MapBackground_);
 }
 
 void GameProcessGameState::Draw(sf::RenderWindow& Window)
 {
 	Window.clear(sf::Color::White);
+
+	Map_.Draw(Window);
 
 	Window.display();
 }

@@ -22,16 +22,26 @@
 
 #pragma once
 
+#include "Canvas.h"
 #include "Serializer.h"
 
 class Map : public Serializer
 {
 public:
-	Map() = default;
+	Map();
 	~Map() = default;
 	Map(const Map&) = default;
 	Map(Map&&) = default;
 	Map& operator=(const Map&) = default;
 	Map& operator=(Map&&) = default;
 
+	Canvas& GetMapBackground();
+
+	void Serialize() override;
+	void Deserialize() override;
+
+	void Draw(sf::RenderWindow& Window);
+
+private:
+	Canvas MapBackground_;
 };
