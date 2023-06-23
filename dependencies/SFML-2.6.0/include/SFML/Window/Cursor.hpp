@@ -145,7 +145,7 @@ public:
     /// hotspot is the pixel coordinate within the cursor image
     /// which will be located exactly where the mouse pointer
     /// position is. Any mouse actions that are performed will
-    /// return the window/screen location of the hotspot.
+    /// return the Window_/screen location of the hotspot.
     ///
     /// \warning On Unix platforms which do not support colored
     ///          cursors, the pixels are mapped into a monochrome
@@ -209,7 +209,7 @@ private:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Cursor
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// \warning Features related to Cursor are not supported on
 ///          iOS and Android.
@@ -223,17 +223,17 @@ private:
 /// cursor can be changed with sf::Window::setMouseCursor().
 ///
 /// The behaviour is undefined if the cursor is destroyed while
-/// in use by the window.
+/// in use by the Window_.
 ///
 /// Usage example:
 /// \code
-/// sf::Window window;
+/// sf::Window Window_;
 ///
-/// // ... create window as usual ...
+/// // ... create Window_ as usual ...
 ///
 /// sf::Cursor cursor;
 /// if (cursor.loadFromSystem(sf::Cursor::Hand))
-///     window.setMouseCursor(cursor);
+///     Window_.setMouseCursor(cursor);
 /// \endcode
 ///
 /// \see sf::Window::setMouseCursor

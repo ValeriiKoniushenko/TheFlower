@@ -47,7 +47,7 @@ class WindowImplWin32 : public WindowImpl
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the window implementation from an existing control
+    /// \brief Construct the Window_ implementation from an existing control
     ///
     /// \param handle Platform-specific handle of the control
     ///
@@ -55,10 +55,10 @@ public:
     WindowImplWin32(WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create the window implementation
+    /// \brief Create the Window_ implementation
     ///
     /// \param mode  Video mode to use
-    /// \param title Title of the window
+    /// \param title Title of the Window_
     /// \param style Window style
     /// \param settings Additional settings for the underlying OpenGL context
     ///
@@ -72,39 +72,39 @@ public:
     ~WindowImplWin32();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the OS-specific handle of the window
+    /// \brief Get the OS-specific handle of the Window_
     ///
-    /// \return Handle of the window
+    /// \return Handle of the Window_
     ///
     ////////////////////////////////////////////////////////////
     virtual WindowHandle getSystemHandle() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the position of the window
+    /// \brief Get the position of the Window_
     ///
-    /// \return Position of the window, in pixels
+    /// \return Position of the Window_, in pixels
     ///
     ////////////////////////////////////////////////////////////
     virtual Vector2i getPosition() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the position of the window on screen
+    /// \brief Change the position of the Window_ on screen
     ///
-    /// \param position New position of the window, in pixels
+    /// \param position New position of the Window_, in pixels
     ///
     ////////////////////////////////////////////////////////////
     virtual void setPosition(const Vector2i& position);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the client size of the window
+    /// \brief Get the client size of the Window_
     ///
-    /// \return Size of the window, in pixels
+    /// \return Size of the Window_, in pixels
     ///
     ////////////////////////////////////////////////////////////
     virtual Vector2u getSize() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the size of the rendering region of the window
+    /// \brief Change the size of the rendering region of the Window_
     ///
     /// \param size New size, in pixels
     ///
@@ -112,7 +112,7 @@ public:
     virtual void setSize(const Vector2u& size);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the title of the window
+    /// \brief Change the title of the Window_
     ///
     /// \param title New title
     ///
@@ -120,7 +120,7 @@ public:
     virtual void setTitle(const String& title);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the window's icon
+    /// \brief Change the Window_'s icon
     ///
     /// \param width  Icon's width, in pixels
     /// \param height Icon's height, in pixels
@@ -130,7 +130,7 @@ public:
     virtual void setIcon(unsigned int width, unsigned int height, const Uint8* pixels);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Show or hide the window
+    /// \brief Show or hide the Window_
     ///
     /// \param visible True to show, false to hide
     ///
@@ -170,16 +170,16 @@ public:
     virtual void setKeyRepeatEnabled(bool enabled);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Request the current window to be made the active
-    ///        foreground window
+    /// \brief Request the current Window_ to be made the active
+    ///        foreground Window_
     ///
     ////////////////////////////////////////////////////////////
     virtual void requestFocus();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check whether the window has the input focus
+    /// \brief Check whether the Window_ has the input focus
     ///
-    /// \return True if window has focus, false otherwise
+    /// \return True if Window_ has focus, false otherwise
     ///
     ////////////////////////////////////////////////////////////
     virtual bool hasFocus() const;
@@ -195,7 +195,7 @@ protected:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// Register the window class
+    /// Register the Window_ class
     ///
     ////////////////////////////////////////////////////////////
     void registerWindowClass();
@@ -209,7 +209,7 @@ private:
     void switchToFullscreen(const VideoMode& mode);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Free all the graphical resources attached to the window
+    /// \brief Free all the graphical resources attached to the Window_
     ///
     ////////////////////////////////////////////////////////////
     void cleanup();
@@ -225,7 +225,7 @@ private:
     void processEvent(UINT message, WPARAM wParam, LPARAM lParam);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Enables or disables tracking for the mouse cursor leaving the window
+    /// \brief Enables or disables tracking for the mouse cursor leaving the Window_
     ///
     /// \param track True to enable, false to disable
     ///
@@ -259,7 +259,7 @@ private:
     ////////////////////////////////////////////////////////////
     /// \brief Function called whenever one of our windows receives a message
     ///
-    /// \param handle  Win32 handle of the window
+    /// \param handle  Win32 handle of the Window_
     /// \param message Message received
     /// \param wParam  First parameter of the message
     /// \param lParam  Second parameter of the message
@@ -282,17 +282,17 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    HWND     m_handle;           //!< Win32 handle of the window
+    HWND     m_handle;           //!< Win32 handle of the Window_
     LONG_PTR m_callback;         //!< Stores the original event callback function of the control
     bool     m_cursorVisible;    //!< Is the cursor visible or hidden?
-    HCURSOR  m_lastCursor;       //!< Last cursor used -- this data is not owned by the window and is required to be always valid
-    HICON    m_icon;             //!< Custom icon assigned to the window
+    HCURSOR  m_lastCursor;       //!< Last cursor used -- this data is not owned by the Window_ and is required to be always valid
+    HICON    m_icon;             //!< Custom icon assigned to the Window_
     bool     m_keyRepeatEnabled; //!< Automatic key-repeat state for keydown events
-    Vector2u m_lastSize;         //!< The last handled size of the window
-    bool     m_resizing;         //!< Is the window being resized?
+    Vector2u m_lastSize;         //!< The last handled size of the Window_
+    bool     m_resizing;         //!< Is the Window_ being resized?
     Uint16   m_surrogate;        //!< First half of the surrogate pair, in case we're receiving a Unicode character in two events
-    bool     m_mouseInside;      //!< Mouse is inside the window?
-    bool     m_fullscreen;       //!< Is the window fullscreen?
+    bool     m_mouseInside;      //!< Mouse is inside the Window_?
+    bool     m_fullscreen;       //!< Is the Window_ fullscreen?
     bool     m_cursorGrabbed;    //!< Is the mouse cursor trapped?
 };
 

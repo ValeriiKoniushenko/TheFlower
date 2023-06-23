@@ -113,14 +113,14 @@ Similarly, if a product manufactured in several parallel assembly lines and the 
 Finally, since the hyperexponential distribution exhibits a high Coefficient of Variation (CoV), that is a CoV > 1, it is especially suited to fit empirical data with large CoV (Feitelson,2014; Wolski et al.,2013) and to approximate [@http://en.wikipedia.org/wiki/Long_tail long-tail probability distributions] (Feldmann et al.,1998).
 
 [/ Another possible example (work in progress):
-For instance, suppose that at the airport the company Foobar Airlines has a help desk with 3 different windows (servers) such that window A is for regional flights, window B is for international flights and window C is general customer care.
-From previous studies, it has been observed that each window is able to serve requests with the following timings:
-- window W1: 20 minutes, on average,
-- window W2: 30 minutes, on average, and
-- window W3: 10 minutes, on average.
+For instance, suppose that at the airport the company Foobar Airlines has a help desk with 3 different windows (servers) such that Window_ A is for regional flights, Window_ B is for international flights and Window_ C is general customer care.
+From previous studies, it has been observed that each Window_ is able to serve requests with the following timings:
+- Window_ W1: 20 minutes, on average,
+- Window_ W2: 30 minutes, on average, and
+- Window_ W3: 10 minutes, on average.
 
-Furthermore, another airline company has a help desk with a single window.
-It has been observed that to the window can arrive three types of customers:
+Furthermore, another airline company has a help desk with a single Window_.
+It has been observed that to the Window_ can arrive three types of customers:
 - customer C1 (e.g., premium customer):
 - customer C2 (e.g., business customer):
 - customer C3 (e.g., regular customer):

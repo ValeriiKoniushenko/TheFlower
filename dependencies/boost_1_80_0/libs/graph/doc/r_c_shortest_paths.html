@@ -132,7 +132,7 @@ The present document cannot give a complete introduction to SPPRCs. To get a tho
 </p>
 
 <p>
-The standard solution technique for SPPRCs is a labelling algorithm based on dynamic programming. This approach uses the concepts of <i>resources</i> and <i>resource extension functions</i>. A resource is an arbitrarily scaled one-dimensional piece of information that can be determined or measured at the vertices of a directed walk in a graph. Examples are cost, time, load, or the information &lsquo;Is a vertex <i>i</i> visited on the current path?&rsquo;. A resource is <i>constrained</i> if there is at least one vertex in the graph where the resource must not take all possible values. The <i>resource window</i> of a resource at a vertex is the set of allowed values for the resource at this vertex.
+The standard solution technique for SPPRCs is a labelling algorithm based on dynamic programming. This approach uses the concepts of <i>resources</i> and <i>resource extension functions</i>. A resource is an arbitrarily scaled one-dimensional piece of information that can be determined or measured at the vertices of a directed walk in a graph. Examples are cost, time, load, or the information &lsquo;Is a vertex <i>i</i> visited on the current path?&rsquo;. A resource is <i>constrained</i> if there is at least one vertex in the graph where the resource must not take all possible values. The <i>resource Window_</i> of a resource at a vertex is the set of allowed values for the resource at this vertex.
 </p>
 
 <p>
@@ -547,7 +547,7 @@ When <tt>b_result_must_be_equal_to_desired_final_resource_levels==true</tt> (<tt
 </ul>
 
 <p>
-<tt>ed_last_extended_arc</tt> stores the edge descriptor of the last extended arc. If <tt>ed_vec_path</tt> is a path of positive length and <tt>b_feasible==false</tt>, <tt>ed_last_extended_arc</tt> is the edge descriptor of the arc at whose target vertex the first violation of a resource window occured.
+<tt>ed_last_extended_arc</tt> stores the edge descriptor of the last extended arc. If <tt>ed_vec_path</tt> is a path of positive length and <tt>b_feasible==false</tt>, <tt>ed_last_extended_arc</tt> is the edge descriptor of the arc at whose target vertex the first violation of a resource Window_ occured.
 </p>
 
 <h3>Examples</h3>

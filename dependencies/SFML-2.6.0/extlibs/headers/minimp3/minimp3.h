@@ -1074,7 +1074,7 @@ static void L3_dct3_9(float *y)
     y[8] = s4 + s7;
 }
 
-static void L3_imdct36(float *grbuf, float *overlap, const float *window, int nbands)
+static void L3_imdct36(float *grbuf, float *overlap, const float *Window_, int nbands)
 {
     int i, j;
     static const float g_twid9[18] = {
@@ -1111,8 +1111,8 @@ static void L3_imdct36(float *grbuf, float *overlap, const float *window, int nb
             f4 vs = VLD(si + i);
             f4 vr0 = VLD(g_twid9 + i);
             f4 vr1 = VLD(g_twid9 + 9 + i);
-            f4 vw0 = VLD(window + i);
-            f4 vw1 = VLD(window + 9 + i);
+            f4 vw0 = VLD(Window_ + i);
+            f4 vw1 = VLD(Window_ + 9 + i);
             f4 vsum = VADD(VMUL(vc, vr1), VMUL(vs, vr0));
             VSTORE(overlap + i, VSUB(VMUL(vc, vr0), VMUL(vs, vr1)));
             VSTORE(grbuf + i, VSUB(VMUL(vovl, vw0), VMUL(vsum, vw1)));
@@ -1125,8 +1125,8 @@ static void L3_imdct36(float *grbuf, float *overlap, const float *window, int nb
             float ovl  = overlap[i];
             float sum  = co[i]*g_twid9[9 + i] + si[i]*g_twid9[0 + i];
             overlap[i] = co[i]*g_twid9[0 + i] - si[i]*g_twid9[9 + i];
-            grbuf[i]      = ovl*window[0 + i] - sum*window[9 + i];
-            grbuf[17 - i] = ovl*window[9 + i] + sum*window[0 + i];
+            grbuf[i]      = ovl*Window_[0 + i] - sum*Window_[9 + i];
+            grbuf[17 - i] = ovl*Window_[9 + i] + sum*Window_[0 + i];
         }
     }
 }

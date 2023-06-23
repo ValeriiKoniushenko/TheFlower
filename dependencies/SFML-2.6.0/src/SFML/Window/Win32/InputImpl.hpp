@@ -100,13 +100,13 @@ public:
     static Vector2i getMousePosition();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the current position of the mouse in window coordinates
+    /// \brief Get the current position of the mouse in Window_ coordinates
     ///
     /// This function returns the current position of the mouse
-    /// cursor, relative to the given window.
-    /// If no window is used, it returns desktop coordinates.
+    /// cursor, relative to the given Window_.
+    /// If no Window_ is used, it returns desktop coordinates.
     ///
-    /// \param relativeTo Reference window
+    /// \param relativeTo Reference Window_
     ///
     /// \return Current position of the mouse
     ///
@@ -118,7 +118,7 @@ public:
     ///
     /// This function sets the current position of the mouse
     /// cursor in global (desktop) coordinates.
-    /// If no window is used, it sets the position in desktop coordinates.
+    /// If no Window_ is used, it sets the position in desktop coordinates.
     ///
     /// \param position New position of the mouse
     ///
@@ -126,14 +126,14 @@ public:
     static void setMousePosition(const Vector2i& position);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the current position of the mouse in window coordinates
+    /// \brief Set the current position of the mouse in Window_ coordinates
     ///
     /// This function sets the current position of the mouse
-    /// cursor, relative to the given window.
-    /// If no window is used, it sets the position in desktop coordinates.
+    /// cursor, relative to the given Window_.
+    /// If no Window_ is used, it sets the position in desktop coordinates.
     ///
     /// \param position New position of the mouse
-    /// \param relativeTo Reference window
+    /// \param relativeTo Reference Window_
     ///
     ////////////////////////////////////////////////////////////
     static void setMousePosition(const Vector2i& position, const WindowBase& relativeTo);
@@ -162,13 +162,13 @@ public:
     static Vector2i getTouchPosition(unsigned int finger);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the current position of a touch in window coordinates
+    /// \brief Get the current position of a touch in Window_ coordinates
     ///
     /// This function returns the current touch position
     /// in global (desktop) coordinates.
     ///
     /// \param finger Finger index
-    /// \param relativeTo Reference window
+    /// \param relativeTo Reference Window_
     ///
     /// \return Current position of \a finger, or undefined if it's not down
     ///

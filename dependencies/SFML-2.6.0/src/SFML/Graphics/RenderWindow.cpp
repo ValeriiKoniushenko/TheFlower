@@ -120,8 +120,8 @@ void RenderWindow::onCreate()
 {
     if (priv::RenderTextureImplFBO::isAvailable())
     {
-        // Retrieve the framebuffer ID we have to bind when targeting the window for rendering
-        // We assume that this window's context is still active at this point
+        // Retrieve the framebuffer ID we have to bind when targeting the Window_ for rendering
+        // We assume that this Window_'s context is still active at this point
         glCheck(glGetIntegerv(GLEXT_GL_FRAMEBUFFER_BINDING, reinterpret_cast<GLint*>(&m_defaultFrameBuffer)));
     }
 

@@ -99,7 +99,7 @@
    <span class="comment">//A static intrusive list declaration</span>
    <span class="keyword">static</span> <span class="identifier">win_list</span> <span class="identifier">all_windows</span><span class="special">;</span>
 
-   <span class="comment">//Constructor. Includes this window in the list</span>
+   <span class="comment">//Constructor. Includes this Window_ in the list</span>
    <span class="identifier">Window</span><span class="special">()</span>             <span class="special">{</span>  <span class="identifier">all_windows</span><span class="special">.</span><span class="identifier">push_back</span><span class="special">(*</span><span class="keyword">this</span><span class="special">);</span>  <span class="special">}</span>
    <span class="comment">//Destructor. Removes this node from the list</span>
    <span class="keyword">virtual</span> <span class="special">~</span><span class="identifier">Window</span><span class="special">()</span>    <span class="special">{</span>  <span class="identifier">all_windows</span><span class="special">.</span><span class="identifier">erase</span><span class="special">(</span><span class="identifier">win_list</span><span class="special">::</span><span class="identifier">s_iterator_to</span><span class="special">(*</span><span class="keyword">this</span><span class="special">));</span>  <span class="special">}</span>
@@ -147,7 +147,7 @@
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
 <span class="special">{</span>
    <span class="comment">//When a Window class is created, is automatically registered in the global list</span>
-   <span class="identifier">MainWindow</span> <span class="identifier">window</span><span class="special">;</span>
+   <span class="identifier">MainWindow</span> <span class="identifier">Window_</span><span class="special">;</span>
 
    <span class="comment">//Paint all the windows, sub-windows and so on</span>
    <span class="identifier">paint_all_windows</span><span class="special">();</span>

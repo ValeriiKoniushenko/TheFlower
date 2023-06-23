@@ -71,7 +71,7 @@ distribution. [#zip]_
    :class: small
 
    In Windows, a command-line tool is invoked by typing its name,
-   optionally followed by arguments, into a *Command Prompt* window
+   optionally followed by arguments, into a *Command Prompt* Window_
    and pressing the Return (or Enter) key.
 
    To open a generic *Command Prompt*, click the *Start* menu
@@ -123,7 +123,7 @@ Build From the Visual Studio IDE
 * From the *Build* menu, select *Build Solution*.
 
 To test your application, hit the F5 key and type the following
-into the resulting window, followed by the Return key::
+into the resulting Window_, followed by the Return key::
 
   1 2 3
 
@@ -148,8 +148,8 @@ or, if you're a Visual Studio .NET 2003 user, select
   *All Programs* > *Microsoft Visual Studio .NET 2003* 
   > *Visual Studio .NET Tools* > *Visual Studio .NET 2003 Command Prompt*
 
-to bring up a special `command prompt`_ window set up for the
-Visual Studio compiler.  In that window, set the `current
+to bring up a special `command prompt`_ Window_ set up for the
+Visual Studio compiler.  In that Window_, set the `current
 directory`_ to a suitable location for creating some temporary
 files and type the following command followed by the Return key:
 
@@ -279,7 +279,7 @@ Library Naming
 
 .. include:: detail/test-head.rst
 
-Now, in a `command prompt`_ window, type:
+Now, in a `command prompt`_ Window_, type:
 
 .. parsed-literal::
 

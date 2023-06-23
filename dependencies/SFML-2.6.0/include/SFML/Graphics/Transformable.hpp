@@ -387,7 +387,7 @@ private:
 /// MyEntity entity;
 /// entity.setPosition(10, 20);
 /// entity.setRotation(45);
-/// window.draw(entity);
+/// Window_.draw(entity);
 /// \endcode
 ///
 /// It can also be used as a member, if you don't want to use
@@ -418,7 +418,7 @@ private:
 /// like slow movements or rotations to appear smoothly, it can lead to
 /// unwanted results in some cases, for example blurred or distorted objects.
 /// In order to render a sf::Drawable object pixel-perfectly, make sure
-/// the involved coordinates allow a 1:1 mapping of pixels in the window
+/// the involved coordinates allow a 1:1 mapping of pixels in the Window_
 /// to texels (pixels in the texture). More specifically, this means:
 /// * The object's position, origin and scale have no fractional part
 /// * The object's and the view's rotation are a multiple of 90 degrees

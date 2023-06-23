@@ -51,7 +51,7 @@
     chain_length    equ     dword ptr [esp+NbStack-28]
     limit           equ     dword ptr [esp+NbStack-32]
     best_len        equ     dword ptr [esp+NbStack-36]
-    window          equ     dword ptr [esp+NbStack-40]
+    Window_          equ     dword ptr [esp+NbStack-40]
     prev            equ     dword ptr [esp+NbStack-44]
     scan_start      equ      word ptr [esp+NbStack-48]
     wmask           equ     dword ptr [esp+NbStack-52]
@@ -119,8 +119,8 @@ MAX_MATCH_8_     equ     ((MAX_MATCH + 7) AND 0FFF0h)
 
 chainlenwmask   equ  esp + 0    ; high word: current chain len
                     ; low word: s->wmask
-window      equ  esp + 4    ; local copy of s->window
-windowbestlen   equ  esp + 8    ; s->window + bestlen
+Window_      equ  esp + 4    ; local copy of s->Window_
+windowbestlen   equ  esp + 8    ; s->Window_ + bestlen
 scanstart   equ  esp + 16   ; first two bytes of string
 scanend     equ  esp + 12   ; last two bytes of string
 scanalign   equ  esp + 20   ; dword-misalignment of string
@@ -248,10 +248,10 @@ LastMatchGood:
         mov ebx, eax
 LookaheadLess:  mov [nicematch], ebx
 
-;;; register Bytef *scan = s->window + s->strstart;
+;;; register Bytef *scan = s->Window_ + s->strstart;
 
         mov esi, [edx + dsWindow]
-        mov [window], esi
+        mov [Window_], esi
         mov ebp, [edx + dsStrStart]
         lea edi, [esi + ebp]
         mov [scan], edi
@@ -279,7 +279,7 @@ LimitPositive:
         mov eax, [edx + dsPrevLen]
         mov [bestlen], eax
 
-;;; Store the sum of s->window + best_len in esi locally, and in esi.
+;;; Store the sum of s->Window_ + best_len in esi locally, and in esi.
 
         add esi, eax
         mov [windowbestlen], esi
@@ -302,7 +302,7 @@ LimitPositive:
 align 4
 
 ;;; do {
-;;;     match = s->window + cur_match;
+;;;     match = s->Window_ + cur_match;
 ;;;     if (*(ushf*)(match+best_len-1) != scan_end ||
 ;;;         *(ushf*)match != scan_start) continue;
 ;;;     [...]
@@ -317,7 +317,7 @@ align 4
 ;;; ebx = scanend
 ;;; ecx = curmatch
 ;;; edx = chainlenwmask - i.e., ((chainlen << 16) | wmask)
-;;; esi = windowbestlen - i.e., (window + bestlen)
+;;; esi = windowbestlen - i.e., (Window_ + bestlen)
 ;;; edi = prev
 ;;; ebp = limit
 
@@ -331,7 +331,7 @@ LookupLoop:
 LoopEntry:  movzx   eax, word ptr [esi + ecx - 1]
         cmp eax, ebx
         jnz LookupLoop
-        mov eax, [window]
+        mov eax, [Window_]
         movzx   eax, word ptr [eax + ecx]
         cmp eax, [scanstart]
         jnz LookupLoop
@@ -345,7 +345,7 @@ LoopEntry:  movzx   eax, word ptr [esi + ecx - 1]
 ;;; both pointed (MAX_MATCH_8 - scanalign) bytes ahead, and edx is
 ;;; initialized to -(MAX_MATCH_8 - scanalign).
 
-        mov esi, [window]
+        mov esi, [Window_]
         mov edi, [scan]
         add esi, ecx
         mov eax, [scanalign]
@@ -417,7 +417,7 @@ LongerMatch:    mov ebx, [nicematch]
         mov [edx + dsMatchStart], ecx
         cmp eax, ebx
         jge LeaveNow
-        mov esi, [window]
+        mov esi, [Window_]
         add esi, eax
         mov [windowbestlen], esi
         movzx   ebx, word ptr [edi + eax - 1]

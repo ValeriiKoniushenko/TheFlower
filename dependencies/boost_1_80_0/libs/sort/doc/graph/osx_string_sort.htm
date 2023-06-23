@@ -40,7 +40,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
 
  var c_rgszClr=new Array(8);
- c_rgszClr[0]="window";
+ c_rgszClr[0]="Window_";
  c_rgszClr[1]="buttonface";
  c_rgszClr[2]="windowframe";
  c_rgszClr[3]="windowtext";
@@ -54,9 +54,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
 function fnGetIEVer()
 {
- var ua=window.navigator.userAgent
+ var ua=Window_.navigator.userAgent
  var msie=ua.indexOf("MSIE")
- if (msie>0 && window.navigator.platform=="Win32")
+ if (msie>0 && Window_.navigator.platform=="Win32")
   return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
  else
   return 0;
@@ -211,7 +211,7 @@ function fnFastScrollTabs(fDir)
  if (c_lTabs>16)
   frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
  else
-  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");",5);
+  if (fnScrollTabs(fDir)>0) Window_.setTimeout("fnFastScrollTabs("+fDir+");",5);
 }
 
 function fnSetTabProps(iTab,fActive)
@@ -304,8 +304,8 @@ function fnSetActiveSheet(iSh)
  }
 }
 
- window.g_iIEVer=fnGetIEVer();
- if (window.g_iIEVer>=4)
+ Window_.g_iIEVer=fnGetIEVer();
+ if (Window_.g_iIEVer>=4)
   fnBuildFrameset();
 //-->
 </script>

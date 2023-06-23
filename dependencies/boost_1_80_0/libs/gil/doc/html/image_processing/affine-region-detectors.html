@@ -88,17 +88,17 @@ or any other stable features.</p>
 <h2>Algorithm steps</h2>
 <div class="section" id="harris-and-hessian">
 <h3>Harris and Hessian</h3>
-<p>Both are derived from a concept called Moravec window. Lets have a look
+<p>Both are derived from a concept called Moravec Window_. Lets have a look
 at the image below:</p>
 <div class="figure" id="id1">
-<img alt="Moravec window corner case" src="../_images/Moravec-window-corner.png" />
-<p class="caption"><span class="caption-text">Moravec window corner case</span></p>
+<img alt="Moravec Window_ corner case" src="../_images/Moravec-Window_-corner.png" />
+<p class="caption"><span class="caption-text">Moravec Window_ corner case</span></p>
 </div>
-<p>As can be noticed, moving the yellow window in any direction will cause
+<p>As can be noticed, moving the yellow Window_ in any direction will cause
 very big change in intensity. Now, lets have a look at the edge case:</p>
 <div class="figure" id="id2">
-<img alt="Moravec window edge case" src="../_images/Moravec-window-edge.png" />
-<p class="caption"><span class="caption-text">Moravec window edge case</span></p>
+<img alt="Moravec Window_ edge case" src="../_images/Moravec-Window_-edge.png" />
+<p class="caption"><span class="caption-text">Moravec Window_ edge case</span></p>
 </div>
 <p>In this case, intensity change will happen only when moving in
 particular direction.</p>
@@ -124,7 +124,7 @@ matrix is used as weights, because corners should have hill like
 curvature in gradients, and other weights might be noisy.
 Basically overlay weights matrix over a corner, compute sum of
 <code class="docutils literal"><span class="pre">s[i,j]=image[x</span> <span class="pre">+</span> <span class="pre">i,</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">j]</span> <span class="pre">*</span> <span class="pre">weights[i,</span> <span class="pre">j]</span></code> for <code class="docutils literal"><span class="pre">i,</span> <span class="pre">j</span></code>
-from zero to weight matrix dimensions, then move the window
+from zero to weight matrix dimensions, then move the Window_
 and compute again until all of the image is covered.</p>
 <p><strong>Response computation</strong> is a matter of choice. Given the general form
 of both matrices above</p>

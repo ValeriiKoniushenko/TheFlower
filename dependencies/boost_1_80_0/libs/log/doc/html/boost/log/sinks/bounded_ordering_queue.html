@@ -52,8 +52,8 @@
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem"><p>The queue has limited capacity specified by the <code class="computeroutput">MaxQueueSizeV</code> template parameter. </p></li>
 <li class="listitem"><p>Upon reaching the size limit, the queue invokes the overflow handling strategy specified in the <code class="computeroutput">OverflowStrategyT</code> template parameter to handle the situation. The library provides overflow handling strategies for most common cases: <code class="computeroutput"><a class="link" href="drop_on_overflow.html" title="Class drop_on_overflow">drop_on_overflow</a></code> will silently discard the log record, and <code class="computeroutput"><a class="link" href="block_on_overflow.html" title="Class block_on_overflow">block_on_overflow</a></code> will put the enqueueing thread to wait until there is space in the queue. </p></li>
-<li class="listitem"><p>The queue has a fixed latency window. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </p></li>
-<li class="listitem"><p>The queue performs stable record ordering within the latency window. The ordering predicate can be specified in the <code class="computeroutput">OrderT</code> template parameter. </p></li>
+<li class="listitem"><p>The queue has a fixed latency Window_. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </p></li>
+<li class="listitem"><p>The queue performs stable record ordering within the latency Window_. The ordering predicate can be specified in the <code class="computeroutput">OrderT</code> template parameter. </p></li>
 </ul></div>
 <p>
 </p>
@@ -70,7 +70,7 @@
 <a name="idm32583-bb"></a><code class="computeroutput">bounded_ordering_queue</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 <pre class="literallayout"><span class="identifier">posix_time</span><span class="special">::</span><span class="identifier">time_duration</span> <a name="idm32584-bb"></a><span class="identifier">get_ordering_window</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
-<p>Returns ordering window size specified during initialization </p>
+<p>Returns ordering Window_ size specified during initialization </p>
 </li></ol></div>
 </div>
 <div class="refsect2">
@@ -78,7 +78,7 @@
 <a name="idm32588-bb"></a><code class="computeroutput">bounded_ordering_queue</code> public static functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 <pre class="literallayout"><span class="keyword">static</span> <span class="identifier">posix_time</span><span class="special">::</span><span class="identifier">time_duration</span> <a name="idm32589-bb"></a><span class="identifier">get_default_ordering_window</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
-<p>Returns default ordering window size. The default window size is specific to the operating system thread scheduling mechanism. </p>
+<p>Returns default ordering Window_ size. The default Window_ size is specific to the operating system thread scheduling mechanism. </p>
 </li></ol></div>
 </div>
 <div class="refsect2">

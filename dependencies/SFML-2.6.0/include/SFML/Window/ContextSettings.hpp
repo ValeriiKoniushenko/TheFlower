@@ -31,7 +31,7 @@ namespace sf
 {
 ////////////////////////////////////////////////////////////
 /// \brief Structure defining the settings of the OpenGL
-///        context attached to a window
+///        context attached to a Window_
 ///
 ////////////////////////////////////////////////////////////
 struct ContextSettings
@@ -90,10 +90,10 @@ struct ContextSettings
 
 ////////////////////////////////////////////////////////////
 /// \class sf::ContextSettings
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// ContextSettings allows to define several advanced settings
-/// of the OpenGL context attached to a window. All these
+/// of the OpenGL context attached to a Window_. All these
 /// settings with the exception of the compatibility flag
 /// and anti-aliasing level have no impact on the regular
 /// SFML rendering (graphics module), so you may need to use
@@ -143,7 +143,7 @@ struct ContextSettings
 /// No failure will be reported if one or more of these values
 /// are not supported by the system; instead, SFML will try to
 /// find the closest valid match. You can then retrieve the
-/// settings that the window actually used to create its context,
+/// settings that the Window_ actually used to create its context,
 /// with Window::getSettings().
 ///
 ////////////////////////////////////////////////////////////

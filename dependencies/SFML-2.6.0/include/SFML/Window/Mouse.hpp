@@ -94,12 +94,12 @@ public:
     static Vector2i getPosition();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the current position of the mouse in window coordinates
+    /// \brief Get the current position of the mouse in Window_ coordinates
     ///
     /// This function returns the current position of the mouse
-    /// cursor, relative to the given window.
+    /// cursor, relative to the given Window_.
     ///
-    /// \param relativeTo Reference window
+    /// \param relativeTo Reference Window_
     ///
     /// \return Current position of the mouse
     ///
@@ -118,13 +118,13 @@ public:
     static void setPosition(const Vector2i& position);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set the current position of the mouse in window coordinates
+    /// \brief Set the current position of the mouse in Window_ coordinates
     ///
     /// This function sets the current position of the mouse
-    /// cursor, relative to the given window.
+    /// cursor, relative to the given Window_.
     ///
     /// \param position New position of the mouse
-    /// \param relativeTo Reference window
+    /// \param relativeTo Reference Window_
     ///
     ////////////////////////////////////////////////////////////
     static void setPosition(const Vector2i& position, const WindowBase& relativeTo);
@@ -138,28 +138,28 @@ public:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Mouse
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::Mouse provides an interface to the state of the
 /// mouse. It only contains static functions (a single
 /// mouse is assumed), so it's not meant to be instantiated.
 ///
 /// This class allows users to query the mouse state at any
-/// time and directly, without having to deal with a window and
+/// time and directly, without having to deal with a Window_ and
 /// its events. Compared to the MouseMoved, MouseButtonPressed
 /// and MouseButtonReleased events, sf::Mouse can retrieve the
 /// state of the cursor and the buttons at any time
 /// (you don't need to store and update a boolean on your side
 /// in order to know if a button is pressed or released), and you
 /// always get the real state of the mouse, even if it is
-/// moved, pressed or released when your window is out of focus
+/// moved, pressed or released when your Window_ is out of focus
 /// and no event is triggered.
 ///
 /// The setPosition and getPosition functions can be used to change
 /// or retrieve the current position of the mouse pointer. There are
 /// two versions: one that operates in global coordinates (relative
-/// to the desktop) and one that operates in window coordinates
-/// (relative to a specific window).
+/// to the desktop) and one that operates in Window_ coordinates
+/// (relative to a specific Window_).
 ///
 /// Usage example:
 /// \code
@@ -171,8 +171,8 @@ public:
 /// // get global mouse position
 /// sf::Vector2i position = sf::Mouse::getPosition();
 ///
-/// // set mouse position relative to a window
-/// sf::Mouse::setPosition(sf::Vector2i(100, 200), window);
+/// // set mouse position relative to a Window_
+/// sf::Mouse::setPosition(sf::Vector2i(100, 200), Window_);
 /// \endcode
 ///
 /// \see sf::Joystick, sf::Keyboard, sf::Touch

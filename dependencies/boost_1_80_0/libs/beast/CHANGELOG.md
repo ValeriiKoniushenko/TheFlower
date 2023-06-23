@@ -64,7 +64,7 @@ Version 321:
 * Remove test framework's dependency on RTTI.
 * Fix CVE-2016-9840 in zlib implementation.
 * Fix TLS SNI handling in websocket_client_async_ssl example.
-* Fix reuse of sliding window in WebSocket permessage_deflate.
+* Fix reuse of sliding Window_ in WebSocket permessage_deflate.
 * Fix accept error handling in http_server_async example.
 * Move library-specific docca configuration to Beast.
 * Remove dependency on RTTI in `test::stream`.

@@ -50,7 +50,7 @@ The header contains implementation of asynchronous sink frontend. </para><namesp
 <method name="feed_records"><type>void</type><description><para>The method feeds log records that may have been buffered to the backend and returns</para><para>
 </para></description><requires><para>The sink frontend must be constructed without spawning a dedicated thread </para>
 </requires></method>
-<method name="flush" specifiers="virtual"><type>void</type><description><para>The method feeds all log records that may have been buffered to the backend and returns. Unlike <computeroutput>feed_records</computeroutput>, in case of ordering queueing the method also feeds records that were enqueued during the ordering window, attempting to drain the queue completely. </para></description></method>
+<method name="flush" specifiers="virtual"><type>void</type><description><para>The method feeds all log records that may have been buffered to the backend and returns. Unlike <computeroutput>feed_records</computeroutput>, in case of ordering queueing the method also feeds records that were enqueued during the ordering Window_, attempting to drain the queue completely. </para></description></method>
 </method-group>
 <constructor specifiers="explicit"><parameter name="start_thread"><paramtype>bool</paramtype><default>true</default><description><para>If <computeroutput>true</computeroutput>, the frontend creates a thread to feed log records to the backend. Otherwise no thread is started and it is assumed that the user will call <computeroutput>run</computeroutput>, <computeroutput>feed_records</computeroutput> or <computeroutput>flush</computeroutput> himself. </para></description></parameter><description><para>Default constructor. Constructs the sink backend instance. Requires the backend to be default-constructible.</para><para>
 </para></description></constructor>
@@ -307,16 +307,16 @@ The header contains implementation of bounded ordering queueing strategy for the
 </listitem>
 <listitem><para>Upon reaching the size limit, the queue invokes the overflow handling strategy specified in the <computeroutput>OverflowStrategyT</computeroutput> template parameter to handle the situation. The library provides overflow handling strategies for most common cases: <computeroutput><classname alt="boost::log::sinks::drop_on_overflow">drop_on_overflow</classname></computeroutput> will silently discard the log record, and <computeroutput><classname alt="boost::log::sinks::block_on_overflow">block_on_overflow</classname></computeroutput> will put the enqueueing thread to wait until there is space in the queue. </para>
 </listitem>
-<listitem><para>The queue has a fixed latency window. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </para>
+<listitem><para>The queue has a fixed latency Window_. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </para>
 </listitem>
-<listitem><para>The queue performs stable record ordering within the latency window. The ordering predicate can be specified in the <computeroutput>OrderT</computeroutput> template parameter. </para>
+<listitem><para>The queue performs stable record ordering within the latency Window_. The ordering predicate can be specified in the <computeroutput>OrderT</computeroutput> template parameter. </para>
 </listitem>
 </itemizedlist>
 </para></description><method-group name="public member functions">
-<method name="get_ordering_window" cv="const"><type>posix_time::time_duration</type><description><para>Returns ordering window size specified during initialization </para></description></method>
+<method name="get_ordering_window" cv="const"><type>posix_time::time_duration</type><description><para>Returns ordering Window_ size specified during initialization </para></description></method>
 </method-group>
 <method-group name="public static functions">
-<method name="get_default_ordering_window" specifiers="static"><type>posix_time::time_duration</type><description><para>Returns default ordering window size. The default window size is specific to the operating system thread scheduling mechanism. </para></description></method>
+<method name="get_default_ordering_window" specifiers="static"><type>posix_time::time_duration</type><description><para>Returns default ordering Window_ size. The default Window_ size is specific to the operating system thread scheduling mechanism. </para></description></method>
 </method-group>
 <method-group name="protected member functions">
 <method name="enqueue"><type>void</type><parameter name="rec"><paramtype>record_view const &amp;</paramtype></parameter><purpose>Enqueues log record to the queue. </purpose></method>
@@ -1065,16 +1065,16 @@ The header contains implementation of unbounded ordering record queueing strateg
     </template><purpose>Unbounded ordering log record queueing strategy. </purpose><description><para>The <computeroutput><classname alt="boost::log::sinks::unbounded_ordering_queue">unbounded_ordering_queue</classname></computeroutput> class is intended to be used with the <computeroutput><classname alt="boost::log::sinks::asynchronous_sink">asynchronous_sink</classname></computeroutput> frontend as a log record queueing strategy.</para><para>This strategy provides the following properties to the record queueing mechanism:</para><para><itemizedlist>
 <listitem><para>The queue has no size limits. </para>
 </listitem>
-<listitem><para>The queue has a fixed latency window. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </para>
+<listitem><para>The queue has a fixed latency Window_. This means that each log record put into the queue will normally not be dequeued for a certain period of time. </para>
 </listitem>
-<listitem><para>The queue performs stable record ordering within the latency window. The ordering predicate can be specified in the <computeroutput>OrderT</computeroutput> template parameter.</para>
+<listitem><para>The queue performs stable record ordering within the latency Window_. The ordering predicate can be specified in the <computeroutput>OrderT</computeroutput> template parameter.</para>
 </listitem>
 </itemizedlist>
 Since this queue has no size limits, it may grow uncontrollably if sink backends dequeue log records not fast enough. When this is an issue, it is recommended to use one of the bounded strategies. </para></description><method-group name="public member functions">
-<method name="get_ordering_window" cv="const"><type>posix_time::time_duration</type><description><para>Returns ordering window size specified during initialization </para></description></method>
+<method name="get_ordering_window" cv="const"><type>posix_time::time_duration</type><description><para>Returns ordering Window_ size specified during initialization </para></description></method>
 </method-group>
 <method-group name="public static functions">
-<method name="get_default_ordering_window" specifiers="static"><type>posix_time::time_duration</type><description><para>Returns default ordering window size. The default window size is specific to the operating system thread scheduling mechanism. </para></description></method>
+<method name="get_default_ordering_window" specifiers="static"><type>posix_time::time_duration</type><description><para>Returns default ordering Window_ size. The default Window_ size is specific to the operating system thread scheduling mechanism. </para></description></method>
 </method-group>
 <method-group name="protected member functions">
 <method name="enqueue"><type>void</type><parameter name="rec"><paramtype>record_view const &amp;</paramtype></parameter><purpose>Enqueues log record to the queue. </purpose></method>

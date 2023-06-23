@@ -104,7 +104,7 @@ like this:
   BOOST_PARAMETER_KEYWORD(tag, width)
   BOOST_PARAMETER_KEYWORD(tag, height)
 
-  class window
+  class Window_
   {
   public:
       BOOST_PARAMETER_MEMBER_FUNCTION(
@@ -132,7 +132,7 @@ Python we use the binding utility ``boost::parameter::python::function``.
 and pass to ``boost::python::class_::def()``.
 
 To use ``boost::parameter::python::function`` we first need to define
-a class with forwarding overloads. This is needed because ``window::open()``
+a class with forwarding overloads. This is needed because ``Window_::open()``
 is a function template, so we can't refer to it in any other way. 
 
 ::
@@ -141,7 +141,7 @@ is a function template, so we can't refer to it in any other way.
   {
       template <class A0, class A1, class A2>
       void operator()(
-          boost::type<void>, window& self
+          boost::type<void>, Window_& self
         , A0 const& a0, A1 const& a1, A2 const& a2
       )
       {
@@ -155,7 +155,7 @@ but in some cases, when we are exporting several specializations of a
 Boost.Parameter-enabled template, we need to use that parameter to
 deduce the return type.
 
-``window::open()`` takes a total of 3 parameters, so the forwarding function
+``Window_::open()`` takes a total of 3 parameters, so the forwarding function
 needs to take three parameters as well.
 
 .. Note::
@@ -175,7 +175,7 @@ Next we'll define the module and export the class:
       namespace py = boost::parameter::python;
       namespace mpl = boost::mpl;
 
-      class_<window>("window")
+      class_<Window_>("Window_")
           .def(
               "open", py::function<
                   open_fwd
@@ -224,7 +224,7 @@ class.
 
 That's it! This class can now be used in Python with the expected syntax::
 
-    >>> w = my_module.window()
+    >>> w = my_module.Window_()
     >>> w.open(title = "foo", height = 20)
 
 .. @example.prepend('import my_module')
@@ -233,7 +233,7 @@ That's it! This class can now be used in Python with the expected syntax::
 .. Sorry to say this at such a late date, but this syntax really
 .. strikes me as cumbersome.  Couldn't we do something like:
 
-    class_<window>("window")
+    class_<Window_>("Window_")
           .def(
               "open", 
               (void (*)( 
@@ -245,7 +245,7 @@ That's it! This class can now be used in Python with the expected syntax::
 
    or at least:
 
-      class_<window>("window")
+      class_<Window_>("Window_")
           .def(
               "open", 
               mpl::vector<

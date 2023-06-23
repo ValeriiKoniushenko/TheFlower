@@ -3,12 +3,12 @@ exec_prefix=${prefix}
 libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
 includedir=${prefix}/include
 
-Name: SFML-window
-Description: The Simple and Fast Multimedia Library, window module.
+Name: SFML-Window_
+Description: The Simple and Fast Multimedia Library, Window_ module.
 URL: http://www.sfml-dev.org
 Version: @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@
 Requires: sfml-system
-Libs: -L${libdir} -lsfml-window
+Libs: -L${libdir} -lsfml-Window_
 # gl may not be in pkg-config
 Libs.private: @OPENGL_gl_LIBRARY@ @OPENGL_glu_LIBRARY@
 Cflags: -I${includedir}

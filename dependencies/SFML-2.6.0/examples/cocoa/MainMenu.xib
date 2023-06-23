@@ -2321,7 +2321,7 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">window</string>
+						<string key="label">Window_</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
@@ -4040,7 +4040,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>sfmlView</string>
 							<string>textField</string>
-							<string>window</string>
+							<string>Window_</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4055,7 +4055,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>sfmlView</string>
 							<string>textField</string>
-							<string>window</string>
+							<string>Window_</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4068,7 +4068,7 @@
 								<string key="candidateClassName">NSTextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">window</string>
+								<string key="name">Window_</string>
 								<string key="candidateClassName">NSWindow</string>
 							</object>
 						</object>

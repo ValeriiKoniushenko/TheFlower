@@ -69,8 +69,8 @@ longest_match PROC
 
  chainlenwmask   equ  rsp + 8 - LocalVarsSize    ; high word: current chain len
                                                  ; low word: s->wmask
-;window          equ  rsp + xx - LocalVarsSize   ; local copy of s->window ; stored in r10
-;windowbestlen   equ  rsp + xx - LocalVarsSize   ; s->window + bestlen , use r10+r11
+;Window_          equ  rsp + xx - LocalVarsSize   ; local copy of s->Window_ ; stored in r10
+;windowbestlen   equ  rsp + xx - LocalVarsSize   ; s->Window_ + bestlen , use r10+r11
 ;scanstart       equ  rsp + xx - LocalVarsSize   ; first two bytes of string ; stored in r12w
 ;scanend         equ  rsp + xx - LocalVarsSize   ; last two bytes of string use ebx
 ;scanalign       equ  rsp + xx - LocalVarsSize   ; dword-misalignment of string r13
@@ -100,7 +100,7 @@ save_r13        equ  rsp + 64 - LocalVarsSize
 ; windowbestlen   r8
 ; scanalign   r9
 ; scanalignd  r9d
-; window      r10
+; Window_      r10
 ; bestlen     r11
 ; bestlend    r11d
 ; scanstart   r12d
@@ -141,7 +141,7 @@ IFDEF INFOZIP
 _DATA   SEGMENT
 COMM    window_size:DWORD
 ; WMask ; 7fff
-COMM    window:BYTE:010040H
+COMM    Window_:BYTE:010040H
 COMM    prev:WORD:08000H
 ; MatchLen : unused
 ; PrevMatch : unused
@@ -153,7 +153,7 @@ COMM    max_chain_length:DWORD
 COMM    good_match:DWORD
 COMM    nice_match:DWORD
 prev_ad equ OFFSET prev
-window_ad equ OFFSET window
+window_ad equ OFFSET Window_
 nicematch equ nice_match
 _DATA ENDS
 WMask equ 07fffh
@@ -267,7 +267,7 @@ ELSE
         mov [nicematch],r10d
 ENDIF
 
-;;; register Bytef *scan = s->window + s->strstart;
+;;; register Bytef *scan = s->Window_ + s->strstart;
         mov r10, window_ad
         mov ebp, strstart
         lea r13, [r10 + rbp]
@@ -297,7 +297,7 @@ ENDIF
 ;;; int best_len = s->prev_length;
 
 
-;;; Store the sum of s->window + best_len in esi locally, and in esi.
+;;; Store the sum of s->Window_ + best_len in esi locally, and in esi.
 
        lea  rsi,[r10+r11]
 
@@ -360,7 +360,7 @@ LoopEntry4:
 
 
 ;;; do {
-;;;     match = s->window + cur_match;
+;;;     match = s->Window_ + cur_match;
 ;;;     if (*(ushf*)(match+best_len-1) != scan_end ||
 ;;;         *(ushf*)match != scan_start) continue;
 ;;;     [...]
@@ -375,7 +375,7 @@ LoopEntry4:
 ;;; ebx = scanend
 ;;; r8d = curmatch
 ;;; edx = chainlenwmask - i.e., ((chainlen << 16) | wmask)
-;;; esi = windowbestlen - i.e., (window + bestlen)
+;;; esi = windowbestlen - i.e., (Window_ + bestlen)
 ;;; edi = prev
 ;;; ebp = limit
 

@@ -99,7 +99,7 @@ BOOST_PARAMETER_KEYWORD(tag, title)
 BOOST_PARAMETER_KEYWORD(tag, width)
 BOOST_PARAMETER_KEYWORD(tag, height)
 
-class window
+class Window_
 {
 public:
     BOOST_PARAMETER_MEMBER_FUNCTION(
@@ -125,14 +125,14 @@ Python we use the binding utility <tt class="docutils literal"><span class="pre"
 <tt class="docutils literal"><span class="pre">boost::parameter::python::function</span></tt> is a <a class="reference external" href="../../../python/doc/v2/def_visitor.html"><tt class="docutils literal">def_visitor</tt></a> that we'll instantiate
 and pass to <tt class="docutils literal"><span class="pre">boost::python::class_::def()</span></tt>.</p>
 <p>To use <tt class="docutils literal"><span class="pre">boost::parameter::python::function</span></tt> we first need to define
-a class with forwarding overloads. This is needed because <tt class="docutils literal"><span class="pre">window::open()</span></tt>
+a class with forwarding overloads. This is needed because <tt class="docutils literal"><span class="pre">Window_::open()</span></tt>
 is a function template, so we can't refer to it in any other way.</p>
 <pre class="literal-block">
 struct open_fwd
 {
     template &lt;class A0, class A1, class A2&gt;
     void operator()(
-        boost::type&lt;void&gt;, window&amp; self
+        boost::type&lt;void&gt;, Window_&amp; self
       , A0 const&amp; a0, A1 const&amp; a1, A2 const&amp; a2
     )
     {
@@ -145,7 +145,7 @@ what the return type should be. In this case we know that it's always void
 but in some cases, when we are exporting several specializations of a
 Boost.Parameter-enabled template, we need to use that parameter to
 deduce the return type.</p>
-<p><tt class="docutils literal"><span class="pre">window::open()</span></tt> takes a total of 3 parameters, so the forwarding function
+<p><tt class="docutils literal"><span class="pre">Window_::open()</span></tt> takes a total of 3 parameters, so the forwarding function
 needs to take three parameters as well.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -162,7 +162,7 @@ BOOST_PYTHON_MODULE(my_module)
     namespace py = boost::parameter::python;
     namespace mpl = boost::mpl;
 
-    class_&lt;window&gt;(&quot;window&quot;)
+    class_&lt;Window_&gt;(&quot;Window_&quot;)
         .def(
             &quot;open&quot;, py::function&lt;
                 open_fwd
@@ -207,7 +207,7 @@ then the parameter types:
 .. @ignore() -->
 <p>That's it! This class can now be used in Python with the expected syntax:</p>
 <pre class="literal-block">
-&gt;&gt;&gt; w = my_module.window()
+&gt;&gt;&gt; w = my_module.Window_()
 &gt;&gt;&gt; w.open(title = &quot;foo&quot;, height = 20)
 </pre>
 <!-- @example.prepend('import my_module') -->
@@ -215,7 +215,7 @@ then the parameter types:
 <!-- Sorry to say this at such a late date, but this syntax really -->
 <!-- strikes me as cumbersome.  Couldn't we do something like:
 
- class_<window>("window")
+ class_<Window_>("Window_")
        .def(
            "open",
            (void (*)(
@@ -227,7 +227,7 @@ then the parameter types:
 
 or at least:
 
-   class_<window>("window")
+   class_<Window_>("Window_")
        .def(
            "open",
            mpl::vector<

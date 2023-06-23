@@ -46,7 +46,7 @@ class Drawable;
 class VertexBuffer;
 
 ////////////////////////////////////////////////////////////
-/// \brief Base class for all render targets (window, texture, ...)
+/// \brief Base class for all render targets (Window_, texture, ...)
 ///
 ////////////////////////////////////////////////////////////
 class SFML_GRAPHICS_API RenderTarget : NonCopyable
@@ -319,10 +319,10 @@ public:
     /// calls Draw functions. Example:
     /// \code
     /// // OpenGL code here...
-    /// window.pushGLStates();
-    /// window.draw(...);
-    /// window.draw(...);
-    /// window.popGLStates();
+    /// Window_.pushGLStates();
+    /// Window_.draw(...);
+    /// Window_.draw(...);
+    /// Window_.popGLStates();
     /// // OpenGL code here...
     /// \endcode
     ///
@@ -364,9 +364,9 @@ public:
     /// \code
     /// // OpenGL code here...
     /// glPushAttrib(...);
-    /// window.resetGLStates();
-    /// window.draw(...);
-    /// window.draw(...);
+    /// Window_.resetGLStates();
+    /// Window_.draw(...);
+    /// Window_.draw(...);
     /// glPopAttrib(...);
     /// // OpenGL code here...
     /// \endcode

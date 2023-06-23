@@ -53,11 +53,11 @@ public:
     WglContext(WglContext* shared);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create a new context attached to a window
+    /// \brief Create a new context attached to a Window_
     ///
     /// \param shared       Context to share the new one with
     /// \param settings     Creation parameters
-    /// \param owner        Pointer to the owner window
+    /// \param owner        Pointer to the owner Window_
     /// \param bitsPerPixel Pixel depth, in bits per pixel
     ///
     ////////////////////////////////////////////////////////////
@@ -160,9 +160,9 @@ private:
     void createSurface(WglContext* shared, unsigned int width, unsigned int height, unsigned int bitsPerPixel);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create the context's drawing surface from an existing window
+    /// \brief Create the context's drawing surface from an existing Window_
     ///
-    /// \param window       Window handle of the owning window
+    /// \param window       Window handle of the owning Window_
     /// \param bitsPerPixel Pixel depth, in bits per pixel
     ///
     ////////////////////////////////////////////////////////////
@@ -183,7 +183,7 @@ private:
     HPBUFFERARB m_pbuffer;       //!< Handle to a pbuffer if one was created
     HDC         m_deviceContext; //!< Device context associated to the context
     HGLRC       m_context;       //!< OpenGL context
-    bool        m_ownsWindow;    //!< Do we own the target window?
+    bool        m_ownsWindow;    //!< Do we own the target Window_?
 };
 
 } // namespace priv

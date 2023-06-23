@@ -218,7 +218,7 @@ ALIGN 4
 L_check_dist_one:
 	cmp	r15d, 1            ; /* if dist 1, is a memset */
 	jne	L_check_window
-	cmp	[rsp+40], rdi      ; /* if out == beg, outside window */
+	cmp	[rsp+40], rdi      ; /* if out == beg, outside Window_ */
 	je	L_check_window
 
 	mov	ecx, r14d         ; /* ecx = len */
@@ -275,7 +275,7 @@ L_clip_window:
 	cmp	dword ptr [rsp+96], 0
 	jne	L_wrap_around_window ; /* if (write != 0) */
 
-	mov	rsi, [rsp+56]     ; /* from  = window */
+	mov	rsi, [rsp+56]     ; /* from  = Window_ */
 	sub	eax, ecx         ; /* eax  -= nbytes */
 	add	rsi, rax         ; /* from += wsize - nbytes */
 
@@ -296,7 +296,7 @@ L_wrap_around_window:
 	jbe	L_contiguous_in_window ; /* if (write >= nbytes) */
 
 	mov	esi, [rsp+92]     ; /* from  = wsize */
-	add	rsi, [rsp+56]     ; /* from += window */
+	add	rsi, [rsp+56]     ; /* from += Window_ */
 	add	rsi, rax         ; /* from += write */
 	sub	rsi, rcx         ; /* from -= nbytes */
 	sub	ecx, eax         ; /* nbytes -= write */
@@ -307,7 +307,7 @@ L_wrap_around_window:
 
 	sub	eax, ecx         ; /* len -= nbytes */
 	rep     movsb
-	mov	rsi, [rsp+56]     ; /* from = window */
+	mov	rsi, [rsp+56]     ; /* from = Window_ */
 	mov	ecx, [rsp+96]     ; /* nbytes = write */
 	cmp	eax, ecx
 	jbe	L_do_copy           ; /* if (nbytes >= len) */
@@ -320,7 +320,7 @@ L_wrap_around_window:
 
 ALIGN 4
 L_contiguous_in_window:
-	mov	rsi, [rsp+56]     ; /* rsi = window */
+	mov	rsi, [rsp+56]     ; /* rsi = Window_ */
 	add	rsi, rax
 	sub	rsi, rcx         ; /* from += write - nbytes */
 

@@ -117,10 +117,10 @@
           the compressor for this purpose.) The use of <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">finish</span></code></a> is not required to perform
           an inflation in one step. However it may be used to inform inflate that
           a faster approach can be used for the single call. <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">finish</span></code></a> also informs inflate to
-          not maintain a sliding window if the stream completes, which reduces inflate's
+          not maintain a sliding Window_ if the stream completes, which reduces inflate's
           memory footprint. If the stream does not complete, either because not all
           of the stream is provided or not enough output space is provided, then
-          a sliding window will be allocated and <code class="computeroutput"><span class="identifier">write</span></code>
+          a sliding Window_ will be allocated and <code class="computeroutput"><span class="identifier">write</span></code>
           can be called again to continue the operation as if <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">none</span></code></a> had been used. In this implementation,
           <code class="computeroutput"><span class="identifier">write</span></code> always flushes as
           much output as possible to the output buffer, and always uses the faster
@@ -128,7 +128,7 @@
           implementation are on the return value of <code class="computeroutput"><span class="identifier">write</span></code>
           as noted below, when <code class="computeroutput"><span class="identifier">write</span></code>
           returns early when <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">block</span></code></a> or <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">trees</span></code></a> is used, and when <code class="computeroutput"><span class="identifier">write</span></code> avoids the allocation of memory
-          for a sliding window when <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">finish</span></code></a> is used. If a preset dictionary
+          for a sliding Window_ when <a class="link" href="../boost__beast__zlib__Flush.html" title="zlib::FlushToFile"><code class="computeroutput"><span class="identifier">FlushToFile</span><span class="special">::</span><span class="identifier">finish</span></code></a> is used. If a preset dictionary
           is needed after this call, <code class="computeroutput"><span class="identifier">write</span></code>
           sets <code class="computeroutput"><span class="identifier">zs</span><span class="special">.</span><span class="identifier">adler</span></code> to the Adler-32 checksum of the
           dictionary chosen by the compressor and returns <code class="computeroutput"><span class="identifier">error</span><span class="special">::</span><span class="identifier">need_dictionary</span></code>;

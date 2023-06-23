@@ -143,8 +143,8 @@
       The spinlock tracks how many times the thread failed to acquire the lock. The
       higher the contention, the longer the thread should back-off. A <span class="quote">“<span class="quote">Binary
       Exponential Backoff</span>”</span> algorithm together with a randomized contention
-      window is utilized for this purpose. BOOST_FIBERS_CONTENTION_WINDOW_THRESHOLD
-      determines the upper limit of the contention window (expressed as the exponent
+      Window_ is utilized for this purpose. BOOST_FIBERS_CONTENTION_WINDOW_THRESHOLD
+      determines the upper limit of the contention Window_ (expressed as the exponent
       for basis of two).
     </p>
 <h4>
@@ -448,7 +448,7 @@
             </td>
 <td>
               <p>
-                max size of collisions window, expressed as exponent for the basis
+                max size of collisions Window_, expressed as exponent for the basis
                 of two
               </p>
             </td>

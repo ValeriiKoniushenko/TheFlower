@@ -84,8 +84,8 @@ public:
     ////////////////////////////////////////////////////////////
     struct MouseMoveEvent
     {
-        int x; //!< X position of the mouse pointer, relative to the left of the owner window
-        int y; //!< Y position of the mouse pointer, relative to the top of the owner window
+        int x; //!< X position of the mouse pointer, relative to the left of the owner Window_
+        int y; //!< Y position of the mouse pointer, relative to the top of the owner Window_
     };
 
     ////////////////////////////////////////////////////////////
@@ -96,8 +96,8 @@ public:
     struct MouseButtonEvent
     {
         Mouse::Button button; //!< Code of the button that has been pressed
-        int           x;      //!< X position of the mouse pointer, relative to the left of the owner window
-        int           y;      //!< Y position of the mouse pointer, relative to the top of the owner window
+        int           x;      //!< X position of the mouse pointer, relative to the left of the owner Window_
+        int           y;      //!< Y position of the mouse pointer, relative to the top of the owner Window_
     };
 
     ////////////////////////////////////////////////////////////
@@ -110,8 +110,8 @@ public:
     struct MouseWheelEvent
     {
         int delta; //!< Number of ticks the wheel has moved (positive is up, negative is down)
-        int x;     //!< X position of the mouse pointer, relative to the left of the owner window
-        int y;     //!< Y position of the mouse pointer, relative to the top of the owner window
+        int x;     //!< X position of the mouse pointer, relative to the left of the owner Window_
+        int y;     //!< Y position of the mouse pointer, relative to the top of the owner Window_
     };
 
     ////////////////////////////////////////////////////////////
@@ -122,8 +122,8 @@ public:
     {
         Mouse::Wheel wheel; //!< Which wheel (for mice with multiple ones)
         float        delta; //!< Wheel offset (positive is up/left, negative is down/right). High-precision mice may use non-integral offsets.
-        int          x;     //!< X position of the mouse pointer, relative to the left of the owner window
-        int          y;     //!< Y position of the mouse pointer, relative to the top of the owner window
+        int          x;     //!< X position of the mouse pointer, relative to the left of the owner Window_
+        int          y;     //!< Y position of the mouse pointer, relative to the top of the owner Window_
     };
 
     ////////////////////////////////////////////////////////////
@@ -165,8 +165,8 @@ public:
     struct TouchEvent
     {
         unsigned int finger; //!< Index of the finger in case of multi-touch events
-        int x;               //!< X position of the touch, relative to the left of the owner window
-        int y;               //!< Y position of the touch, relative to the top of the owner window
+        int x;               //!< X position of the touch, relative to the left of the owner Window_
+        int y;               //!< Y position of the touch, relative to the top of the owner Window_
     };
 
     ////////////////////////////////////////////////////////////
@@ -187,10 +187,10 @@ public:
     ////////////////////////////////////////////////////////////
     enum EventType
     {
-        Closed,                 //!< The window requested to be closed (no data)
-        Resized,                //!< The window was resized (data in event.size)
-        LostFocus,              //!< The window lost the focus (no data)
-        GainedFocus,            //!< The window gained the focus (no data)
+        Closed,                 //!< The Window_ requested to be closed (no data)
+        Resized,                //!< The Window_ was resized (data in event.size)
+        LostFocus,              //!< The Window_ lost the focus (no data)
+        GainedFocus,            //!< The Window_ gained the focus (no data)
         TextEntered,            //!< A character was entered (data in event.text)
         KeyPressed,             //!< A key was pressed (data in event.key)
         KeyReleased,            //!< A key was released (data in event.key)
@@ -199,8 +199,8 @@ public:
         MouseButtonPressed,     //!< A mouse button was pressed (data in event.mouseButton)
         MouseButtonReleased,    //!< A mouse button was released (data in event.mouseButton)
         MouseMoved,             //!< The mouse cursor moved (data in event.mouseMove)
-        MouseEntered,           //!< The mouse cursor entered the area of the window (no data)
-        MouseLeft,              //!< The mouse cursor left the area of the window (no data)
+        MouseEntered,           //!< The mouse cursor entered the area of the Window_ (no data)
+        MouseLeft,              //!< The mouse cursor left the area of the Window_ (no data)
         JoystickButtonPressed,  //!< A joystick button was pressed (data in event.joystickButton)
         JoystickButtonReleased, //!< A joystick button was released (data in event.joystickButton)
         JoystickMoved,          //!< The joystick moved along an axis (data in event.joystickMove)
@@ -244,14 +244,14 @@ public:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Event
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::Event holds all the informations about a system event
 /// that just happened. Events are retrieved using the
 /// sf::Window::pollEvent and sf::Window::waitEvent functions.
 ///
 /// A sf::Event instance contains the type of the event
-/// (mouse moved, key pressed, window closed, ...) as well
+/// (mouse moved, key pressed, Window_ closed, ...) as well
 /// as the details about this particular event. Please note that
 /// the event parameters are defined in a union, which means that
 /// only the member matching the type of the event will be properly
@@ -264,17 +264,17 @@ public:
 /// Usage example:
 /// \code
 /// sf::Event event;
-/// while (window.pollEvent(event))
+/// while (Window_.pollEvent(event))
 /// {
-///     // Request for closing the window
+///     // Request for closing the Window_
 ///     if (event.type == sf::Event::Closed)
-///         window.close();
+///         Window_.close();
 ///
 ///     // The escape key was pressed
 ///     if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
-///         window.close();
+///         Window_.close();
 ///
-///     // The window was resized
+///     // The Window_ was resized
 ///     if (event.type == sf::Event::Resized)
 ///         doSomethingWithTheNewSize(event.size.width, event.size.height);
 ///

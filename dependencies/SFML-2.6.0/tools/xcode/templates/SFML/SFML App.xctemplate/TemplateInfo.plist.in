@@ -258,7 +258,7 @@ fi
 
 if [ -n "$SFML_WINDOW" ]
 then
-    require "window"
+    require "Window_"
 fi
 
 if [ -n "$SFML_GRAPHICS" ]

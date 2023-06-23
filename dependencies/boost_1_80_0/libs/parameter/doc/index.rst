@@ -139,7 +139,7 @@ defaults, the positional interface becomes burdensome:
 
     .. parsed-literal::
 
-        window* new_window(
+        Window_* new_window(
             char const* name
           , **int border_width = default_border_width**
           , bool movable = true
@@ -147,15 +147,15 @@ defaults, the positional interface becomes burdensome:
         );
 
         bool const movability = false;
-        window* w = new_window("alert box", movability);
+        Window_* w = new_window("alert box", movability);
 
-    In the example above we wanted to make an unmoveable window with a default
-    ``border_width``, but instead we got a moveable window with a
+    In the example above we wanted to make an unmoveable Window_ with a default
+    ``border_width``, but instead we got a moveable Window_ with a
     ``border_width`` of zero.  To get the desired effect, we'd need to write:
 
     .. parsed-literal::
 
-        window* w = new_window(
+        Window_* w = new_window(
             "alert box", **default_border_width**, movability
         );
 
@@ -164,9 +164,9 @@ defaults, the positional interface becomes burdensome:
     It can become difficult for readers to understand the meaning of arguments
     at the call site::
 
-        window* w = new_window("alert", 1, true, false);
+        Window_* w = new_window("alert", 1, true, false);
 
-    Is this window moveable and initially invisible, or unmoveable and
+    Is this Window_ moveable and initially invisible, or unmoveable and
     initially visible?  The reader needs to remember the order of arguments to
     be sure.  
 
@@ -187,7 +187,7 @@ Named Function Parameters
 
     .. parsed-literal::
 
-        window* w = new_window(
+        Window_* w = new_window(
             "alert box"
           , **movable_=**\ false
         ); // OK!
@@ -206,16 +206,16 @@ Deduced Function Parameters
     passed.  The ``name`` parameter to ``new_window`` is one such
     example.  None of the other arguments, if valid, can reasonably be
     converted to a ``char const*``.  With a deduced parameter interface, we
-    could pass the window name in *any* argument position without causing
+    could pass the Window_ name in *any* argument position without causing
     ambiguity:
 
     .. parsed-literal::
 
-        window* w = new_window(
+        Window_* w = new_window(
             movable_=false
           , **"alert box"**
         ); // OK!
-        window* w = new_window(
+        Window_* w = new_window(
             **"alert box"**
           , movable_=false
         ); // OK!
@@ -1143,11 +1143,11 @@ enabling the function to have deduced parameter interface.  Let's revisit the
 
 .. parsed-literal::
 
-    window\* w = new_window(
+    Window_\* w = new_window(
         movable_=false
       , "alert box"
     );
-    window\* w = new_window(
+    Window_\* w = new_window(
         "alert box"
       , movable_=false
     );
@@ -1164,7 +1164,7 @@ parameter signature:
     BOOST_PARAMETER_NAME((name\_, keywords) name)
     BOOST_PARAMETER_NAME((movable\_, keywords) movable)
 
-    BOOST_PARAMETER_FUNCTION((window\*), new_window, keywords,
+    BOOST_PARAMETER_FUNCTION((Window_\*), new_window, keywords,
         (deduced
             (required
                 (name, *(char const\*)*)
@@ -1183,8 +1183,8 @@ well as the previous statements:
 
 .. parsed-literal::
 
-    window\* w = new_window(false, "alert box");
-    window\* w = new_window("alert box", false);
+    Window_\* w = new_window(false, "alert box");
+    Window_\* w = new_window("alert box", false);
 
 .. @ignore()
 

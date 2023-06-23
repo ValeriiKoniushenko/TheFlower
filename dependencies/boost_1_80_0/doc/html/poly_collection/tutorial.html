@@ -215,9 +215,9 @@
               member functon for rendering:
             </li>
 </ul></div>
-<pre class="programlisting"><span class="keyword">struct</span> <span class="identifier">window</span>
+<pre class="programlisting"><span class="keyword">struct</span> <span class="identifier">Window_</span>
 <span class="special">{</span>
-  <span class="identifier">window</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">caption</span><span class="special">):</span><span class="identifier">caption</span><span class="special">{</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">move</span><span class="special">(</span><span class="identifier">caption</span><span class="special">)}{}</span>
+  <span class="identifier">Window_</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">caption</span><span class="special">):</span><span class="identifier">caption</span><span class="special">{</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">move</span><span class="special">(</span><span class="identifier">caption</span><span class="special">)}{}</span>
 
   <span class="keyword">void</span> <span class="identifier">display</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="identifier">os</span><span class="special">)</span><span class="keyword">const</span><span class="special">{</span><span class="identifier">os</span><span class="special">&lt;&lt;</span><span class="string">"["</span><span class="special">&lt;&lt;</span><span class="identifier">caption</span><span class="special">&lt;&lt;</span><span class="string">"]"</span><span class="special">;}</span>
 
@@ -230,7 +230,7 @@
         </p>
 <pre class="programlisting"><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">unique_ptr</span><span class="special">&lt;</span><span class="identifier">sprite</span><span class="special">&gt;&gt;</span> <span class="identifier">sprs</span><span class="special">;</span>
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">&gt;</span>             <span class="identifier">msgs</span><span class="special">;</span>
-<span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">window</span><span class="special">&gt;</span>                  <span class="identifier">wnds</span><span class="special">;</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">Window_</span><span class="special">&gt;</span>                  <span class="identifier">wnds</span><span class="special">;</span>
 </pre>
 <p>
           and define our rendering container as a <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">function_collection</span></code>
@@ -247,7 +247,7 @@
 </pre>
 <p>
           which we fill with suitable adaptors for <code class="computeroutput"><span class="identifier">sprite</span></code>s,
-          <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span></code>s and <code class="computeroutput"><span class="identifier">window</span></code>s,
+          <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span></code>s and <code class="computeroutput"><span class="identifier">Window_</span></code>s,
           respectively. Lambda functions allow for a particularly terse code.
         </p>
 <pre class="programlisting"><span class="keyword">auto</span> <span class="identifier">render_sprite</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">sprite</span><span class="special">&amp;</span> <span class="identifier">s</span><span class="special">){</span>
@@ -258,7 +258,7 @@
   <span class="keyword">return</span> <span class="special">[&amp;](</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="identifier">os</span><span class="special">){</span><span class="identifier">os</span><span class="special">&lt;&lt;</span><span class="identifier">m</span><span class="special">;};</span>
 <span class="special">}</span>
 
-<span class="keyword">auto</span> <span class="identifier">render_window</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">window</span><span class="special">&amp;</span> <span class="identifier">w</span><span class="special">){</span>
+<span class="keyword">auto</span> <span class="identifier">render_window</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Window_</span><span class="special">&amp;</span> <span class="identifier">w</span><span class="special">){</span>
   <span class="keyword">return</span> <span class="special">[&amp;](</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="identifier">os</span><span class="special">){</span><span class="identifier">w</span><span class="special">.</span><span class="identifier">display</span><span class="special">(</span><span class="identifier">os</span><span class="special">);};</span>
 <span class="special">}</span>
 <span class="special">...</span>
@@ -348,7 +348,7 @@
 
 <span class="comment">// std::string already has a suitable operator&lt;&lt;</span>
 
-<span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="keyword">operator</span><span class="special">&lt;&lt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="identifier">os</span><span class="special">,</span><span class="keyword">const</span> <span class="identifier">window</span><span class="special">&amp;</span> <span class="identifier">w</span><span class="special">)</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="keyword">operator</span><span class="special">&lt;&lt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span><span class="special">&amp;</span> <span class="identifier">os</span><span class="special">,</span><span class="keyword">const</span> <span class="identifier">Window_</span><span class="special">&amp;</span> <span class="identifier">w</span><span class="special">)</span>
 <span class="special">{</span>
   <span class="identifier">w</span><span class="special">.</span><span class="identifier">display</span><span class="special">(</span><span class="identifier">os</span><span class="special">);</span>
   <span class="keyword">return</span> <span class="identifier">os</span><span class="special">;</span>
@@ -385,8 +385,8 @@
 <span class="identifier">c</span><span class="special">.</span><span class="identifier">insert</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">{</span><span class="string">"\"game over\""</span><span class="special">});</span>
 
 <span class="comment">// populate with windows</span>
-<span class="identifier">c</span><span class="special">.</span><span class="identifier">insert</span><span class="special">(</span><span class="identifier">window</span><span class="special">{</span><span class="string">"pop-up 1"</span><span class="special">});</span>
-<span class="identifier">c</span><span class="special">.</span><span class="identifier">insert</span><span class="special">(</span><span class="identifier">window</span><span class="special">{</span><span class="string">"pop-up 2"</span><span class="special">});</span>
+<span class="identifier">c</span><span class="special">.</span><span class="identifier">insert</span><span class="special">(</span><span class="identifier">Window_</span><span class="special">{</span><span class="string">"pop-up 1"</span><span class="special">});</span>
+<span class="identifier">c</span><span class="special">.</span><span class="identifier">insert</span><span class="special">(</span><span class="identifier">Window_</span><span class="special">{</span><span class="string">"pop-up 2"</span><span class="special">});</span>
 </pre>
 <p>
           and rendering becomes
@@ -1117,7 +1117,7 @@ juggernaut 7,goblin 1,goblin 3,goblin 5,"stamina: 10,000","game over"
               present in the collection, not a promise. Also, the list of types need
               not be exhaustive, that is, some unlisted types could be present in
               the collection —in the example above, the loop traverses <span class="bold"><strong>all</strong></span> elements (including <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span></code>s
-              and <code class="computeroutput"><span class="identifier">window</span></code>s), not only
+              and <code class="computeroutput"><span class="identifier">Window_</span></code>s), not only
               those corresponding to restituted types. In general, the more types
               are restituted, the greater the potential improvement in performance.
             </li>

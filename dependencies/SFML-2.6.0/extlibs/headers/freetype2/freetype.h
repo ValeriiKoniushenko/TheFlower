@@ -2230,7 +2230,7 @@ FT_BEGIN_HEADER
   /*      value is determined the same way as                              */
   /*      @FT_SIZE_REQUEST_TYPE_REAL_DIM does.  Finally, both scaling      */
   /*      values are set to the smaller one.  This type is useful if you   */
-  /*      want to specify the font size for, say, a window of a given      */
+  /*      want to specify the font size for, say, a Window_ of a given      */
   /*      dimension and 80x24 cells.                                       */
   /*                                                                       */
   /*    FT_SIZE_REQUEST_TYPE_SCALES ::                                     */

@@ -505,7 +505,7 @@ private:
 /// text.setFillColor(sf::Color::Red);
 ///
 /// // Draw it
-/// window.draw(text);
+/// Window_.draw(text);
 /// \endcode
 ///
 /// \see sf::Font, sf::Transformable

@@ -53,18 +53,18 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// This constructor doesn't actually create the window,
+    /// This constructor doesn't actually create the Window_,
     /// use the other constructors or call create() to do so.
     ///
     ////////////////////////////////////////////////////////////
     Window();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a new window
+    /// \brief Construct a new Window_
     ///
-    /// This constructor creates the window with the size and pixel
+    /// This constructor creates the Window_ with the size and pixel
     /// depth defined in \a mode. An optional style can be passed to
-    /// customize the look and behavior of the window (borders,
+    /// customize the look and behavior of the Window_ (borders,
     /// title bar, resizable, closable, ...). If \a style contains
     /// Style::Fullscreen, then \a mode must be a valid video mode.
     ///
@@ -72,8 +72,8 @@ public:
     /// advanced OpenGL context settings such as antialiasing,
     /// depth-buffer bits, etc.
     ///
-    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title    Title of the window
+    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title    Title of the Window_
     /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
@@ -81,7 +81,7 @@ public:
     Window(VideoMode mode, const String& title, Uint32 style = Style::Default, const ContextSettings& settings = ContextSettings());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the window from an existing control
+    /// \brief Construct the Window_ from an existing control
     ///
     /// Use this constructor if you want to create an OpenGL
     /// rendering area into an already existing control.
@@ -99,29 +99,29 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Destructor
     ///
-    /// Closes the window and frees all the resources attached to it.
+    /// Closes the Window_ and frees all the resources attached to it.
     ///
     ////////////////////////////////////////////////////////////
     virtual ~Window();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window
+    /// \brief Create (or recreate) the Window_
     ///
-    /// If the window was already created, it closes it first.
+    /// If the Window_ was already created, it closes it first.
     /// If \a style contains Style::Fullscreen, then \a mode
     /// must be a valid video mode.
     ///
-    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title    Title of the window
+    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title    Title of the Window_
     /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
     ///
     ////////////////////////////////////////////////////////////
     virtual void create(VideoMode mode, const String& title, Uint32 style = Style::Default);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window
+    /// \brief Create (or recreate) the Window_
     ///
-    /// If the window was already created, it closes it first.
+    /// If the Window_ was already created, it closes it first.
     /// If \a style contains Style::Fullscreen, then \a mode
     /// must be a valid video mode.
     ///
@@ -129,8 +129,8 @@ public:
     /// advanced OpenGL context settings such as antialiasing,
     /// depth-buffer bits, etc.
     ///
-    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title    Title of the window
+    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title    Title of the Window_
     /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
@@ -138,11 +138,11 @@ public:
     virtual void create(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window from an existing control
+    /// \brief Create (or recreate) the Window_ from an existing control
     ///
     /// Use this function if you want to create an OpenGL
     /// rendering area into an already existing control.
-    /// If the window was already created, it closes it first.
+    /// If the Window_ was already created, it closes it first.
     ///
     /// \param handle   Platform-specific handle of the control
     ///
@@ -150,11 +150,11 @@ public:
     virtual void create(WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window from an existing control
+    /// \brief Create (or recreate) the Window_ from an existing control
     ///
     /// Use this function if you want to create an OpenGL
     /// rendering area into an already existing control.
-    /// If the window was already created, it closes it first.
+    /// If the Window_ was already created, it closes it first.
     ///
     /// The second parameter is an optional structure specifying
     /// advanced OpenGL context settings such as antialiasing,
@@ -167,10 +167,10 @@ public:
     virtual void create(WindowHandle handle, const ContextSettings& settings);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Close the window and destroy all the attached resources
+    /// \brief Close the Window_ and destroy all the attached resources
     ///
     /// After calling this function, the sf::Window instance remains
-    /// valid and you can call create() to recreate the window.
+    /// valid and you can call create() to recreate the Window_.
     /// All other functions such as pollEvent() or display() will
     /// still work (i.e. you don't have to test isOpen() every time),
     /// and will have no effect on closed windows.
@@ -179,7 +179,7 @@ public:
     virtual void close();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the settings of the OpenGL context of the window
+    /// \brief Get the settings of the OpenGL context of the Window_
     ///
     /// Note that these settings may be different from what was
     /// passed to the constructor or the create() function,
@@ -209,7 +209,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Limit the framerate to a maximum fixed frequency
     ///
-    /// If a limit is set, the window will use a small delay after
+    /// If a limit is set, the Window_ will use a small delay after
     /// each call to display() to ensure that the current frame
     /// lasted long enough to match the framerate limit.
     /// SFML will try to match the given limit as much as it can,
@@ -224,14 +224,14 @@ public:
     void setFramerateLimit(unsigned int limit);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Activate or deactivate the window as the current target
+    /// \brief Activate or deactivate the Window_ as the current target
     ///        for OpenGL rendering
     ///
-    /// A window is active only on the current thread, if you want to
+    /// A Window_ is active only on the current thread, if you want to
     /// make it active on another thread you have to deactivate it
     /// on the previous thread first if it was active.
-    /// Only one window can be active on a thread at a time, thus
-    /// the window previously active (if any) automatically gets deactivated.
+    /// Only one Window_ can be active on a thread at a time, thus
+    /// the Window_ previously active (if any) automatically gets deactivated.
     /// This is not to be confused with requestFocus().
     ///
     /// \param active True to activate, false to deactivate
@@ -242,7 +242,7 @@ public:
     bool setActive(bool active = true) const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Display on screen what has been rendered to the window so far
+    /// \brief Display on screen what has been rendered to the Window_ so far
     ///
     /// This function is typically called after all OpenGL rendering
     /// has been done for the current frame, in order to show
@@ -257,9 +257,9 @@ private:
     /// \brief Processes an event before it is sent to the user
     ///
     /// This function is called every time an event is received
-    /// from the internal window (through pollEvent or waitEvent).
+    /// from the internal Window_ (through pollEvent or waitEvent).
     /// It filters out unwanted events, and performs whatever internal
-    /// stuff the window needs before the event is returned to the
+    /// stuff the Window_ needs before the event is returned to the
     /// user.
     ///
     /// \param event Event to filter
@@ -289,29 +289,29 @@ private:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Window
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::Window is the main class of the Window module. It defines
-/// an OS window that is able to receive an OpenGL rendering.
+/// an OS Window_ that is able to receive an OpenGL rendering.
 ///
-/// A sf::Window can create its own new window, or be embedded into
+/// A sf::Window can create its own new Window_, or be embedded into
 /// an already existing control using the create(handle) function.
 /// This can be useful for embedding an OpenGL rendering area into
 /// a view which is part of a bigger GUI with existing windows,
 /// controls, etc. It can also serve as embedding an OpenGL rendering
-/// area into a window created by another (probably richer) GUI library
+/// area into a Window_ created by another (probably richer) GUI library
 /// like Qt or wxWidgets.
 ///
 /// The sf::Window class provides a simple interface for manipulating
-/// the window: move, resize, show/hide, control mouse cursor, etc.
+/// the Window_: move, resize, show/hide, control mouse cursor, etc.
 /// It also provides event handling through its pollEvent() and waitEvent()
 /// functions.
 ///
 /// Note that OpenGL experts can pass their own parameters (antialiasing
 /// level, bits for the depth and stencil buffers, etc.) to the
-/// OpenGL context attached to the window, with the sf::ContextSettings
+/// OpenGL context attached to the Window_, with the sf::ContextSettings
 /// structure which is passed as an optional argument when creating the
-/// window.
+/// Window_.
 ///
 /// On dual-graphics systems consisting of a low-power integrated GPU
 /// and a powerful discrete GPU, the driver picks which GPU will run an
@@ -323,31 +323,31 @@ private:
 ///
 /// Usage example:
 /// \code
-/// // Declare and create a new window
-/// sf::Window window(sf::VideoMode(800, 600), "SFML window");
+/// // Declare and create a new Window_
+/// sf::Window Window_(sf::VideoMode(800, 600), "SFML Window_");
 ///
 /// // Limit the framerate to 60 frames per second (this step is optional)
-/// window.setFramerateLimit(60);
+/// Window_.setFramerateLimit(60);
 ///
-/// // The main loop - ends as soon as the window is closed
-/// while (window.isOpen())
+/// // The main loop - ends as soon as the Window_ is closed
+/// while (Window_.isOpen())
 /// {
 ///    // Event processing
 ///    sf::Event event;
-///    while (window.pollEvent(event))
+///    while (Window_.pollEvent(event))
 ///    {
-///        // Request for closing the window
+///        // Request for closing the Window_
 ///        if (event.type == sf::Event::Closed)
-///            window.close();
+///            Window_.close();
 ///    }
 ///
-///    // Activate the window for OpenGL rendering
-///    window.setActive();
+///    // Activate the Window_ for OpenGL rendering
+///    Window_.setActive();
 ///
 ///    // OpenGL drawing commands go here...
 ///
 ///    // End the current frame and display its contents on screen
-///    window.display();
+///    Window_.display();
 /// }
 /// \endcode
 ///

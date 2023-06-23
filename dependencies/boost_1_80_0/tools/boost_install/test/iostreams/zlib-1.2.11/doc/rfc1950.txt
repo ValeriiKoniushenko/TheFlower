@@ -251,7 +251,7 @@ RFC 1950       ZLIB Compressed Data Format Specification        May 1996
 
       CM (Compression method)
          This identifies the compression method used in the file. CM = 8
-         denotes the "deflate" compression method with a window size up
+         denotes the "deflate" compression method with a Window_ size up
          to 32K.  This is the method used by gzip and PNG (see
          references [1] and [2] in Chapter 3, below, for the reference
          documents).  CM = 15 is reserved.  It might be used in a future
@@ -259,8 +259,8 @@ RFC 1950       ZLIB Compressed Data Format Specification        May 1996
          extra field before the compressed data.
 
       CINFO (Compression info)
-         For CM = 8, CINFO is the base-2 logarithm of the LZ77 window
-         size, minus eight (CINFO=7 indicates a 32K window size). Values
+         For CM = 8, CINFO is the base-2 logarithm of the LZ77 Window_
+         size, minus eight (CINFO=7 indicates a 32K Window_ size). Values
          of CINFO above 7 are not allowed in this version of the
          specification.  CINFO is not defined in this specification for
          CM not equal to 8.

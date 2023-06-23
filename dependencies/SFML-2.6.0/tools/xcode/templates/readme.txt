@@ -62,7 +62,7 @@ Usage
 To use these templates follow these steps:
 
  1. open Xcode,
- 2. select "create a new Xcode project" from the "Welcome to Xcode" window or select menus
+ 2. select "create a new Xcode project" from the "Welcome to Xcode" Window_ or select menus
     File > New > New Project,
  3. select "SFML" subsection under "Mac OS X" on the left,
  4. then select either "SFML App", if you want an application bundle, or "SFML CLT", if you

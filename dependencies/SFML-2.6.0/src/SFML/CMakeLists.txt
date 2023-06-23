@@ -55,7 +55,7 @@ if(SFML_OS_WINDOWS OR SFML_OS_ANDROID OR SFML_OS_IOS)
     add_subdirectory(Main)
 endif()
 
-# sfml-window
+# sfml-Window_
 if(SFML_BUILD_WINDOW OR SFML_BUILD_GRAPHICS)
     add_subdirectory(Window)
 endif()

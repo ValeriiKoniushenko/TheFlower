@@ -81,7 +81,7 @@ It writes: [pre Distance in miles: 267.02]
 
 [h3 Adapted structs]
 
-Finally an example from a totally different domain: developing window-based 
+Finally an example from a totally different domain: developing Window_-based
 applications, for example using QtWidgets. As soon as Qt classes are registered 
 in __boost_geometry__ we can use them. We can, for example, check if two 
 rectangles overlap and if so, move the second one to another place:

@@ -2032,7 +2032,7 @@ Both `tag::pot_tail_mean<_left_or_right_>` and `tag::pot_tail_mean_prob<_left_or
 
 [section:rolling_count rolling_count]
 
-The rolling count is the current number of elements in the rolling window. 
+The rolling count is the current number of elements in the rolling Window_.
 
 [variablelist
     [[Result Type] [``std::size_t``]]

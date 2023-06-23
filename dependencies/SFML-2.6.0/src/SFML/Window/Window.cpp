@@ -78,13 +78,13 @@ void Window::create(VideoMode mode, const String& title, Uint32 style)
 ////////////////////////////////////////////////////////////
 void Window::create(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings)
 {
-    // Destroy the previous window implementation
+    // Destroy the previous Window_ implementation
     close();
 
     // Fullscreen style requires some tests
     if (style & Style::Fullscreen)
     {
-        // Make sure there's not already a fullscreen window (only one is allowed)
+        // Make sure there's not already a fullscreen Window_ (only one is allowed)
         if (getFullscreenWindow())
         {
             err() << "Creating two fullscreen windows is not allowed, switching to windowed mode" << std::endl;
@@ -99,7 +99,7 @@ void Window::create(VideoMode mode, const String& title, Uint32 style, const Con
                 mode = VideoMode::getFullscreenModes()[0];
             }
 
-            // Update the fullscreen window
+            // Update the fullscreen Window_
             setFullscreenWindow(this);
         }
     }
@@ -115,7 +115,7 @@ void Window::create(VideoMode mode, const String& title, Uint32 style, const Con
             style |= Style::Titlebar;
     #endif
 
-    // Recreate the window implementation
+    // Recreate the Window_ implementation
     m_impl = priv::WindowImpl::create(mode, title, style, settings);
 
     // Recreate the context
@@ -136,10 +136,10 @@ void Window::create(WindowHandle handle)
 ////////////////////////////////////////////////////////////
 void Window::create(WindowHandle handle, const ContextSettings& settings)
 {
-    // Destroy the previous window implementation
+    // Destroy the previous Window_ implementation
     close();
 
-    // Recreate the window implementation
+    // Recreate the Window_ implementation
     WindowBase::create(handle);
 
     // Recreate the context
@@ -157,7 +157,7 @@ void Window::close()
     delete m_context;
     m_context = NULL;
 
-    // Close the base window
+    // Close the base Window_
     WindowBase::close();
 }
 
@@ -200,7 +200,7 @@ bool Window::setActive(bool active) const
         }
         else
         {
-            err() << "Failed to activate the window's context" << std::endl;
+            err() << "Failed to activate the Window_'s context" << std::endl;
             return false;
         }
     }
@@ -237,7 +237,7 @@ void Window::initialize()
     // Reset frame time
     m_clock.restart();
 
-    // Activate the window
+    // Activate the Window_
     setActive();
 
     WindowBase::initialize();

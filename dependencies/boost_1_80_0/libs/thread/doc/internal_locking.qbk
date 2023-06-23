@@ -223,7 +223,7 @@ The caller-ensured locking approach is more flexible and the most efficient, but
         }
     };
 
-Obviously, the caller-ensured locking approach has a safety problem. BankAccount's implementation code is finite, and easy to reach and maintain, but there's an unbounded amount of client code that manipulates BankAccount objects. In designing applications, it's important to differentiate between requirements imposed on bounded code and unbounded code. If your class makes undue requirements on unbounded code, that's usually a sign that encapsulation is out the window.
+Obviously, the caller-ensured locking approach has a safety problem. BankAccount's implementation code is finite, and easy to reach and maintain, but there's an unbounded amount of client code that manipulates BankAccount objects. In designing applications, it's important to differentiate between requirements imposed on bounded code and unbounded code. If your class makes undue requirements on unbounded code, that's usually a sign that encapsulation is out the Window_.
 
 To conclude, if in designing a multi-threaded class you settle on internal locking, you expose yourself to inefficiency or deadlocks. On the other hand, if you rely on caller-provided locking, you make your class error-prone and difficult to use. Finally, external locking completely avoids the issue by leaving it all to the client code.
 

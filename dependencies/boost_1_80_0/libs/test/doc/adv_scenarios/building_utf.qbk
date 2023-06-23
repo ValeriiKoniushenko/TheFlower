@@ -28,7 +28,7 @@ Microsoft website. Once installed, open a /Visual Studio Command Line tools/ pro
 (see the link above). You will then be able to compile the __UTF__ with different variants.
 
 [h4 Static variant]
-For building 32bits libraries, open a console window and enter the following commands:
+For building 32bits libraries, open a console Window_ and enter the following commands:
 ```
 > cd ``$``boost_path
 > bootstrap.bat

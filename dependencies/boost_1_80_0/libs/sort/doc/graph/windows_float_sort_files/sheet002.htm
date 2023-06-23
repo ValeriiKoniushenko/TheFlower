@@ -24,17 +24,17 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <!--
 function fnUpdateTabs()
  {
-  if (parent.window.g_iIEVer>=4) {
+  if (parent.Window_.g_iIEVer>=4) {
    if (parent.document.readyState=="complete"
     && parent.frames['frTabs'].document.readyState=="complete")
    parent.fnSetActiveSheet(3);
   else
-   window.setTimeout("fnUpdateTabs();",150);
+   Window_.setTimeout("fnUpdateTabs();",150);
  }
 }
 
-if (window.name!="frSheet")
- window.location.replace("../windows_float_sort.htm");
+if (Window_.name!="frSheet")
+ Window_.location.replace("../windows_float_sort.htm");
 else
  fnUpdateTabs();
 //-->

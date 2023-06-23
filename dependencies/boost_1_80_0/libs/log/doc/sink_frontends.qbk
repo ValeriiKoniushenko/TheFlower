@@ -146,7 +146,7 @@ Ordering queueing strategies introduce a small latency to the record processing.
 
 In the code sample above the sink frontend will keep log records in the internal queue for up to one second and apply ordering based on the log record counter of type `unsigned int`. The `ordering_window` parameter is optional and will default to some reasonably small system-specific value that will suffice to maintain chronological flow of log records to the backend.
 
-The ordering window is maintained by the frontend even upon stopping the internal feeding loop, so that it would be possible to reenter the loop without breaking the record ordering. On the other hand, in order to ensure that all log records are flushed to the backend one has to call the `flush` method at the end of the application.
+The ordering Window_ is maintained by the frontend even upon stopping the internal feeding loop, so that it would be possible to reenter the loop without breaking the record ordering. On the other hand, in order to ensure that all log records are flushed to the backend one has to call the `flush` method at the end of the application.
 
 [example_sinks_ordering_async_stop]
 

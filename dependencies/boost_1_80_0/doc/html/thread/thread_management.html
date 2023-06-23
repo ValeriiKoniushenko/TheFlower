@@ -239,7 +239,7 @@
 <span class="comment">// ...</span>
 <span class="identifier">attr</span><span class="special">.</span><span class="identifier">set_stack_size</span><span class="special">(</span><span class="number">4096</span><span class="special">*</span><span class="number">10</span><span class="special">);</span>
 <span class="preprocessor">#if</span> <span class="identifier">defined</span><span class="special">(</span><span class="identifier">BOOST_THREAD_PLATFORM_WIN32</span><span class="special">)</span>
-    <span class="comment">// ... window version</span>
+    <span class="comment">// ... Window_ version</span>
 <span class="preprocessor">#elif</span> <span class="identifier">defined</span><span class="special">(</span><span class="identifier">BOOST_THREAD_PLATFORM_PTHREAD</span><span class="special">)</span>
     <span class="comment">// ... pthread version</span>
     <span class="identifier">pthread_attr_setschedpolicy</span><span class="special">(</span><span class="identifier">attr</span><span class="special">.</span><span class="identifier">native_handle</span><span class="special">(),</span> <span class="identifier">SCHED_RR</span><span class="special">);</span>

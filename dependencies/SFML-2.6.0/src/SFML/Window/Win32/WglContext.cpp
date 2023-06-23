@@ -117,7 +117,7 @@ m_ownsWindow   (false)
     // Save the creation settings
     m_settings = ContextSettings();
 
-    // Create the rendering surface (window or pbuffer if supported)
+    // Create the rendering surface (Window_ or pbuffer if supported)
     createSurface(shared, 1, 1, VideoMode::getDesktopMode().bitsPerPixel);
 
     // Create the context
@@ -138,7 +138,7 @@ m_ownsWindow   (false)
     // Save the creation settings
     m_settings = settings;
 
-    // Create the rendering surface from the owner window
+    // Create the rendering surface from the owner Window_
     createSurface(owner->getSystemHandle(), bitsPerPixel);
 
     // Create the context
@@ -159,7 +159,7 @@ m_ownsWindow   (false)
     // Save the creation settings
     m_settings = settings;
 
-    // Create the rendering surface (window or pbuffer if supported)
+    // Create the rendering surface (Window_ or pbuffer if supported)
     createSurface(shared, width, height, VideoMode::getDesktopMode().bitsPerPixel);
 
     // Create the context
@@ -199,7 +199,7 @@ WglContext::~WglContext()
         }
     }
 
-    // Destroy the window if we own it
+    // Destroy the Window_ if we own it
     if (m_window && m_ownsWindow)
         DestroyWindow(m_window);
 }
@@ -292,7 +292,7 @@ int WglContext::selectBestPixelFormat(HDC deviceContext, unsigned int bitsPerPix
     int bestFormat = 0;
     if (SF_GLAD_WGL_ARB_pixel_format)
     {
-        // Define the basic attributes we want for our window
+        // Define the basic attributes we want for our Window_
         int intAttributes[] =
         {
             WGL_DRAW_TO_WINDOW_ARB, GL_TRUE,
@@ -573,13 +573,13 @@ void WglContext::createSurface(WglContext* shared, unsigned int width, unsigned 
         }
     }
 
-    // If pbuffers are not available we use a hidden window as the off-screen surface to draw to
+    // If pbuffers are not available we use a hidden Window_ as the off-screen surface to draw to
     if (!m_deviceContext)
     {
         // We can't create a memory DC, the resulting context wouldn't be compatible
         // with other contexts and thus wglShareLists would always fail
 
-        // Create the hidden window
+        // Create the hidden Window_
         m_window = CreateWindowA("STATIC", "", WS_POPUP | WS_DISABLED, 0, 0, static_cast<int>(width), static_cast<int>(height), NULL, NULL, GetModuleHandle(NULL), NULL);
         ShowWindow(m_window, SW_HIDE);
         m_deviceContext = GetDC(m_window);
@@ -726,7 +726,7 @@ void WglContext::createContext(WglContext* shared)
         m_context = wglCreateContext(m_deviceContext);
         if (!m_context)
         {
-            err() << "Failed to create an OpenGL context for this window: " << getErrorString(GetLastError()).toAnsiString() << std::endl;
+            err() << "Failed to create an OpenGL context for this Window_: " << getErrorString(GetLastError()).toAnsiString() << std::endl;
             return;
         }
 

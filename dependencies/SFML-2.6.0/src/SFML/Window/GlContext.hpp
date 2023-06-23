@@ -96,7 +96,7 @@ public:
     static void releaseTransientContext();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create a new context, not associated to a window
+    /// \brief Create a new context, not associated to a Window_
     ///
     /// This function automatically chooses the specialized class
     /// to use according to the OS.
@@ -107,13 +107,13 @@ public:
     static GlContext* create();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create a new context attached to a window
+    /// \brief Create a new context attached to a Window_
     ///
     /// This function automatically chooses the specialized class
     /// to use according to the OS.
     ///
     /// \param settings     Creation parameters
-    /// \param owner        Pointer to the owner window
+    /// \param owner        Pointer to the owner Window_
     /// \param bitsPerPixel Pixel depth (in bits per pixel)
     ///
     /// \return Pointer to the created context

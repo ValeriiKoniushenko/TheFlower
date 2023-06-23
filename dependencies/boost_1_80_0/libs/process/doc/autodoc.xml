@@ -1753,13 +1753,13 @@ namespace boost {
 </para><namespace name="boost">
 <namespace name="process">
 <namespace name="windows">
-<data-member name="hide"><type><emphasis>unspecified</emphasis></type><purpose>Hides the window and activates another window. </purpose></data-member>
-<data-member name="maximized"><type><emphasis>unspecified</emphasis></type><purpose>Activates the window and displays it as a maximized window. </purpose></data-member>
-<data-member name="minimized"><type><emphasis>unspecified</emphasis></type><purpose>Activates the window and displays it as a minimized window. </purpose></data-member>
-<data-member name="minimized_not_active"><type><emphasis>unspecified</emphasis></type><purpose>Displays the window as a minimized window. This value is similar to <computeroutput>minimized</computeroutput>, except the window is not activated. </purpose></data-member>
-<data-member name="not_active"><type><emphasis>unspecified</emphasis></type><purpose>Displays a window in its most recent size and position. This value is similar to show_normal`, except that the window is not activated. </purpose></data-member>
-<data-member name="show"><type><emphasis>unspecified</emphasis></type><purpose>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time. </purpose></data-member>
-<data-member name="show_normal"><type><emphasis>unspecified</emphasis></type><purpose>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time. </purpose></data-member>
+<data-member name="hide"><type><emphasis>unspecified</emphasis></type><purpose>Hides the Window_ and activates another Window_. </purpose></data-member>
+<data-member name="maximized"><type><emphasis>unspecified</emphasis></type><purpose>Activates the Window_ and displays it as a maximized Window_. </purpose></data-member>
+<data-member name="minimized"><type><emphasis>unspecified</emphasis></type><purpose>Activates the Window_ and displays it as a minimized Window_. </purpose></data-member>
+<data-member name="minimized_not_active"><type><emphasis>unspecified</emphasis></type><purpose>Displays the Window_ as a minimized Window_. This value is similar to <computeroutput>minimized</computeroutput>, except the Window_ is not activated. </purpose></data-member>
+<data-member name="not_active"><type><emphasis>unspecified</emphasis></type><purpose>Displays a Window_ in its most recent size and position. This value is similar to show_normal`, except that the Window_ is not activated. </purpose></data-member>
+<data-member name="show"><type><emphasis>unspecified</emphasis></type><purpose>Activates and displays a Window_. If the Window_ is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the Window_ for the first time. </purpose></data-member>
+<data-member name="show_normal"><type><emphasis>unspecified</emphasis></type><purpose>Activates and displays a Window_. If the Window_ is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the Window_ for the first time. </purpose></data-member>
 <data-member name="create_no_window"><type><emphasis>unspecified</emphasis></type><purpose>Adds the <ulink url="https://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx">CREATE_NO_WINDOW</ulink> flag. </purpose></data-member>
 </namespace>
 

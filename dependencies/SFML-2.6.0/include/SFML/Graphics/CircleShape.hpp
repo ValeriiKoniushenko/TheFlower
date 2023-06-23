@@ -137,7 +137,7 @@ private:
 /// circle.setOutlineThickness(5);
 /// circle.setPosition(10, 20);
 /// ...
-/// window.draw(circle);
+/// Window_.draw(circle);
 /// \endcode
 ///
 /// Since the graphics card can't draw perfect circles, we have to

@@ -238,7 +238,7 @@ struct ovectl_ratemanage_arg {
 /** hard upper limit (in kilobits per second) above which the stream bitrate
     will never be allowed for any given bitrate_hard_window seconds of time.*/
   long   bitrate_hard_max;
-/** the window period (in seconds) used to regulate the hard bitrate minimum
+/** the Window_ period (in seconds) used to regulate the hard bitrate minimum
     and maximum*/
   double bitrate_hard_window;
 /** soft lower limit (in kilobits per second) below which the average bitrate
@@ -247,12 +247,12 @@ struct ovectl_ratemanage_arg {
 /** soft upper limit (in kilobits per second) above which the average bitrate
     tracker will start nudging the bitrate lower.*/
   long   bitrate_av_hi;
-/** the window period (in seconds) used to regulate the average bitrate
+/** the Window_ period (in seconds) used to regulate the average bitrate
     minimum and maximum.*/
   double bitrate_av_window;
 /** Regulates the relative centering of the average and hard windows; in
-    libvorbis 1.0 and 1.0.1, the hard window regulation overlapped but
-    followed the average window regulation. In libvorbis 1.1 a bit-reservoir
+    libvorbis 1.0 and 1.0.1, the hard Window_ regulation overlapped but
+    followed the average Window_ regulation. In libvorbis 1.1 a bit-reservoir
     interface replaces the old windowing interface; the older windowing
     interface is simulated and this field has no effect.*/
   double bitrate_av_window_center;

@@ -100,7 +100,7 @@ protected:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::GlResource
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// This class is for internal use only, it must be the base
 /// of every class that requires a valid OpenGL context in

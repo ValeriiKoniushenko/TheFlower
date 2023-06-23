@@ -28,21 +28,21 @@ Algorithm steps
 Harris and Hessian
 ^^^^^^^^^^^^^^^^^^
 
-Both are derived from a concept called Moravec window. Lets have a look
+Both are derived from a concept called Moravec Window_. Lets have a look
 at the image below:
 
-.. figure:: ./Moravec-window-corner.png
-   :alt: Moravec window corner case
+.. figure:: ./Moravec-Window_-corner.png
+   :alt: Moravec Window_ corner case
 
-   Moravec window corner case
+   Moravec Window_ corner case
 
-As can be noticed, moving the yellow window in any direction will cause
+As can be noticed, moving the yellow Window_ in any direction will cause
 very big change in intensity. Now, lets have a look at the edge case:
 
-.. figure:: ./Moravec-window-edge.png
-   :alt: Moravec window edge case
+.. figure:: ./Moravec-Window_-edge.png
+   :alt: Moravec Window_ edge case
 
-   Moravec window edge case
+   Moravec Window_ edge case
 
 In this case, intensity change will happen only when moving in
 particular direction.
@@ -78,7 +78,7 @@ matrix is used as weights, because corners should have hill like
 curvature in gradients, and other weights might be noisy.
 Basically overlay weights matrix over a corner, compute sum of
 ``s[i,j]=image[x + i, y + j] * weights[i, j]`` for ``i, j``
-from zero to weight matrix dimensions, then move the window
+from zero to weight matrix dimensions, then move the Window_
 and compute again until all of the image is covered.
 
 **Response computation** is a matter of choice. Given the general form

@@ -15,7 +15,7 @@ the output of the applications would not be displayed correctly in the console.
 
 So in order to use UTF-8 encoding under the Windows console and see the output correctly, do the following:
 
--# Open a \c cmd window
+-# Open a \c cmd Window_
 -# Change the default font to a TrueType font: go to properties-\>font (right click on title-bar-\>properties-\>font) and
 change the font to a TrueType font like Lucida Console
 -# Change the default codepage to 65001 (UTF-8) by running <tt>chcp 65001</tt>

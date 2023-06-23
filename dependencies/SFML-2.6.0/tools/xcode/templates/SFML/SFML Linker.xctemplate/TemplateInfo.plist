@@ -137,10 +137,10 @@ subject to the following restrictions:
                 <string>windowModule</string>
 
                 <key>Name</key>
-                <string>Use window module</string>
+                <string>Use Window_ module</string>
 
                 <key>Description</key>
-                <string>Indicates whether window module should be used or not.</string>
+                <string>Indicates whether Window_ module should be used or not.</string>
 
                 <key>Type</key>
                 <string>checkbox</string>
@@ -158,7 +158,7 @@ subject to the following restrictions:
                             <key>SharedSettings</key>
                             <dict>
                                 <key>SFML_WINDOW</key>
-                                <string>$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)</string>
+                                <string>$(SFML_LINK_PREFIX) sfml-Window_$(SFML_LINK_SUFFIX)</string>
                             </dict>
                         </dict>
                     </dict>

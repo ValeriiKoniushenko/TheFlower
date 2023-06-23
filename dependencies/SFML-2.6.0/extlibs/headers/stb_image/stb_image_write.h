@@ -910,7 +910,7 @@ STBIWDEF unsigned char * stbi_zlib_compress(unsigned char *data, int data_len, i
       return NULL;
    if (quality < 5) quality = 5;
 
-   stbiw__sbpush(out, 0x78);   // DEFLATE 32K window
+   stbiw__sbpush(out, 0x78);   // DEFLATE 32K Window_
    stbiw__sbpush(out, 0x5e);   // FLEVEL = 1
    stbiw__zlib_add(1,1);  // BFINAL = 1
    stbiw__zlib_add(1,2);  // BTYPE = 1 -- fixed huffman
@@ -926,7 +926,7 @@ STBIWDEF unsigned char * stbi_zlib_compress(unsigned char *data, int data_len, i
       unsigned char **hlist = hash_table[h];
       int n = stbiw__sbcount(hlist);
       for (j=0; j < n; ++j) {
-         if (hlist[j]-data > i-32768) { // if entry lies within window
+         if (hlist[j]-data > i-32768) { // if entry lies within Window_
             int d = stbiw__zlib_countm(hlist[j], data+i, data_len-i);
             if (d >= best) { best=d; bestloc=hlist[j]; }
          }
@@ -983,7 +983,7 @@ STBIWDEF unsigned char * stbi_zlib_compress(unsigned char *data, int data_len, i
 
    // store uncompressed instead if compression was worse
    if (stbiw__sbn(out) > data_len + 2 + ((data_len+32766)/32767)*5) {
-      stbiw__sbn(out) = 2;  // truncate to DEFLATE 32K window and FLEVEL = 1
+      stbiw__sbn(out) = 2;  // truncate to DEFLATE 32K Window_ and FLEVEL = 1
       for (j = 0; j < data_len;) {
          int blocklen = data_len - j;
          if (blocklen > 32767) blocklen = 32767;

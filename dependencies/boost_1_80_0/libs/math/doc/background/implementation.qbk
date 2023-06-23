@@ -543,7 +543,7 @@ done
 Currently Inkscape seems to generate the better looking PNGs.
 
 The PDF is generated into \pdf\math.pdf
-using a command from a shell or command window with current directory
+using a command from a shell or command Window_ with current directory
 \math_toolkit\libs\math\doc\sf_and_dist, typically:
 
 [pre bjam -a pdf >math_pdf.log]

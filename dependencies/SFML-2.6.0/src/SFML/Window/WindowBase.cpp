@@ -80,13 +80,13 @@ WindowBase::~WindowBase()
 ////////////////////////////////////////////////////////////
 void WindowBase::create(VideoMode mode, const String& title, Uint32 style)
 {
-    // Destroy the previous window implementation
+    // Destroy the previous Window_ implementation
     close();
 
     // Fullscreen style requires some tests
     if (style & Style::Fullscreen)
     {
-        // Make sure there's not already a fullscreen window (only one is allowed)
+        // Make sure there's not already a fullscreen Window_ (only one is allowed)
         if (getFullscreenWindow())
         {
             err() << "Creating two fullscreen windows is not allowed, switching to windowed mode" << std::endl;
@@ -101,7 +101,7 @@ void WindowBase::create(VideoMode mode, const String& title, Uint32 style)
                 mode = VideoMode::getFullscreenModes()[0];
             }
 
-            // Update the fullscreen window
+            // Update the fullscreen Window_
             setFullscreenWindow(this);
         }
     }
@@ -117,7 +117,7 @@ void WindowBase::create(VideoMode mode, const String& title, Uint32 style)
             style |= Style::Titlebar;
     #endif
 
-    // Recreate the window implementation
+    // Recreate the Window_ implementation
     m_impl = priv::WindowImpl::create(mode, title, style, ContextSettings(0, 0, 0, 0, 0, 0xFFFFFFFF, false));
 
     // Perform common initializations
@@ -128,10 +128,10 @@ void WindowBase::create(VideoMode mode, const String& title, Uint32 style)
 ////////////////////////////////////////////////////////////
 void WindowBase::create(WindowHandle handle)
 {
-    // Destroy the previous window implementation
+    // Destroy the previous Window_ implementation
     close();
 
-    // Recreate the window implementation
+    // Recreate the Window_ implementation
     m_impl = priv::WindowImpl::create(handle);
 
     // Perform common initializations
@@ -142,11 +142,11 @@ void WindowBase::create(WindowHandle handle)
 ////////////////////////////////////////////////////////////
 void WindowBase::close()
 {
-    // Delete the window implementation
+    // Delete the Window_ implementation
     delete m_impl;
     m_impl = NULL;
 
-    // Update the fullscreen window
+    // Update the fullscreen Window_
     if (this == getFullscreenWindow())
         setFullscreenWindow(NULL);
 }
@@ -359,7 +359,7 @@ void WindowBase::initialize()
     setMouseCursorVisible(true);
     setKeyRepeatEnabled(true);
 
-    // Get and cache the initial size of the window
+    // Get and cache the initial size of the Window_
     m_size = m_impl->getSize();
 
     // Notify the derived class

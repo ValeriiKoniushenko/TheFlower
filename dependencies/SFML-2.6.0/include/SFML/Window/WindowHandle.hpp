@@ -76,9 +76,9 @@ namespace sf
 
 ////////////////////////////////////////////////////////////
 /// \typedef sf::WindowHandle
-/// \ingroup window
+/// \ingroup Window_
 ///
-/// Define a low-level window handle type, specific to
+/// Define a low-level Window_ handle type, specific to
 /// each platform.
 ///
 /// Platform        | Type
@@ -92,10 +92,10 @@ namespace sf
 /// \par Mac OS X Specification
 ///
 /// On Mac OS X, a sf::Window can be created either from an
-/// existing \p NSWindow* or an \p NSView*. When the window
-/// is created from a window, SFML will use its content view
+/// existing \p NSWindow* or an \p NSView*. When the Window_
+/// is created from a Window_, SFML will use its content view
 /// as the OpenGL area. sf::Window::getSystemHandle() will
-/// return the handle that was used to create the window,
+/// return the handle that was used to create the Window_,
 /// which is a \p NSWindow* by default.
 ///
 ////////////////////////////////////////////////////////////

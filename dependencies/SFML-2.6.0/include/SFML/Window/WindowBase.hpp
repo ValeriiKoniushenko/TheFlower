@@ -60,30 +60,30 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// This constructor doesn't actually create the window,
+    /// This constructor doesn't actually create the Window_,
     /// use the other constructors or call create() to do so.
     ///
     ////////////////////////////////////////////////////////////
     WindowBase();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a new window
+    /// \brief Construct a new Window_
     ///
-    /// This constructor creates the window with the size and pixel
+    /// This constructor creates the Window_ with the size and pixel
     /// depth defined in \a mode. An optional style can be passed to
-    /// customize the look and behavior of the window (borders,
+    /// customize the look and behavior of the Window_ (borders,
     /// title bar, resizable, closable, ...). If \a style contains
     /// Style::Fullscreen, then \a mode must be a valid video mode.
     ///
-    /// \param mode  Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title Title of the window
+    /// \param mode  Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title Title of the Window_
     /// \param style %Window style, a bitwise OR combination of sf::Style enumerators
     ///
     ////////////////////////////////////////////////////////////
     WindowBase(VideoMode mode, const String& title, Uint32 style = Style::Default);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the window from an existing control
+    /// \brief Construct the Window_ from an existing control
     ///
     /// \param handle Platform-specific handle of the control
     ///
@@ -93,27 +93,27 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Destructor
     ///
-    /// Closes the window and frees all the resources attached to it.
+    /// Closes the Window_ and frees all the resources attached to it.
     ///
     ////////////////////////////////////////////////////////////
     virtual ~WindowBase();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window
+    /// \brief Create (or recreate) the Window_
     ///
-    /// If the window was already created, it closes it first.
+    /// If the Window_ was already created, it closes it first.
     /// If \a style contains Style::Fullscreen, then \a mode
     /// must be a valid video mode.
     ///
-    /// \param mode  Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title Title of the window
+    /// \param mode  Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title Title of the Window_
     /// \param style %Window style, a bitwise OR combination of sf::Style enumerators
     ///
     ////////////////////////////////////////////////////////////
     virtual void create(VideoMode mode, const String& title, Uint32 style = Style::Default);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Create (or recreate) the window from an existing control
+    /// \brief Create (or recreate) the Window_ from an existing control
     ///
     /// \param handle Platform-specific handle of the control
     ///
@@ -121,10 +121,10 @@ public:
     virtual void create(WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Close the window and destroy all the attached resources
+    /// \brief Close the Window_ and destroy all the attached resources
     ///
     /// After calling this function, the sf::Window instance remains
-    /// valid and you can call create() to recreate the window.
+    /// valid and you can call create() to recreate the Window_.
     /// All other functions such as pollEvent() or display() will
     /// still work (i.e. you don't have to test isOpen() every time),
     /// and will have no effect on closed windows.
@@ -133,13 +133,13 @@ public:
     virtual void close();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Tell whether or not the window is open
+    /// \brief Tell whether or not the Window_ is open
     ///
-    /// This function returns whether or not the window exists.
-    /// Note that a hidden window (setVisible(false)) is open
+    /// This function returns whether or not the Window_ exists.
+    /// Note that a hidden Window_ (setVisible(false)) is open
     /// (therefore this function would return true).
     ///
-    /// \return True if the window is open, false if it has been closed
+    /// \return True if the Window_ is open, false if it has been closed
     ///
     ////////////////////////////////////////////////////////////
     bool isOpen() const;
@@ -154,7 +154,7 @@ public:
     /// to make sure that you process every pending event.
     /// \code
     /// sf::Event event;
-    /// while (window.pollEvent(event))
+    /// while (Window_.pollEvent(event))
     /// {
     ///    // process event...
     /// }
@@ -181,7 +181,7 @@ public:
     /// sleep as long as no new event is received.
     /// \code
     /// sf::Event event;
-    /// if (window.waitEvent(event))
+    /// if (Window_.waitEvent(event))
     /// {
     ///    // process event...
     /// }
@@ -197,9 +197,9 @@ public:
     bool waitEvent(Event& event);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the position of the window
+    /// \brief Get the position of the Window_
     ///
-    /// \return Position of the window, in pixels
+    /// \return Position of the Window_, in pixels
     ///
     /// \see setPosition
     ///
@@ -207,11 +207,11 @@ public:
     Vector2i getPosition() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the position of the window on screen
+    /// \brief Change the position of the Window_ on screen
     ///
     /// This function only works for top-level windows
     /// (i.e. it will be ignored for windows created from
-    /// the handle of a child window/control).
+    /// the handle of a child Window_/control).
     ///
     /// \param position New position, in pixels
     ///
@@ -221,10 +221,10 @@ public:
     void setPosition(const Vector2i& position);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the size of the rendering region of the window
+    /// \brief Get the size of the rendering region of the Window_
     ///
     /// The size doesn't include the titlebar and borders
-    /// of the window.
+    /// of the Window_.
     ///
     /// \return Size in pixels
     ///
@@ -234,7 +234,7 @@ public:
     Vector2u getSize() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the size of the rendering region of the window
+    /// \brief Change the size of the rendering region of the Window_
     ///
     /// \param size New size, in pixels
     ///
@@ -244,7 +244,7 @@ public:
     void setSize(const Vector2u& size);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the title of the window
+    /// \brief Change the title of the Window_
     ///
     /// \param title New title
     ///
@@ -254,7 +254,7 @@ public:
     void setTitle(const String& title);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Change the window's icon
+    /// \brief Change the Window_'s icon
     ///
     /// \a pixels must be an array of \a width x \a height pixels
     /// in 32-bits RGBA format.
@@ -273,11 +273,11 @@ public:
     void setIcon(unsigned int width, unsigned int height, const Uint8* pixels);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Show or hide the window
+    /// \brief Show or hide the Window_
     ///
-    /// The window is shown by default.
+    /// The Window_ is shown by default.
     ///
-    /// \param visible True to show the window, false to hide it
+    /// \param visible True to show the Window_, false to hide it
     ///
     ////////////////////////////////////////////////////////////
     void setVisible(bool visible);
@@ -295,9 +295,9 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Grab or release the mouse cursor
     ///
-    /// If set, grabs the mouse cursor inside this window's client
+    /// If set, grabs the mouse cursor inside this Window_'s client
     /// area so it may no longer be moved outside its bounds.
-    /// Note that grabbing is only active while the window has
+    /// Note that grabbing is only active while the Window_ has
     /// focus.
     ///
     /// \param grabbed True to enable, false to disable
@@ -308,10 +308,10 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Set the displayed cursor to a native system cursor
     ///
-    /// Upon window creation, the arrow cursor is used by default.
+    /// Upon Window_ creation, the arrow cursor is used by default.
     ///
     /// \warning The cursor must not be destroyed while in use by
-    ///          the window.
+    ///          the Window_.
     ///
     /// \warning Features related to Cursor are not supported on
     ///          iOS and Android.
@@ -352,12 +352,12 @@ public:
     void setJoystickThreshold(float threshold);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Request the current window to be made the active
-    ///        foreground window
+    /// \brief Request the current Window_ to be made the active
+    ///        foreground Window_
     ///
-    /// At any given time, only one window may have the input focus
+    /// At any given time, only one Window_ may have the input focus
     /// to receive input events such as keystrokes or mouse events.
-    /// If a window requests focus, it only hints to the operating
+    /// If a Window_ requests focus, it only hints to the operating
     /// system, that it would like to be focused. The operating system
     /// is free to deny the request.
     /// This is not to be confused with setActive().
@@ -368,20 +368,20 @@ public:
     void requestFocus();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Check whether the window has the input focus
+    /// \brief Check whether the Window_ has the input focus
     ///
-    /// At any given time, only one window may have the input focus
+    /// At any given time, only one Window_ may have the input focus
     /// to receive input events such as keystrokes or most mouse
     /// events.
     ///
-    /// \return True if window has focus, false otherwise
+    /// \return True if Window_ has focus, false otherwise
     /// \see requestFocus
     ///
     ////////////////////////////////////////////////////////////
     bool hasFocus() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the OS-specific handle of the window
+    /// \brief Get the OS-specific handle of the Window_
     ///
     /// The type of the returned handle is sf::WindowHandle,
     /// which is a typedef to the handle type defined by the OS.
@@ -389,7 +389,7 @@ public:
     /// very specific stuff to implement that SFML doesn't support,
     /// or implement a temporary workaround until a bug is fixed.
     ///
-    /// \return System handle of the window
+    /// \return System handle of the Window_
     ///
     ////////////////////////////////////////////////////////////
     WindowHandle getSystemHandle() const;
@@ -409,20 +409,20 @@ public:
 protected:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Function called after the window has been created
+    /// \brief Function called after the Window_ has been created
     ///
     /// This function is called so that derived classes can
     /// perform their own specific initialization as soon as
-    /// the window is created.
+    /// the Window_ is created.
     ///
     ////////////////////////////////////////////////////////////
     virtual void onCreate();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Function called after the window has been resized
+    /// \brief Function called after the Window_ has been resized
     ///
     /// This function is called so that derived classes can
-    /// perform custom actions when the size of the window changes.
+    /// perform custom actions when the size of the Window_ changes.
     ///
     ////////////////////////////////////////////////////////////
     virtual void onResize();
@@ -435,9 +435,9 @@ private:
     /// \brief Processes an event before it is sent to the user
     ///
     /// This function is called every time an event is received
-    /// from the internal window (through pollEvent or waitEvent).
+    /// from the internal Window_ (through pollEvent or waitEvent).
     /// It filters out unwanted events, and performs whatever internal
-    /// stuff the window needs before the event is returned to the
+    /// stuff the Window_ needs before the event is returned to the
     /// user.
     ///
     /// \param event Event to filter
@@ -452,17 +452,17 @@ private:
     void initialize();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the fullscreen window
+    /// \brief Get the fullscreen Window_
     ///
-    /// \return The fullscreen window or NULL if there is none
+    /// \return The fullscreen Window_ or NULL if there is none
     ///
     ////////////////////////////////////////////////////////////
     const WindowBase* getFullscreenWindow();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Set a window as the fullscreen window
+    /// \brief Set a Window_ as the fullscreen Window_
     ///
-    /// \param window Window to set as fullscreen window
+    /// \param window Window to set as fullscreen Window_
     ///
     ////////////////////////////////////////////////////////////
     void setFullscreenWindow(const WindowBase* window);
@@ -470,8 +470,8 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    priv::WindowImpl* m_impl;           //!< Platform-specific implementation of the window
-    Vector2u          m_size;           //!< Current size of the window
+    priv::WindowImpl* m_impl;           //!< Platform-specific implementation of the Window_
+    Vector2u          m_size;           //!< Current size of the Window_
 };
 
 } // namespace sf
@@ -482,36 +482,36 @@ private:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::WindowBase
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::WindowBase serves as the base class for all Windows.
 ///
-/// A sf::WindowBase can create its own new window, or be embedded into
+/// A sf::WindowBase can create its own new Window_, or be embedded into
 /// an already existing control using the create(handle) function.
 ///
 /// The sf::WindowBase class provides a simple interface for manipulating
-/// the window: move, resize, show/hide, control mouse cursor, etc.
+/// the Window_: move, resize, show/hide, control mouse cursor, etc.
 /// It also provides event handling through its pollEvent() and waitEvent()
 /// functions.
 ///
 /// Usage example:
 /// \code
-/// // Declare and create a new window
-/// sf::WindowBase window(sf::VideoMode(800, 600), "SFML window");
+/// // Declare and create a new Window_
+/// sf::WindowBase Window_(sf::VideoMode(800, 600), "SFML Window_");
 ///
-/// // The main loop - ends as soon as the window is closed
-/// while (window.isOpen())
+/// // The main loop - ends as soon as the Window_ is closed
+/// while (Window_.isOpen())
 /// {
 ///    // Event processing
 ///    sf::Event event;
-///    while (window.pollEvent(event))
+///    while (Window_.pollEvent(event))
 ///    {
-///        // Request for closing the window
+///        // Request for closing the Window_
 ///        if (event.type == sf::Event::Closed)
-///            window.close();
+///            Window_.close();
 ///    }
 ///
-///    // Do things with the window here...
+///    // Do things with the Window_ here...
 /// }
 /// \endcode
 ///

@@ -63,7 +63,7 @@ public:
     /// \warning Due to limitations on some operating systems,
     ///          setting the clipboard contents is only
     ///          guaranteed to work if there is currently an
-    ///          open window for which events are being handled.
+    ///          open Window_ for which events are being handled.
     ///
     /// \param text sf::String containing the data to be sent
     /// to the clipboard
@@ -80,7 +80,7 @@ public:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Clipboard
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::Clipboard provides an interface for getting and
 /// setting the contents of the system clipboard.
@@ -88,7 +88,7 @@ public:
 /// It is important to note that due to limitations on some
 /// operating systems, setting the clipboard contents is
 /// only guaranteed to work if there is currently an open
-/// window for which events are being handled.
+/// Window_ for which events are being handled.
 ///
 /// Usage example:
 /// \code
@@ -97,10 +97,10 @@ public:
 ///
 /// // or use it in the event loop
 /// sf::Event event;
-/// while(window.pollEvent(event))
+/// while(Window_.pollEvent(event))
 /// {
 ///     if(event.type == sf::Event::Closed)
-///         window.close();
+///         Window_.close();
 ///     if(event.type == sf::Event::KeyPressed)
 ///     {
 ///         // Using Ctrl + V to paste a string into SFML

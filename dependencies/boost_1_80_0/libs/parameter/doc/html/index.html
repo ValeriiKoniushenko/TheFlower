@@ -170,7 +170,7 @@ defaults, the positional interface becomes burdensome:</p>
 (often arbitrary) order for parameters with default values, making some
 combinations of defaults unusable:</p>
 <pre class="compound-middle literal-block">
-window* new_window(
+Window_* new_window(
     char const* name
   , <strong>int border_width = default_border_width</strong>
   , bool movable = true
@@ -178,13 +178,13 @@ window* new_window(
 );
 
 bool const movability = false;
-window* w = new_window(&quot;alert box&quot;, movability);
+Window_* w = new_window(&quot;alert box&quot;, movability);
 </pre>
-<p class="compound-middle">In the example above we wanted to make an unmoveable window with a default
-<tt class="docutils literal">border_width</tt>, but instead we got a moveable window with a
+<p class="compound-middle">In the example above we wanted to make an unmoveable Window_ with a default
+<tt class="docutils literal">border_width</tt>, but instead we got a moveable Window_ with a
 <tt class="docutils literal">border_width</tt> of zero.  To get the desired effect, we'd need to write:</p>
 <pre class="compound-last literal-block">
-window* w = new_window(
+Window_* w = new_window(
     &quot;alert box&quot;, <strong>default_border_width</strong>, movability
 );
 </pre>
@@ -194,9 +194,9 @@ window* w = new_window(
 <p class="compound-first">It can become difficult for readers to understand the meaning of arguments
 at the call site:</p>
 <pre class="compound-middle literal-block">
-window* w = new_window(&quot;alert&quot;, 1, true, false);
+Window_* w = new_window(&quot;alert&quot;, 1, true, false);
 </pre>
-<p class="compound-last">Is this window moveable and initially invisible, or unmoveable and
+<p class="compound-last">Is this Window_ moveable and initially invisible, or unmoveable and
 initially visible?  The reader needs to remember the order of arguments to
 be sure.</p>
 </div>
@@ -213,7 +213,7 @@ leading to hard-to-find bugs.</p>
 parameter name with a keyword object.  Now users can identify arguments by
 name, rather than by position:</p>
 <pre class="compound-last literal-block">
-window* w = new_window(
+Window_* w = new_window(
     &quot;alert box&quot;
   , <strong>movable_=</strong>false
 ); // OK!
@@ -230,14 +230,14 @@ parameters that can be uniquely identified based on the types of arguments
 passed.  The <tt class="docutils literal">name</tt> parameter to <tt class="docutils literal">new_window</tt> is one such
 example.  None of the other arguments, if valid, can reasonably be
 converted to a <tt class="docutils literal">char const*</tt>.  With a deduced parameter interface, we
-could pass the window name in <em>any</em> argument position without causing
+could pass the Window_ name in <em>any</em> argument position without causing
 ambiguity:</p>
 <pre class="compound-middle literal-block">
-window* w = new_window(
+Window_* w = new_window(
     movable_=false
   , <strong>&quot;alert box&quot;</strong>
 ); // OK!
-window* w = new_window(
+Window_* w = new_window(
     <strong>&quot;alert box&quot;</strong>
   , movable_=false
 ); // OK!
@@ -1073,11 +1073,11 @@ experience.  You'll also have an easier transition to the C++20 standard with
 enabling the function to have deduced parameter interface.  Let's revisit the
 <tt class="docutils literal">new_window</tt> example for a moment:</p>
 <pre class="literal-block">
-window* w = new_window(
+Window_* w = new_window(
     movable_=false
   , &quot;alert box&quot;
 );
-window* w = new_window(
+Window_* w = new_window(
     &quot;alert box&quot;
   , movable_=false
 );
@@ -1091,7 +1091,7 @@ parameter signature:</p>
 BOOST_PARAMETER_NAME((name_, keywords) name)
 BOOST_PARAMETER_NAME((movable_, keywords) movable)
 
-BOOST_PARAMETER_FUNCTION((window*), new_window, keywords,
+BOOST_PARAMETER_FUNCTION((Window_*), new_window, keywords,
     (deduced
         (required
             (name, <em>(char const*)</em>)
@@ -1107,8 +1107,8 @@ BOOST_PARAMETER_FUNCTION((window*), new_window, keywords,
 <p>The following statements will now work and are equivalent to each other as
 well as the previous statements:</p>
 <pre class="literal-block">
-window* w = new_window(false, &quot;alert box&quot;);
-window* w = new_window(&quot;alert box&quot;, false);
+Window_* w = new_window(false, &quot;alert box&quot;);
+Window_* w = new_window(&quot;alert box&quot;, false);
 </pre>
 <!-- @ignore() -->
 </div>

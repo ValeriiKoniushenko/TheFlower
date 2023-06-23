@@ -97,9 +97,9 @@ futex-wait.
 The spinlock tracks how many times the thread failed to acquire the lock.
 The higher the contention, the longer the thread should back-off.
 A ["Binary Exponential Backoff] algorithm together with a randomized contention
-window is utilized for this purpose.
+Window_ is utilized for this purpose.
 BOOST_FIBERS_CONTENTION_WINDOW_THRESHOLD determines the upper limit of the 
-contention window (expressed as the exponent for basis of two).
+contention Window_ (expressed as the exponent for basis of two).
 
 
 [heading Speculative execution (hardware transactional memory)]
@@ -206,7 +206,7 @@ remote memory access (latence).
     [
         [BOOST_FIBERS_CONTENTION_WINDOW_THRESHOLD]
         [16]
-        [max size of collisions window, expressed as exponent for the basis of
+        [max size of collisions Window_, expressed as exponent for the basis of
         two]
     ]
     [

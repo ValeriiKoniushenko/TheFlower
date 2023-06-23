@@ -85,7 +85,7 @@ public:
     /// \brief Create a Vulkan rendering surface
     ///
     /// \param instance     Vulkan instance
-    /// \param windowHandle Handle to the window to create the surface for
+    /// \param windowHandle Handle to the Window_ to create the surface for
     /// \param surface      Created surface
     /// \param allocator    Allocator to use
     ///

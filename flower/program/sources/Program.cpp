@@ -31,23 +31,22 @@ void Program::Run()
 {
 	Deserialize();
 
-	window.create(sf::VideoMode(GetFromSerializer<float>("Window-Width"),
-	    GetFromSerializer<float>("Window-Height")), GetFromSerializer<std::string>("Window-Title"));
+	CreateWindow();
 
-	while(window.isOpen())
+	while(Window_.isOpen())
 	{
 		sf::Event Event;
-		if (window.pollEvent(Event))
+		if (Window_.pollEvent(Event))
 			if (Event.type == sf::Event::Closed)
-				window.close();
-
+				Window_.close();
+		LifeCycle();
 	}
 }
 
 void Program::Serialize()
 {
-	AddToSerialize("Window-Width", window.getSize().x);
-	AddToSerialize("Window-Height", window.getSize().y);
+	AddToSerialize("Window-Width", Window_.getSize().x);
+	AddToSerialize("Window-Height", Window_.getSize().y);
 
 	Serializer::Serialize();
 }
@@ -55,4 +54,23 @@ void Program::Serialize()
 Program::~Program()
 {
 	Serialize();
+}
+
+void Program::CreateWindow()
+{
+	Window_.create(sf::VideoMode(GetFromSerializer<float>("Window-Width"),
+					  GetFromSerializer<float>("Window-Height")), GetFromSerializer<std::string>("Window-Title"));
+}
+
+void Program::LifeCycle()
+{
+	switch (GameState_)
+	{
+		case GameState::MainMenu:
+			break;
+		case GameState::Game:
+			break;
+		case GameState::GameOver:
+			break;
+	}
 }

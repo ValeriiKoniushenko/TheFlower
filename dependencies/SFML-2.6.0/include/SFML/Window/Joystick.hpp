@@ -158,7 +158,7 @@ public:
     ///
     /// This function is used internally by SFML, so you normally
     /// don't have to call it explicitly. However, you may need to
-    /// call it if you have no window yet (or no window at all):
+    /// call it if you have no Window_ yet (or no Window_ at all):
     /// in this case the joystick states are not updated automatically.
     ///
     ////////////////////////////////////////////////////////////
@@ -173,7 +173,7 @@ public:
 
 ////////////////////////////////////////////////////////////
 /// \class sf::Joystick
-/// \ingroup window
+/// \ingroup Window_
 ///
 /// sf::Joystick provides an interface to the state of the
 /// joysticks. It only contains static functions, so it's not
@@ -181,14 +181,14 @@ public:
 /// by an index that is passed to the functions of this class.
 ///
 /// This class allows users to query the state of joysticks at any
-/// time and directly, without having to deal with a window and
+/// time and directly, without having to deal with a Window_ and
 /// its events. Compared to the JoystickMoved, JoystickButtonPressed
 /// and JoystickButtonReleased events, sf::Joystick can retrieve the
 /// state of axes and buttons of joysticks at any time
 /// (you don't need to store and update a boolean on your side
 /// in order to know if a button is pressed or released), and you
 /// always get the real state of joysticks, even if they are
-/// moved, pressed or released when your window is out of focus
+/// moved, pressed or released when your Window_ is out of focus
 /// and no event is triggered.
 ///
 /// SFML supports:
@@ -199,9 +199,9 @@ public:
 /// Unlike the keyboard or mouse, the state of joysticks is sometimes
 /// not directly available (depending on the OS), therefore an update()
 /// function must be called in order to update the current state of
-/// joysticks. When you have a window with event handling, this is done
+/// joysticks. When you have a Window_ with event handling, this is done
 /// automatically, you don't need to call anything. But if you have no
-/// window, or if you want to check joysticks state before creating one,
+/// Window_, or if you want to check joysticks state before creating one,
 /// you must call sf::Joystick::update explicitly.
 ///
 /// Usage example:

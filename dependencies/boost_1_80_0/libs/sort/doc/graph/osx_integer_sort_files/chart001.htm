@@ -31,17 +31,17 @@ x\:* {behavior:url(#default#VML);}
 <!--
 function fnUpdateTabs()
  {
-  if (parent.window.g_iIEVer>=4) {
+  if (parent.Window_.g_iIEVer>=4) {
    if (parent.document.readyState=="complete"
     && parent.frames['frTabs'].document.readyState=="complete")
    parent.fnSetActiveSheet(0);
   else
-   window.setTimeout("fnUpdateTabs();",150);
+   Window_.setTimeout("fnUpdateTabs();",150);
  }
 }
 
-if (window.name!="frSheet")
- window.location.replace("../osx_integer_sort.htm");
+if (Window_.name!="frSheet")
+ Window_.location.replace("../osx_integer_sort.htm");
 else
  fnUpdateTabs();
 //-->

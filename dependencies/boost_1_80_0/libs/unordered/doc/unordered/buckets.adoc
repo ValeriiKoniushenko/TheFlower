@@ -173,7 +173,7 @@ Canonical standard implementations will wind up looking like the diagram below:
 
 [.text-center]
 .The canonical standard approach
-image::singly-linked.png[align=center,link=../diagrams/singly-linked.png,window=_blank]
+image::singly-linked.png[align=center,link=../diagrams/singly-linked.png,Window_=_blank]
 
 It's worth noting that this approach is only used by pass:[libc++] and pass:[libstdc++]; the MSVC Dinkumware implementation uses a different one. A more detailed analysis of the standard containers can be found http://bannalia.blogspot.com/2013/10/implementation-of-c-unordered.html[here].
 

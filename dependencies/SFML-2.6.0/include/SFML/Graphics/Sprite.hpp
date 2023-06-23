@@ -271,7 +271,7 @@ private:
 /// sprite.setPosition(100, 25);
 ///
 /// // Draw it
-/// window.draw(sprite);
+/// Window_.draw(sprite);
 /// \endcode
 ///
 /// \see sf::Texture, sf::Transformable

@@ -134,7 +134,7 @@ function inflatePrime(var strm: z_stream; bits, value: Integer): Integer;
 function inflateMark(var strm: z_stream): LongInt;
 function inflateGetHeader(var strm: z_stream; var head: gz_header): Integer;
 function inflateBackInit(var strm: z_stream;
-                         windowBits: Integer; window: PChar): Integer;
+                         windowBits: Integer; Window_: PChar): Integer;
 function inflateBack(var strm: z_stream; in_fn: in_func; in_desc: Pointer;
                      out_fn: out_func; out_desc: Pointer): Integer;
 function inflateBackEnd(var strm: z_stream): Integer;
@@ -167,7 +167,7 @@ function deflateInit2_(var strm: z_stream;
 function inflateInit2_(var strm: z_stream; windowBits: Integer;
                        const version: PChar; stream_size: Integer): Integer;
 function inflateBackInit_(var strm: z_stream;
-                          windowBits: Integer; window: PChar;
+                          windowBits: Integer; Window_: PChar;
                           const version: PChar; stream_size: Integer): Integer;
 
 
@@ -247,9 +247,9 @@ begin
 end;
 
 function inflateBackInit(var strm: z_stream;
-                         windowBits: Integer; window: PChar): Integer;
+                         windowBits: Integer; Window_: PChar): Integer;
 begin
-  Result := inflateBackInit_(strm, windowBits, window,
+  Result := inflateBackInit_(strm, windowBits, Window_,
                              ZLIB_VERSION, sizeof(z_stream));
 end;
 

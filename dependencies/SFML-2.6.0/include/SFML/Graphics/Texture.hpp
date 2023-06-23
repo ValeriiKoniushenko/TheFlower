@@ -352,18 +352,18 @@ public:
     void update(const Image& image, unsigned int x, unsigned int y);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update the texture from the contents of a window
+    /// \brief Update the texture from the contents of a Window_
     ///
-    /// Although the source window can be smaller than the texture,
+    /// Although the source Window_ can be smaller than the texture,
     /// this function is usually used for updating the whole texture.
     /// The other overload, which has (x, y) additional arguments,
     /// is more convenient for updating a sub-area of the texture.
     ///
-    /// No additional check is performed on the size of the window,
-    /// passing a window bigger than the texture will lead to an
+    /// No additional check is performed on the size of the Window_,
+    /// passing a Window_ bigger than the texture will lead to an
     /// undefined behavior.
     ///
-    /// This function does nothing if either the texture or the window
+    /// This function does nothing if either the texture or the Window_
     /// was not previously created.
     ///
     /// \param window Window to copy to the texture
@@ -372,18 +372,18 @@ public:
     void update(const Window& window);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Update a part of the texture from the contents of a window
+    /// \brief Update a part of the texture from the contents of a Window_
     ///
-    /// No additional check is performed on the size of the window,
-    /// passing an invalid combination of window size and offset
+    /// No additional check is performed on the size of the Window_,
+    /// passing an invalid combination of Window_ size and offset
     /// will lead to an undefined behavior.
     ///
-    /// This function does nothing if either the texture or the window
+    /// This function does nothing if either the texture or the Window_
     /// was not previously created.
     ///
     /// \param window Window to copy to the texture
-    /// \param x      X offset in the texture where to copy the source window
-    /// \param y      Y offset in the texture where to copy the source window
+    /// \param x      X offset in the texture where to copy the source Window_
+    /// \param y      Y offset in the texture where to copy the source Window_
     ///
     ////////////////////////////////////////////////////////////
     void update(const Window& window, unsigned int x, unsigned int y);
@@ -430,7 +430,7 @@ public:
     /// the texture data in order for the setting to take effect.
     ///
     /// This option is only useful in conjunction with an sRGB capable
-    /// framebuffer. This can be requested during window creation.
+    /// framebuffer. This can be requested during Window_ creation.
     ///
     /// \param sRgb True to enable sRGB conversion, false to disable it
     ///
@@ -688,7 +688,7 @@ private:
 /// sprite.setTexture(texture);
 ///
 /// // Draw the textured sprite
-/// window.draw(sprite);
+/// Window_.draw(sprite);
 /// \endcode
 ///
 /// \code
@@ -712,7 +712,7 @@ private:
 ///     texture.update(pixels);
 ///
 ///     // draw it
-///     window.draw(sprite);
+///     Window_.draw(sprite);
 ///
 ///     ...
 /// }

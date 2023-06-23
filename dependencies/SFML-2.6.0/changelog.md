@@ -48,9 +48,9 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.6.0
 
 **Features**
 
--   Allow creation of a window without an OpenGL context (#1484)
+-   Allow creation of a Window_ without an OpenGL context (#1484)
 -   Dynamically load EGL and GLES extensions as is done for desktop GL (#1539, #1577, #1603, #2157, #2160)
--   Add support for creating Vulkan window surfaces (#1557)
+-   Add support for creating Vulkan Window_ surfaces (#1557)
 -   Scancode support (#1235, #1400, #1596, #2009, #2096, #2148, #2243)
 -   [Linux] Add support for colored cursors in Unix implementation (#1693, #1694)
 -   [Linux] Added support for directional arrow resize cursors on Linux (#1688)
@@ -75,16 +75,16 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.6.0
 -   [Android] Fix warning: control may reach end of non-void function (#1713)
 -   [Windows] Fixed Win32 requestFocus in multi-threaded environment (#1600)
 -   [Android] Fix issue where `EGL_DEFAULT_DISPLAY` is `NULL` (#1639, #1740)
--   [macOS] When initializing an OpenGL view with an existing window, call `finishInit` (#1759, #1760)
+-   [macOS] When initializing an OpenGL view with an existing Window_, call `finishInit` (#1759, #1760)
 -   [macOS] Fix potential crash when changing cursor (#1721, #1736)
 -   [Android] Fixed `SIGSEGV` after pressing back button on Android (#531, #1580)
 -   [Android] Fix issue with `waitEvent` and an OpenGL Context (#1532, #1790)
 -   [iOS] Fix issue where OpenGL ES libraries couldn't be located (#1687, #1804)
--   [macOS] Fix issue where window wouldn't be closing because of events still being processed (#1581, #1814)
+-   [macOS] Fix issue where Window_ wouldn't be closing because of events still being processed (#1581, #1814)
 -   [Windows] Preserve the drop shadow for system cursors on Windows (#1731)
 -   [Windows] Use GetWindowLongPtr for better overall compatibility (#1806)
 -   [macOS] Ensure proper nesting of autorelease pools on OS X (#1549, #1820)
--   [Linux] Fix typo in window construction (#1951, #1953)
+-   [Linux] Fix typo in Window_ construction (#1951, #1953)
 -   [Linux] Prevent crash in Unix JoystickImpl with too many file descriptors (#1900, #1941)
 
 ### Graphics
@@ -164,9 +164,9 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.5.1
 **Bugfixes**
 
 -   [iOS] Use default supported rotations when none are specified (#1417)
--   [iOS] Fixed autocomplete window overlaps keyboard (#1473, #1482)
+-   [iOS] Fixed autocomplete Window_ overlaps keyboard (#1473, #1482)
 -   [Linux] Fixed dual monitor issue (#1226, #1238)
--   [Linux] Fixed issue where fullscreen window didn't go over task bars on top and left on in Ubuntu (#1224)
+-   [Linux] Fixed issue where fullscreen Window_ didn't go over task bars on top and left on in Ubuntu (#1224)
 -   [Linux] Fixed the Unix clipboard implementation causing an abort due to internal data races in Xlib (#1437)
 -   [macOS] Added additional system cursors (#1401, #1413, #1425)
 -   [Windows] Fixed swapped colors for custom cursors (#1464, #1465, #1491)
@@ -240,10 +240,10 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.5.0
 
 -   [Android] Return correct key code for delete/backspace (#1309, #1362)
 -   [iOS] Don't need to find vorbisfile or vorbisenc (#1347)
--   [Linux] Fixed `sf::Window::getPosition()` returning incorrect position because of differences in window managers (#1228, #1266)
+-   [Linux] Fixed `sf::Window::getPosition()` returning incorrect position because of differences in Window_ managers (#1228, #1266)
 -   [Linux] Fix X11 key repeat handling not filtering out events from other windows (#1223, #1230, #1291)
--   [Linux] Restore fullscreen of a non-visible window (#1339)
--   [macOS] Fixed window menu not working (#1091, #1180, #1193)
+-   [Linux] Restore fullscreen of a non-visible Window_ (#1339)
+-   [macOS] Fixed Window_ menu not working (#1091, #1180, #1193)
 -   [macOS] Fixed crash with application messing hardware detection e.g. TeamViewer (#1323)
 -   [macOS] Added support for (some) Hat/POV axis (#1248)
 -   [Windows] Prevent uninitialized read by zeroing memory (#1264)
@@ -349,13 +349,13 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.4.1
 
 -   Fixed stack overflow on GlContext creation with multiple threads (#989, #1002)
 -   Adjusted mouse cursor grab documentation (#1133)
--   [iOS] Fixed orientation change not rescaling window size properly (#1049, #1050)
+-   [iOS] Fixed orientation change not rescaling Window_ size properly (#1049, #1050)
 -   [Linux] Fixed fullscreen issue (#921, #1138)
 -   [Linux] Switched from XCB back to Xlib for windowing (#1138)
--   [Linux] Fixed window icon not showing up on some distros (#1087, #1088)
--   [Linux] Fixed an issue where GNOME flags window unresponsive (#1089, #1138)
+-   [Linux] Fixed Window_ icon not showing up on some distros (#1087, #1088)
+-   [Linux] Fixed an issue where GNOME flags Window_ unresponsive (#1089, #1138)
 -   [Linux] Fixed leak of XVisualInfo objects during GlxContext creation (#1135)
--   [Linux] Fixed possible hang when setting visibility if external window sources (#1136)
+-   [Linux] Fixed possible hang when setting visibility if external Window_ sources (#1136)
 -   [macOS] Fixed inconsistency between doc and impl on macOS for the grab feature (#1133, #1148, #1150)
 -   [Windows] Fixed context memory leaks (#1143, #1002)
 
@@ -429,7 +429,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.4.0
 -   [Android] Copy the selected EGL context's settings to SFML (#1039)
 -   [Linux] Fixed modifiers causing sf::Keyboard::Unknown being returned (#1022, #1012)
 -   [macOS] Improved memory management on macOS (#962, #790)
--   [macOS] Fixed crash when resizing a window to a zero-height/width size (#986, #984)
+-   [macOS] Fixed crash when resizing a Window_ to a zero-height/width size (#986, #984)
 -   [macOS] Use the mouse button constant instead of 0 to avoid a compiler error on macOS (#1035)
 -   [macOS] macOS improvement: warnings + bugfix + refactoring, the lot! (#1042)
 
@@ -512,10 +512,10 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.3.1
 
 **Bugfixes**
 
--   [Android] Make sure a window still exists before trying to access its dimensions (#854)
+-   [Android] Make sure a Window_ still exists before trying to access its dimensions (#854)
 -   [Android] Added Android API level checks (#856)
 -   [Android] Updated the JNI/event handling code (#906)
--   [Linux] Resized events are only spawned when the window size actually changes (#878, #893)
+-   [Linux] Resized events are only spawned when the Window_ size actually changes (#878, #893)
 -   [Linux] Whitelisted X SHAPE events (#879, #883)
 -   [Linux] Remap Unix keyboard when user changes layout (#895, #897)
 -   [Linux] Fix undefined behavior in ewmhSupported() (#892, #901)
@@ -571,7 +571,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.3
 -   Fixed joystick identification (#809, #811)
 -   [iOS] Fixed various issues including stencil bits, device orientation and retina support (#748)
 -   [iOS] Fixed inconsistency between sf::Touch::getPosition and touch events (#875)
--   [Linux] Fixed Alt+F4 not getting triggered in window mode (#274)
+-   [Linux] Fixed Alt+F4 not getting triggered in Window_ mode (#274)
 -   [Linux] Fixed Unix joystick stuff (#838)
 -   [macOS] Fixed typo in JoystickImpl.cpp to prevent a crash (#762, #765)
 -   [macOS] Fixed an issue in InputImpl::getSFOpenGLViewFromSFMLWindow (#782, #792)
@@ -658,7 +658,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.2
 
 **Features**
 
--   Added window methods to request and to check focus (#518, #525, #613, #723, #735)
+-   Added Window_ methods to request and to check focus (#518, #525, #613, #723, #735)
 -   Provide name, manufacturer ID and product ID via sf::Joystick (#152, #528)
 -   [FreeBSD] Joystick support (#477)
 -   [macOS] Improved integration with menus and dock actions (#11)
@@ -675,8 +675,8 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.2
 -   Fixed various joystick problems (memory leak, accelerometer detected, code refactoring) (#660, #686, #742, #743)
 -   Optimized sf::Window::waitEvent a bit, no sleep if events are available at first try (ff555d6)
 -   [Linux] Output error message when XOpenDisplay() fails (#508, #616)
--   [Linux] Resize window with setSize when sf::Style::Resize is set (#466)
--   [Linux] Fixed broken key repeat on window recreation (#564, #567)
+-   [Linux] Resize Window_ with setSize when sf::Style::Resize is set (#466)
+-   [Linux] Fixed broken key repeat on Window_ recreation (#564, #567)
 -   [macOS] Fixed KeyReleased not being fired in fullscreen mode (#465)
 -   [macOS] Fixed an issue where disconnecting the keyboard would cause a crash (#467)
 -   [macOS] Fixed unexpected resizing behavior (#468)
@@ -688,7 +688,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.2
 -   [Windows] Fixed joystick POV values (ef1d29b)
 -   [Windows] Fixed Unicode inconsistency (#635)
 -   [Windows] Fixed Alt+F4 and mouse clicks issues (#437, #457)
--   [Windows] Send MouseButtonReleased event when the mouse is outside of the window (#455, #457)
+-   [Windows] Send MouseButtonReleased event when the mouse is outside of the Window_ (#455, #457)
 -   [Windows] Fixed sf::Joystick wrong registry usage (#701, #702, #706)
 
 ### Graphics
@@ -724,7 +724,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.2
 -   Fixed sf::Texture::getMaximumSize() possibly breaking context management (#666)
 -   Fixed various sf::Text rendering issues (#692, #699)
 -   The texture matrix is now reset in sf::Texture::bind(NULL) (7c4b058)
--   [Windows] Fixed DPI scaling causing strange window behavior (#679, #681, #688)
+-   [Windows] Fixed DPI scaling causing strange Window_ behavior (#679, #681, #688)
 
 ### Audio
 
@@ -779,14 +779,14 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.1
 -   Improved TextEntered for macOS (#377)
 -   Improved the performances of Window::getSize() (the size is now cached)
 -   Added the WM_CLASS property to SFML windows on Linux
--   Fake resize events are no longer sent when the window is moved, on Linux
+-   Fake resize events are no longer sent when the Window_ is moved, on Linux
 -   Pressing ALT or F10 on Windows no longer steals the focus
 
 **Bugfixes**
 
 -   Fixed MouseMove event sometimes not generated when holding left button on Windows (#225)
 -   Fixed ContextSettings ignored when creating a 3.x/4.x OpenGL context on Linux (#258)
--   Fixed ContextSettings ignored on Linux when creating a window (#35)
+-   Fixed ContextSettings ignored on Linux when creating a Window_ (#35)
 -   Fixed windows bigger than the desktop not appearing on Windows (#215)
 -   Fixed KeyRelease events sometimes not reported on Linux (#404)
 -   Fixed mouse moved event on macOS when dragging the cursor (#277)

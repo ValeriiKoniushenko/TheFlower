@@ -925,7 +925,7 @@ FLAC_API FLAC__bool FLAC__stream_encoder_set_loose_mid_side_stereo(FLAC__StreamE
  * For \c gauss(STDDEV), STDDEV specifies the standard deviation
  * (0<STDDEV<=0.5).
  *
- * For \c tukey(P), P specifies the fraction of the window that is
+ * For \c tukey(P), P specifies the fraction of the Window_ that is
  * tapered (0<=P<=1).  P=0 corresponds to \c rectangle and P=1
  * corresponds to \c hann.
  *
@@ -937,11 +937,11 @@ FLAC_API FLAC__bool FLAC__stream_encoder_set_loose_mid_side_stereo(FLAC__StreamE
  * is empty the encoder defaults to \c "tukey(0.5)".
  *
  * When more than one function is specified, then for every subframe the
- * encoder will try each of them separately and choose the window that
+ * encoder will try each of them separately and choose the Window_ that
  * results in the smallest compressed subframe.
  *
  * Note that each function specified causes the encoder to occupy a
- * floating point array in which to store the window.
+ * floating point array in which to store the Window_.
  *
  * \default \c "tukey(0.5)"
  * \param  encoder        An encoder instance to set.

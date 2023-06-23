@@ -331,7 +331,7 @@
      D  strm                               like(z_stream)                       Compression stream
      D  level                        10I 0 value                                Compression level
      D  method                       10I 0 value                                Compression method
-     D  windowBits                   10I 0 value                                log2(window size)
+     D  windowBits                   10I 0 value                                log2(Window_ size)
      D  memLevel                     10I 0 value                                Mem/cmpress tradeoff
      D  strategy                     10I 0 value                                Compression strategy
      D  version                        *   value options(*string)               Version string
@@ -378,7 +378,7 @@
       *
      D inflateInit2    PR            10I 0 extproc('inflateInit2_')             Init. expansion
      D  strm                               like(z_stream)                       Expansion stream
-     D  windowBits                   10I 0 value                                log2(window size)
+     D  windowBits                   10I 0 value                                log2(Window_ size)
      D  version                        *   value options(*string)               Version string
      D  stream_size                  10i 0 value                                Stream struct. size
       *
@@ -445,7 +445,7 @@
      D                 PR            10I 0 extproc('inflateBackInit_')
      D  strm                               like(z_stream)                       Expansion stream
      D  windowBits                   10I 0 value                                Log2(buffer size)
-     D  window                    65535    options(*varsize)                    Buffer
+     D  Window_                    65535    options(*varsize)                    Buffer
      D  version                        *   value options(*string)               Version string
      D  stream_size                  10i 0 value                                Stream struct. size
       *

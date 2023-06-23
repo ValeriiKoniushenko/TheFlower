@@ -280,7 +280,7 @@ elseif(SFML_OS_ANDROID)
     source_group("android" FILES ${PLATFORM_SRC})
 endif()
 
-# define the sfml-window target
+# define the sfml-Window_ target
 sfml_add_library(sfml-window
                  SOURCES ${SRC} ${PLATFORM_SRC})
 # DRM libraries

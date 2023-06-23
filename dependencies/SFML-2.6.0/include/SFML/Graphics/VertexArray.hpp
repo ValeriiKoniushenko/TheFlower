@@ -215,7 +215,7 @@ private:
 /// lines[2].position = sf::Vector2f(30, 5);
 /// lines[3].position = sf::Vector2f(40, 2);
 ///
-/// window.draw(lines);
+/// Window_.draw(lines);
 /// \endcode
 ///
 /// \see sf::Vertex

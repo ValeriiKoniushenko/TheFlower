@@ -65,11 +65,11 @@
         exponential smoothing function to a series of discrete rate samples, to calculate
         instantaneous throughput.
       </p>
-<pre class="programlisting"><span class="keyword">class</span> <span class="identifier">window</span>
+<pre class="programlisting"><span class="keyword">class</span> <span class="identifier">Window_</span>
 <span class="special">{</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">value_</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
 
-    <span class="comment">// The size of the exponential window, in seconds.</span>
+    <span class="comment">// The size of the exponential Window_, in seconds.</span>
     <span class="comment">// This should be a power of two.</span>
 
     <span class="keyword">static</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="keyword">constexpr</span> <span class="identifier">Window</span> <span class="special">=</span> <span class="number">4</span><span class="special">;</span>
@@ -105,7 +105,7 @@
         <span class="comment">// Apply exponential decay.</span>
         <span class="comment">//</span>
         <span class="comment">// This formula is fast (no division or multiplication) but inaccurate.</span>
-        <span class="comment">// It overshoots by `n*(1-a)/(1-a^n), where a=(window-1)/window`.</span>
+        <span class="comment">// It overshoots by `n*(1-a)/(1-a^n), where a=(Window_-1)/Window_`.</span>
         <span class="comment">// Could be good enough for a rough approximation, but if relying</span>
         <span class="comment">// on this for production please perform tests!</span>
 
@@ -141,14 +141,14 @@
     <span class="comment">// The clock used to measure elapsed time</span>
     <span class="keyword">using</span> <span class="identifier">clock_type</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">chrono</span><span class="special">::</span><span class="identifier">steady_clock</span><span class="special">;</span>
 
-    <span class="comment">// This implements an exponential smoothing window function.</span>
-    <span class="comment">// The value `Seconds` is the size of the window in seconds.</span>
+    <span class="comment">// This implements an exponential smoothing Window_ function.</span>
+    <span class="comment">// The value `Seconds` is the size of the Window_ in seconds.</span>
 
     <span class="identifier">clock_type</span><span class="special">::</span><span class="identifier">time_point</span> <span class="identifier">when_</span><span class="special">;</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">read_bytes_</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">write_bytes_</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
-    <span class="identifier">window</span> <span class="identifier">read_window_</span><span class="special">;</span>
-    <span class="identifier">window</span> <span class="identifier">write_window_</span><span class="special">;</span>
+    <span class="identifier">Window_</span> <span class="identifier">read_window_</span><span class="special">;</span>
+    <span class="identifier">Window_</span> <span class="identifier">write_window_</span><span class="special">;</span>
 
     <span class="comment">// Friending this type allows us to mark the</span>
     <span class="comment">// member functions required by RatePolicy as private.</span>
@@ -196,7 +196,7 @@
     <span class="identifier">on_timer</span><span class="special">()</span>
     <span class="special">{</span>
         <span class="comment">// Calculate elapsed time in seconds, and adjust our time point</span>
-        <span class="keyword">auto</span> <span class="keyword">const</span> <span class="identifier">elapsed</span> <span class="special">=</span> <span class="identifier">window</span><span class="special">::</span><span class="identifier">get_elapsed</span><span class="special">(</span><span class="identifier">when_</span><span class="special">);</span>
+        <span class="keyword">auto</span> <span class="keyword">const</span> <span class="identifier">elapsed</span> <span class="special">=</span> <span class="identifier">Window_</span><span class="special">::</span><span class="identifier">get_elapsed</span><span class="special">(</span><span class="identifier">when_</span><span class="special">);</span>
 
         <span class="comment">// Skip the update when elapsed==0,</span>
         <span class="comment">// otherwise the measurement will have jitter</span>

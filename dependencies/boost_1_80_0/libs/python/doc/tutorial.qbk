@@ -138,7 +138,7 @@ typing:
 ECHO %HOMEDRIVE%%HOMEPATH%
 ]
 
-into a command prompt window. Your file should at least have the rules
+into a command prompt Window_. Your file should at least have the rules
 for your compiler and your python installation. A specific example of
 this on Windows would be:
 

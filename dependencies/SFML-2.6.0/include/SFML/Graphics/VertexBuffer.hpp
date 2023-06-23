@@ -400,7 +400,7 @@ private:
 /// triangles.create(15);
 /// triangles.update(vertices);
 /// ...
-/// window.draw(triangles);
+/// Window_.draw(triangles);
 /// \endcode
 ///
 /// \see sf::Vertex, sf::VertexArray

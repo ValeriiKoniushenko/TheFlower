@@ -4,10 +4,10 @@
 # Usage
 # -----
 #
-# When you try to locate the SFML libraries, you must specify which modules you want to use (system, window, graphics, network, audio, main).
+# When you try to locate the SFML libraries, you must specify which modules you want to use (system, Window_, graphics, network, audio, main).
 # If none is given, no imported target will be created and you won't be able to link to SFML libraries.
 # example:
-#   find_package(SFML COMPONENTS graphics window system) # find the graphics, window and system modules
+#   find_package(SFML COMPONENTS graphics Window_ system) # find the graphics, Window_ and system modules
 #
 # You can enforce a specific version, either MAJOR.MINOR or only MAJOR.
 # If nothing is specified, the version won't be checked (i.e. any version will be accepted).
@@ -40,19 +40,19 @@
 # ------
 #
 # This script defines the following variables:
-# - For each specified module XXX (system, window, graphics, network, audio, main):
+# - For each specified module XXX (system, Window_, graphics, network, audio, main):
 #   - SFML_XXX_FOUND:  true if either the debug or release library of the xxx module is found
 # - SFML_FOUND:        true if all the required modules are found
 #
 # And the following targets:
-# - For each specified module XXX (system, window, graphics, network, audio, main):
+# - For each specified module XXX (system, Window_, graphics, network, audio, main):
 #   - sfml-XXX
 # The SFML targets are the same for both Debug and Release build configurations and will automatically provide
 # correct settings based on your currently active build configuration. The SFML targets name also do not change
 # when using dynamic or static SFML libraries.
 #
 # When linking against a SFML target, you do not need to specify indirect dependencies. For example, linking
-# against sfml-graphics will also automatically link against sfml-window and sfml-system.
+# against sfml-graphics will also automatically link against sfml-Window_ and sfml-system.
 #
 # example:
 #   find_package(SFML 2 COMPONENTS graphics audio REQUIRED)
@@ -81,13 +81,13 @@ find_path(SFML_DOC_DIR SFML.tag
           PATHS ${FIND_SFML_PATHS})
 
 
-# Update requested components (eg. request window component if graphics component was requested)
+# Update requested components (eg. request Window_ component if graphics component was requested)
 set(FIND_SFML_SYSTEM_DEPENDENCIES "")
 set(FIND_SFML_MAIN_DEPENDENCIES "")
 set(FIND_SFML_AUDIO_DEPENDENCIES system)
 set(FIND_SFML_NETWORK_DEPENDENCIES system)
 set(FIND_SFML_WINDOW_DEPENDENCIES system)
-set(FIND_SFML_GRAPHICS_DEPENDENCIES window system)
+set(FIND_SFML_GRAPHICS_DEPENDENCIES Window_ system)
 set(FIND_SFML_ADDITIONAL_COMPONENTS "")
 foreach(component ${SFML_FIND_COMPONENTS})
     string(TOUPPER "${component}" UPPER_COMPONENT)

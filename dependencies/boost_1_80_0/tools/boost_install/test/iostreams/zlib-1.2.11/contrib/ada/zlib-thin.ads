@@ -19,7 +19,7 @@ private package ZLib.Thin is
    MAX_MEM_LEVEL : constant := 9;         --  zconf.h:105
                                           --  zconf.h:105
    MAX_WBITS : constant := 15;      --  zconf.h:115
-                                    --  32K LZ77 window
+                                    --  32K LZ77 Window_
                                     --  zconf.h:115
    SEEK_SET : constant := 8#0000#;  --  zconf.h:244
                                     --  Seek from beginning of file.
@@ -289,11 +289,11 @@ private package ZLib.Thin is
    function inflateBackInit
      (strm        : in Z_Streamp;
       windowBits  : in Int;
-      window      : in Byte_Access;
+      Window_      : in Byte_Access;
       version     : in Chars_Ptr;
       stream_size : in Int)
       return      Int;
-   --  Size of window have to be 2**windowBits.
+   --  Size of Window_ have to be 2**windowBits.
 
    function Inflate_Init (strm : Z_Streamp; windowBits : Int) return Int;
    pragma Inline (Inflate_Init);

@@ -1462,7 +1462,7 @@ ENUM_VALUES_PER_LINE   = 4
 TREEVIEW_WIDTH         = 250
 
 # If the EXT_LINKS_IN_WINDOW option is set to YES, doxygen will open links to
-# external symbols imported via tag files in a separate window.
+# external symbols imported via tag files in a separate Window_.
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
@@ -1547,7 +1547,7 @@ MATHJAX_CODEFILE       =
 # search using the keyboard; to jump to the search box use <access key> + S
 # (what the <access key> is depends on the OS and browser, but it is typically
 # <CTRL>, <ALT>/<option>, or both). Inside the search box use the <cursor down
-# key> to jump into the search results window, the results can be navigated
+# key> to jump into the search results Window_, the results can be navigated
 # using the <cursor keys>. Press <Enter> to select an item or <escape> to cancel
 # the search. The filter options can be selected when the cursor is inside the
 # search box by pressing <Shift>+<cursor down>. Also here use the <cursor keys>

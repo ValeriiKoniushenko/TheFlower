@@ -158,7 +158,7 @@ elseif(SFML_OS_ANDROID)
     set(DEFAULT_INSTALL_MISC_DIR ${CMAKE_ANDROID_NDK}/sources/third_party/sfml)
 endif()
 
-# force building sfml-window, if sfml-graphics module is built
+# force building sfml-Window_, if sfml-graphics module is built
 if(SFML_BUILD_GRAPHICS AND NOT SFML_BUILD_WINDOW)
     message(WARNING "You're trying to build SFML's Graphics module without the Window module. Forcing building of the Window module as a dependency.")
     set(SFML_BUILD_WINDOW TRUE)
@@ -366,7 +366,7 @@ else()
                        ${PROJECT_SOURCE_DIR}/include/SFML/System
                        $<TARGET_FILE_DIR:SFML>/Headers)
 
-    # add window module headers if enabled
+    # add Window_ module headers if enabled
     if(SFML_BUILD_WINDOW)
         add_custom_command(TARGET SFML POST_BUILD COMMAND cp -r
                            ${PROJECT_SOURCE_DIR}/include/SFML/Window.hpp

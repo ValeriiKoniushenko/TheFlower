@@ -464,7 +464,7 @@
         <span class="comment">// in the stack of stream layers. In this case it will be the tcp_stream.</span>
         <span class="comment">// This timeout will apply to all subsequent operations collectively.</span>
         <span class="comment">// That is to say, they must all complete within the same 30 second</span>
-        <span class="comment">// window.</span>
+        <span class="comment">// Window_.</span>
 
         <span class="identifier">get_lowest_layer</span><span class="special">(</span><span class="identifier">stream</span><span class="special">).</span><span class="identifier">expires_after</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">chrono</span><span class="special">::</span><span class="identifier">seconds</span><span class="special">(</span><span class="number">30</span><span class="special">));</span>
 

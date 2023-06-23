@@ -280,7 +280,7 @@ call `operator()`\u2014 accepting a `std::ostream&` as a parameter
 [basic_function_2]
  
 which we fill with suitable adaptors for `sprite`s, `std::string`s and
-`window`s, respectively. Lambda functions allow for a particularly terse code.
+`Window_`s, respectively. Lambda functions allow for a particularly terse code.
 
 [basic_function_3]
 
@@ -814,7 +814,7 @@ This rendering loop differs from the non-restituting one in two aspects:
 an indication that the types /may/ be actually present in the collection, not
 a promise. Also, the list of types need not be exhaustive, that is, some
 unlisted types could be present in the collection \u2014in the example above,
-the loop traverses *all* elements (including `std::string`s and `window`s),
+the loop traverses *all* elements (including `std::string`s and `Window_`s),
 not only those corresponding to restituted types. In general, the more types
 are restituted, the greater the potential improvement in performance.
 * The lambda function passed is a generic one accepting its argument as

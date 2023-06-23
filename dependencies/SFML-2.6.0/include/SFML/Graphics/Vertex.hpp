@@ -136,7 +136,7 @@ public:
 /// };
 ///
 /// // draw it
-/// window.draw(vertices, 4, sf::Quads);
+/// Window_.draw(vertices, 4, sf::Quads);
 /// \endcode
 ///
 /// Note: although texture coordinates are supposed to be an integer

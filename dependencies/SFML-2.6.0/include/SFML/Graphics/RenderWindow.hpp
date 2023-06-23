@@ -48,18 +48,18 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Default constructor
     ///
-    /// This constructor doesn't actually create the window,
+    /// This constructor doesn't actually create the Window_,
     /// use the other constructors or call create() to do so.
     ///
     ////////////////////////////////////////////////////////////
     RenderWindow();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct a new window
+    /// \brief Construct a new Window_
     ///
-    /// This constructor creates the window with the size and pixel
+    /// This constructor creates the Window_ with the size and pixel
     /// depth defined in \a mode. An optional style can be passed to
-    /// customize the look and behavior of the window (borders,
+    /// customize the look and behavior of the Window_ (borders,
     /// title bar, resizable, closable, ...).
     ///
     /// The fourth parameter is an optional structure specifying
@@ -67,8 +67,8 @@ public:
     /// depth-buffer bits, etc. You shouldn't care about these
     /// parameters for a regular usage of the graphics module.
     ///
-    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the window)
-    /// \param title    Title of the window
+    /// \param mode     Video mode to use (defines the width, height and depth of the rendering area of the Window_)
+    /// \param title    Title of the Window_
     /// \param style    %Window style, a bitwise OR combination of sf::Style enumerators
     /// \param settings Additional settings for the underlying OpenGL context
     ///
@@ -76,7 +76,7 @@ public:
     RenderWindow(VideoMode mode, const String& title, Uint32 style = Style::Default, const ContextSettings& settings = ContextSettings());
 
     ////////////////////////////////////////////////////////////
-    /// \brief Construct the window from an existing control
+    /// \brief Construct the Window_ from an existing control
     ///
     /// Use this constructor if you want to create an SFML
     /// rendering area into an already existing control.
@@ -96,16 +96,16 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Destructor
     ///
-    /// Closes the window and frees all the resources attached to it.
+    /// Closes the Window_ and frees all the resources attached to it.
     ///
     ////////////////////////////////////////////////////////////
     virtual ~RenderWindow();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Get the size of the rendering region of the window
+    /// \brief Get the size of the rendering region of the Window_
     ///
     /// The size doesn't include the titlebar and borders
-    /// of the window.
+    /// of the Window_.
     ///
     /// \return Size in pixels
     ///
@@ -114,24 +114,24 @@ public:
 
 
     ////////////////////////////////////////////////////////////
-    /// \brief Tell if the window will use sRGB encoding when drawing on it
+    /// \brief Tell if the Window_ will use sRGB encoding when drawing on it
     ///
-    /// You can request sRGB encoding for a window by having the sRgbCapable flag set in the ContextSettings
+    /// You can request sRGB encoding for a Window_ by having the sRgbCapable flag set in the ContextSettings
     ///
-    /// \return True if the window use sRGB encoding, false otherwise
+    /// \return True if the Window_ use sRGB encoding, false otherwise
     ///
     ////////////////////////////////////////////////////////////
     virtual bool isSrgb() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Activate or deactivate the window as the current target
+    /// \brief Activate or deactivate the Window_ as the current target
     ///        for OpenGL rendering
     ///
-    /// A window is active only on the current thread, if you want to
+    /// A Window_ is active only on the current thread, if you want to
     /// make it active on another thread you have to deactivate it
     /// on the previous thread first if it was active.
-    /// Only one window can be active on a thread at a time, thus
-    /// the window previously active (if any) automatically gets deactivated.
+    /// Only one Window_ can be active on a thread at a time, thus
+    /// the Window_ previously active (if any) automatically gets deactivated.
     /// This is not to be confused with requestFocus().
     ///
     /// \param active True to activate, false to deactivate
@@ -142,22 +142,22 @@ public:
     bool setActive(bool active = true);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Copy the current contents of the window to an image
+    /// \brief Copy the current contents of the Window_ to an image
     ///
     /// \deprecated
     /// Use a sf::Texture and its sf::Texture::update(const Window&)
     /// function and copy its contents into an sf::Image instead.
     /// \code
-    /// sf::Vector2u windowSize = window.getSize();
+    /// sf::Vector2u windowSize = Window_.getSize();
     /// sf::Texture texture;
     /// texture.create(windowSize.x, windowSize.y);
-    /// texture.update(window);
+    /// texture.update(Window_);
     /// sf::Image screenshot = texture.copyToImage();
     /// \endcode
     ///
     /// This is a slow operation, whose main purpose is to make
     /// screenshots of the application. If you want to update an
-    /// image with the contents of the window and then use it for
+    /// image with the contents of the Window_ and then use it for
     /// drawing, you should rather use a sf::Texture and its
     /// update(Window&) function.
     /// You can also draw things directly to a texture with the
@@ -171,20 +171,20 @@ public:
 protected:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Function called after the window has been created
+    /// \brief Function called after the Window_ has been created
     ///
     /// This function is called so that derived classes can
     /// perform their own specific initialization as soon as
-    /// the window is created.
+    /// the Window_ is created.
     ///
     ////////////////////////////////////////////////////////////
     virtual void onCreate();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Function called after the window has been resized
+    /// \brief Function called after the Window_ has been resized
     ///
     /// This function is called so that derived classes can
-    /// perform custom actions when the size of the window changes.
+    /// perform custom actions when the size of the Window_ changes.
     ///
     ////////////////////////////////////////////////////////////
     virtual void onResize();
@@ -194,7 +194,7 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    unsigned int m_defaultFrameBuffer; //!< Framebuffer to bind when targeting this window
+    unsigned int m_defaultFrameBuffer; //!< Framebuffer to bind when targeting this Window_
 };
 
 } // namespace sf
@@ -208,11 +208,11 @@ private:
 /// \ingroup graphics
 ///
 /// sf::RenderWindow is the main class of the Graphics module.
-/// It defines an OS window that can be painted using the other
+/// It defines an OS Window_ that can be painted using the other
 /// classes of the graphics module.
 ///
 /// sf::RenderWindow is derived from sf::Window, thus it inherits
-/// all its features: events, window management, OpenGL rendering,
+/// all its features: events, Window_ management, OpenGL rendering,
 /// etc. See the documentation of sf::Window for a more complete
 /// description of all these features, as well as code examples.
 ///
@@ -222,34 +222,34 @@ private:
 /// Here is a typical rendering and event loop with a sf::RenderWindow:
 ///
 /// \code
-/// // Declare and create a new render-window
-/// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+/// // Declare and create a new render-Window_
+/// sf::RenderWindow Window_(sf::VideoMode(800, 600), "SFML Window_");
 ///
 /// // Limit the framerate to 60 frames per second (this step is optional)
-/// window.setFramerateLimit(60);
+/// Window_.setFramerateLimit(60);
 ///
-/// // The main loop - ends as soon as the window is closed
-/// while (window.isOpen())
+/// // The main loop - ends as soon as the Window_ is closed
+/// while (Window_.isOpen())
 /// {
 ///    // Event processing
 ///    sf::Event event;
-///    while (window.pollEvent(event))
+///    while (Window_.pollEvent(event))
 ///    {
-///        // Request for closing the window
+///        // Request for closing the Window_
 ///        if (event.type == sf::Event::Closed)
-///            window.close();
+///            Window_.close();
 ///    }
 ///
-///    // Clear the whole window before rendering a new frame
-///    window.clear();
+///    // Clear the whole Window_ before rendering a new frame
+///    Window_.clear();
 ///
 ///    // Draw some graphical entities
-///    window.draw(sprite);
-///    window.draw(circle);
-///    window.draw(text);
+///    Window_.draw(sprite);
+///    Window_.draw(circle);
+///    Window_.draw(text);
 ///
 ///    // End the current frame and display its contents on screen
-///    window.display();
+///    Window_.display();
 /// }
 /// \endcode
 ///
@@ -258,8 +258,8 @@ private:
 /// and regular SFML drawing commands.
 ///
 /// \code
-/// // Create the render window
-/// sf::RenderWindow window(sf::VideoMode(800, 600), "SFML OpenGL");
+/// // Create the render Window_
+/// sf::RenderWindow Window_(sf::VideoMode(800, 600), "SFML OpenGL");
 ///
 /// // Create a sprite and a text to display
 /// sf::Sprite sprite;
@@ -271,15 +271,15 @@ private:
 /// ...
 ///
 /// // Start the rendering loop
-/// while (window.isOpen())
+/// while (Window_.isOpen())
 /// {
 ///     // Process events
 ///     ...
 ///
 ///     // Draw a background sprite
-///     window.pushGLStates();
-///     window.draw(sprite);
-///     window.popGLStates();
+///     Window_.pushGLStates();
+///     Window_.draw(sprite);
+///     Window_.popGLStates();
 ///
 ///     // Draw a 3D object using OpenGL
 ///     glBegin(GL_QUADS);
@@ -288,12 +288,12 @@ private:
 ///     glEnd();
 ///
 ///     // Draw text on top of the 3D object
-///     window.pushGLStates();
-///     window.draw(text);
-///     window.popGLStates();
+///     Window_.pushGLStates();
+///     Window_.draw(text);
+///     Window_.popGLStates();
 ///
 ///     // Finally, display the rendered frame on screen
-///     window.display();
+///     Window_.display();
 /// }
 /// \endcode
 ///
