@@ -2868,7 +2868,7 @@ see the data you've written, you have the following alternatives:
 
       //Now write the file...
 
-      //Flush data before unlocking the exclusive lock
+      //FlushToFile data before unlocking the exclusive lock
       file.flush();
    }
 

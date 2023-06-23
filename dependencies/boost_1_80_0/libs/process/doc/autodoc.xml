@@ -1426,7 +1426,7 @@ std_out.null();
 <method name="is_open" cv="const"><type>bool</type><purpose>Check if the pipe is open. </purpose></method>
 <method name="open"><type>void</type><purpose>Open a new pipe. </purpose></method>
 <method name="open"><type>void</type><parameter name="name"><paramtype>const std::string &amp;</paramtype></parameter><purpose>Open a new named pipe. </purpose></method>
-<method name="close"><type>void</type><purpose>Flush the buffer &amp; close the pipe. </purpose></method>
+<method name="close"><type>void</type><purpose>FlushToFile the buffer &amp; close the pipe. </purpose></method>
 </method-group>
 <constructor><purpose>Default constructor. </purpose></constructor>
 <constructor cv="= delete"><parameter name=""><paramtype>const <classname>basic_ipstream</classname> &amp;</paramtype></parameter><purpose>Copy constructor. </purpose></constructor>
@@ -1455,7 +1455,7 @@ std_out.null();
 <method name="pipe"><type><classname>pipe_type</classname> &amp;&amp;</type><purpose>Get a rvalue reference to the pipe. Qualified as rvalue. </purpose></method>
 <method name="open"><type>void</type><purpose>Open a new pipe. </purpose></method>
 <method name="open"><type>void</type><parameter name="name"><paramtype>const std::string &amp;</paramtype></parameter><purpose>Open a new named pipe. </purpose></method>
-<method name="close"><type>void</type><purpose>Flush the buffer &amp; close the pipe. </purpose></method>
+<method name="close"><type>void</type><purpose>FlushToFile the buffer &amp; close the pipe. </purpose></method>
 </method-group>
 <constructor><purpose>Default constructor. </purpose></constructor>
 <constructor cv="= delete"><parameter name=""><paramtype>const <classname>basic_opstream</classname> &amp;</paramtype></parameter><purpose>Copy constructor. </purpose></constructor>
@@ -1518,7 +1518,7 @@ std_out.null();
 <method name="is_open" cv="const"><type>bool</type><purpose>Check if the pipe is open. </purpose></method>
 <method name="open"><type><classname>basic_pipebuf</classname>&lt; CharT, Traits &gt; *</type><purpose>Open a new pipe. </purpose></method>
 <method name="open"><type><classname>basic_pipebuf</classname>&lt; CharT, Traits &gt; *</type><parameter name="name"><paramtype>const std::string &amp;</paramtype></parameter><purpose>Open a new named pipe. </purpose></method>
-<method name="close"><type><classname>basic_pipebuf</classname>&lt; CharT, Traits &gt; *</type><purpose>Flush the buffer &amp; close the pipe. </purpose></method>
+<method name="close"><type><classname>basic_pipebuf</classname>&lt; CharT, Traits &gt; *</type><purpose>FlushToFile the buffer &amp; close the pipe. </purpose></method>
 </method-group>
 <constructor><purpose>Default constructor, will also construct the pipe. </purpose></constructor>
 <constructor cv="= default"><parameter name=""><paramtype>const <classname>basic_pipebuf</classname> &amp;</paramtype></parameter><purpose>Copy Constructor. </purpose></constructor>
@@ -1551,7 +1551,7 @@ std_out.null();
 <method name="pipe"><type><classname>pipe_type</classname> &amp;&amp;</type><purpose>Get a rvalue reference to the pipe. Qualified as rvalue. </purpose></method>
 <method name="open"><type>void</type><purpose>Open a new pipe. </purpose></method>
 <method name="open"><type>void</type><parameter name="name"><paramtype>const std::string &amp;</paramtype></parameter><purpose>Open a new named pipe. </purpose></method>
-<method name="close"><type>void</type><purpose>Flush the buffer &amp; close the pipe. </purpose></method>
+<method name="close"><type>void</type><purpose>FlushToFile the buffer &amp; close the pipe. </purpose></method>
 </method-group>
 <constructor><purpose>Default constructor. </purpose></constructor>
 <constructor cv="= delete"><parameter name=""><paramtype>const <classname>basic_pstream</classname> &amp;</paramtype></parameter><purpose>Copy constructor. </purpose></constructor>

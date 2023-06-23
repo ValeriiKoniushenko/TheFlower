@@ -6,7 +6,7 @@
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// 														  copies of the Software, and to permit persons to whom the Software is
+// copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
 // The above copyright notice and this permission notice shall be included in all
@@ -22,16 +22,38 @@
 
 #pragma once
 
-#include "Serializer.h"
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <filesystem>
+#include <string>
 
 class Serializer
 {
 public:
-	Serializer() = default;
-	~Serializer() = default;
+	explicit Serializer(const std::string& SaveFileName);
+	~Serializer();
 	Serializer(const Serializer&) = default;
 	Serializer(Serializer&&) = default;
 	Serializer& operator=(const Serializer&) = default;
 	Serializer& operator=(Serializer&&) = default;
 
+	template<class T>
+	void AddToSerialize(const std::string& Key, const T& Value);
+
+	void Serialize();
+	void Deserialize();
+
+	inline static const std::filesystem::path SaveDirectory = "save";
+protected:
+	std::filesystem::path GetSavePath() const;
+
+private:
+	std::string SaveFileName_;
+	boost::property_tree::ptree PTree_;
 };
+
+template <class T>
+void Serializer::AddToSerialize(const std::string& Key, const T& Value)
+{
+	PTree_.add(Key, Value);
+}

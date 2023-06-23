@@ -160,7 +160,7 @@ void SoundFileWriterOgg::write(const Int16* samples, Uint64 count)
 
         frameCount -= bufferSize;
 
-        // Flush any produced block
+        // FlushToFile any produced block
         flushBlocks();
     }
 }

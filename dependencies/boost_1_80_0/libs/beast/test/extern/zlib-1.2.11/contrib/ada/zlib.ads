@@ -278,7 +278,7 @@ package ZLib is
      (Filter : in out Filter_Type;
       Item   :    out Ada.Streams.Stream_Element_Array;
       Last   :    out Ada.Streams.Stream_Element_Offset;
-      Flush  : in     Flush_Mode := No_Flush);
+      FlushToFile  : in     Flush_Mode := No_Flush);
    --  Compress/Decompress data from generic parameter procedure Read to the
    --  Item. User should provide Buffer and initialized Rest_First, Rest_Last
    --  indicators. If Allow_Read_Some is True, Read routines could return

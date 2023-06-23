@@ -879,13 +879,13 @@
           has started but there is no guarantee that all data has been written to
           disk:
         </p>
-<pre class="programlisting"><span class="comment">//Flush the whole region</span>
+<pre class="programlisting"><span class="comment">//FlushToFile the whole region</span>
 <span class="identifier">region</span><span class="special">.</span><span class="identifier">flush</span><span class="special">();</span>
 
-<span class="comment">//Flush from an offset until the end of the region</span>
+<span class="comment">//FlushToFile from an offset until the end of the region</span>
 <span class="identifier">region</span><span class="special">.</span><span class="identifier">flush</span><span class="special">(</span><span class="identifier">offset</span><span class="special">);</span>
 
-<span class="comment">//Flush a memory range starting on an offset</span>
+<span class="comment">//FlushToFile a memory range starting on an offset</span>
 <span class="identifier">region</span><span class="special">.</span><span class="identifier">flush</span><span class="special">(</span><span class="identifier">offset</span><span class="special">,</span> <span class="identifier">size</span><span class="special">);</span>
 </pre>
 <p>

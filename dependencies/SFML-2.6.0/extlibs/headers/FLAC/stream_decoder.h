@@ -1369,7 +1369,7 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_file(
  */
 FLAC_API FLAC__bool FLAC__stream_decoder_finish(FLAC__StreamDecoder *decoder);
 
-/** Flush the stream input.
+/** FlushToFile the stream input.
  *  The decoder's input buffer will be cleared and the state set to
  *  \c FLAC__STREAM_DECODER_SEARCH_FOR_FRAME_SYNC.  This will also turn
  *  off MD5 checking.
@@ -1533,7 +1533,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_stream(FLAC__Strea
  */
 FLAC_API FLAC__bool FLAC__stream_decoder_skip_single_frame(FLAC__StreamDecoder *decoder);
 
-/** Flush the input and seek to an absolute sample.
+/** FlushToFile the input and seek to an absolute sample.
  *  Decoding will resume at the given sample.  Note that because of
  *  this, the next write callback may contain a partial block.  The
  *  client must support seeking the input or this function will fail

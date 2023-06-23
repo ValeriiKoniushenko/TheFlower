@@ -112,7 +112,7 @@ package body ZLib.Streams is
 
          exit when Last < Buffer'Last;
       end loop;
-   end Flush;
+   end FlushToFile;
 
    -------------
    -- Is_Open --

@@ -93,7 +93,7 @@ public:
 private:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Flush blocks produced by the ogg stream, if any
+    /// \brief FlushToFile blocks produced by the ogg stream, if any
     ///
     ////////////////////////////////////////////////////////////
     void flushBlocks();

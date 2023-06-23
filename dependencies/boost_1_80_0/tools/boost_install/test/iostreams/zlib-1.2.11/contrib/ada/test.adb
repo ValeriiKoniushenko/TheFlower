@@ -363,7 +363,7 @@ begin
 
          --  Flushing internal buffers to the back stream.
 
-         ZLib.Streams.Flush (File_Z, ZLib.Finish);
+         ZLib.Streams.FlushToFile (File_Z, ZLib.Finish);
 
          Print_Statistic ("Write compress",
                           ZLib.Streams.Write_Total_Out (File_Z));

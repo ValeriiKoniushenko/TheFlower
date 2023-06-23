@@ -283,7 +283,7 @@ package body ZLib is
                In_Last  => In_Last,
                Out_Data => Out_Buffer,
                Out_Last => Out_Last,
-               Flush    => Flush_Finish (Last < In_Buffer'First));
+               FlushToFile    => Flush_Finish (Last < In_Buffer'First));
 
             if Out_Buffer'First <= Out_Last then
                Data_Out (Out_Buffer (Out_Buffer'First .. Out_Last));

@@ -336,7 +336,7 @@
         <bridgehead renderas="sect3">Constants</bridgehead>
         <simplelist type="vert" columns="1">
           <member><link linkend="beast.ref.boost__beast__zlib__error">error</link></member>
-          <member><link linkend="beast.ref.boost__beast__zlib__Flush">Flush</link></member>
+          <member><link linkend="beast.ref.boost__beast__zlib__Flush">FlushToFile</link></member>
           <member><link linkend="beast.ref.boost__beast__zlib__Strategy">Strategy</link></member>
         </simplelist>
       </entry>

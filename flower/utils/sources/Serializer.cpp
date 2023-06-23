@@ -6,7 +6,7 @@
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// 														  copies of the Software, and to permit persons to whom the Software is
+// copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
 // The above copyright notice and this permission notice shall be included in all
@@ -21,3 +21,29 @@
 // SOFTWARE.
 
 #include "Serializer.h"
+
+Serializer::Serializer(const std::string& SaveFileName) :
+ 	SaveFileName_(SaveFileName)
+{
+
+}
+
+void Serializer::Serialize()
+{
+	boost::property_tree::write_json(GetSavePath().string(), PTree_);
+}
+
+Serializer::~Serializer()
+{
+	Serialize();
+}
+
+void Serializer::Deserialize()
+{
+	boost::property_tree::read_json(GetSavePath().string(), PTree_);
+}
+
+std::filesystem::path Serializer::GetSavePath() const
+{
+	return SaveDirectory.string() + "/" + SaveFileName_;
+}

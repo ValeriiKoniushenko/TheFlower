@@ -397,7 +397,7 @@ package body ZLib is
      (Filter : in out Filter_Type;
       Item   :    out Ada.Streams.Stream_Element_Array;
       Last   :    out Ada.Streams.Stream_Element_Offset;
-      Flush  : in     Flush_Mode := No_Flush)
+      FlushToFile  : in     Flush_Mode := No_Flush)
    is
       In_Last    : Stream_Element_Offset;
       Item_First : Ada.Streams.Stream_Element_Offset := Item'First;

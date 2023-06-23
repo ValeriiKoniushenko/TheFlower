@@ -29,7 +29,7 @@ package ZLib.Streams is
    procedure Flush
      (Stream : in out Stream_Type;
       Mode   : in     Flush_Mode := Sync_Flush);
-   --  Flush the written data to the back stream,
+   --  FlushToFile the written data to the back stream,
    --  all data placed to the compressor is flushing to the Back stream.
    --  Should not be used until necessary, because it is decreasing
    --  compression.

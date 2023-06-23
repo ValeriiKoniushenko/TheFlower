@@ -2983,7 +2983,7 @@
               in Windows systems) instead of iostream.
             </li>
 <li class="listitem">
-              Flush data before unlocking the file lock in writers using <code class="computeroutput"><span class="identifier">fflush</span></code> if you are using standard
+              FlushToFile data before unlocking the file lock in writers using <code class="computeroutput"><span class="identifier">fflush</span></code> if you are using standard
               C functions or the <code class="computeroutput"><span class="identifier">flush</span><span class="special">()</span></code> member function when using C++ iostreams.
               In windows you can't even use another class to access the same file.
             </li>
@@ -3002,7 +3002,7 @@
 
    <span class="comment">//Now write the file...</span>
 
-   <span class="comment">//Flush data before unlocking the exclusive lock</span>
+   <span class="comment">//FlushToFile data before unlocking the exclusive lock</span>
    <span class="identifier">file</span><span class="special">.</span><span class="identifier">flush</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>

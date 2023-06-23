@@ -11,7 +11,7 @@ It provides Ada-style access to the ZLib C library.
 - Attension: ZLib.Read generic routine have a initialization requirement
   for Read_Last parameter now. It is a bit incompartible with previous version,
   but extends functionality, we could use new parameters Allow_Read_Some and
-  Flush now.
+  FlushToFile now.
 
 - Added Is_Open routines to ZLib and ZLib.Streams packages.
 

@@ -318,7 +318,7 @@
       *
      D inflate         PR            10I 0 extproc('inflate')                   Expand data
      D  strm                               like(z_stream)                       Expansion stream
-     D  flush                        10I 0 value                                Flush type required
+     D  flush                        10I 0 value                                FlushToFile type required
       *
      D inflateEnd      PR            10I 0 extproc('inflateEnd')                Termin. expansion
      D  strm                               like(z_stream)                       Expansion stream
