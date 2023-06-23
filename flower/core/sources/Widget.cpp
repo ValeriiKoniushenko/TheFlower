@@ -20,28 +20,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "Widget.h"
 
-#include "Button.h"
-#include "GameStateBase.h"
-
-class MainMenuGameState final : public GameStateBase
+void Widget::SetName(const std::string& Name)
 {
-public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
+	Name_ = Name;
+}
 
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+const std::string& Widget::GetName() const
+{
+	return Name_;
+}
 
-protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
+void Widget::SetOnMouseLeftClickEventCallback(std::function<void(const Widget&)> OnClick)
+{
+	OnLeftClick_ = OnClick;
+}
 
-	Button StartButton_;
-};
+void Widget::SetOnMouseRightClickEventCallback(std::function<void(const Widget&)> OnClick)
+{
+	OnRightClick_ = OnClick;
+}
+
+void Widget::Update(sf::RenderWindow& Window)
+{
+	const sf::Mouse Mouse;
+	const sf::Vector2i MousePosition = Mouse.getPosition(Window);
+	if (getGlobalBounds().contains(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y)))
+	{
+		if (OnLeftClick_ && Mouse.isButtonPressed(sf::Mouse::Button::Left))
+		{
+			OnLeftClick_(*this);
+		}
+
+		if (OnRightClick_ && Mouse.isButtonPressed(sf::Mouse::Button::Right))
+		{
+			OnRightClick_(*this);
+		}
+	}
+}

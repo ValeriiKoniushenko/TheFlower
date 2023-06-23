@@ -21,3 +21,8 @@
 // SOFTWARE.
 
 #include "GameStateBase.h"
+
+void GameStateBase::Prepare()
+{
+	MainFont_.loadFromFile("assets/fonts/Rubik-Medium.ttf");
+}

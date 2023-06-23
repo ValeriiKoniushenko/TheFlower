@@ -22,26 +22,32 @@
 
 #pragma once
 
-#include "Button.h"
-#include "GameStateBase.h"
+#include <SFML/Graphics.hpp>
+#include <functional>
 
-class MainMenuGameState final : public GameStateBase
+class Widget : public sf::Sprite
 {
 public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
+	enum class TextAlign : __int8
+	{
+		Center	  // TODO: add 'left' 'right'
+	};
 
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+public:
+	~Widget() override = default;
+
+	void SetName(const std::string& Name);
+	_NODISCARD const std::string& GetName() const;
+
+	void SetOnMouseLeftClickEventCallback(std::function<void(const Widget&)> OnClick);
+	void SetOnMouseRightClickEventCallback(std::function<void(const Widget&)> OnClick);
+	virtual void Update(sf::RenderWindow& Window);
 
 protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
+	Widget() = default;
 
-	Button StartButton_;
+protected:
+	std::function<void(const Widget&)> OnLeftClick_;
+	std::function<void(const Widget&)> OnRightClick_;
+	std::string Name_;
 };

@@ -22,26 +22,26 @@
 
 #pragma once
 
-#include "Button.h"
-#include "GameStateBase.h"
+#include "Widget.h"
 
-class MainMenuGameState final : public GameStateBase
+class Button : public Widget
 {
 public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
+	~Button() override = default;
 
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+	_NODISCARD sf::Text& GetText();
+	_NODISCARD const sf::Text& GetText() const;
+	void Update(sf::RenderWindow& Window) override;
 
-protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
+	void Draw(sf::RenderWindow& window);
+	void SetTextVerticalAlign(TextAlign Align);
+	_NODISCARD TextAlign GetTextVerticalAlign() const;
 
-	Button StartButton_;
+	void SetTextHorizontalAlign(TextAlign Align);
+	_NODISCARD TextAlign GetTextHorizontalAlign() const;
+
+private:
+	sf::Text Text_;
+	TextAlign VerticalAlign_ = TextAlign::Center;
+	TextAlign HorizontalAlign_ = TextAlign::Center;
 };

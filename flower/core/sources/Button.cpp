@@ -20,28 +20,62 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
 #include "Button.h"
-#include "GameStateBase.h"
 
-class MainMenuGameState final : public GameStateBase
+sf::Text& Button::GetText()
 {
-public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
+	return Text_;
+}
 
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+const sf::Text& Button::GetText() const
+{
+	return Text_;
+}
 
-protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
+void Button::Update(sf::RenderWindow& Window)
+{
+	Widget::Update(Window);
 
-	Button StartButton_;
-};
+	sf::Vector2f NewTextPosition = getPosition();
+	switch (VerticalAlign_)
+	{
+		case TextAlign::Center:
+			NewTextPosition.y += (getGlobalBounds().height - Text_.getCharacterSize()) / 2.f;
+			break;
+	}
+
+	switch (HorizontalAlign_)
+	{
+		case TextAlign::Center:
+			NewTextPosition.x += (getGlobalBounds().width - Text_.getGlobalBounds().width) / 2.f;
+			break;
+	}
+
+	Text_.setPosition(NewTextPosition);
+}
+
+void Button::Draw(sf::RenderWindow& Window)
+{
+	Window.draw(*this);
+	Window.draw(Text_);
+}
+
+void Button::SetTextVerticalAlign(Widget::TextAlign Align)
+{
+	VerticalAlign_ = Align;
+}
+
+void Button::SetTextHorizontalAlign(Widget::TextAlign Align)
+{
+	HorizontalAlign_ = Align;
+}
+
+Widget::TextAlign Button::GetTextVerticalAlign() const
+{
+	return VerticalAlign_;
+}
+
+Widget::TextAlign Button::GetTextHorizontalAlign() const
+{
+	return HorizontalAlign_;
+}

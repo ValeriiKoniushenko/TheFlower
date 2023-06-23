@@ -21,3 +21,32 @@
 // SOFTWARE.
 
 #include "MainMenuGameState.h"
+
+void MainMenuGameState::Prepare()
+{
+	GameStateBase::Prepare();
+
+	BackgroundTexture_.loadFromFile("assets/images/main-menu-background.jpg");	  // TODO: add checking -> out to the log
+	ButtonTexture_.loadFromFile("assets/images/button.png");					  // TODO: add checking -> out to the log
+
+	StartButton_.setTexture(ButtonTexture_);
+	StartButton_.setScale(.5f, .5f);
+	StartButton_.GetText().setFont(MainFont_);
+	StartButton_.GetText().setString("Start");
+	StartButton_.GetText().setFillColor(sf::Color::Black);
+	StartButton_.GetText().setCharacterSize(24);
+}
+
+void MainMenuGameState::Draw(sf::RenderWindow& Window)
+{
+	Window.clear(sf::Color::White);
+
+	StartButton_.Draw(Window);
+
+	Window.display();
+}
+
+void MainMenuGameState::UpdateUi(sf::RenderWindow& Window)
+{
+	StartButton_.Update(Window);
+}

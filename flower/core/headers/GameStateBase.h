@@ -22,6 +22,8 @@
 
 #pragma once
 
+#include "SFML/Graphics.hpp"
+
 class GameStateBase
 {
 public:
@@ -32,6 +34,10 @@ public:
 	GameStateBase& operator=(GameStateBase&&) = default;
 	GameStateBase& operator=(const GameStateBase&) = default;
 
-private:
+	virtual void Prepare();
+	virtual void Draw(sf::RenderWindow& Window) = 0;
+	virtual void UpdateUi(sf::RenderWindow& Window) = 0;
 
+protected:
+	sf::Font MainFont_;
 };
