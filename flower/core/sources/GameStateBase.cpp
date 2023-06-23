@@ -26,3 +26,10 @@ void GameStateBase::Prepare()
 {
 	MainFont_.loadFromFile("assets/fonts/Rubik-Medium.ttf");
 }
+
+GameStateBase::CustomEvent GameStateBase::PollEvent()
+{
+	const auto Tmp = CustomEvent_;
+	CustomEvent_ = CustomEvent::None;
+	return Tmp;
+}

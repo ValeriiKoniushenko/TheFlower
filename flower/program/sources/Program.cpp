@@ -22,12 +22,11 @@
 
 #include "Program.h"
 
+#include "GameProcessGameState.h"
 #include "GameStateBase.h"
 #include "MainMenuGameState.h"
 
-
-Program::Program() :
-	Serializer("General.json")
+Program::Program() : Serializer("General.json")
 {
 }
 
@@ -38,14 +37,18 @@ void Program::Run()
 	CreateWindow();
 
 	GameState_ = std::make_unique<MainMenuGameState>();
-	GameState_->Prepare(); // TODO: add nullptr checking
+	GameState_->Prepare();	  // TODO: add nullptr checking
 
-	while(Window_.isOpen())
+	while (Window_.isOpen())
 	{
 		sf::Event Event;
 		if (Window_.pollEvent(Event))
+		{
 			if (Event.type == sf::Event::Closed)
+			{
 				Window_.close();
+			}
+		}
 		LifeCycle();
 	}
 }
@@ -65,8 +68,8 @@ Program::~Program()
 
 void Program::CreateWindow()
 {
-	Window_.create(sf::VideoMode(GetFromSerializer<float>("Window-Width"),
-					  GetFromSerializer<float>("Window-Height")), GetFromSerializer<std::string>("Window-Title"));
+	Window_.create(sf::VideoMode(GetFromSerializer<float>("Window-Width"), GetFromSerializer<float>("Window-Height")),
+		GetFromSerializer<std::string>("Window-Title"));
 }
 
 void Program::LifeCycle()
@@ -75,6 +78,22 @@ void Program::LifeCycle()
 	{
 		GameState_->Draw(Window_);
 	}
+	else if (dynamic_cast<GameProcessGameState*>(GameState_.get()))
+	{
+		GameState_->Draw(Window_);
+	}
 
 	GameState_->UpdateUi(Window_);
+
+	ProcessCustomEvent();
+}
+
+void Program::ProcessCustomEvent()
+{
+	GameStateBase::CustomEvent Event = GameState_->PollEvent();
+	if (Event == GameStateBase::CustomEvent::OpenGame)
+	{
+		GameState_.reset();
+		GameState_ = std::make_unique<GameProcessGameState>();
+	}
 }

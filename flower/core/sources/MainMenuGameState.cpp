@@ -36,6 +36,9 @@ void MainMenuGameState::Prepare()
 	StartButton_.GetText().setString("Start");
 	StartButton_.GetText().setFillColor(sf::Color::Black);
 	StartButton_.GetText().setCharacterSize(24);
+	StartButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) {
+			CustomEvent_ = CustomEvent::OpenGame;
+		});
 
 	BackgroundCanvas_.setTexture(BackgroundTexture_);
 }

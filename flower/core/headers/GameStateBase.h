@@ -27,6 +27,14 @@
 class GameStateBase
 {
 public:
+	enum class CustomEvent : __int8
+	{
+		None,
+		OpenGame,
+		CloseGame
+	};
+
+public:
 	GameStateBase() = default;
 	virtual ~GameStateBase() = default;
 	GameStateBase(GameStateBase&&) = default;
@@ -38,6 +46,9 @@ public:
 	virtual void Draw(sf::RenderWindow& Window) = 0;
 	virtual void UpdateUi(sf::RenderWindow& Window) = 0;
 
+	_NODISCARD CustomEvent PollEvent();
+
 protected:
 	sf::Font MainFont_;
+	CustomEvent CustomEvent_ = CustomEvent::None;
 };

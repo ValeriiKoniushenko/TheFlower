@@ -45,6 +45,7 @@ public:
 private:
 	void CreateWindow();
 	void LifeCycle();
+	void ProcessCustomEvent();
 private:
 	sf::RenderWindow Window_;
 	std::unique_ptr<GameStateBase> GameState_;
