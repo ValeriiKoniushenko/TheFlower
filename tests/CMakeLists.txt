@@ -9,3 +9,7 @@ target_include_directories(Tests PRIVATE
     ${PROJECT_SOURCE_DIR}/dependencies/googletest/include/
     ${PROJECT_SOURCE_DIR}/dependencies/googletest/src/
 )
+
+target_link_libraries(Tests PUBLIC
+    Utils
+)

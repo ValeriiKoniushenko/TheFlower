@@ -25,11 +25,13 @@
 Serializer::Serializer(const std::string& SaveFileName) :
  	SaveFileName_(SaveFileName)
 {
-
 }
 
 void Serializer::Serialize()
 {
+	if (!std::filesystem::exists(SaveDirectory))
+		std::filesystem::create_directory(SaveDirectory);
+
 	boost::property_tree::write_json(GetSavePath().string(), PTree_);
 }
 

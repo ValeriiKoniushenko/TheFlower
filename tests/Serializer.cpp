@@ -22,7 +22,45 @@
 
 #include "gtest/gtest.h"
 
-TEST(Serializer, SerializeOneObject)
-{
+#include "Serializer.h"
+#include <filesystem>
 
+TEST(Serializer, CheckSerializeMethod)
+{
+	const std::string FileName = "test.file";
+	Serializer S(FileName);
+	S.AddToSerialize("Hello", "World");
+	S.Serialize();
+
+	EXPECT_EQ(true, std::filesystem::exists(Serializer::SaveDirectory.string() + "/" + FileName));
+}
+
+TEST(Serializer, CheckDestruction)
+{
+	const std::string FileName = "test.file";
+
+	{
+		Serializer S(FileName);
+		S.AddToSerialize("Hello", "World");
+	}
+
+	EXPECT_EQ(true, std::filesystem::exists(Serializer::SaveDirectory.string() + "/" + FileName));
+}
+
+TEST(Serializer, SettingInt)
+{
+	Serializer S("test.file");
+	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1));
+}
+
+TEST(Serializer, SettingFloat)
+{
+	Serializer S("test.file");
+	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1.5f));
+}
+
+TEST(Serializer, SettingDouble)
+{
+	Serializer S("test.file");
+	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1.5));
 }
