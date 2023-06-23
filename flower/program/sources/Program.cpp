@@ -24,4 +24,6 @@
 
 void Program::Run()
 {
+	window.setSize({400,400});
+	window.setTitle("The Flower");
 }
