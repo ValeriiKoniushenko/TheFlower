@@ -48,7 +48,6 @@ public:
 
 	inline static const std::filesystem::path SaveDirectory = "save";
 
-
 protected:
 	std::filesystem::path GetSavePath() const;
 
