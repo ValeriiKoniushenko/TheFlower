@@ -24,6 +24,8 @@
 
 int main()
 {
+	Program Program_;
+	Program_.Run();
 
 	return 0;
 }

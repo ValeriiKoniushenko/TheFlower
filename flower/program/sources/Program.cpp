@@ -24,6 +24,14 @@
 
 void Program::Run()
 {
-	window.setSize({400,400});
-	window.setTitle("The Flower");
+	window.create(sf::VideoMode(400,400), "The Flower");
+
+	while(window.isOpen())
+	{
+		sf::Event Event;
+		if (window.pollEvent(Event))
+			if (Event.type == sf::Event::Closed)
+				window.close();
+
+	}
 }

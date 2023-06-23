@@ -43,8 +43,8 @@ public:
 	template<class T>
 	T GetFromSerializer(const std::string& Key);
 
-	void Serialize();
-	void Deserialize();
+	virtual void Serialize();
+	virtual void Deserialize();
 
 	inline static const std::filesystem::path SaveDirectory = "save";
 
