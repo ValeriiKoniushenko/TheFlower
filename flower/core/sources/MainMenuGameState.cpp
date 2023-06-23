@@ -35,12 +35,15 @@ void MainMenuGameState::Prepare()
 	StartButton_.GetText().setString("Start");
 	StartButton_.GetText().setFillColor(sf::Color::Black);
 	StartButton_.GetText().setCharacterSize(24);
+
+	BackgroundCanvas_.setTexture(BackgroundTexture_);
 }
 
 void MainMenuGameState::Draw(sf::RenderWindow& Window)
 {
 	Window.clear(sf::Color::White);
 
+	Window.draw(BackgroundCanvas_);
 	StartButton_.Draw(Window);
 
 	Window.display();

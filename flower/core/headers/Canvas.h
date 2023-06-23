@@ -22,28 +22,10 @@
 
 #pragma once
 
-#include "Button.h"
-#include "Canvas.h"
-#include "GameStateBase.h"
+#include "Widget.h"
 
-class MainMenuGameState final : public GameStateBase
+class Canvas : public Widget
 {
 public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
 
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
-
-protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
-
-	Button StartButton_;
-	Canvas BackgroundCanvas_;
 };

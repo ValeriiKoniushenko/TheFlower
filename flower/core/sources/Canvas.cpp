@@ -20,30 +20,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include "Button.h"
 #include "Canvas.h"
-#include "GameStateBase.h"
-
-class MainMenuGameState final : public GameStateBase
-{
-public:
-	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
-	MainMenuGameState(MainMenuGameState&&) = default;
-	MainMenuGameState(const MainMenuGameState&) = default;
-	MainMenuGameState& operator=(MainMenuGameState&&) = default;
-	MainMenuGameState& operator=(const MainMenuGameState&) = default;
-
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
-
-protected:
-	sf::Texture BackgroundTexture_;
-	sf::Texture ButtonTexture_;
-
-	Button StartButton_;
-	Canvas BackgroundCanvas_;
-};
