@@ -25,15 +25,11 @@
 #include "Serializer.h"
 #include <SFML/Graphics.hpp>
 
+class GameStateBase;
+
 class Program : public Serializer
 {
 public:
-	enum class GameState : __int8
-	{
-		MainMenu,
-		Game,
-		GameOver
-	};
 
 public:
 	Program();
@@ -51,5 +47,5 @@ private:
 	void LifeCycle();
 private:
 	sf::RenderWindow Window_;
-	GameState GameState_ = GameState::MainMenu;
+	std::unique_ptr<GameStateBase> GameState_;
 };

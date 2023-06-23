@@ -22,6 +22,10 @@
 
 #include "Program.h"
 
+#include "GameStateBase.h"
+#include "MainMenuGameState.h"
+
+
 Program::Program() :
 	Serializer("General.json")
 {
@@ -32,6 +36,9 @@ void Program::Run()
 	Deserialize();
 
 	CreateWindow();
+
+	GameState_ = std::make_unique<MainMenuGameState>();
+	GameState_->Prepare(); // TODO: add nullptr checking
 
 	while(Window_.isOpen())
 	{
@@ -64,13 +71,10 @@ void Program::CreateWindow()
 
 void Program::LifeCycle()
 {
-	switch (GameState_)
+	if (dynamic_cast<MainMenuGameState*>(GameState_.get()))
 	{
-		case GameState::MainMenu:
-			break;
-		case GameState::Game:
-			break;
-		case GameState::GameOver:
-			break;
+		GameState_->Draw(Window_);
 	}
+
+	GameState_->UpdateUi(Window_);
 }
