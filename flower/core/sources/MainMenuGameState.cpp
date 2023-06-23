@@ -29,6 +29,7 @@ void MainMenuGameState::Prepare()
 	BackgroundTexture_.loadFromFile("assets/images/main-menu-background.jpg");	  // TODO: add checking -> out to the log
 	ButtonTexture_.loadFromFile("assets/images/button.png");					  // TODO: add checking -> out to the log
 
+	StartButton_.setPosition(100.f, 100.f);
 	StartButton_.setTexture(ButtonTexture_);
 	StartButton_.setScale(.5f, .5f);
 	StartButton_.GetText().setFont(MainFont_);
