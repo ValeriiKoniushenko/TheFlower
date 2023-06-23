@@ -95,5 +95,6 @@ void Program::ProcessCustomEvent()
 	{
 		GameState_.reset();
 		GameState_ = std::make_unique<GameProcessGameState>();
+		GameState_->Prepare();
 	}
 }

@@ -22,15 +22,16 @@
 
 #include "Serializer.h"
 
-Serializer::Serializer(const std::string& SaveFileName) :
- 	SaveFileName_(SaveFileName)
+Serializer::Serializer(const std::string& SaveFileName) : SaveFileName_(SaveFileName)
 {
 }
 
 void Serializer::Serialize()
 {
 	if (!std::filesystem::exists(SaveDirectory))
+	{
 		std::filesystem::create_directory(SaveDirectory);
+	}
 
 	boost::property_tree::write_json(GetSavePath().string(), PTree_);
 }
@@ -41,7 +42,13 @@ Serializer::~Serializer()
 
 void Serializer::Deserialize()
 {
-	boost::property_tree::read_json(GetSavePath().string(), PTree_);
+	try
+	{
+		boost::property_tree::read_json(GetSavePath().string(), PTree_);
+	}
+	catch (...)
+	{
+	}
 }
 
 std::filesystem::path Serializer::GetSavePath() const

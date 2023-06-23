@@ -37,10 +37,10 @@ public:
 	Serializer& operator=(const Serializer&) = default;
 	Serializer& operator=(Serializer&&) = default;
 
-	template<class T>
+	template <class T>
 	void AddToSerialize(const std::string& Key, const T& Value);
 
-	template<class T>
+	template <class T>
 	T GetFromSerializer(const std::string& Key);
 
 	virtual void Serialize();
@@ -60,7 +60,6 @@ template <class T>
 void Serializer::AddToSerialize(const std::string& Key, const T& Value)
 {
 	PTree_.put(Key, Value);
-
 }
 
 template <class T>

@@ -21,3 +21,41 @@
 // SOFTWARE.
 
 #include "Player.h"
+
+Player::Player() : Serializer("Player.json")
+{
+}
+
+__int64 Player::GetMoney() const
+{
+	return Money_;
+}
+
+void Player::SetMoney(__int64 Money)
+{
+	Money_ = Money;
+}
+
+void Player::AddMoney(__int64 Money)
+{
+	Money_ += Money;
+}
+
+Player::~Player()
+{
+	Serialize();
+}
+
+void Player::Serialize()
+{
+	AddToSerialize("money", Money_);
+
+	Serializer::Serialize();
+}
+
+void Player::Deserialize()
+{
+	Serializer::Deserialize();
+
+	SetMoney(GetFromSerializer<decltype(Money_)>("money"));
+}

@@ -25,6 +25,8 @@
 void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
+
+	Player_.Deserialize();
 }
 
 void GameProcessGameState::Draw(sf::RenderWindow& Window)

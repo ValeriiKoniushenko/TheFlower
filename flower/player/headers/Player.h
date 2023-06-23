@@ -27,11 +27,20 @@
 class Player : public Serializer
 {
 public:
-	Player() = default;
-	~Player() = default;
+	Player();
+	~Player() override;
 	Player(const Player&) = default;
 	Player(Player&&) = default;
 	Player& operator=(const Player&) = default;
 	Player& operator=(Player&&) = default;
 
+	_NODISCARD __int64 GetMoney() const;
+	void SetMoney(__int64 Money);
+	void AddMoney(__int64 Money);
+
+	void Serialize() override;
+	void Deserialize() override;
+
+private:
+	__int64 Money_ = 0;
 };

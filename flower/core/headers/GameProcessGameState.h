@@ -23,6 +23,7 @@
 #pragma once
 
 #include "GameStateBase.h"
+#include "Player.h"
 
 class GameProcessGameState : public GameStateBase
 {
@@ -32,5 +33,5 @@ public:
 	void UpdateUi(sf::RenderWindow& Window) override;
 
 private:
-
+	Player Player_;
 };
