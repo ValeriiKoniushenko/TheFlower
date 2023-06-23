@@ -4,6 +4,7 @@ project(FlowerGame)
 
 set (CMAKE_CXX_STANDARD 20)
 
+add_subdirectory(flower/core)
 add_subdirectory(flower/flower)
 add_subdirectory(flower/map)
 add_subdirectory(flower/player)
