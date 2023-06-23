@@ -22,9 +22,17 @@
 
 #include "Program.h"
 
+Program::Program() :
+	Serializer("General.json")
+{
+}
+
 void Program::Run()
 {
-	window.create(sf::VideoMode(400,400), "The Flower");
+	Deserialize();
+
+	window.create(sf::VideoMode(GetFromSerializer<float>("Window-Width"),
+	    GetFromSerializer<float>("Window-Height")), GetFromSerializer<std::string>("Window-Title"));
 
 	while(window.isOpen())
 	{
@@ -34,4 +42,17 @@ void Program::Run()
 				window.close();
 
 	}
+}
+
+void Program::Serialize()
+{
+	AddToSerialize("Window-Width", window.getSize().x);
+	AddToSerialize("Window-Height", window.getSize().y);
+
+	Serializer::Serialize();
+}
+
+Program::~Program()
+{
+	Serialize();
 }

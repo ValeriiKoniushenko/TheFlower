@@ -37,7 +37,6 @@ void Serializer::Serialize()
 
 Serializer::~Serializer()
 {
-	Serialize();
 }
 
 void Serializer::Deserialize()

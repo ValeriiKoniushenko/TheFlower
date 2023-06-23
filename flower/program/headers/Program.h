@@ -22,19 +22,21 @@
 
 #pragma once
 
+#include "Serializer.h"
 #include <SFML/Graphics.hpp>
 
-class Program
+class Program : public Serializer
 {
 public:
-	Program() = default;
-	~Program() = default;
+	Program();
+	~Program() override;
 	Program(const Program&) = default;
 	Program(Program&&) = default;
 	Program& operator=(const Program&) = default;
 	Program& operator=(Program&&) = default;
 
 	void Run();
+	void Serialize() override;
 
 private:
 	sf::RenderWindow window;

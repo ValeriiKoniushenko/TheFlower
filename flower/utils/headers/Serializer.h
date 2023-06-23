@@ -31,7 +31,7 @@ class Serializer
 {
 public:
 	explicit Serializer(const std::string& SaveFileName);
-	~Serializer();
+	virtual ~Serializer();
 	Serializer(const Serializer&) = default;
 	Serializer(Serializer&&) = default;
 	Serializer& operator=(const Serializer&) = default;
@@ -59,7 +59,8 @@ private:
 template <class T>
 void Serializer::AddToSerialize(const std::string& Key, const T& Value)
 {
-	PTree_.add(Key, Value);
+	PTree_.put(Key, Value);
+
 }
 
 template <class T>

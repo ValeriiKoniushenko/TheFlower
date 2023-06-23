@@ -9,7 +9,7 @@ target_include_directories(TheFlower PUBLIC
 )
 
 target_link_libraries(TheFlower PUBLIC
-    sfml-graphics sfml-system sfml-audio sfml-window sfml-main
+    sfml-graphics sfml-system sfml-audio sfml-window sfml-main Utils
 )
 
 file(GLOB dlls "${PROJECT_BINARY_DIR}/dependencies/SFML-2.6.0/lib/*.dll")
