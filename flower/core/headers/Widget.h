@@ -25,6 +25,8 @@
 #include <SFML/Graphics.hpp>
 #include <functional>
 
+// TODO: Move it to UI lib
+
 class Widget : public sf::Sprite
 {
 public:

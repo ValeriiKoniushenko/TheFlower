@@ -25,20 +25,15 @@
 void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
-
-
 }
 
 void GameProcessGameState::Draw(sf::RenderWindow& Window)
 {
 	Window.clear(sf::Color::White);
 
-
-
 	Window.display();
 }
 
 void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 {
-
 }
