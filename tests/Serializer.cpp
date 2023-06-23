@@ -28,9 +28,9 @@
 TEST(Serializer, CheckSerializeMethod)
 {
 	const std::string FileName = "test.file";
-	Serializer S(FileName);
-	S.AddToSerialize("Hello", "World");
-	S.Serialize();
+	Serializer Saver(FileName);
+	Saver.AddToSerialize("Hello", "World");
+	Saver.Serialize();
 
 	EXPECT_EQ(true, std::filesystem::exists(Serializer::SaveDirectory.string() + "/" + FileName));
 }
@@ -40,8 +40,8 @@ TEST(Serializer, CheckDestruction)
 	const std::string FileName = "test.file";
 
 	{
-		Serializer S(FileName);
-		S.AddToSerialize("Hello", "World");
+		Serializer Saver(FileName);
+		Saver.AddToSerialize("Hello", "World");
 	}
 
 	EXPECT_EQ(true, std::filesystem::exists(Serializer::SaveDirectory.string() + "/" + FileName));
@@ -49,18 +49,35 @@ TEST(Serializer, CheckDestruction)
 
 TEST(Serializer, SettingInt)
 {
-	Serializer S("test.file");
-	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1));
+	Serializer Saver("test.file");
+	EXPECT_NO_THROW(Saver.AddToSerialize("Hello", 1));
 }
 
 TEST(Serializer, SettingFloat)
 {
-	Serializer S("test.file");
-	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1.5f));
+	Serializer Saver("test.file");
+	EXPECT_NO_THROW(Saver.AddToSerialize("Hello", 1.5f));
 }
 
 TEST(Serializer, SettingDouble)
 {
-	Serializer S("test.file");
-	EXPECT_NO_THROW(S.AddToSerialize("Hello", 1.5));
+	Serializer Saver("test.file");
+	EXPECT_NO_THROW(Saver.AddToSerialize("Hello", 1.5));
+}
+
+TEST(Serializer, TryToGetSerializedData)
+{
+	const std::string FileName = "test.file";
+
+	Serializer Saver(FileName);
+	EXPECT_NO_THROW(Saver.AddToSerialize("Width", 1.5));
+	EXPECT_NO_THROW(Saver.AddToSerialize("Height", 10));
+	EXPECT_NO_THROW(Saver.AddToSerialize("Hello", "World"));
+	Saver.Serialize();
+
+	Serializer Loader(FileName);
+	Loader.Deserialize();
+	EXPECT_EQ(1.5, Loader.GetFromSerializer<double>("Width"));
+	EXPECT_EQ(10, Loader.GetFromSerializer<int>("Height"));
+	EXPECT_EQ(std::string("World"), Loader.GetFromSerializer<std::string>("Hello"));
 }

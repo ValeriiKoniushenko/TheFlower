@@ -40,10 +40,15 @@ public:
 	template<class T>
 	void AddToSerialize(const std::string& Key, const T& Value);
 
+	template<class T>
+	T GetFromSerializer(const std::string& Key);
+
 	void Serialize();
 	void Deserialize();
 
 	inline static const std::filesystem::path SaveDirectory = "save";
+
+
 protected:
 	std::filesystem::path GetSavePath() const;
 
@@ -56,4 +61,10 @@ template <class T>
 void Serializer::AddToSerialize(const std::string& Key, const T& Value)
 {
 	PTree_.add(Key, Value);
+}
+
+template <class T>
+T Serializer::GetFromSerializer(const std::string& Key)
+{
+	return PTree_.get<T>(Key);
 }
