@@ -33,6 +33,7 @@ public:
 	void Deserialize() override;
 
 	clock_t LastSpawnTime = 0;
+	clock_t LastErase = 0;
 	__int32 StartSize = 2;
 	clock_t GrowthSpeed = 3;
 	clock_t SpawnEveryXSeconds = 5;

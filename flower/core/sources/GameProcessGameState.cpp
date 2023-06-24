@@ -99,7 +99,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		Snake.Update(Window);
 	}
 
-	if (clock() - LastErase > SnakeConfig_.EraseFrequency)
+	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)
 	{
 		sf::Mouse Mouse;
 		sf::Vector2i MousePosition = Mouse.getPosition(Window);
@@ -114,7 +114,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 			}
 		}
 
-		LastErase = clock();
+		SnakeConfig_.LastErase = clock();
 	}
 }
 
