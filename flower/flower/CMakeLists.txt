@@ -9,4 +9,4 @@ target_include_directories(
 	headers/
 )
 
-target_link_libraries(Flower PUBLIC Utils)
+target_link_libraries(Flower PUBLIC Utils Core sfml-graphics)

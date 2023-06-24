@@ -21,3 +21,36 @@
 // SOFTWARE.
 
 #include "Flower.h"
+
+Flower::Flower()
+{
+}
+
+sf::Sprite& Flower::GetMainSprite()
+{
+	return MainSprite_;
+}
+
+const sf::Sprite& Flower::GetMainSprite() const
+{
+	return MainSprite_;
+}
+
+void Flower::Draw(sf::RenderWindow& Window)
+{
+	Window.draw(MainSprite_);
+}
+
+boost::property_tree::ptree Flower::ToJSON() const
+{
+	boost::property_tree::ptree PTree;
+	PTree.put("x", MainSprite_.getPosition().x);
+	PTree.put("y", MainSprite_.getPosition().y);
+
+	return PTree;
+}
+
+void Flower::SetPosition(sf::Vector2f Position)
+{
+	MainSprite_.setPosition(Position);
+}

@@ -5,6 +5,7 @@ add_library(
     headers/Widget.h
     headers/GameStateBase.h
     headers/MainMenuGameState.h
+    headers/SceneObject.h
     headers/GameProcessGameState.h
 
     sources/Button.cpp
@@ -12,6 +13,7 @@ add_library(
     sources/Widget.cpp
     sources/GameStateBase.cpp
     sources/MainMenuGameState.cpp
+    sources/SceneObject.cpp
     sources/GameProcessGameState.cpp
 )
 

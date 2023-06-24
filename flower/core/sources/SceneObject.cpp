@@ -20,30 +20,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include "SFML/Graphics.hpp"
-#include "Serializer.h"
 #include "SceneObject.h"
-
-class Flower : public SceneObject
-{
-public:
-	Flower();
-	~Flower() override;
-	Flower(const Flower&) = default;
-	Flower(Flower&&) = default;
-	Flower& operator=(const Flower&) = default;
-	Flower& operator=(Flower&&) = default;
-
-	_NODISCARD sf::Sprite& GetMainSprite();
-	_NODISCARD const sf::Sprite& GetMainSprite() const;
-
-	void Draw(sf::RenderWindow& Window) override;
-	boost::property_tree::ptree ToJSON() const override;
-
-	void SetPosition(sf::Vector2f Position);
-
-protected:
-	sf::Sprite MainSprite_;
-};
