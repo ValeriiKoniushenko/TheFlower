@@ -50,7 +50,7 @@ boost::property_tree::ptree Flower::ToJSON() const
 	return PTree;
 }
 
-void Flower::SetPosition(sf::Vector2f Position)
+void Flower::SetPosition(const sf::Vector2f& Position)
 {
 	MainSprite_.setPosition(Position);
 }

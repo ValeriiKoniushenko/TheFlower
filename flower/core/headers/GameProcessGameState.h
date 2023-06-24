@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include "Flower.h"
 #include "GameStateBase.h"
 #include "Map.h"
 #include "Player.h"
@@ -38,8 +39,14 @@ private:
 	void PlantAt(const sf::Vector2i& PositionAtWindow);
 
 private:
-	sf::Texture MapBackground_;
+	sf::Texture MapBackgroundTexture_;
+	sf::Texture FlowerTexture_;
 
+	// TODO: move to config class
+	clock_t LastPlant = 0;
+	clock_t PlantFrequency = 500;
+
+	std::vector<Flower> Flowers_;
 	Player Player_;
 	Map Map_;
 };

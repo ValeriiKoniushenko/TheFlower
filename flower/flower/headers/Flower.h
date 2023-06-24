@@ -23,14 +23,14 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
-#include "Serializer.h"
 #include "SceneObject.h"
+#include "Serializer.h"
 
 class Flower : public SceneObject
 {
 public:
 	Flower();
-	~Flower() override;
+	~Flower() override = default;
 	Flower(const Flower&) = default;
 	Flower(Flower&&) = default;
 	Flower& operator=(const Flower&) = default;
@@ -42,7 +42,7 @@ public:
 	void Draw(sf::RenderWindow& Window) override;
 	boost::property_tree::ptree ToJSON() const override;
 
-	void SetPosition(sf::Vector2f Position);
+	void SetPosition(const sf::Vector2f& Position);
 
 protected:
 	sf::Sprite MainSprite_;
