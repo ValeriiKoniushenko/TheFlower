@@ -27,14 +27,25 @@ void GameProcessGameState::Prepare()
 	GameStateBase::Prepare();
 
 	FlowerConfig_.Deserialize();
+	Player_.Deserialize();
+	Map_.Deserialize();
 
 	MapBackgroundTexture_.loadFromFile("assets/images/grass.jpg");
 	MapBackgroundTexture_.setRepeated(true);
 
+	CoinTexture_.loadFromFile("assets/images/coin.png");
+	Coin_.setTexture(CoinTexture_);
+	Coin_.setScale(0.05f, 0.05f);
+	Coin_.setPosition(20.f, 20.f);
+
+	CoinCount_.setFont(MainFont_);
+	CoinCount_.setFillColor(sf::Color::White);
+	CoinCount_.setString(std::to_string(Player_.GetMoney()) + "$");
+	CoinCount_.setCharacterSize(36);
+	CoinCount_.setPosition(120.f, 35.f);	// TODO: make auto align
+
 	FlowerTexture_.loadFromFile("assets/images/flower.png");
 
-	Player_.Deserialize();
-	Map_.Deserialize();
 	Map_.GetMapBackground().setTexture(MapBackgroundTexture_);
 }
 
@@ -47,6 +58,8 @@ void GameProcessGameState::Draw(sf::RenderWindow& Window)
 	{
 		Flower_.Draw(Window);
 	}
+	Window.draw(Coin_);
+	Window.draw(CoinCount_);
 
 	Window.display();
 }
@@ -88,6 +101,8 @@ void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
 
 			Flowers_.emplace_back(Flower_);
 			Player_.AddMoney(-FlowerConfig_.PlantCosts);
+			CoinCount_.setString(
+				std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
 		}
 		FlowerConfig_.LastPlant = clock();
 	}

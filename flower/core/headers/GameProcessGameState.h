@@ -43,6 +43,11 @@ private:
 	sf::Texture MapBackgroundTexture_;
 	sf::Texture FlowerTexture_;
 
+	// TODO: move to a common widget
+	sf::Texture CoinTexture_;
+	sf::Sprite Coin_;
+	sf::Text CoinCount_;
+
 	FlowerConfig FlowerConfig_;
 
 	std::vector<Flower> Flowers_;
