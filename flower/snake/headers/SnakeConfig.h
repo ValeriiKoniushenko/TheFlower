@@ -43,4 +43,7 @@ public:
 	clock_t LastGrowth = 0;
 	__int32 MaxSize = 5;
 	clock_t SpawnNewSnakeEveryXMs = 5000;
+	clock_t DecreaseSpeedEveryXMs = 5000;
+	float DecreaseSpeedCounter = 0.05f;
+	clock_t LastDecreaseSpeed = 0;
 };

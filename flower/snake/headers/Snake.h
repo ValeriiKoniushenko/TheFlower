@@ -52,6 +52,8 @@ public:
 	void Bobtail();
 	void Increase(__int32 MaxSize);
 
+	void DecreaseSpeedBy(float Percent);
+
 private:
 	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;
 	sf::Vector2f Normalize(const sf::Vector2f& source) const;	 // TODO: move to Utils
@@ -70,4 +72,5 @@ private:
 	clock_t LastUpdate = 0;
 	clock_t UpdateFrequency = 8;	// 1000ms / 120FPS = 8
 	std::default_random_engine generator;
+	float Speed = 1.f;
 };

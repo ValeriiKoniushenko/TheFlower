@@ -82,7 +82,7 @@ void Snake::Update(sf::Window& Window)
 
 			MoveToPoint.x = distributionByWidth(generator);
 			MoveToPoint.y = distributionByHeight(generator);
-			Direction = Normalize((MoveToPoint - Sprites_.begin()->getPosition()));
+			Direction = Normalize((MoveToPoint - Sprites_.begin()->getPosition())) * Speed;
 		}
 	}
 
@@ -94,7 +94,7 @@ void Snake::Update(sf::Window& Window)
 		}
 		else
 		{
-			auto TempDirection = Normalize((It - 1)->getPosition() - It->getPosition());
+			auto TempDirection = Normalize((It - 1)->getPosition() - It->getPosition()) * Speed;
 			if (Vector2Distance(It->getPosition(), (It - 1)->getPosition()) >= 50.f)
 			{
 				It->move(TempDirection);
@@ -153,4 +153,9 @@ void Snake::Increase(__int32 MaxSize)
 		(Sprites_.end() - 1)->setTexture(*TextureP_);
 		(Sprites_.end() - 1)->setPosition((Sprites_.end() - 2)->getPosition());
 	}
+}
+
+void Snake::DecreaseSpeedBy(float Percent)
+{
+	Speed *= 1.f - Percent;
 }

@@ -36,6 +36,8 @@ void SnakeConfig::Serialize()
 	AddToSerialize("GrowthFrequency", GrowthFrequency);
 	AddToSerialize("MaxSize", MaxSize);
 	AddToSerialize("SpawnNewSnakeEveryXMs", SpawnNewSnakeEveryXMs);
+	AddToSerialize("DecreaseSpeedEveryXMs", DecreaseSpeedEveryXMs);
+	AddToSerialize("DecreaseSpeedCounter", DecreaseSpeedCounter);
 
 	Serializer::Serialize();
 }
@@ -54,4 +56,7 @@ void SnakeConfig::Deserialize()
 	LastGrowth = 0;
 	MaxSize = GetFromSerializer<decltype(MaxSize)>("MaxSize");
 	SpawnNewSnakeEveryXMs = GetFromSerializer<decltype(SpawnNewSnakeEveryXMs)>("SpawnNewSnakeEveryXMs");
+	DecreaseSpeedEveryXMs = GetFromSerializer<decltype(DecreaseSpeedEveryXMs)>("DecreaseSpeedEveryXMs");
+	DecreaseSpeedCounter = GetFromSerializer<decltype(DecreaseSpeedCounter)>("DecreaseSpeedCounter");
+	LastDecreaseSpeed = 0;
 }

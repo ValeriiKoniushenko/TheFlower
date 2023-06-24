@@ -121,7 +121,14 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	{
 		for (auto& Snake : Snakes_)
 		{
-			Snake.Increase(SnakeConfig_.MaxSize);
+			if (FlowerPool_.Size() >= 2)
+			{
+				Snake.Increase(SnakeConfig_.MaxSize);
+			}
+			else
+			{
+				Snake.Increase(SnakeConfig_.MaxSize / 2);
+			}
 		}
 		SnakeConfig_.LastGrowth = clock();
 	}
@@ -133,6 +140,16 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 			SpawnSnakeAtRandomPosition(Window);
 		}
 		SnakeConfig_.LastSpawnTime = clock();
+	}
+
+	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)
+	{
+		for (Snake& Snake : Snakes_)
+		{
+			Snake.DecreaseSpeedBy(SnakeConfig_.DecreaseSpeedCounter);
+		}
+
+		SnakeConfig_.LastDecreaseSpeed = clock();
 	}
 }
 
