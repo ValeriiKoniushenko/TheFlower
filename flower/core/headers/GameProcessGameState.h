@@ -23,6 +23,7 @@
 #pragma once
 
 #include "Flower.h"
+#include "FlowerConfig.h"
 #include "GameStateBase.h"
 #include "Map.h"
 #include "Player.h"
@@ -42,9 +43,7 @@ private:
 	sf::Texture MapBackgroundTexture_;
 	sf::Texture FlowerTexture_;
 
-	// TODO: move to config class
-	clock_t LastPlant = 0;
-	clock_t PlantFrequency = 500;
+	FlowerConfig FlowerConfig_;
 
 	std::vector<Flower> Flowers_;
 	Player Player_;

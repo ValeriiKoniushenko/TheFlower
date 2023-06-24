@@ -59,3 +59,8 @@ void Player::Deserialize()
 
 	SetMoney(GetFromSerializer<decltype(Money_)>("money"));
 }
+
+bool Player::CanApproveTransaction(__int64 Costs)
+{
+	return Money_ >= Costs;
+}

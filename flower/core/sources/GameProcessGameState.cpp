@@ -26,6 +26,8 @@ void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
 
+	FlowerConfig_.Deserialize();
+
 	MapBackgroundTexture_.loadFromFile("assets/images/grass.jpg");
 	MapBackgroundTexture_.setRepeated(true);
 
@@ -75,15 +77,18 @@ bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
 
 void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
 {
-	if (clock() - LastPlant >= PlantFrequency)
+	if (clock() - FlowerConfig_.LastPlant >= FlowerConfig_.PlantFrequency)
 	{
-		Flower Flower_;
-		Flower_.GetMainSprite().setTexture(FlowerTexture_);
-		Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
-			static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
+		if (Player_.CanApproveTransaction(FlowerConfig_.PlantCosts))
+		{
+			Flower Flower_;
+			Flower_.GetMainSprite().setTexture(FlowerTexture_);
+			Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
+				static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
 
-		Flowers_.emplace_back(Flower_);
-
-		LastPlant = clock();
+			Flowers_.emplace_back(Flower_);
+			Player_.AddMoney(-FlowerConfig_.PlantCosts);
+		}
+		FlowerConfig_.LastPlant = clock();
 	}
 }

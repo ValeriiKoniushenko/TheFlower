@@ -24,25 +24,16 @@
 
 #include "Serializer.h"
 
-class Player : public Serializer
+struct FlowerConfig : public Serializer
 {
 public:
-	Player();
-	~Player() override;
-	Player(const Player&) = default;
-	Player(Player&&) = default;
-	Player& operator=(const Player&) = default;
-	Player& operator=(Player&&) = default;
-
-	_NODISCARD __int64 GetMoney() const;
-	void SetMoney(__int64 Money);
-	void AddMoney(__int64 Money);
+	FlowerConfig();
+	~FlowerConfig() override;
 
 	void Serialize() override;
 	void Deserialize() override;
 
-	bool CanApproveTransaction(__int64 Costs);
-
-private:
-	__int64 Money_ = 0;
+	clock_t LastPlant = 0;
+	clock_t PlantFrequency = 500;
+	__int64 PlantCosts = 50;
 };

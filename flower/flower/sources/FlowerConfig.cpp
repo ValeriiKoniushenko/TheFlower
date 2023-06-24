@@ -20,29 +20,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "FlowerConfig.h"
 
-#include "Serializer.h"
-
-class Player : public Serializer
+FlowerConfig::FlowerConfig() : Serializer("FlowerConfig.json")
 {
-public:
-	Player();
-	~Player() override;
-	Player(const Player&) = default;
-	Player(Player&&) = default;
-	Player& operator=(const Player&) = default;
-	Player& operator=(Player&&) = default;
+}
 
-	_NODISCARD __int64 GetMoney() const;
-	void SetMoney(__int64 Money);
-	void AddMoney(__int64 Money);
+void FlowerConfig::Serialize()
+{
+	AddToSerialize("PlantFrequency", PlantFrequency);
+	AddToSerialize("PlantCosts", PlantCosts);
 
-	void Serialize() override;
-	void Deserialize() override;
+	Serializer::Serialize();
+}
 
-	bool CanApproveTransaction(__int64 Costs);
+void FlowerConfig::Deserialize()
+{
+	Serializer::Deserialize();
 
-private:
-	__int64 Money_ = 0;
-};
+	LastPlant = 0;
+	PlantFrequency = GetFromSerializer<decltype(PlantFrequency)>("PlantFrequency");
+	PlantCosts = GetFromSerializer<decltype(PlantCosts)>("PlantCosts");
+}
+
+FlowerConfig::~FlowerConfig()
+{
+	Serialize();
+}
