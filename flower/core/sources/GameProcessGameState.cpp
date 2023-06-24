@@ -116,6 +116,15 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 
 		SnakeConfig_.LastErase = clock();
 	}
+
+	if (clock() - SnakeConfig_.LastGrowth > SnakeConfig_.GrowthFrequency)
+	{
+		for (auto& Snake : Snakes_)
+		{
+			Snake.Increase(SnakeConfig_.MaxSize);
+		}
+		SnakeConfig_.LastGrowth = clock();
+	}
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)

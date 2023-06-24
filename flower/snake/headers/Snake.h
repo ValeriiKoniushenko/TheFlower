@@ -50,6 +50,7 @@ public:
 	inline static constexpr float GapBetweenNodes = 50;	   // px
 
 	void Bobtail();
+	void Increase(__int32 MaxSize);
 
 private:
 	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;

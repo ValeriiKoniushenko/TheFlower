@@ -137,8 +137,20 @@ bool Snake::Contains(sf::Vector2f Point) const
 	for (const sf::Sprite& Sprite : Sprites_)
 	{
 		if (Sprite.getGlobalBounds().contains(Point))
+		{
 			return true;
+		}
 	}
 
 	return false;
+}
+
+void Snake::Increase(__int32 MaxSize)
+{
+	if (Sprites_.size() < MaxSize)
+	{
+		Sprites_.resize(Sprites_.size() + 1);
+		(Sprites_.end() - 1)->setTexture(*TextureP_);
+		(Sprites_.end() - 1)->setPosition((Sprites_.end() - 2)->getPosition());
+	}
 }

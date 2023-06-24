@@ -40,4 +40,7 @@ public:
 	clock_t SpeedUpEffectLength = 5;
 	float SpeedUpEffectStrength = 2.f;
 	clock_t EraseFrequency = 100;
+	clock_t GrowthFrequency = 3000;
+	clock_t LastGrowth = 0;
+	clock_t MaxSize = 5;
 };
