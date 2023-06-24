@@ -86,71 +86,12 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		PlantAt(Mouse.getPosition(Window), Window);
 	}
 
-	if (clock() - LastIncome > FlowerConfig_.IncomeFrequency)	 // TODO: change to Timer
-	{
-		Player_.AddMoney(FlowerPool_.Size() * FlowerConfig_.IncomeAmount);
-		CoinCount_.setString(
-			std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
-		LastIncome = clock();
-	}
-
-	for (auto& Snake : Snakes_)
-	{
-		Snake.Update(Window);
-	}
-
-	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)
-	{
-		sf::Mouse Mouse;
-		sf::Vector2i MousePosition = Mouse.getPosition(Window);
-		for (auto It = Snakes_.begin(); It != Snakes_.end(); ++It)
-		{
-			if (It->Contains(sf::Vector2f(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y))))
-			{
-				if (Mouse.isButtonPressed(sf::Mouse::Button::Left))	   // TODO: move to input Mapping
-				{
-					It->Bobtail();
-				}
-			}
-		}
-
-		SnakeConfig_.LastErase = clock();
-	}
-
-	if (clock() - SnakeConfig_.LastGrowth > SnakeConfig_.GrowthFrequency)
-	{
-		for (auto& Snake : Snakes_)
-		{
-			if (FlowerPool_.Size() >= 2)
-			{
-				Snake.Increase(SnakeConfig_.MaxSize);
-			}
-			else
-			{
-				Snake.Increase(SnakeConfig_.MaxSize / 2);
-			}
-		}
-		SnakeConfig_.LastGrowth = clock();
-	}
-
-	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)
-	{
-		if (FlowerPool_.Size())
-		{
-			SpawnSnakeAtRandomPosition(Window);
-		}
-		SnakeConfig_.LastSpawnTime = clock();
-	}
-
-	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)
-	{
-		for (Snake& Snake : Snakes_)
-		{
-			Snake.DecreaseSpeedBy(SnakeConfig_.DecreaseSpeedCounter);
-		}
-
-		SnakeConfig_.LastDecreaseSpeed = clock();
-	}
+	AddMoneyEveryXSeconds();
+	UpdateSnakes(Window);
+	DecreaseSnakeLengthIfClicked(Window);
+	SnakeAutoGrowth();
+	SpawnNewSnakeEveryXSeconds(Window);
+	DecreaseSpeedEveryXSeconds();
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -206,4 +147,88 @@ void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
 	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});
 
 	Snakes_.emplace_back(Snake_);
+}
+
+void GameProcessGameState::AddMoneyEveryXSeconds()
+{
+	if (clock() - LastIncome > FlowerConfig_.IncomeFrequency)	 // TODO: change to Timer
+	{
+		Player_.AddMoney(FlowerPool_.Size() * FlowerConfig_.IncomeAmount);
+		CoinCount_.setString(
+			std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
+		LastIncome = clock();
+	}
+}
+
+void GameProcessGameState::UpdateSnakes(sf::RenderWindow& Window)
+{
+	for (auto& Snake : Snakes_)
+	{
+		Snake.Update(Window);
+	}
+}
+
+void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window)
+{
+	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	 // TODO: change to Timer
+	{
+		sf::Mouse Mouse;
+		sf::Vector2i MousePosition = Mouse.getPosition(Window);
+		for (auto It = Snakes_.begin(); It != Snakes_.end(); ++It)
+		{
+			if (It->Contains(sf::Vector2f(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y))))
+			{
+				if (Mouse.isButtonPressed(sf::Mouse::Button::Left))	   // TODO: move to input Mapping
+				{
+					It->Bobtail();
+				}
+			}
+		}
+
+		SnakeConfig_.LastErase = clock();
+	}
+}
+
+void GameProcessGameState::SnakeAutoGrowth()
+{
+	if (clock() - SnakeConfig_.LastGrowth > SnakeConfig_.GrowthFrequency)	 // TODO: change to Timer
+	{
+		for (auto& Snake : Snakes_)
+		{
+			if (FlowerPool_.Size() >= 2)
+			{
+				Snake.Increase(SnakeConfig_.MaxSize);
+			}
+			else
+			{
+				Snake.Increase(SnakeConfig_.MaxSize / 2);
+			}
+		}
+		SnakeConfig_.LastGrowth = clock();
+	}
+}
+
+void GameProcessGameState::SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window)
+{
+	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)	 // TODO: change to Timer
+	{
+		if (FlowerPool_.Size())
+		{
+			SpawnSnakeAtRandomPosition(Window);
+		}
+		SnakeConfig_.LastSpawnTime = clock();
+	}
+}
+
+void GameProcessGameState::DecreaseSpeedEveryXSeconds()
+{
+	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)	 // TODO: change to Timer
+	{
+		for (Snake& Snake : Snakes_)
+		{
+			Snake.DecreaseSpeedBy(SnakeConfig_.DecreaseSpeedCounter);
+		}
+
+		SnakeConfig_.LastDecreaseSpeed = clock();
+	}
 }

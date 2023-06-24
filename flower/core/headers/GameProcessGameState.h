@@ -44,6 +44,13 @@ private:
 	void SpawnFlowerAt(const sf::Vector2i& PositionAtWindow);
 	void SpawnSnakeAtRandomPosition(sf::RenderWindow& Window);
 
+	void AddMoneyEveryXSeconds();
+	void UpdateSnakes(sf::RenderWindow& Window);
+	void DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window);
+	void SnakeAutoGrowth();
+	void SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window);
+	void DecreaseSpeedEveryXSeconds();
+
 private:
 	sf::Texture MapBackgroundTexture_;
 	sf::Texture FlowerTexture_;
