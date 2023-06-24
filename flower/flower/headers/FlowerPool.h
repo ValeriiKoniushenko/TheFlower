@@ -39,6 +39,8 @@ public:
 	void Push(const Flower& NewFlower);
 	_NODISCARD std::size_t Size() const;
 
+	std::vector<Flower>::iterator Erase(const std::vector<Flower>::iterator& It);
+
 	std::vector<Flower>::iterator begin();
 	std::vector<Flower>::iterator end();
 

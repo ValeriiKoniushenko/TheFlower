@@ -92,6 +92,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	SnakeAutoGrowth();
 	SpawnNewSnakeEveryXSeconds(Window);
 	DecreaseSpeedEveryXSeconds();
+	CheckInteractWithFlower();
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -170,7 +171,7 @@ void GameProcessGameState::UpdateSnakes(sf::RenderWindow& Window)
 
 void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window)
 {
-	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	 // TODO: change to Timer
+	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	   // TODO: change to Timer
 	{
 		sf::Mouse Mouse;
 		sf::Vector2i MousePosition = Mouse.getPosition(Window);
@@ -210,7 +211,7 @@ void GameProcessGameState::SnakeAutoGrowth()
 
 void GameProcessGameState::SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window)
 {
-	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)	 // TODO: change to Timer
+	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)	  // TODO: change to Timer
 	{
 		if (FlowerPool_.Size())
 		{
@@ -222,7 +223,7 @@ void GameProcessGameState::SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window)
 
 void GameProcessGameState::DecreaseSpeedEveryXSeconds()
 {
-	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)	 // TODO: change to Timer
+	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)	  // TODO: change to Timer
 	{
 		for (Snake& Snake : Snakes_)
 		{
@@ -230,5 +231,23 @@ void GameProcessGameState::DecreaseSpeedEveryXSeconds()
 		}
 
 		SnakeConfig_.LastDecreaseSpeed = clock();
+	}
+}
+
+void GameProcessGameState::CheckInteractWithFlower()
+{
+	for (Snake& Snake_ : Snakes_)
+	{
+		for (auto It = FlowerPool_.begin(); It != FlowerPool_.end();)
+		{
+			if (Snake_.InteractWithSprite(It->GetMainSprite()))
+			{
+				It = FlowerPool_.Erase(It);
+			}
+			else
+			{
+				++It;
+			}
+		}
 	}
 }

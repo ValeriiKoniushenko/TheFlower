@@ -50,6 +50,7 @@ private:
 	void SnakeAutoGrowth();
 	void SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window);
 	void DecreaseSpeedEveryXSeconds();
+	void CheckInteractWithFlower();
 
 private:
 	sf::Texture MapBackgroundTexture_;

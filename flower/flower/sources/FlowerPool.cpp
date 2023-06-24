@@ -76,3 +76,8 @@ std::vector<Flower>::iterator FlowerPool::end()
 {
 	return Flowers_.end();
 }
+
+std::vector<Flower>::iterator FlowerPool::Erase(const std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Flower>>>& It)
+{
+	return Flowers_.erase(It);
+}

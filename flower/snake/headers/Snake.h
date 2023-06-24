@@ -53,6 +53,7 @@ public:
 	void Increase(__int32 MaxSize);
 
 	void DecreaseSpeedBy(float Percent);
+	bool InteractWithSprite(const sf::Sprite& Sprite) const;
 
 private:
 	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;

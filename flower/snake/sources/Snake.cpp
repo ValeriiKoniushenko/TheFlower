@@ -159,3 +159,16 @@ void Snake::DecreaseSpeedBy(float Percent)
 {
 	Speed *= 1.f - Percent;
 }
+
+bool Snake::InteractWithSprite(const sf::Sprite& Sprite) const
+{
+	for (const sf::Sprite& Sprite_ : Sprites_)
+	{
+		if (Sprite_.getGlobalBounds().intersects(Sprite.getGlobalBounds()))
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
