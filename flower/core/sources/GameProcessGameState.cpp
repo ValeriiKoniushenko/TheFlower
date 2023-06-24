@@ -125,6 +125,15 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		}
 		SnakeConfig_.LastGrowth = clock();
 	}
+
+	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)
+	{
+		if (FlowerPool_.Size())
+		{
+			SpawnSnakeAtRandomPosition(Window);
+		}
+		SnakeConfig_.LastSpawnTime = clock();
+	}
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
