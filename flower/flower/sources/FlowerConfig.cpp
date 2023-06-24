@@ -30,6 +30,8 @@ void FlowerConfig::Serialize()
 {
 	AddToSerialize("PlantFrequency", PlantFrequency);
 	AddToSerialize("PlantCosts", PlantCosts);
+	AddToSerialize("IncomeFrequency", IncomeFrequency);
+	AddToSerialize("IncomeAmount", IncomeAmount);
 
 	Serializer::Serialize();
 }
@@ -41,6 +43,8 @@ void FlowerConfig::Deserialize()
 	LastPlant = 0;
 	PlantFrequency = GetFromSerializer<decltype(PlantFrequency)>("PlantFrequency");
 	PlantCosts = GetFromSerializer<decltype(PlantCosts)>("PlantCosts");
+	IncomeFrequency = GetFromSerializer<decltype(IncomeFrequency)>("IncomeFrequency");
+	IncomeAmount = GetFromSerializer<decltype(IncomeAmount)>("IncomeAmount");
 }
 
 FlowerConfig::~FlowerConfig()

@@ -36,4 +36,6 @@ public:
 	clock_t LastPlant = 0;
 	clock_t PlantFrequency = 500;
 	__int64 PlantCosts = 50;
+	clock_t IncomeFrequency = 3000;
+	clock_t IncomeAmount = 5;
 };

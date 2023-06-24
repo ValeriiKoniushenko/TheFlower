@@ -71,6 +71,14 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		sf::Mouse Mouse;
 		PlantAt(Mouse.getPosition(Window));
 	}
+
+	if (clock() - LastIncome > FlowerConfig_.IncomeFrequency)	 // TODO: change to Timer
+	{
+		Player_.AddMoney(Flowers_.size() * FlowerConfig_.IncomeAmount);
+		CoinCount_.setString(
+			std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
+		LastIncome = clock();
+	}
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -90,7 +98,7 @@ bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
 
 void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
 {
-	if (clock() - FlowerConfig_.LastPlant >= FlowerConfig_.PlantFrequency)
+	if (clock() - FlowerConfig_.LastPlant >= FlowerConfig_.PlantFrequency)	  // TODO: added timer system
 	{
 		if (Player_.CanApproveTransaction(FlowerConfig_.PlantCosts))
 		{

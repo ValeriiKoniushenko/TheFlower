@@ -49,6 +49,7 @@ private:
 	sf::Text CoinCount_;
 
 	FlowerConfig FlowerConfig_;
+	clock_t LastIncome = 0;
 
 	std::vector<Flower> Flowers_;
 	Player Player_;
