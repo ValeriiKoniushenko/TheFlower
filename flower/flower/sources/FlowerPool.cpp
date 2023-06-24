@@ -20,39 +20,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include "Flower.h"
-#include "FlowerConfig.h"
 #include "FlowerPool.h"
-#include "GameStateBase.h"
-#include "Map.h"
-#include "Player.h"
 
-class GameProcessGameState : public GameStateBase
+FlowerPool::FlowerPool() :
+	Serializer("FlowerPool.json")
 {
-public:
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+}
 
-private:
-	bool HaveToPlant(sf::RenderWindow& Window);
-	void PlantAt(const sf::Vector2i& PositionAtWindow);
+FlowerPool::~FlowerPool()
+{
+	Serialize();
+}
 
-private:
-	sf::Texture MapBackgroundTexture_;
-	sf::Texture FlowerTexture_;
+void FlowerPool::Serialize()
+{
 
-	// TODO: move to a common widget
-	sf::Texture CoinTexture_;
-	sf::Sprite Coin_;
-	sf::Text CoinCount_;
 
-	FlowerConfig FlowerConfig_;
-	clock_t LastIncome = 0;
+	Serializer::Serialize();
+}
 
-	FlowerPool FlowerPool_;
-	Player Player_;
-	Map Map_;
-};
+void FlowerPool::Deserialize()
+{
+	Serializer::Deserialize();
+}
+
+std::size_t FlowerPool::Size() const
+{
+	return Flowers_.size();
+}
+
+void FlowerPool::Push(const Flower& NewFlower)
+{
+	Flowers_.push_back(NewFlower);
+}
+
+std::vector<Flower>::iterator FlowerPool::begin()
+{
+	return Flowers_.begin();
+}
+
+std::vector<Flower>::iterator FlowerPool::end()
+{
+	return Flowers_.end();
+}

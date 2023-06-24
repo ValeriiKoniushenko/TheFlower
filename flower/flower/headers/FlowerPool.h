@@ -23,36 +23,25 @@
 #pragma once
 
 #include "Flower.h"
-#include "FlowerConfig.h"
-#include "FlowerPool.h"
-#include "GameStateBase.h"
-#include "Map.h"
-#include "Player.h"
+#include "Serializer.h"
 
-class GameProcessGameState : public GameStateBase
+#include <vector>
+
+class FlowerPool : public Serializer
 {
 public:
-	void Prepare() override;
-	void Draw(sf::RenderWindow& Window) override;
-	void UpdateUi(sf::RenderWindow& Window) override;
+	FlowerPool();
+	~FlowerPool() override;
+
+	void Serialize() override;
+	void Deserialize() override;
+
+	void Push(const Flower& NewFlower);
+	_NODISCARD std::size_t Size() const;
+
+	std::vector<Flower>::iterator begin();
+	std::vector<Flower>::iterator end();
 
 private:
-	bool HaveToPlant(sf::RenderWindow& Window);
-	void PlantAt(const sf::Vector2i& PositionAtWindow);
-
-private:
-	sf::Texture MapBackgroundTexture_;
-	sf::Texture FlowerTexture_;
-
-	// TODO: move to a common widget
-	sf::Texture CoinTexture_;
-	sf::Sprite Coin_;
-	sf::Text CoinCount_;
-
-	FlowerConfig FlowerConfig_;
-	clock_t LastIncome = 0;
-
-	FlowerPool FlowerPool_;
-	Player Player_;
-	Map Map_;
+	std::vector<Flower> Flowers_;
 };

@@ -54,7 +54,7 @@ void GameProcessGameState::Draw(sf::RenderWindow& Window)
 	Window.clear(sf::Color::White);
 
 	Map_.Draw(Window);
-	for (Flower& Flower_ : Flowers_)
+	for (Flower& Flower_ : FlowerPool_)
 	{
 		Flower_.Draw(Window);
 	}
@@ -74,7 +74,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 
 	if (clock() - LastIncome > FlowerConfig_.IncomeFrequency)	 // TODO: change to Timer
 	{
-		Player_.AddMoney(Flowers_.size() * FlowerConfig_.IncomeAmount);
+		Player_.AddMoney(FlowerPool_.Size() * FlowerConfig_.IncomeAmount);
 		CoinCount_.setString(
 			std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
 		LastIncome = clock();
@@ -107,7 +107,7 @@ void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
 			Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
 				static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
 
-			Flowers_.emplace_back(Flower_);
+			FlowerPool_.Push(Flower_);
 			Player_.AddMoney(-FlowerConfig_.PlantCosts);
 			CoinCount_.setString(
 				std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
