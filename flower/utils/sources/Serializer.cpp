@@ -55,3 +55,18 @@ std::filesystem::path Serializer::GetSavePath() const
 {
 	return SaveDirectory.string() + "/" + SaveFileName_;
 }
+
+void Serializer::AddToSerialize(const std::string& Key, const boost::property_tree::ptree& PTree)
+{
+	PTree_.put_child(Key, PTree);
+}
+
+boost::property_tree::ptree::iterator Serializer::Begin()
+{
+	return PTree_.begin();
+}
+
+boost::property_tree::ptree::iterator Serializer::End()
+{
+	return PTree_.end();
+}

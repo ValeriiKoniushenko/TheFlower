@@ -39,12 +39,16 @@ public:
 
 	template <class T>
 	void AddToSerialize(const std::string& Key, const T& Value);
+	void AddToSerialize(const std::string& Key, const boost::property_tree::ptree& PTree);
 
 	template <class T>
 	T GetFromSerializer(const std::string& Key);
 
 	virtual void Serialize();
 	virtual void Deserialize();
+
+	boost::property_tree::ptree::iterator Begin();
+	boost::property_tree::ptree::iterator End();
 
 	inline static const std::filesystem::path SaveDirectory = "save";
 

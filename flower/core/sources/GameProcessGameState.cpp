@@ -26,6 +26,13 @@ void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
 
+	FlowerTexture_.loadFromFile("assets/images/flower.png");
+
+	FlowerPool_.Deserialize();
+	for (Flower& Flower_ : FlowerPool_)
+	{
+		Flower_.GetMainSprite().setTexture(FlowerTexture_);
+	}
 	FlowerConfig_.Deserialize();
 	Player_.Deserialize();
 	Map_.Deserialize();
@@ -43,8 +50,6 @@ void GameProcessGameState::Prepare()
 	CoinCount_.setString(std::to_string(Player_.GetMoney()) + "$");
 	CoinCount_.setCharacterSize(36);
 	CoinCount_.setPosition(120.f, 35.f);	// TODO: make auto align
-
-	FlowerTexture_.loadFromFile("assets/images/flower.png");
 
 	Map_.GetMapBackground().setTexture(MapBackgroundTexture_);
 }

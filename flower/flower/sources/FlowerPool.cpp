@@ -22,8 +22,7 @@
 
 #include "FlowerPool.h"
 
-FlowerPool::FlowerPool() :
-	Serializer("FlowerPool.json")
+FlowerPool::FlowerPool() : Serializer("FlowerPool.json")
 {
 }
 
@@ -34,7 +33,13 @@ FlowerPool::~FlowerPool()
 
 void FlowerPool::Serialize()
 {
+	boost::property_tree::ptree Array;
+	for (Flower& Flower_ : Flowers_)
+	{
+		Array.push_back(std::make_pair("", Flower_.ToJSON()));
+	}
 
+	AddToSerialize("Flowers", Array);
 
 	Serializer::Serialize();
 }
@@ -42,6 +47,14 @@ void FlowerPool::Serialize()
 void FlowerPool::Deserialize()
 {
 	Serializer::Deserialize();
+
+	auto FlowerKey = Begin()->second;
+	for (auto It = FlowerKey.begin(); It != FlowerKey.end(); ++It)
+	{
+		Flower Temp;
+		Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
+		Flowers_.push_back(Temp);
+	}
 }
 
 std::size_t FlowerPool::Size() const
