@@ -56,6 +56,7 @@ private:
 
 	SnakeConfig SnakeConfig_;
 	std::vector<Snake> Snakes_;
+	clock_t LastErase = 0;
 
 	FlowerConfig FlowerConfig_;
 	clock_t LastIncome = 0;

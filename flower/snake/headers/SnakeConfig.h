@@ -38,4 +38,5 @@ public:
 	clock_t SpawnEveryXSeconds = 5;
 	clock_t SpeedUpEffectLength = 5;
 	float SpeedUpEffectStrength = 2.f;
+	clock_t EraseFrequency = 100;
 };

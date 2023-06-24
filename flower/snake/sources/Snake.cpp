@@ -22,6 +22,8 @@
 
 #include "Snake.h"
 
+#include <iostream>
+
 Snake::Snake(__int32 StartSize) : generator(time(nullptr))
 {
 	Sprites_.resize(StartSize);
@@ -61,19 +63,27 @@ void Snake::SetPosition(sf::Vector2f NewPosition)
 
 void Snake::Update(sf::Window& Window)
 {
+	if (Size() == 0)
+	{
+		return;
+	}
+
 	if (clock() - LastUpdate < UpdateFrequency)
 	{
 		return;
 	}
 
-	if (MoveToPoint.x == 0 && MoveToPoint.y == 0 || IsNearlyToPoint(MoveToPoint, Sprites_.begin()->getPosition()))
+	if (!Sprites_.empty())
 	{
-		std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
-		std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
+		if (MoveToPoint.x == 0 && MoveToPoint.y == 0 || IsNearlyToPoint(MoveToPoint, Sprites_.begin()->getPosition()))
+		{
+			std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
+			std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
 
-		MoveToPoint.x = distributionByWidth(generator);
-		MoveToPoint.y = distributionByHeight(generator);
-		Direction = Normalize((MoveToPoint - Sprites_.begin()->getPosition()));
+			MoveToPoint.x = distributionByWidth(generator);
+			MoveToPoint.y = distributionByHeight(generator);
+			Direction = Normalize((MoveToPoint - Sprites_.begin()->getPosition()));
+		}
 	}
 
 	for (auto It = Sprites_.begin(); It != Sprites_.end(); ++It)
@@ -110,4 +120,25 @@ sf::Vector2f Snake::Normalize(const sf::Vector2f& source) const
 	}
 
 	return source;
+}
+
+void Snake::Bobtail()
+{
+	Sprites_.pop_back();
+}
+
+std::size_t Snake::Size() const
+{
+	return Sprites_.size();
+}
+
+bool Snake::Contains(sf::Vector2f Point) const
+{
+	for (const sf::Sprite& Sprite : Sprites_)
+	{
+		if (Sprite.getGlobalBounds().contains(Point))
+			return true;
+	}
+
+	return false;
 }

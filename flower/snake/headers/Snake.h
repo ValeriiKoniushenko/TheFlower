@@ -42,15 +42,21 @@ public:
 	void SetTexture(sf::Texture& Texture);
 	void SetPosition(sf::Vector2f NewPosition);
 
+	_NODISCARD std::size_t Size() const;
+
 	void Update(sf::Window& Window);
+	bool Contains(sf::Vector2f Point) const;
 
 	inline static constexpr float GapBetweenNodes = 50;	   // px
+
+	void Bobtail();
+
 private:
 	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;
-	sf::Vector2f Normalize(const sf::Vector2f& source) const;
+	sf::Vector2f Normalize(const sf::Vector2f& source) const;	 // TODO: move to Utils
 
 	template <typename T>
-	T Vector2Distance(const sf::Vector2<T>& A, const sf::Vector2<T>& B)
+	T Vector2Distance(const sf::Vector2<T>& A, const sf::Vector2<T>& B)	   // TODO: move to Utils
 	{
 		return (fabs(sqrt(((A.x - B.x) * (A.x - B.x)) + ((A.y - B.y) * (A.y - B.y)))));
 	}
