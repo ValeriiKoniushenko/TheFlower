@@ -94,11 +94,10 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		LastIncome = clock();
 	}
 
-	for (auto It = Snakes_.begin(); It != Snakes_.end(); ++It)
+	for (auto& Snake : Snakes_)
 	{
-		It->Update(Window);
+		Snake.Update(Window);
 	}
-
 
 	if (clock() - LastErase > SnakeConfig_.EraseFrequency)
 	{
@@ -108,7 +107,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		{
 			if (It->Contains(sf::Vector2f(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y))))
 			{
-				if (Mouse.isButtonPressed(sf::Mouse::Button::Left)) // TODO: move to input Mapping
+				if (Mouse.isButtonPressed(sf::Mouse::Button::Left))	   // TODO: move to input Mapping
 				{
 					It->Bobtail();
 				}
