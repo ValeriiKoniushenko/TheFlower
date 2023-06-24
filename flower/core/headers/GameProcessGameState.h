@@ -28,6 +28,8 @@
 #include "GameStateBase.h"
 #include "Map.h"
 #include "Player.h"
+#include "Snake.h"
+#include "SnakeConfig.h"
 
 class GameProcessGameState : public GameStateBase
 {
@@ -38,16 +40,22 @@ public:
 
 private:
 	bool HaveToPlant(sf::RenderWindow& Window);
-	void PlantAt(const sf::Vector2i& PositionAtWindow);
+	void PlantAt(const sf::Vector2i& PositionAtWindow, sf::RenderWindow& Window);
+	void SpawnFlowerAt(const sf::Vector2i& PositionAtWindow);
+	void SpawnSnakeAtRandomPosition(sf::RenderWindow& Window);
 
 private:
 	sf::Texture MapBackgroundTexture_;
 	sf::Texture FlowerTexture_;
+	sf::Texture SnakeTexture_;
 
 	// TODO: move to a common widget
 	sf::Texture CoinTexture_;
 	sf::Sprite Coin_;
 	sf::Text CoinCount_;
+
+	SnakeConfig SnakeConfig_;
+	std::vector<Snake> Snakes_;
 
 	FlowerConfig FlowerConfig_;
 	clock_t LastIncome = 0;

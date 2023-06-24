@@ -22,17 +22,21 @@
 
 #include "GameProcessGameState.h"
 
+#include <random>
+
 void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
 
 	FlowerTexture_.loadFromFile("assets/images/flower.png");
+	SnakeTexture_.loadFromFile("assets/images/snake.png");
 
 	FlowerPool_.Deserialize();
 	for (Flower& Flower_ : FlowerPool_)
 	{
 		Flower_.GetMainSprite().setTexture(FlowerTexture_);
 	}
+	SnakeConfig_.Deserialize();
 	FlowerConfig_.Deserialize();
 	Player_.Deserialize();
 	Map_.Deserialize();
@@ -63,6 +67,11 @@ void GameProcessGameState::Draw(sf::RenderWindow& Window)
 	{
 		Flower_.Draw(Window);
 	}
+	for (Snake& Snake_ : Snakes_)
+	{
+		Snake_.Draw(Window);
+	}
+
 	Window.draw(Coin_);
 	Window.draw(CoinCount_);
 
@@ -74,7 +83,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	if (HaveToPlant(Window))
 	{
 		sf::Mouse Mouse;
-		PlantAt(Mouse.getPosition(Window));
+		PlantAt(Mouse.getPosition(Window), Window);
 	}
 
 	if (clock() - LastIncome > FlowerConfig_.IncomeFrequency)	 // TODO: change to Timer
@@ -83,6 +92,11 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 		CoinCount_.setString(
 			std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
 		LastIncome = clock();
+	}
+
+	for (Snake& Snake_ : Snakes_)
+	{
+		Snake_.Update(Window);
 	}
 }
 
@@ -101,22 +115,42 @@ bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
 	return false;
 }
 
-void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow)
+void GameProcessGameState::PlantAt(const sf::Vector2i& PositionAtWindow, sf::RenderWindow& Window)
 {
 	if (clock() - FlowerConfig_.LastPlant >= FlowerConfig_.PlantFrequency)	  // TODO: added timer system
 	{
 		if (Player_.CanApproveTransaction(FlowerConfig_.PlantCosts))
 		{
-			Flower Flower_;
-			Flower_.GetMainSprite().setTexture(FlowerTexture_);
-			Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
-				static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
+			SpawnSnakeAtRandomPosition(Window);
+			SpawnFlowerAt(PositionAtWindow);
 
-			FlowerPool_.Push(Flower_);
 			Player_.AddMoney(-FlowerConfig_.PlantCosts);
 			CoinCount_.setString(
 				std::to_string(Player_.GetMoney()) + "$");	  // TODO: create Delegate system and change it using a delegate
 		}
 		FlowerConfig_.LastPlant = clock();
 	}
+}
+
+void GameProcessGameState::SpawnFlowerAt(const sf::Vector2i& PositionAtWindow)
+{
+	Flower Flower_;
+	Flower_.GetMainSprite().setTexture(FlowerTexture_);
+	Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
+		static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
+
+	FlowerPool_.Push(Flower_);
+}
+
+void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
+{
+	Snake Snake_(SnakeConfig_.StartSize);
+	Snake_.SetTexture(SnakeTexture_);
+
+	std::default_random_engine generator(time(nullptr));
+	std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
+	std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
+	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});
+
+	Snakes_.emplace_back(Snake_);
 }

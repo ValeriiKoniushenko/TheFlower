@@ -1,8 +1,3 @@
-// MIT License
-//
-// Copyright (c) 2023 Valerii Koniushenko
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -20,34 +15,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "FlowerConfig.h"
+#pragma once
 
-FlowerConfig::FlowerConfig() : Serializer("FlowerConfig.json")
+#include "Serializer.h"
+
+struct SnakeConfig : public Serializer
 {
-}
+public:
+	SnakeConfig();
+	~SnakeConfig() override;
+	SnakeConfig(const SnakeConfig&) = default;
+	SnakeConfig(SnakeConfig&&) = default;
+	SnakeConfig& operator=(const SnakeConfig&) = default;
+	SnakeConfig& operator=(SnakeConfig&&) = default;
 
-FlowerConfig::~FlowerConfig()
-{
-	Serialize();
-}
+	void Serialize() override;
+	void Deserialize() override;
 
-void FlowerConfig::Serialize()
-{
-	AddToSerialize("PlantFrequency", PlantFrequency);
-	AddToSerialize("PlantCosts", PlantCosts);
-	AddToSerialize("IncomeFrequency", IncomeFrequency);
-	AddToSerialize("IncomeAmount", IncomeAmount);
-
-	Serializer::Serialize();
-}
-
-void FlowerConfig::Deserialize()
-{
-	Serializer::Deserialize();
-
-	LastPlant = 0;
-	PlantFrequency = GetFromSerializer<decltype(PlantFrequency)>("PlantFrequency");
-	PlantCosts = GetFromSerializer<decltype(PlantCosts)>("PlantCosts");
-	IncomeFrequency = GetFromSerializer<decltype(IncomeFrequency)>("IncomeFrequency");
-	IncomeAmount = GetFromSerializer<decltype(IncomeAmount)>("IncomeAmount");
-}
+	clock_t LastSpawnTime = 0;
+	__int32 StartSize = 2;
+	clock_t GrowthSpeed = 3;
+	clock_t SpawnEveryXSeconds = 5;
+	clock_t SpeedUpEffectLength = 5;
+	float SpeedUpEffectStrength = 2.f;
+};

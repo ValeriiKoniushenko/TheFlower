@@ -22,16 +22,45 @@
 
 #pragma once
 
-#include "Serializer.h"
+#include "SceneObject.h"
 
-class Snake : public Serializer
+#include <random>
+
+class Snake : public SceneObject
 {
 public:
-	Snake() = default;
+	Snake(__int32 StartSize = 2);
 	~Snake() = default;
 	Snake(const Snake&) = default;
 	Snake(Snake&&) = default;
 	Snake& operator=(const Snake&) = default;
 	Snake& operator=(Snake&&) = default;
 
+	void Draw(sf::RenderWindow& Window) override;
+	boost::property_tree::ptree ToJSON() const override;
+
+	void SetTexture(sf::Texture& Texture);
+	void SetPosition(sf::Vector2f NewPosition);
+
+	void Update(sf::Window& Window);
+
+	inline static constexpr float GapBetweenNodes = 50;	   // px
+private:
+	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;
+	sf::Vector2f Normalize(const sf::Vector2f& source) const;
+
+	template <typename T>
+	T Vector2Distance(const sf::Vector2<T>& A, const sf::Vector2<T>& B)
+	{
+		return (fabs(sqrt(((A.x - B.x) * (A.x - B.x)) + ((A.y - B.y) * (A.y - B.y)))));
+	}
+
+private:
+	sf::Texture* TextureP_ = nullptr;
+	std::vector<sf::Sprite> Sprites_;
+	sf::Vector2f MoveToPoint;
+	sf::Vector2f Direction;
+	clock_t LastUpdate = 0;
+	clock_t UpdateFrequency = 8;	// 1000ms / 120FPS = 8
+	std::default_random_engine generator;
 };

@@ -1,8 +1,3 @@
-// MIT License
-//
-// Copyright (c) 2023 Valerii Koniushenko
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -20,34 +15,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "FlowerConfig.h"
+#include "SnakeConfig.h"
 
-FlowerConfig::FlowerConfig() : Serializer("FlowerConfig.json")
+SnakeConfig::SnakeConfig() : Serializer("SnakeConfig.json")
 {
 }
 
-FlowerConfig::~FlowerConfig()
+SnakeConfig::~SnakeConfig()
 {
 	Serialize();
 }
 
-void FlowerConfig::Serialize()
+void SnakeConfig::Serialize()
 {
-	AddToSerialize("PlantFrequency", PlantFrequency);
-	AddToSerialize("PlantCosts", PlantCosts);
-	AddToSerialize("IncomeFrequency", IncomeFrequency);
-	AddToSerialize("IncomeAmount", IncomeAmount);
+	AddToSerialize("StartSize", StartSize);
+	AddToSerialize("GrowthSpeed", GrowthSpeed);
+	AddToSerialize("SpawnEveryXSeconds", SpawnEveryXSeconds);
+	AddToSerialize("SpeedUpEffectLength", SpeedUpEffectLength);
+	AddToSerialize("SpeedUpEffectStrength", SpeedUpEffectStrength);
 
 	Serializer::Serialize();
 }
 
-void FlowerConfig::Deserialize()
+void SnakeConfig::Deserialize()
 {
 	Serializer::Deserialize();
 
-	LastPlant = 0;
-	PlantFrequency = GetFromSerializer<decltype(PlantFrequency)>("PlantFrequency");
-	PlantCosts = GetFromSerializer<decltype(PlantCosts)>("PlantCosts");
-	IncomeFrequency = GetFromSerializer<decltype(IncomeFrequency)>("IncomeFrequency");
-	IncomeAmount = GetFromSerializer<decltype(IncomeAmount)>("IncomeAmount");
+	LastSpawnTime = 0;
+	StartSize = GetFromSerializer<decltype(StartSize)>("StartSize");
+	GrowthSpeed = GetFromSerializer<decltype(GrowthSpeed)>("GrowthSpeed");
+	SpawnEveryXSeconds = GetFromSerializer<decltype(SpawnEveryXSeconds)>("SpawnEveryXSeconds");
+	SpeedUpEffectLength = GetFromSerializer<decltype(SpeedUpEffectLength)>("SpeedUpEffectLength");
+	SpeedUpEffectStrength = GetFromSerializer<decltype(SpeedUpEffectStrength)>("SpeedUpEffectStrength");
 }
