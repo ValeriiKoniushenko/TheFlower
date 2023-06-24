@@ -20,65 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "FlowerPool.h"
+#pragma once
 
-FlowerPool::FlowerPool() :
-	Serializer("FlowerPool.json")
+#include "Serializer.h"
+#include "Snake.h"
+
+#include <vector>
+
+class SnakePool : public Serializer
 {
-}
+public:
+	SnakePool();
+	~SnakePool() override;
 
-FlowerPool::~FlowerPool()
-{
-	Serialize();
-}
+	void Serialize() override;
+	void Deserialize() override;
 
-void FlowerPool::Serialize()
-{
-	boost::property_tree::ptree Array;
-	for (Flower& Flower_ : Flowers_)
-	{
-		Array.push_back(std::make_pair("", Flower_.ToJSON()));
-	}
+	void Push(const Snake& NewFlower);
+	_NODISCARD std::size_t Size() const;
 
-	AddToSerialize("Flowers", Array);
+	std::vector<Snake>::iterator begin();
+	std::vector<Snake>::iterator end();
 
-	Serializer::Serialize();
-}
+	void SetSnakeTexture(sf::Texture& Texture);
 
-void FlowerPool::Deserialize()
-{
-	Serializer::Deserialize();
-
-	auto FlowerKey = Begin()->second;
-	for (auto It = FlowerKey.begin(); It != FlowerKey.end(); ++It)
-	{
-		Flower Temp;
-		Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
-		Flowers_.push_back(Temp);
-	}
-}
-
-std::size_t FlowerPool::Size() const
-{
-	return Flowers_.size();
-}
-
-void FlowerPool::Push(const Flower& NewFlower)
-{
-	Flowers_.push_back(NewFlower);
-}
-
-std::vector<Flower>::iterator FlowerPool::begin()
-{
-	return Flowers_.begin();
-}
-
-std::vector<Flower>::iterator FlowerPool::end()
-{
-	return Flowers_.end();
-}
-
-std::vector<Flower>::iterator FlowerPool::Erase(const std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Flower>>>& It)
-{
-	return Flowers_.erase(It);
-}
+private:
+	std::vector<Snake> Snakes_;
+	sf::Texture* TextureP_ = nullptr;
+};

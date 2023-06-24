@@ -48,7 +48,11 @@ void Snake::SetTexture(sf::Texture& Texture)
 
 boost::property_tree::ptree Snake::ToJSON() const
 {
-	return boost::property_tree::ptree();
+	boost::property_tree::ptree PTree;
+	PTree.put("x", Sprites_.begin()->getPosition().x);
+	PTree.put("y", Sprites_.begin()->getPosition().y);
+
+	return PTree;
 }
 
 void Snake::SetPosition(sf::Vector2f NewPosition)
@@ -150,8 +154,14 @@ void Snake::Increase(__int32 MaxSize)
 	if (Sprites_.size() < MaxSize)
 	{
 		Sprites_.resize(Sprites_.size() + 1);
-		(Sprites_.end() - 1)->setTexture(*TextureP_);
-		(Sprites_.end() - 1)->setPosition((Sprites_.end() - 2)->getPosition());
+		if (Sprites_.size() >= 1 && TextureP_)
+		{
+			(Sprites_.end() - 1)->setTexture(*TextureP_);
+		}
+		if (Sprites_.size() >= 2)
+		{
+			(Sprites_.end() - 1)->setPosition((Sprites_.end() - 2)->getPosition());
+		}
 	}
 }
 

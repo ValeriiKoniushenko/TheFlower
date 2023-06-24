@@ -31,7 +31,9 @@ void GameProcessGameState::Prepare()
 	FlowerTexture_.loadFromFile("assets/images/flower.png");
 	SnakeTexture_.loadFromFile("assets/images/snake.png");
 
+	SnakePool_.Deserialize();
 	FlowerPool_.Deserialize();
+	SnakePool_.SetSnakeTexture(SnakeTexture_);
 	for (Flower& Flower_ : FlowerPool_)
 	{
 		Flower_.GetMainSprite().setTexture(FlowerTexture_);
@@ -67,7 +69,7 @@ void GameProcessGameState::Draw(sf::RenderWindow& Window)
 	{
 		Flower_.Draw(Window);
 	}
-	for (Snake& Snake_ : Snakes_)
+	for (Snake& Snake_ : SnakePool_)
 	{
 		Snake_.Draw(Window);
 	}
@@ -147,7 +149,7 @@ void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
 	std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
 	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});
 
-	Snakes_.emplace_back(Snake_);
+	SnakePool_.Push(Snake_);
 }
 
 void GameProcessGameState::AddMoneyEveryXSeconds()
@@ -163,7 +165,7 @@ void GameProcessGameState::AddMoneyEveryXSeconds()
 
 void GameProcessGameState::UpdateSnakes(sf::RenderWindow& Window)
 {
-	for (auto& Snake : Snakes_)
+	for (auto& Snake : SnakePool_)
 	{
 		Snake.Update(Window);
 	}
@@ -175,7 +177,7 @@ void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window
 	{
 		sf::Mouse Mouse;
 		sf::Vector2i MousePosition = Mouse.getPosition(Window);
-		for (auto It = Snakes_.begin(); It != Snakes_.end(); ++It)
+		for (auto It = SnakePool_.begin(); It != SnakePool_.end(); ++It)
 		{
 			if (It->Contains(sf::Vector2f(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y))))
 			{
@@ -194,7 +196,7 @@ void GameProcessGameState::SnakeAutoGrowth()
 {
 	if (clock() - SnakeConfig_.LastGrowth > SnakeConfig_.GrowthFrequency)	 // TODO: change to Timer
 	{
-		for (auto& Snake : Snakes_)
+		for (auto& Snake : SnakePool_)
 		{
 			if (FlowerPool_.Size() >= 2)
 			{
@@ -225,7 +227,7 @@ void GameProcessGameState::DecreaseSpeedEveryXSeconds()
 {
 	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)	  // TODO: change to Timer
 	{
-		for (Snake& Snake : Snakes_)
+		for (Snake& Snake : SnakePool_)
 		{
 			Snake.DecreaseSpeedBy(SnakeConfig_.DecreaseSpeedCounter);
 		}
@@ -236,7 +238,7 @@ void GameProcessGameState::DecreaseSpeedEveryXSeconds()
 
 void GameProcessGameState::CheckInteractWithFlower()
 {
-	for (Snake& Snake_ : Snakes_)
+	for (Snake& Snake_ : SnakePool_)
 	{
 		for (auto It = FlowerPool_.begin(); It != FlowerPool_.end();)
 		{

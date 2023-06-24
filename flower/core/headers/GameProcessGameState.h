@@ -30,6 +30,7 @@
 #include "Player.h"
 #include "Snake.h"
 #include "SnakeConfig.h"
+#include "SnakePool.h"
 
 class GameProcessGameState : public GameStateBase
 {
@@ -63,7 +64,7 @@ private:
 	sf::Text CoinCount_;
 
 	SnakeConfig SnakeConfig_;
-	std::vector<Snake> Snakes_;
+	SnakePool SnakePool_;
 
 	FlowerConfig FlowerConfig_;
 	clock_t LastIncome = 0;

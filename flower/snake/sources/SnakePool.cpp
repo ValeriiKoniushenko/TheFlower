@@ -20,65 +20,68 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "FlowerPool.h"
+#include "SnakePool.h"
 
-FlowerPool::FlowerPool() :
-	Serializer("FlowerPool.json")
+SnakePool::SnakePool() : Serializer("SnakePool.json")
 {
 }
 
-FlowerPool::~FlowerPool()
+SnakePool::~SnakePool()
 {
 	Serialize();
 }
 
-void FlowerPool::Serialize()
+void SnakePool::Serialize()
 {
 	boost::property_tree::ptree Array;
-	for (Flower& Flower_ : Flowers_)
+	for (Snake& Snake_ : Snakes_)
 	{
-		Array.push_back(std::make_pair("", Flower_.ToJSON()));
+		Array.push_back(std::make_pair("", Snake_.ToJSON()));
 	}
 
-	AddToSerialize("Flowers", Array);
+	AddToSerialize("Snakes", Array);
 
 	Serializer::Serialize();
 }
 
-void FlowerPool::Deserialize()
+void SnakePool::Deserialize()
 {
 	Serializer::Deserialize();
 
-	auto FlowerKey = Begin()->second;
-	for (auto It = FlowerKey.begin(); It != FlowerKey.end(); ++It)
+	auto SnakeKey = Begin()->second;
+	for (auto It = SnakeKey.begin(); It != SnakeKey.end(); ++It)
 	{
-		Flower Temp;
+		Snake Temp;
 		Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
-		Flowers_.push_back(Temp);
+		Snakes_.push_back(Temp);
 	}
 }
 
-std::size_t FlowerPool::Size() const
+void SnakePool::Push(const Snake& NewFlower)
 {
-	return Flowers_.size();
+	Snakes_.emplace_back(NewFlower);
 }
 
-void FlowerPool::Push(const Flower& NewFlower)
+std::size_t SnakePool::Size() const
 {
-	Flowers_.push_back(NewFlower);
+	return Snakes_.size();
 }
 
-std::vector<Flower>::iterator FlowerPool::begin()
+std::vector<Snake>::iterator SnakePool::begin()
 {
-	return Flowers_.begin();
+	return Snakes_.begin();
 }
 
-std::vector<Flower>::iterator FlowerPool::end()
+std::vector<Snake>::iterator SnakePool::end()
 {
-	return Flowers_.end();
+	return Snakes_.end();
 }
 
-std::vector<Flower>::iterator FlowerPool::Erase(const std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Flower>>>& It)
+void SnakePool::SetSnakeTexture(sf::Texture& Texture)
 {
-	return Flowers_.erase(It);
+	TextureP_ = &Texture;
+	for (Snake& Snake_ : Snakes_)
+	{
+		Snake_.SetTexture(*TextureP_);
+	}
 }
