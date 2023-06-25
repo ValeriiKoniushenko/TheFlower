@@ -3,7 +3,7 @@
     "GrowthSpeed": "3",
     "SpawnEveryXSeconds": "2",
     "SpeedUpEffectStrength": "2",
-    "EraseFrequency": "50",
+    "EraseFrequency": "150",
     "GrowthFrequency": "3000",
     "MaxSize": "10",
     "SpawnNewSnakeEveryXMs": "5000",
