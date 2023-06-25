@@ -33,6 +33,7 @@ At the start we have 150$. Using this money we can plant one flower for 50$. Aft
 - Non-discreet world
 - Scalable architecture
 - Supportable
+- Implemented animation system
 
 # 📞 Feedback & Contacts
 You can send me e-mail: Valerii.Koniushenko@gmail.com or try to find me in telegram: @markmoran24
