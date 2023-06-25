@@ -12,5 +12,9 @@ add_subdirectory(flower/program)
 add_subdirectory(flower/snake)
 add_subdirectory(flower/ui)
 add_subdirectory(flower/utils)
-add_subdirectory(dependencies/SFML-2.6.0)
+
 add_subdirectory(tests)
+add_subdirectory(benchmark)
+
+add_subdirectory(dependencies/SFML-2.6.0)
+add_subdirectory(dependencies/google-benchmark)
