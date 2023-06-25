@@ -15,6 +15,8 @@ target_link_libraries(TheFlower PUBLIC
 file(GLOB dlls "${PROJECT_BINARY_DIR}/dependencies/SFML-2.6.0/lib/*.dll")
 foreach(num IN LISTS dlls)
     add_custom_command(TARGET TheFlower PRE_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory  ${PROJECT_BINARY_DIR}/flower
+        COMMAND ${CMAKE_COMMAND} -E make_directory  ${PROJECT_BINARY_DIR}/flower/program
         COMMAND ${CMAKE_COMMAND} -E copy ${num} ${PROJECT_BINARY_DIR}/flower/program
     )
     message(STATUS ${num} " was copied to: " ${PROJECT_BINARY_DIR}/flower/program)
