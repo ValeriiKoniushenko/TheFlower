@@ -38,7 +38,11 @@ void Program::Run()
 	CreateWindow();
 
 	GameState_ = std::make_unique<MainMenuGameState>();
-	GameState_->Prepare();	  // TODO: add nullptr checking
+	if (!GameState_)
+	{
+		return;	   // TODO: add logging
+	}
+	GameState_->Prepare();
 
 	while (Window_.isOpen())
 	{

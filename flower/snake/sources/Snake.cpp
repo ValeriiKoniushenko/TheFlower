@@ -91,7 +91,7 @@ void Snake::Update(sf::Window& Window)
 
 			MoveToPoint.x = distributionByWidth(generator);
 			MoveToPoint.y = distributionByHeight(generator);
-			Direction = Math::Normalize((MoveToPoint - Sprites_.begin()->getPosition())) * Speed;
+			Direction = Math::Normalize((MoveToPoint - Sprites_.begin()->getPosition()));
 		}
 	}
 
@@ -99,14 +99,14 @@ void Snake::Update(sf::Window& Window)
 	{
 		if (It == Sprites_.begin())
 		{
-			It->move(Direction);
+			It->move(Direction * Speed);
 		}
 		else
 		{
-			auto TempDirection = Math::Normalize((It - 1)->getPosition() - It->getPosition()) * Speed;
-			if (Math::Vector2Distance(It->getPosition(), (It - 1)->getPosition()) >= 50.f)
+			auto TempDirection = Math::Normalize((It - 1)->getPosition() - It->getPosition());
+			if (Math::Vector2Distance(It->getPosition(), (It - 1)->getPosition()) >= GapBetweenNodes)
 			{
-				It->move(TempDirection);
+				It->move(TempDirection * Speed);
 			}
 		}
 	}
