@@ -49,8 +49,11 @@ void Snake::SetTexture(sf::Texture& Texture)
 boost::property_tree::ptree Snake::ToJSON() const
 {
 	boost::property_tree::ptree PTree;
-	PTree.put("x", Sprites_.begin()->getPosition().x);
-	PTree.put("y", Sprites_.begin()->getPosition().y);
+	if (Sprites_.begin() != Sprites_.end())
+	{
+		PTree.put("x", Sprites_.begin()->getPosition().x);
+		PTree.put("y", Sprites_.begin()->getPosition().y);
+	}
 
 	return PTree;
 }

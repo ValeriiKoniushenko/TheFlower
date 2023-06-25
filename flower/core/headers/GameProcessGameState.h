@@ -53,8 +53,8 @@ private:
 	void DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window);
 	void SnakeAutoGrowth();
 	void SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window);
-	void DecreaseSpeedEveryXSeconds();
 	void CheckInteractWithFlower();
+	void DecreaseSpawnSpeedEveryXSeconds();
 
 	void CheckForDefeat();
 

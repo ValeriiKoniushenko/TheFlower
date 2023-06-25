@@ -103,7 +103,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	DecreaseSnakeLengthIfClicked(Window);
 	SnakeAutoGrowth();
 	SpawnNewSnakeEveryXSeconds(Window);
-	DecreaseSpeedEveryXSeconds();
+	DecreaseSpawnSpeedEveryXSeconds();
 	CheckInteractWithFlower();
 	CheckForDefeat();
 }
@@ -226,26 +226,14 @@ void GameProcessGameState::SnakeAutoGrowth()
 
 void GameProcessGameState::SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window)
 {
-	if (clock() - SnakeConfig_.LastSpawnTime > SnakeConfig_.SpawnNewSnakeEveryXMs)	  // TODO: change to Timer
+	if (clock() - SnakeConfig_.LastSpawnTime >
+		SnakeConfig_.SpawnNewSnakeEveryXMs * SnakeConfig_.SnakeSpawnerDecreaser)	// TODO: change to Timer
 	{
 		if (FlowerPool_.Size())
 		{
 			SpawnSnakeAtRandomPosition(Window);
 		}
 		SnakeConfig_.LastSpawnTime = clock();
-	}
-}
-
-void GameProcessGameState::DecreaseSpeedEveryXSeconds()
-{
-	if (clock() - SnakeConfig_.LastDecreaseSpeed > SnakeConfig_.DecreaseSpeedEveryXMs)	  // TODO: change to Timer
-	{
-		for (Snake& Snake : SnakePool_)
-		{
-			Snake.DecreaseSpeedBy(SnakeConfig_.DecreaseSpeedCounter);
-		}
-
-		SnakeConfig_.LastDecreaseSpeed = clock();
 	}
 }
 
@@ -285,4 +273,13 @@ void GameProcessGameState::ResetUserData()
 	boost::property_tree::read_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
 	PTree.put("money", 150);	// TODO: remove a magic number -> move to config
 	boost::property_tree::write_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
+}
+
+void GameProcessGameState::DecreaseSpawnSpeedEveryXSeconds()
+{
+	if (clock() - SnakeConfig_.LastDecreaseSpawnSpeed > SnakeConfig_.DecreaseSpawnSpeedEveryXMs)	// TODO: change to Timer
+	{
+		SnakeConfig_.SnakeSpawnerDecreaser += SnakeConfig_.DecreaseSpawnSpeedFor;
+		SnakeConfig_.LastDecreaseSpawnSpeed = clock();
+	}
 }
