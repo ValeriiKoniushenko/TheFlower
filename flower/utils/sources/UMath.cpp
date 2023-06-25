@@ -20,48 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
+#include "UMath.h"
 
-#include "SceneObject.h"
+#include <cmath>
 
-#include <random>
-
-class Snake : public SceneObject
+namespace Math
 {
-public:
-	Snake(__int32 StartSize = 2);
-	~Snake() = default;
-	Snake(const Snake&) = default;
-	Snake(Snake&&) = default;
-	Snake& operator=(const Snake&) = default;
-	Snake& operator=(Snake&&) = default;
+sf::Vector2f Normalize(const sf::Vector2f& source)
+{
+	const float length = sqrt((source.x * source.x) + (source.y * source.y));
+	if (length != 0)
+	{
+		return sf::Vector2(source.x / length, source.y / length);
+	}
 
-	void Draw(sf::RenderWindow& Window) override;
-	boost::property_tree::ptree ToJSON() const override;
+	return source;
+}
 
-	void SetTexture(sf::Texture& Texture);
-	void SetPosition(sf::Vector2f NewPosition);
-
-	_NODISCARD std::size_t Size() const;
-
-	void Update(sf::Window& Window);
-	bool Contains(sf::Vector2f Point) const;
-
-	inline static constexpr float GapBetweenNodes = 50;	   // px
-
-	void Bobtail();
-	void Increase(__int32 MaxSize);
-	void SetSpeedMultiplier(float Multiplier);
-
-	bool InteractWithSprite(const sf::Sprite& Sprite) const;
-
-private:
-	sf::Texture* TextureP_ = nullptr;
-	std::vector<sf::Sprite> Sprites_;
-	sf::Vector2f MoveToPoint;
-	sf::Vector2f Direction;
-	clock_t LastUpdate = 0;
-	clock_t UpdateFrequency = 8;	// 1000ms / 120FPS = 8
-	std::default_random_engine generator;
-	float Speed = 1.f;
-};
+bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2, float E)
+{
+	return fabs(P1.x - P2.x) < E && fabs(P1.y - P2.y) < E;
+}
+}	 // namespace Math

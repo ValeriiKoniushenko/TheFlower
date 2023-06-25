@@ -22,6 +22,8 @@
 
 #include "Snake.h"
 
+#include "UMath.h"
+
 #include <iostream>
 
 Snake::Snake(__int32 StartSize) : generator(time(nullptr))
@@ -82,14 +84,14 @@ void Snake::Update(sf::Window& Window)
 
 	if (!Sprites_.empty())
 	{
-		if (MoveToPoint.x == 0 && MoveToPoint.y == 0 || IsNearlyToPoint(MoveToPoint, Sprites_.begin()->getPosition()))
+		if (MoveToPoint.x == 0 && MoveToPoint.y == 0 || Math::IsNearlyToPoint(MoveToPoint, Sprites_.begin()->getPosition()))
 		{
 			std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
 			std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
 
 			MoveToPoint.x = distributionByWidth(generator);
 			MoveToPoint.y = distributionByHeight(generator);
-			Direction = Normalize((MoveToPoint - Sprites_.begin()->getPosition())) * Speed;
+			Direction = Math::Normalize((MoveToPoint - Sprites_.begin()->getPosition())) * Speed;
 		}
 	}
 
@@ -101,8 +103,8 @@ void Snake::Update(sf::Window& Window)
 		}
 		else
 		{
-			auto TempDirection = Normalize((It - 1)->getPosition() - It->getPosition()) * Speed;
-			if (Vector2Distance(It->getPosition(), (It - 1)->getPosition()) >= 50.f)
+			auto TempDirection = Math::Normalize((It - 1)->getPosition() - It->getPosition()) * Speed;
+			if (Math::Vector2Distance(It->getPosition(), (It - 1)->getPosition()) >= 50.f)
 			{
 				It->move(TempDirection);
 			}
@@ -110,23 +112,6 @@ void Snake::Update(sf::Window& Window)
 	}
 
 	LastUpdate = clock();
-}
-
-bool Snake::IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const
-{
-	constexpr float E = 100.f;
-	return fabs(P1.x - P2.x) < E && fabs(P1.y - P2.y) < E;
-}
-
-sf::Vector2f Snake::Normalize(const sf::Vector2f& source) const
-{
-	const float length = sqrt((source.x * source.x) + (source.y * source.y));
-	if (length != 0)
-	{
-		return sf::Vector2(source.x / length, source.y / length);
-	}
-
-	return source;
 }
 
 void Snake::Bobtail()
