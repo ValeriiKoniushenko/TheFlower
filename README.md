@@ -4,8 +4,7 @@
 We should survive! Plant a flower and don't be killed by a snake!
 At the start we have 150$. Using this money we can plant one flower for 50$. After that we will get income for 5$ every 3 seconds. But, be carefully! After each planting a big Snake-Monster will be spawned! But you can kill it using your mouse-gun! Just click on the snake do murder it.
 
-
-![Animation](https://github.com/ValeriiKoniushenko/TheFlower/assets/99877553/23269175-c4bc-4f36-a610-ad1ff59b16af)
+![Animation](https://github.com/ValeriiKoniushenko/TheFlower/assets/99877553/a7989a14-ab19-40c1-8c57-61200ed0657b)
 
 # 🔧 How to install a binaries
 - Go to releases(right tab)
