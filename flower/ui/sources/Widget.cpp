@@ -22,6 +22,8 @@
 
 #include "Widget.h"
 
+#include <utility>
+
 void Widget::SetName(const std::string& Name)
 {
 	Name_ = Name;
@@ -34,26 +36,25 @@ const std::string& Widget::GetName() const
 
 void Widget::SetOnMouseLeftClickEventCallback(std::function<void(const Widget&)> OnClick)
 {
-	OnLeftClick_ = OnClick;
+	OnLeftClick_ = std::move(OnClick);
 }
 
 void Widget::SetOnMouseRightClickEventCallback(std::function<void(const Widget&)> OnClick)
 {
-	OnRightClick_ = OnClick;
+	OnRightClick_ = std::move(OnClick);
 }
 
 void Widget::Update(sf::RenderWindow& Window)
 {
-	const sf::Mouse Mouse;
-	const sf::Vector2i MousePosition = Mouse.getPosition(Window);
+	const sf::Vector2i MousePosition = sf::Mouse::getPosition(Window);
 	if (getGlobalBounds().contains(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y)))
 	{
-		if (OnLeftClick_ && Mouse.isButtonPressed(sf::Mouse::Button::Left))
+		if (OnLeftClick_ && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 		{
 			OnLeftClick_(*this);
 		}
 
-		if (OnRightClick_ && Mouse.isButtonPressed(sf::Mouse::Button::Right))
+		if (OnRightClick_ && sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
 		{
 			OnRightClick_(*this);
 		}

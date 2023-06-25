@@ -23,6 +23,7 @@
 #pragma once
 
 #include "Serializer.h"
+
 #include <SFML/Graphics.hpp>
 
 class GameStateBase;
@@ -30,14 +31,9 @@ class GameStateBase;
 class Program : public Serializer
 {
 public:
-
 public:
 	Program();
 	~Program() override;
-	Program(const Program&) = default;
-	Program(Program&&) = default;
-	Program& operator=(const Program&) = default;
-	Program& operator=(Program&&) = default;
 
 	void Run();
 	void Serialize() override;
@@ -46,6 +42,7 @@ private:
 	void CreateWindow();
 	void LifeCycle();
 	void ProcessCustomEvent();
+
 private:
 	sf::RenderWindow Window_;
 	std::unique_ptr<GameStateBase> GameState_;

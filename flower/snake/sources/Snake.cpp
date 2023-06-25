@@ -86,8 +86,8 @@ void Snake::Update(sf::Window& Window)
 	{
 		if (MoveToPoint.x == 0 && MoveToPoint.y == 0 || Math::IsNearlyToPoint(MoveToPoint, Sprites_.begin()->getPosition()))
 		{
-			std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
-			std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
+			std::uniform_real_distribution<float> distributionByWidth(0.f, static_cast<float>(Window.getSize().x));
+			std::uniform_real_distribution<float> distributionByHeight(0.f, static_cast<float>(Window.getSize().y));
 
 			MoveToPoint.x = distributionByWidth(generator);
 			MoveToPoint.y = distributionByHeight(generator);
@@ -126,15 +126,8 @@ std::size_t Snake::Size() const
 
 bool Snake::Contains(sf::Vector2f Point) const
 {
-	for (const sf::Sprite& Sprite : Sprites_)
-	{
-		if (Sprite.getGlobalBounds().contains(Point))
-		{
-			return true;
-		}
-	}
-
-	return false;
+	return std::any_of(
+		Sprites_.cbegin(), Sprites_.cend(), [&](const sf::Sprite& Sprite) { return Sprite.getGlobalBounds().contains(Point); });
 }
 
 void Snake::Increase(__int32 MaxSize)
@@ -155,15 +148,8 @@ void Snake::Increase(__int32 MaxSize)
 
 bool Snake::InteractWithSprite(const sf::Sprite& Sprite) const
 {
-	for (const sf::Sprite& Sprite_ : Sprites_)
-	{
-		if (Sprite_.getGlobalBounds().intersects(Sprite.getGlobalBounds()))
-		{
-			return true;
-		}
-	}
-
-	return false;
+	return std::any_of(Sprites_.cbegin(), Sprites_.cend(),
+		[&](const sf::Sprite& S) { return S.getGlobalBounds().intersects(Sprite.getGlobalBounds()); });
 }
 
 void Snake::SetSpeedMultiplier(float Multiplier)

@@ -22,7 +22,9 @@
 
 #include "Serializer.h"
 
-Serializer::Serializer(const std::string& SaveFileName) : SaveFileName_(SaveFileName)
+#include <utility>
+
+Serializer::Serializer(std::string SaveFileName) : SaveFileName_(std::move(SaveFileName))
 {
 }
 
@@ -34,10 +36,6 @@ void Serializer::Serialize()
 	}
 
 	boost::property_tree::write_json(GetSavePath().string(), PTree_);
-}
-
-Serializer::~Serializer()
-{
 }
 
 void Serializer::Deserialize()

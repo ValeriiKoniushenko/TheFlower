@@ -30,7 +30,7 @@ class DefeatGameState final : public GameStateBase
 {
 public:
 	DefeatGameState() = default;
-	~DefeatGameState() = default;
+	~DefeatGameState() override = default;
 	DefeatGameState(DefeatGameState&&) = default;
 	DefeatGameState(const DefeatGameState&) = default;
 	DefeatGameState& operator=(DefeatGameState&&) = default;

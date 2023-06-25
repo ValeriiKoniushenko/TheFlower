@@ -46,7 +46,7 @@ void Program::Run()
 
 	while (Window_.isOpen())
 	{
-		sf::Event Event;
+		sf::Event Event{};
 		if (Window_.pollEvent(Event))
 		{
 			if (Event.type == sf::Event::Closed)

@@ -29,7 +29,7 @@
 class Flower : public SceneObject
 {
 public:
-	Flower();
+	Flower() = default;
 	~Flower() override = default;
 	Flower(const Flower&) = default;
 	Flower(Flower&&) = default;

@@ -60,7 +60,7 @@ void Player::Deserialize()
 	SetMoney(GetFromSerializer<decltype(Money_)>("money"));
 }
 
-bool Player::CanApproveTransaction(__int64 Costs)
+bool Player::CanApproveTransaction(__int64 Costs) const
 {
 	return Money_ >= Costs;
 }

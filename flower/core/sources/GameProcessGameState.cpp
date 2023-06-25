@@ -92,8 +92,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 {
 	if (HaveToPlant(Window))
 	{
-		sf::Mouse Mouse;
-		PlantAt(Mouse.getPosition(Window), Window);
+		PlantAt(sf::Mouse::getPosition(Window), Window);
 	}
 
 	AddMoneyEveryXSeconds();
@@ -109,11 +108,10 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
 {
-	sf::Mouse Mouse;
-	sf::Vector2i MousePosition = Mouse.getPosition(Window);
+	sf::Vector2i MousePosition = sf::Mouse::getPosition(Window);
 	if (MousePosition.x > 0 && MousePosition.y > 0 && MousePosition.x < Window.getSize().x && MousePosition.y < Window.getSize().y)
 	{
-		if (Mouse.isButtonPressed(sf::Mouse::Button::Right))	// TODO: move\create to InputMapping : public Serializer
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))	 // TODO: move\create to InputMapping : public Serializer
 		{
 			return true;
 		}
@@ -143,8 +141,9 @@ void GameProcessGameState::SpawnFlowerAt(const sf::Vector2i& PositionAtWindow)
 {
 	Flower Flower_;
 	Flower_.GetMainSprite().setTexture(FlowerTexture_);
-	Flower_.SetPosition({static_cast<float>(PositionAtWindow.x) - Flower_.GetMainSprite().getTextureRect().width / 2.f,
-		static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
+	Flower_.SetPosition(
+		{static_cast<float>(PositionAtWindow.x) - static_cast<float>(Flower_.GetMainSprite().getTextureRect().width) / 2.f,
+			static_cast<float>(PositionAtWindow.y) - static_cast<float>(Flower_.GetMainSprite().getTextureRect().height) / 2.f});
 
 	FlowerPool_.Push(Flower_);
 	PlantSound_.play();
@@ -155,8 +154,8 @@ void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
 	Snake Snake_(SnakeConfig_.StartSize);
 	Snake_.SetTexture(SnakeTexture_);
 
-	std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
-	std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
+	std::uniform_real_distribution<float> distributionByWidth(0.f, static_cast<float>(Window.getSize().x));
+	std::uniform_real_distribution<float> distributionByHeight(0.f, static_cast<float>(Window.getSize().y));
 	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});
 
 	SnakePool_.Push(Snake_);
@@ -186,13 +185,12 @@ void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window
 {
 	if (SnakeConfig_.CanSnakeBobtail)
 	{
-		sf::Mouse Mouse;
-		sf::Vector2i MousePosition = Mouse.getPosition(Window);
+		sf::Vector2i MousePosition = sf::Mouse::getPosition(Window);
 		for (auto It = SnakePool_.begin(); It != SnakePool_.end(); ++It)
 		{
 			if (It->Contains(sf::Vector2f(static_cast<float>(MousePosition.x), static_cast<float>(MousePosition.y))))
 			{
-				if (Mouse.isButtonPressed(sf::Mouse::Button::Left))	   // TODO: move to input Mapping
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))	// TODO: move to input Mapping
 				{
 					It->Bobtail();
 				}
@@ -202,7 +200,7 @@ void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window
 		SnakeConfig_.LastErase = clock();
 	}
 
-	if (!SnakeConfig_.CanSnakeBobtail && clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	   // TODO: change to Timer
+	if (!SnakeConfig_.CanSnakeBobtail && clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	// TODO: change to Timer
 	{
 		SnakeConfig_.CanSnakeBobtail = true;
 	}

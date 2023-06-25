@@ -22,10 +22,6 @@
 
 #include "Flower.h"
 
-Flower::Flower()
-{
-}
-
 sf::Sprite& Flower::GetMainSprite()
 {
 	return MainSprite_;

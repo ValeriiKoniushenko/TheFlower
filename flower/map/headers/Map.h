@@ -29,7 +29,7 @@ class Map : public Serializer
 {
 public:
 	Map();
-	~Map() = default;
+	~Map() override = default;
 	Map(const Map&) = default;
 	Map(Map&&) = default;
 	Map& operator=(const Map&) = default;

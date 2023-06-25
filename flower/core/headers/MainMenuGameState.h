@@ -30,7 +30,7 @@ class MainMenuGameState final : public GameStateBase
 {
 public:
 	MainMenuGameState() = default;
-	~MainMenuGameState() = default;
+	~MainMenuGameState() override = default;
 	MainMenuGameState(MainMenuGameState&&) = default;
 	MainMenuGameState(const MainMenuGameState&) = default;
 	MainMenuGameState& operator=(MainMenuGameState&&) = default;

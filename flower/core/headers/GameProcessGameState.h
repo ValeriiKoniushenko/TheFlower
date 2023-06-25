@@ -42,7 +42,7 @@ public:
 	void Draw(sf::RenderWindow& Window) override;
 	void UpdateUi(sf::RenderWindow& Window) override;
 
-	void ResetUserData();
+	static void ResetUserData();
 
 private:
 	bool HaveToPlant(sf::RenderWindow& Window);

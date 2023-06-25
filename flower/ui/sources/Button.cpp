@@ -40,7 +40,7 @@ void Button::Update(sf::RenderWindow& Window)
 	switch (VerticalAlign_)
 	{
 		case TextAlign::Center:
-			NewTextPosition.y += (getGlobalBounds().height - Text_.getCharacterSize()) / 2.f;
+			NewTextPosition.y += (getGlobalBounds().height - static_cast<float>(Text_.getCharacterSize())) / 2.f;
 			break;
 	}
 

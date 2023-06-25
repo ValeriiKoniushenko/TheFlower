@@ -34,8 +34,8 @@
 class Serializer
 {
 public:
-	explicit Serializer(const std::string& SaveFileName);
-	virtual ~Serializer();
+	explicit Serializer(std::string SaveFileName);
+	virtual ~Serializer() = default;
 	Serializer(const Serializer&) = default;
 	Serializer(Serializer&&) = default;
 	Serializer& operator=(const Serializer&) = default;
@@ -68,12 +68,12 @@ public:
 	/**
 	 * @brief use this method if you want to get the first element from a PTree
 	 */
-	boost::property_tree::ptree::iterator Begin();
+	_NODISCARD boost::property_tree::ptree::iterator Begin();
 
 	/**
 	 * @brief use this method if you want to get the last element from a PTree
 	 */
-	boost::property_tree::ptree::iterator End();
+	_NODISCARD boost::property_tree::ptree::iterator End();
 
 	// TODO: add config directory
 	inline static const std::filesystem::path SaveDirectory = "save";
@@ -82,7 +82,7 @@ protected:
 	/**
 	 * @brief getting a path for saving data, e.g. 'save/General.json'
 	 */
-	std::filesystem::path GetSavePath() const;
+	_NODISCARD std::filesystem::path GetSavePath() const;
 
 private:
 	std::string SaveFileName_;

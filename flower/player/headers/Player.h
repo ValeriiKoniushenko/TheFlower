@@ -41,7 +41,7 @@ public:
 	void Serialize() override;
 	void Deserialize() override;
 
-	bool CanApproveTransaction(__int64 Costs);
+	bool CanApproveTransaction(__int64 Costs) const;
 
 private:
 	__int64 Money_ = 0;

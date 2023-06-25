@@ -29,15 +29,15 @@
 class Snake : public SceneObject
 {
 public:
-	Snake(__int32 StartSize = 2);
-	~Snake() = default;
+	explicit Snake(__int32 StartSize = 2);
+	~Snake() override = default;
 	Snake(const Snake&) = default;
 	Snake(Snake&&) = default;
 	Snake& operator=(const Snake&) = default;
 	Snake& operator=(Snake&&) = default;
 
 	void Draw(sf::RenderWindow& Window) override;
-	boost::property_tree::ptree ToJSON() const override;
+	_NODISCARD boost::property_tree::ptree ToJSON() const override;
 
 	void SetTexture(sf::Texture& Texture);
 	void SetPosition(sf::Vector2f NewPosition);
@@ -53,7 +53,7 @@ public:
 	void Increase(__int32 MaxSize);
 	void SetSpeedMultiplier(float Multiplier);
 
-	bool InteractWithSprite(const sf::Sprite& Sprite) const;
+	_NODISCARD bool InteractWithSprite(const sf::Sprite& Sprite) const;
 
 private:
 	sf::Texture* TextureP_ = nullptr;
