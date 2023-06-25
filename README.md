@@ -5,7 +5,18 @@ I have created a game about flowers and snakes. We should survive! Plant a flowe
 
 ![Animation](https://github.com/ValeriiKoniushenko/TheFlower/assets/99877553/23269175-c4bc-4f36-a610-ad1ff59b16af)
 
-## Technical cases
+# How to install a binaries
+- Go to releases(right tab)
+- Download .zip file
+- Unpack it
+- Play!
+
+# How to build
+- Clone the repository using ```git clone https://github.com/ValeriiKoniushenko/TheFlower.git```
+- Go to folder with a local repo
+- 
+
+# Technical cases
 - Serializing of all data(the Window_'s size, warms' position, flowers' position etc)
 - Wrote GTest-s for testing core parts of the game
 - Supporting of GameStates
