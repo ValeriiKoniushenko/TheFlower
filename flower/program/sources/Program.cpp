@@ -22,6 +22,7 @@
 
 #include "Program.h"
 
+#include "DefeatGameState.h"
 #include "GameProcessGameState.h"
 #include "GameStateBase.h"
 #include "MainMenuGameState.h"
@@ -83,10 +84,23 @@ void Program::LifeCycle()
 void Program::ProcessCustomEvent()
 {
 	GameStateBase::CustomEvent Event = GameState_->PollEvent();
-	if (Event == GameStateBase::CustomEvent::OpenGame)
+	if (Event != GameStateBase::CustomEvent::None)
 	{
 		GameState_.reset();
-		GameState_ = std::make_unique<GameProcessGameState>();
+
+		if (Event == GameStateBase::CustomEvent::OpenGame)
+		{
+			GameState_ = std::make_unique<GameProcessGameState>();
+		}
+		if (Event == GameStateBase::CustomEvent::GoToMainMenu)
+		{
+			GameState_ = std::make_unique<MainMenuGameState>();
+		}
+		if (Event == GameStateBase::CustomEvent::DefeatMenu)
+		{
+			GameState_ = std::make_unique<DefeatGameState>();
+		}
+
 		GameState_->Prepare();
 	}
 }

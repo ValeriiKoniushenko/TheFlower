@@ -22,56 +22,29 @@
 
 #pragma once
 
-#include "Flower.h"
-#include "FlowerConfig.h"
-#include "FlowerPool.h"
+#include "Button.h"
+#include "Canvas.h"
 #include "GameStateBase.h"
-#include "Map.h"
-#include "Player.h"
-#include "Snake.h"
-#include "SnakeConfig.h"
-#include "SnakePool.h"
 
-class GameProcessGameState : public GameStateBase
+class DefeatGameState final : public GameStateBase
 {
 public:
+	DefeatGameState() = default;
+	~DefeatGameState() = default;
+	DefeatGameState(DefeatGameState&&) = default;
+	DefeatGameState(const DefeatGameState&) = default;
+	DefeatGameState& operator=(DefeatGameState&&) = default;
+	DefeatGameState& operator=(const DefeatGameState&) = default;
+
 	void Prepare() override;
 	void Draw(sf::RenderWindow& Window) override;
 	void UpdateUi(sf::RenderWindow& Window) override;
 
-private:
-	bool HaveToPlant(sf::RenderWindow& Window);
-	void PlantAt(const sf::Vector2i& PositionAtWindow, sf::RenderWindow& Window);
-	void SpawnFlowerAt(const sf::Vector2i& PositionAtWindow);
-	void SpawnSnakeAtRandomPosition(sf::RenderWindow& Window);
+protected:
+	sf::Texture BackgroundTexture_;
+	sf::Texture ButtonTexture_;
 
-	void AddMoneyEveryXSeconds();
-	void UpdateSnakes(sf::RenderWindow& Window);
-	void DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window);
-	void SnakeAutoGrowth();
-	void SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window);
-	void DecreaseSpeedEveryXSeconds();
-	void CheckInteractWithFlower();
-
-	void CheckForDefeat();
-
-private:
-	sf::Texture MapBackgroundTexture_;
-	sf::Texture FlowerTexture_;
-	sf::Texture SnakeTexture_;
-
-	// TODO: move to a common widget
-	sf::Texture CoinTexture_;
-	sf::Sprite Coin_;
-	sf::Text CoinCount_;
-
-	SnakeConfig SnakeConfig_;
-	SnakePool SnakePool_;
-
-	FlowerConfig FlowerConfig_;
-	clock_t LastIncome = 0;
-
-	FlowerPool FlowerPool_;
-	Player Player_;
-	Map Map_;
+	sf::Text DefeatText_;
+	Button GoToMainMenuButton_;
+	Canvas BackgroundCanvas_;
 };

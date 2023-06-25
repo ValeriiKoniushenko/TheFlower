@@ -65,14 +65,17 @@
 class GameStateBase
 {
 public:
+	// TODO: move it to *.data file and pull this data from that *.data file
 	/**
 	 * @brief Register your own event in this enum class to use it
 	 */
 	enum class CustomEvent : __int8
 	{
 		None,
-		OpenGame,
-		CloseGame
+		CloseGame,
+		DefeatMenu,
+		GoToMainMenu,
+		OpenGame
 	};
 
 public:

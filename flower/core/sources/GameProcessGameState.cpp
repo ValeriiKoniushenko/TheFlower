@@ -95,6 +95,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	SpawnNewSnakeEveryXSeconds(Window);
 	DecreaseSpeedEveryXSeconds();
 	CheckInteractWithFlower();
+	CheckForDefeat();
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -251,5 +252,13 @@ void GameProcessGameState::CheckInteractWithFlower()
 				++It;
 			}
 		}
+	}
+}
+
+void GameProcessGameState::CheckForDefeat()
+{
+	if (Player_.GetMoney() <= FlowerConfig_.PlantCosts && FlowerPool_.Size() == 0)
+	{
+		CustomEvent_ = CustomEvent::DefeatMenu;
 	}
 }
