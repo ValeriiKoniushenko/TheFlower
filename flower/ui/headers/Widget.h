@@ -25,8 +25,6 @@
 #include <SFML/Graphics.hpp>
 #include <functional>
 
-// TODO: Move it to UI lib
-
 /**
  * @brief the main class for UI elements. Inherit from this class if you want to create new UI element.
  */

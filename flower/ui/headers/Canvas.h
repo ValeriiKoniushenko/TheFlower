@@ -24,8 +24,6 @@
 
 #include "Widget.h"
 
-// TODO: Move it to UI lib
-
 class Canvas : public Widget
 {
 public:
