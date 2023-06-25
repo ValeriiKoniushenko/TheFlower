@@ -95,6 +95,10 @@ void Program::ProcessCustomEvent()
 		else if (Event == GameStateBase::CustomEvent::StartNewGame)
 		{
 			GameState_ = std::make_unique<GameProcessGameState>();
+			if (GameProcessGameState* GameState = dynamic_cast<GameProcessGameState*>(GameState_.get()))
+			{
+				GameState->ResetUserData();
+			}
 		}
 		else if (Event == GameStateBase::CustomEvent::GoToMainMenu)
 		{

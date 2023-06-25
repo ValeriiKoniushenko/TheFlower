@@ -22,8 +22,7 @@
 
 #include "FlowerPool.h"
 
-FlowerPool::FlowerPool() :
-	Serializer("FlowerPool.json")
+FlowerPool::FlowerPool() : Serializer("FlowerPool.json")
 {
 }
 
@@ -49,12 +48,15 @@ void FlowerPool::Deserialize()
 {
 	Serializer::Deserialize();
 
-	auto FlowerKey = Begin()->second;
-	for (auto It = FlowerKey.begin(); It != FlowerKey.end(); ++It)
+	if (Begin() != End())
 	{
-		Flower Temp;
-		Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
-		Flowers_.push_back(Temp);
+		auto FlowerKey = Begin()->second;
+		for (auto It = FlowerKey.begin(); It != FlowerKey.end(); ++It)
+		{
+			Flower Temp;
+			Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
+			Flowers_.push_back(Temp);
+		}
 	}
 }
 

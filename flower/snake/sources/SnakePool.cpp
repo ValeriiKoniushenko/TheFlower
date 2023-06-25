@@ -48,12 +48,15 @@ void SnakePool::Deserialize()
 {
 	Serializer::Deserialize();
 
-	auto SnakeKey = Begin()->second;
-	for (auto It = SnakeKey.begin(); It != SnakeKey.end(); ++It)
+	if (Begin() != End())
 	{
-		Snake Temp;
-		Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
-		Snakes_.push_back(Temp);
+		auto SnakeKey = Begin()->second;
+		for (auto It = SnakeKey.begin(); It != SnakeKey.end(); ++It)
+		{
+			Snake Temp;
+			Temp.SetPosition({It->second.get<float>("x"), It->second.get<float>("y")});
+			Snakes_.push_back(Temp);
+		}
 	}
 }
 

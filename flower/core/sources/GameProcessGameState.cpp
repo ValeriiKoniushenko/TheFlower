@@ -262,3 +262,15 @@ void GameProcessGameState::CheckForDefeat()
 		CustomEvent_ = CustomEvent::DefeatMenu;
 	}
 }
+
+void GameProcessGameState::ResetUserData()
+{
+	// TODO: remove all magic string and refactor this
+	std::filesystem::remove(Serializer::SaveDirectory.string() + "/" + "SnakePool.json");
+	std::filesystem::remove(Serializer::SaveDirectory.string() + "/" + "FlowerPool.json");
+
+	boost::property_tree::ptree PTree;
+	boost::property_tree::read_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
+	PTree.put("money", 150); // TODO: remove a magic number -> move to config
+	boost::property_tree::write_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
+}

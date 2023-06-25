@@ -39,6 +39,8 @@ public:
 	void Draw(sf::RenderWindow& Window) override;
 	void UpdateUi(sf::RenderWindow& Window) override;
 
+	void ResetUserData();
+
 private:
 	bool HaveToPlant(sf::RenderWindow& Window);
 	void PlantAt(const sf::Vector2i& PositionAtWindow, sf::RenderWindow& Window);
