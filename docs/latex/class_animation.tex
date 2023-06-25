@@ -1,0 +1,126 @@
+\doxysection{Animation Class Reference}
+\hypertarget{class_animation}{}\label{class_animation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63fa409ac3d4c1bc0daea43e1243a0f8d72a}{Finite}}
+, \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63faeb2ac5b04180d8d6011a016aeb8f75b3}{Infinity}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_animation_ad4a04551c8bcf28c94b9c49b32e9709c}{Set\+Texture}} (sf\+::\+Texture \&Texture)
+\item 
+void \mbox{\hyperlink{class_animation_ad87a09f3371f7d6c2db855aec73b9c13}{Play}} (sf\+::\+Render\+Window \&Window)
+\item 
+void \mbox{\hyperlink{class_animation_a8f47980559be67a6d61ac126dcfbb7bc}{Set\+Start\+Rect}} (const sf\+::\+Int\+Rect \&Rect)
+\item 
+void \mbox{\hyperlink{class_animation_afc6aa75f0b4f790c09d4c8338ae6f9a0}{Set\+Direction}} (const sf\+::\+Vector2i \&Direction)
+\item 
+void \mbox{\hyperlink{class_animation_a429a20680e6d68f343ac305fdca17350}{Set\+Delay\+Between\+Frames}} (clock\+\_\+t Delay)
+\item 
+void \mbox{\hyperlink{class_animation_a9c84f6862d89f3c6ebc0f672a207a0bc}{Set\+Mode}} (\mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}} New\+Mode)
+\item 
+void \mbox{\hyperlink{class_animation_a0e5601d49cf6dcb7724c74cbf8d50aa2}{Set\+Frame\+Count}} (\+\_\+\+\_\+int8 Count)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}} \mbox{\hyperlink{class_animation_a9fdac5da97c5392686d92e6cea11ce23}{Get\+Mode}} () const
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_animation_a9a1a246d8fe3e8c89508049bab96b13a}{Get\+Texture\+Width}} () const
+\item 
+\+\_\+\+NODISCARD float \mbox{\hyperlink{class_animation_ab219346f9832086537e7bb29857805bb}{Get\+Texture\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_animation_aae0b845b72be36a6a62a70f13d3b8ca3}{Set\+Position}} (const sf\+::\+Vector2f \&Position)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_animation_ae8682e40fe940fdb2837aae4092cc63f}\label{class_animation_ae8682e40fe940fdb2837aae4092cc63f} 
+\index{Animation@{Animation}!Mode@{Mode}}
+\index{Mode@{Mode}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Animation\+::\+Mode}} \+: \+\_\+\+\_\+int8\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Finite@{Finite}!Animation@{Animation}}\index{Animation@{Animation}!Finite@{Finite}}}\Hypertarget{class_animation_ae8682e40fe940fdb2837aae4092cc63fa409ac3d4c1bc0daea43e1243a0f8d72a}\label{class_animation_ae8682e40fe940fdb2837aae4092cc63fa409ac3d4c1bc0daea43e1243a0f8d72a} 
+Finite&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinity@{Infinity}!Animation@{Animation}}\index{Animation@{Animation}!Infinity@{Infinity}}}\Hypertarget{class_animation_ae8682e40fe940fdb2837aae4092cc63faeb2ac5b04180d8d6011a016aeb8f75b3}\label{class_animation_ae8682e40fe940fdb2837aae4092cc63faeb2ac5b04180d8d6011a016aeb8f75b3} 
+Infinity&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_animation_a9fdac5da97c5392686d92e6cea11ce23}\label{class_animation_a9fdac5da97c5392686d92e6cea11ce23} 
+\index{Animation@{Animation}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{GetMode()}{GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Animation\+::\+Mode}} Animation\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_animation_ab219346f9832086537e7bb29857805bb}\label{class_animation_ab219346f9832086537e7bb29857805bb} 
+\index{Animation@{Animation}!GetTextureHeight@{GetTextureHeight}}
+\index{GetTextureHeight@{GetTextureHeight}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{GetTextureHeight()}{GetTextureHeight()}}
+{\footnotesize\ttfamily float Animation\+::\+Get\+Texture\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_animation_a9a1a246d8fe3e8c89508049bab96b13a}\label{class_animation_a9a1a246d8fe3e8c89508049bab96b13a} 
+\index{Animation@{Animation}!GetTextureWidth@{GetTextureWidth}}
+\index{GetTextureWidth@{GetTextureWidth}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{GetTextureWidth()}{GetTextureWidth()}}
+{\footnotesize\ttfamily float Animation\+::\+Get\+Texture\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_animation_ad87a09f3371f7d6c2db855aec73b9c13}\label{class_animation_ad87a09f3371f7d6c2db855aec73b9c13} 
+\index{Animation@{Animation}!Play@{Play}}
+\index{Play@{Play}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Animation\+::\+Play (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_a429a20680e6d68f343ac305fdca17350}\label{class_animation_a429a20680e6d68f343ac305fdca17350} 
+\index{Animation@{Animation}!SetDelayBetweenFrames@{SetDelayBetweenFrames}}
+\index{SetDelayBetweenFrames@{SetDelayBetweenFrames}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetDelayBetweenFrames()}{SetDelayBetweenFrames()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Delay\+Between\+Frames (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{Delay }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_afc6aa75f0b4f790c09d4c8338ae6f9a0}\label{class_animation_afc6aa75f0b4f790c09d4c8338ae6f9a0} 
+\index{Animation@{Animation}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2i \&}]{Direction }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_a0e5601d49cf6dcb7724c74cbf8d50aa2}\label{class_animation_a0e5601d49cf6dcb7724c74cbf8d50aa2} 
+\index{Animation@{Animation}!SetFrameCount@{SetFrameCount}}
+\index{SetFrameCount@{SetFrameCount}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetFrameCount()}{SetFrameCount()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Frame\+Count (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int8}]{Count }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_a9c84f6862d89f3c6ebc0f672a207a0bc}\label{class_animation_a9c84f6862d89f3c6ebc0f672a207a0bc} 
+\index{Animation@{Animation}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetMode()}{SetMode()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Animation\+::\+Mode}}}]{New\+Mode }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_aae0b845b72be36a6a62a70f13d3b8ca3}\label{class_animation_aae0b845b72be36a6a62a70f13d3b8ca3} 
+\index{Animation@{Animation}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{Position }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_a8f47980559be67a6d61ac126dcfbb7bc}\label{class_animation_a8f47980559be67a6d61ac126dcfbb7bc} 
+\index{Animation@{Animation}!SetStartRect@{SetStartRect}}
+\index{SetStartRect@{SetStartRect}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetStartRect()}{SetStartRect()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Start\+Rect (\begin{DoxyParamCaption}\item[{const sf\+::\+Int\+Rect \&}]{Rect }\end{DoxyParamCaption})}
+
+\Hypertarget{class_animation_ad4a04551c8bcf28c94b9c49b32e9709c}\label{class_animation_ad4a04551c8bcf28c94b9c49b32e9709c} 
+\index{Animation@{Animation}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{Texture }\end{DoxyParamCaption})}
+

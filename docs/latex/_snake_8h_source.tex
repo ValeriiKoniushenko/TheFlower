@@ -33,15 +33,15 @@
 \DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_snake}{Snake}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_object}{SceneObject}}}
 \DoxyCodeLine{00030\ \{}
 \DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}(\_\_int32\ StartSize\ =\ 2);}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}{\string~Snake}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_snake}{Snake}}(\_\_int32\ StartSize\ =\ 2);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_snake_aa2c2d788aa3264b4bac80ee2eafb7146}{\string~Snake}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_snake_a4d256c29fe1e6908513cf86ee7d58089}{Snake}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_snake}{Snake}}\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_snake_a726e8088f075b6dd0f5e78b095db93e3}{Snake}}(\mbox{\hyperlink{class_snake}{Snake}}\&\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}\&\ \mbox{\hyperlink{class_snake_a033186926d847bfeb564f0c7dd2a56d1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_snake}{Snake}}\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}\&\ \mbox{\hyperlink{class_snake_a57f78e6d77c74d431a461e8ecad906d6}{operator=}}(\mbox{\hyperlink{class_snake}{Snake}}\&\&)\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00038\ }
 \DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a200c0a51ce21c44e65607086bca32fd5}{Draw}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00040\ \ \ \ \ boost::property\_tree::ptree\ \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{ToJSON}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ \ \ \ \ \_NODISCARD\ boost::property\_tree::ptree\ \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{ToJSON}}()\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00041\ }
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3}{SetTexture}}(sf::Texture\&\ Texture);}
 \DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_aebf84904546b29f2f1194fc44fc0e402}{SetPosition}}(sf::Vector2f\ NewPosition);}
@@ -57,7 +57,7 @@
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_adacf38866097765b296210c6a250eb8d}{Increase}}(\_\_int32\ MaxSize);}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_ad2a94b16085c8c16d1437063f0a8dfc4}{SetSpeedMultiplier}}(\textcolor{keywordtype}{float}\ Multiplier);}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{InteractWithSprite}}(\textcolor{keyword}{const}\ sf::Sprite\&\ Sprite)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{InteractWithSprite}}(\textcolor{keyword}{const}\ sf::Sprite\&\ Sprite)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00059\ \ \ \ \ sf::Texture*\ TextureP\_\ =\ \textcolor{keyword}{nullptr};}

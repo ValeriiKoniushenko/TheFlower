@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['startnewgame_0',['StartNewGame',['../class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4',1,'GameStateBase']]]
+  ['infinity_0',['Infinity',['../class_animation.html#ae8682e40fe940fdb2837aae4092cc63faeb2ac5b04180d8d6011a016aeb8f75b3',1,'Animation']]]
 ];

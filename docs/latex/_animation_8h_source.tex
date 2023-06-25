@@ -1,0 +1,65 @@
+\doxysection{Animation.\+h}
+\hypertarget{_animation_8h_source}{}\label{_animation_8h_source}\index{flower/ui/headers/Animation.h@{flower/ui/headers/Animation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animation}{Animation}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}}\ :\ \_\_int8}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63fa409ac3d4c1bc0daea43e1243a0f8d72a}{Finite}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63faeb2ac5b04180d8d6011a016aeb8f75b3}{Infinity}}}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_ad4a04551c8bcf28c94b9c49b32e9709c}{SetTexture}}(sf::Texture\&\ Texture);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_ad87a09f3371f7d6c2db855aec73b9c13}{Play}}(sf::RenderWindow\&\ Window);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_a8f47980559be67a6d61ac126dcfbb7bc}{SetStartRect}}(\textcolor{keyword}{const}\ sf::IntRect\&\ Rect);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_afc6aa75f0b4f790c09d4c8338ae6f9a0}{SetDirection}}(\textcolor{keyword}{const}\ sf::Vector2i\&\ Direction);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_a429a20680e6d68f343ac305fdca17350}{SetDelayBetweenFrames}}(clock\_t\ Delay);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_a9c84f6862d89f3c6ebc0f672a207a0bc}{SetMode}}(\mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}}\ NewMode);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_a0e5601d49cf6dcb7724c74cbf8d50aa2}{SetFrameCount}}(\_\_int8\ Count);}
+\DoxyCodeLine{00041\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}}\ \mbox{\hyperlink{class_animation_a9fdac5da97c5392686d92e6cea11ce23}{GetMode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_animation_a9a1a246d8fe3e8c89508049bab96b13a}{GetTextureWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \_NODISCARD\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_animation_ab219346f9832086537e7bb29857805bb}{GetTextureHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_aae0b845b72be36a6a62a70f13d3b8ca3}{SetPosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ Position);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(sf::RenderWindow\&\ Window);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Sprite\ Sprite\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63f}{Mode}}\ Mode\_\ =\ \mbox{\hyperlink{class_animation_ae8682e40fe940fdb2837aae4092cc63fa409ac3d4c1bc0daea43e1243a0f8d72a}{Mode::Finite}};}
+\DoxyCodeLine{00052\ \ \ \ \ clock\_t\ DelayBetweenFrames\_\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ sf::Vector2i\ Direction\_;}
+\DoxyCodeLine{00054\ \ \ \ \ sf::IntRect\ StartRect\_;}
+\DoxyCodeLine{00055\ \ \ \ \ \_\_int8\ FramesCount\_\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \_\_int8\ CurrentFrame\_\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ clock\_t\ LastDraw\_\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsEnd\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \};}
+
+\end{DoxyCode}

@@ -5,5 +5,6 @@ var searchData=
   ['mainsprite_5f_2',['MainSprite_',['../class_flower.html#a5ad09759d1d0b9c0eebf73fe3e7d7f10',1,'Flower']]],
   ['map_3',['Map',['../class_map.html',1,'Map'],['../class_map.html#a0f5ad0fd4563497b4214038cbca8b582',1,'Map::Map()'],['../class_map.html#a1169ade17c80d65cd0effa825c0183b4',1,'Map::Map(const Map &amp;)=default'],['../class_map.html#a72349bdc15e148cbb68e95878a989d70',1,'Map::Map(Map &amp;&amp;)=default']]],
   ['math_4',['Math',['../namespace_math.html',1,'']]],
-  ['maxsize_5',['MaxSize',['../struct_snake_config.html#ae9ea289f133818e3167c29d87473e3ea',1,'SnakeConfig']]]
+  ['maxsize_5',['MaxSize',['../struct_snake_config.html#ae9ea289f133818e3167c29d87473e3ea',1,'SnakeConfig']]],
+  ['mode_6',['Mode',['../class_animation.html#ae8682e40fe940fdb2837aae4092cc63f',1,'Animation']]]
 ];

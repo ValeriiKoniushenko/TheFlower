@@ -26,30 +26,35 @@
 \DoxyCodeLine{00022\ }
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}SceneObject.h"{}}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}Serializer.h"{}}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_flower}{Flower}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_object}{SceneObject}}}
-\DoxyCodeLine{00030\ \{}
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_flower_a24f3f77559b3a76509febf7392413ff7}{Flower}}();}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_flower_aec9d06ab8811948e9e7ebd018306a60e}{\string~Flower}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_flower_afb38800452f3c369e33ec6c9c639b492}{Flower}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_flower}{Flower}}\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_flower_a89e0ed82b7ba2736937ab086ebaad10c}{Flower}}(\mbox{\hyperlink{class_flower}{Flower}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_flower}{Flower}}\&\ \mbox{\hyperlink{class_flower_af885661c31766acd255dc29c75854a0a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_flower}{Flower}}\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_flower}{Flower}}\&\ \mbox{\hyperlink{class_flower_a3c8445c37febdfb0a39845ec08dbcade}{operator=}}(\mbox{\hyperlink{class_flower}{Flower}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \_NODISCARD\ sf::Sprite\&\ \mbox{\hyperlink{class_flower_a624bd10512e6cb3f3551da556daeb411}{GetMainSprite}}();}
-\DoxyCodeLine{00040\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ sf::Sprite\&\ \mbox{\hyperlink{class_flower_a624bd10512e6cb3f3551da556daeb411}{GetMainSprite}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{Draw}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00043\ \ \ \ \ boost::property\_tree::ptree\ \mbox{\hyperlink{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}{ToJSON}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_a0c246497cbeeec4848d7bb90112f64f7}{SetPosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ Position);}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Animation.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}SceneObject.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}Serializer.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_flower}{Flower}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_object}{SceneObject}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_flower_a838f138a49c398f6699b0062478e9a94}{Flower}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_flower_aec9d06ab8811948e9e7ebd018306a60e}{\string~Flower}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_flower_afb38800452f3c369e33ec6c9c639b492}{Flower}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_flower}{Flower}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_flower_a89e0ed82b7ba2736937ab086ebaad10c}{Flower}}(\mbox{\hyperlink{class_flower}{Flower}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_flower}{Flower}}\&\ \mbox{\hyperlink{class_flower_af885661c31766acd255dc29c75854a0a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_flower}{Flower}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_flower}{Flower}}\&\ \mbox{\hyperlink{class_flower_a3c8445c37febdfb0a39845ec08dbcade}{operator=}}(\mbox{\hyperlink{class_flower}{Flower}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \_NODISCARD\ sf::Sprite\&\ \mbox{\hyperlink{class_flower_a624bd10512e6cb3f3551da556daeb411}{GetMainSprite}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ sf::Sprite\&\ \mbox{\hyperlink{class_flower_a624bd10512e6cb3f3551da556daeb411}{GetMainSprite}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_adf7f44d083bcc6d3cf945f7976b39306}{Prepare}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{Draw}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \ \ boost::property\_tree::ptree\ \mbox{\hyperlink{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}{ToJSON}}()\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00048\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}{MainSprite\_}};}
-\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_a0c246497cbeeec4848d7bb90112f64f7}{SetPosition}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ Position);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_abb1d7aaef63a227c9098bf4ab33aabaa}{SetClockTexture}}(sf::Texture\&\ Texture);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_flower_a8998e9e10a57b387992ec8ccbd2287c7}{AlignClock}}(\textcolor{keywordtype}{float}\ OffsetX\ =\ 0.f,\ \textcolor{keywordtype}{float}\ OffsetY\ =\ 0.f);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00052\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}{MainSprite\_}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_animation}{Animation}}\ \mbox{\hyperlink{class_flower_a22766a27ca1ee068afe4583786bfb3c1}{ClockAnimation\_}};}
+\DoxyCodeLine{00054\ \};}
 
 \end{DoxyCode}

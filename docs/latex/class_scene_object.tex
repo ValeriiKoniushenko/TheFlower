@@ -32,7 +32,7 @@ virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\
 \item 
 virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
 \begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
-virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+virtual \+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}{To\+JSON}} () const =0
 \begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -93,11 +93,11 @@ Implemented in \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& Scene\+Object\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\Hypertarget{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}\label{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3} 
+\Hypertarget{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}\label{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05} 
 \index{SceneObject@{SceneObject}!ToJSON@{ToJSON}}
 \index{ToJSON@{ToJSON}!SceneObject@{SceneObject}}
 \doxysubsubsection{\texorpdfstring{ToJSON()}{ToJSON()}}
-{\footnotesize\ttfamily virtual boost\+::property\+\_\+tree\+::ptree Scene\+Object\+::\+To\+JSON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree Scene\+Object\+::\+To\+JSON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 

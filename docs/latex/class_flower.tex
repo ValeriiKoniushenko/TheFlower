@@ -13,7 +13,7 @@ Inheritance diagram for Flower\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_flower_a24f3f77559b3a76509febf7392413ff7}{Flower}} ()
+\mbox{\hyperlink{class_flower_a838f138a49c398f6699b0062478e9a94}{Flower}} ()=default
 \item 
 \mbox{\hyperlink{class_flower_aec9d06ab8811948e9e7ebd018306a60e}{\texorpdfstring{$\sim$}{\string~}\+Flower}} () override=default
 \item 
@@ -29,11 +29,17 @@ Inheritance diagram for Flower\+:\begin{figure}[H]
 \item 
 \+\_\+\+NODISCARD const sf\+::\+Sprite \& \mbox{\hyperlink{class_flower_ab3b816a45799a7bd4d49709f0f18851e}{Get\+Main\+Sprite}} () const
 \item 
+void \mbox{\hyperlink{class_flower_adf7f44d083bcc6d3cf945f7976b39306}{Prepare}} ()
+\item 
 void \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{Draw}} (sf\+::\+Render\+Window \&Window) override
 \begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
 boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}{To\+JSON}} () const override
 \begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_flower_a0c246497cbeeec4848d7bb90112f64f7}{Set\+Position}} (const sf\+::\+Vector2f \&Position)
+\item 
+void \mbox{\hyperlink{class_flower_abb1d7aaef63a227c9098bf4ab33aabaa}{Set\+Clock\+Texture}} (sf\+::\+Texture \&Texture)
+\item 
+void \mbox{\hyperlink{class_flower_a8998e9e10a57b387992ec8ccbd2287c7}{Align\+Clock}} (float OffsetX=0.f, float OffsetY=0.f)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene_object}{Scene\+Object}}}
 \begin{DoxyCompactItemize}
@@ -52,21 +58,23 @@ virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\
 \item 
 virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
 \begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
-virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+virtual \+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}{To\+JSON}} () const =0
 \begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 sf\+::\+Sprite \mbox{\hyperlink{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}{Main\+Sprite\+\_\+}}
+\item 
+\mbox{\hyperlink{class_animation}{Animation}} \mbox{\hyperlink{class_flower_a22766a27ca1ee068afe4583786bfb3c1}{Clock\+Animation\+\_\+}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_flower_a24f3f77559b3a76509febf7392413ff7}\label{class_flower_a24f3f77559b3a76509febf7392413ff7} 
+\Hypertarget{class_flower_a838f138a49c398f6699b0062478e9a94}\label{class_flower_a838f138a49c398f6699b0062478e9a94} 
 \index{Flower@{Flower}!Flower@{Flower}}
 \index{Flower@{Flower}!Flower@{Flower}}
 \doxysubsubsection{\texorpdfstring{Flower()}{Flower()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Flower\+::\+Flower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Flower\+::\+Flower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
 \Hypertarget{class_flower_aec9d06ab8811948e9e7ebd018306a60e}\label{class_flower_aec9d06ab8811948e9e7ebd018306a60e} 
 \index{Flower@{Flower}!````~Flower@{\texorpdfstring{$\sim$}{\string~}Flower}}
@@ -89,6 +97,12 @@ sf\+::\+Sprite \mbox{\hyperlink{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}{
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_flower_a8998e9e10a57b387992ec8ccbd2287c7}\label{class_flower_a8998e9e10a57b387992ec8ccbd2287c7} 
+\index{Flower@{Flower}!AlignClock@{AlignClock}}
+\index{AlignClock@{AlignClock}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{AlignClock()}{AlignClock()}}
+{\footnotesize\ttfamily void Flower\+::\+Align\+Clock (\begin{DoxyParamCaption}\item[{float}]{OffsetX = {\ttfamily 0.f},  }\item[{float}]{OffsetY = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
 \Hypertarget{class_flower_af9cc774170a040f4bf846fd3ad1b3239}\label{class_flower_af9cc774170a040f4bf846fd3ad1b3239} 
 \index{Flower@{Flower}!Draw@{Draw}}
 \index{Draw@{Draw}!Flower@{Flower}}
@@ -127,6 +141,18 @@ Implements \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_flower}{Flower}} \& Flower\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flower}{Flower}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
+\Hypertarget{class_flower_adf7f44d083bcc6d3cf945f7976b39306}\label{class_flower_adf7f44d083bcc6d3cf945f7976b39306} 
+\index{Flower@{Flower}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{Prepare()}{Prepare()}}
+{\footnotesize\ttfamily void Flower\+::\+Prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_abb1d7aaef63a227c9098bf4ab33aabaa}\label{class_flower_abb1d7aaef63a227c9098bf4ab33aabaa} 
+\index{Flower@{Flower}!SetClockTexture@{SetClockTexture}}
+\index{SetClockTexture@{SetClockTexture}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{SetClockTexture()}{SetClockTexture()}}
+{\footnotesize\ttfamily void Flower\+::\+Set\+Clock\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{Texture }\end{DoxyParamCaption})}
+
 \Hypertarget{class_flower_a0c246497cbeeec4848d7bb90112f64f7}\label{class_flower_a0c246497cbeeec4848d7bb90112f64f7} 
 \index{Flower@{Flower}!SetPosition@{SetPosition}}
 \index{SetPosition@{SetPosition}!Flower@{Flower}}
@@ -145,11 +171,17 @@ override this function to get an ability cast your scene object to JSON format. 
 
 
 
-Implements \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{Scene\+Object}}.
+Implements \mbox{\hyperlink{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}{Scene\+Object}}.
 
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_flower_a22766a27ca1ee068afe4583786bfb3c1}\label{class_flower_a22766a27ca1ee068afe4583786bfb3c1} 
+\index{Flower@{Flower}!ClockAnimation\_@{ClockAnimation\_}}
+\index{ClockAnimation\_@{ClockAnimation\_}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{ClockAnimation\_}{ClockAnimation\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animation}{Animation}} Flower\+::\+Clock\+Animation\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
 \Hypertarget{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}\label{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10} 
 \index{Flower@{Flower}!MainSprite\_@{MainSprite\_}}
 \index{MainSprite\_@{MainSprite\_}!Flower@{Flower}}

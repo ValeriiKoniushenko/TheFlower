@@ -18,9 +18,7 @@ void \mbox{\hyperlink{class_game_process_game_state_abc3fc19b0b44d51a692bd009085
 void \mbox{\hyperlink{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}{Draw}} (sf\+::\+Render\+Window \&Window) override
 \begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}{Update\+Ui}} (sf\+::\+Render\+Window \&Window) override
-\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_game_process_game_state_a0242200cccaee92c613fde8e3146b41b}{Reset\+User\+Data}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,6 +42,11 @@ virtual void \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3
 \begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\item 
 \+\_\+\+NODISCARD \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{Poll\+Event}} ()
 \begin{DoxyCompactList}\small\item\em use this function to poll a one state-\/custom-\/event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_game_process_game_state_a0242200cccaee92c613fde8e3146b41b}{Reset\+User\+Data}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
 \begin{DoxyCompactItemize}
@@ -100,7 +103,7 @@ Reimplemented from \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb
 \index{GameProcessGameState@{GameProcessGameState}!ResetUserData@{ResetUserData}}
 \index{ResetUserData@{ResetUserData}!GameProcessGameState@{GameProcessGameState}}
 \doxysubsubsection{\texorpdfstring{ResetUserData()}{ResetUserData()}}
-{\footnotesize\ttfamily void Game\+Process\+Game\+State\+::\+Reset\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Game\+Process\+Game\+State\+::\+Reset\+User\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \Hypertarget{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}\label{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66} 
 \index{GameProcessGameState@{GameProcessGameState}!UpdateUi@{UpdateUi}}

@@ -15,7 +15,7 @@ Inheritance diagram for Snake\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_snake_af383084cb65b20ada0b007de8a4d9dbe}{Snake}} (\+\_\+\+\_\+int32 Start\+Size=2)
 \item 
-\mbox{\hyperlink{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}{\texorpdfstring{$\sim$}{\string~}\+Snake}} ()=default
+\mbox{\hyperlink{class_snake_aa2c2d788aa3264b4bac80ee2eafb7146}{\texorpdfstring{$\sim$}{\string~}\+Snake}} () override=default
 \item 
 \mbox{\hyperlink{class_snake_a4d256c29fe1e6908513cf86ee7d58089}{Snake}} (const \mbox{\hyperlink{class_snake}{Snake}} \&)=default
 \item 
@@ -27,7 +27,7 @@ Inheritance diagram for Snake\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_snake_a200c0a51ce21c44e65607086bca32fd5}{Draw}} (sf\+::\+Render\+Window \&Window) override
 \begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
-boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{To\+JSON}} () const override
+\+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{To\+JSON}} () const override
 \begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3}{Set\+Texture}} (sf\+::\+Texture \&Texture)
 \item 
@@ -45,7 +45,7 @@ void \mbox{\hyperlink{class_snake_adacf38866097765b296210c6a250eb8d}{Increase}} 
 \item 
 void \mbox{\hyperlink{class_snake_ad2a94b16085c8c16d1437063f0a8dfc4}{Set\+Speed\+Multiplier}} (float Multiplier)
 \item 
-bool \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{Interact\+With\+Sprite}} (const sf\+::\+Sprite \&Sprite) const
+\+\_\+\+NODISCARD bool \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{Interact\+With\+Sprite}} (const sf\+::\+Sprite \&Sprite) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene_object}{Scene\+Object}}}
 \begin{DoxyCompactItemize}
@@ -64,7 +64,7 @@ virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\
 \item 
 virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
 \begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
-virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+virtual \+\_\+\+NODISCARD boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}{To\+JSON}} () const =0
 \begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -78,13 +78,13 @@ static constexpr float \mbox{\hyperlink{class_snake_a7dc9351b4ddcc22f78d6539849a
 \index{Snake@{Snake}!Snake@{Snake}}
 \index{Snake@{Snake}!Snake@{Snake}}
 \doxysubsubsection{\texorpdfstring{Snake()}{Snake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int32}]{Start\+Size = {\ttfamily 2} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int32}]{Start\+Size = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-\Hypertarget{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}\label{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a} 
+\Hypertarget{class_snake_aa2c2d788aa3264b4bac80ee2eafb7146}\label{class_snake_aa2c2d788aa3264b4bac80ee2eafb7146} 
 \index{Snake@{Snake}!````~Snake@{\texorpdfstring{$\sim$}{\string~}Snake}}
 \index{````~Snake@{\texorpdfstring{$\sim$}{\string~}Snake}!Snake@{Snake}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Snake()}{\string~Snake()}}
-{\footnotesize\ttfamily Snake\+::\texorpdfstring{$\sim$}{\string~}\+Snake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily Snake\+::\texorpdfstring{$\sim$}{\string~}\+Snake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
 
 \Hypertarget{class_snake_a4d256c29fe1e6908513cf86ee7d58089}\label{class_snake_a4d256c29fe1e6908513cf86ee7d58089} 
 \index{Snake@{Snake}!Snake@{Snake}}
@@ -187,7 +187,7 @@ override this function to get an ability cast your scene object to JSON format. 
 
 
 
-Implements \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{Scene\+Object}}.
+Implements \mbox{\hyperlink{class_scene_object_a6dbfd5ba7f4ae9f320895149083dbd05}{Scene\+Object}}.
 
 \Hypertarget{class_snake_ae383384501da0a7d72c9be9f832d8b60}\label{class_snake_ae383384501da0a7d72c9be9f832d8b60} 
 \index{Snake@{Snake}!Update@{Update}}

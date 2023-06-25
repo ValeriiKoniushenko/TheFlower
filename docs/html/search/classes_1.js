@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['canvas_0',['Canvas',['../class_canvas.html',1,'']]]
+  ['button_0',['Button',['../class_button.html',1,'']]]
 ];

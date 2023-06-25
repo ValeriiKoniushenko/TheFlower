@@ -110,9 +110,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad281ada9a143d39e675700a9490e1e36"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ad281ada9a143d39e675700a9490e1e36">Draw</a> (sf::RenderWindow &amp;Window)=0</td></tr>
 <tr class="memdesc:ad281ada9a143d39e675700a9490e1e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">override this function to Draw anything on the scene  <br /></td></tr>
 <tr class="separator:ad281ada9a143d39e675700a9490e1e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e0e63d1ba63b27cef7b256e28fb5d3"><td class="memItemLeft" align="right" valign="top">virtual boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a10e0e63d1ba63b27cef7b256e28fb5d3">ToJSON</a> () const =0</td></tr>
-<tr class="memdesc:a10e0e63d1ba63b27cef7b256e28fb5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization.  <br /></td></tr>
-<tr class="separator:a10e0e63d1ba63b27cef7b256e28fb5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dbfd5ba7f4ae9f320895149083dbd05"><td class="memItemLeft" align="right" valign="top">virtual _NODISCARD boost::property_tree::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a6dbfd5ba7f4ae9f320895149083dbd05">ToJSON</a> () const =0</td></tr>
+<tr class="memdesc:a6dbfd5ba7f4ae9f320895149083dbd05"><td class="mdescLeft">&#160;</td><td class="mdescRight">override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization.  <br /></td></tr>
+<tr class="separator:a6dbfd5ba7f4ae9f320895149083dbd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The base class for all objects on the scene. </p>
@@ -302,8 +302,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a10e0e63d1ba63b27cef7b256e28fb5d3" name="a10e0e63d1ba63b27cef7b256e28fb5d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e0e63d1ba63b27cef7b256e28fb5d3">&#9670;&#160;</a></span>ToJSON()</h2>
+<a id="a6dbfd5ba7f4ae9f320895149083dbd05" name="a6dbfd5ba7f4ae9f320895149083dbd05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dbfd5ba7f4ae9f320895149083dbd05">&#9670;&#160;</a></span>ToJSON()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +312,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual boost::property_tree::ptree SceneObject::ToJSON </td>
+          <td class="memname">virtual _NODISCARD boost::property_tree::ptree SceneObject::ToJSON </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
