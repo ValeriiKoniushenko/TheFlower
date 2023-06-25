@@ -168,11 +168,6 @@ void Snake::Increase(__int32 MaxSize)
 	}
 }
 
-void Snake::DecreaseSpeedBy(float Percent)
-{
-	Speed *= 1.f - Percent;
-}
-
 bool Snake::InteractWithSprite(const sf::Sprite& Sprite) const
 {
 	for (const sf::Sprite& Sprite_ : Sprites_)
@@ -184,4 +179,9 @@ bool Snake::InteractWithSprite(const sf::Sprite& Sprite) const
 	}
 
 	return false;
+}
+
+void Snake::SetSpeedMultiplier(float Multiplier)
+{
+	Speed = Multiplier;
 }

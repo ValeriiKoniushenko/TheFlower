@@ -106,6 +106,15 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	DecreaseSpawnSpeedEveryXSeconds();
 	CheckInteractWithFlower();
 	CheckForDefeat();
+
+	if (SnakeConfig_.HaveToSpeedUp)
+	{
+		if (clock() - SnakeConfig_.LastSpeedUpEffect > SnakeConfig_.SpeedUpEffectTime)
+		{
+			SpeedDownAllSnakes();
+			SnakeConfig_.HaveToSpeedUp = false;
+		}
+	}
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -246,6 +255,9 @@ void GameProcessGameState::CheckInteractWithFlower()
 			if (Snake_.InteractWithSprite(It->GetMainSprite()))
 			{
 				It = FlowerPool_.Erase(It);
+				SnakeConfig_.HaveToSpeedUp = true;
+				SpeedUpAllSnakes();
+				SnakeConfig_.LastSpeedUpEffect = clock();
 			}
 			else
 			{
@@ -281,5 +293,21 @@ void GameProcessGameState::DecreaseSpawnSpeedEveryXSeconds()
 	{
 		SnakeConfig_.SnakeSpawnerDecreaser += SnakeConfig_.DecreaseSpawnSpeedFor;
 		SnakeConfig_.LastDecreaseSpawnSpeed = clock();
+	}
+}
+
+void GameProcessGameState::SpeedUpAllSnakes()
+{
+	for (Snake& Snake_ : SnakePool_)
+	{
+		Snake_.SetSpeedMultiplier(SnakeConfig_.SpeedUpEffectStrength);
+	}
+}
+
+void GameProcessGameState::SpeedDownAllSnakes()
+{
+	for (Snake& Snake_ : SnakePool_)
+	{
+		Snake_.SetSpeedMultiplier(1.f);
 	}
 }

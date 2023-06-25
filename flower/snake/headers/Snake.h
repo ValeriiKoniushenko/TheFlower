@@ -51,12 +51,12 @@ public:
 
 	void Bobtail();
 	void Increase(__int32 MaxSize);
+	void SetSpeedMultiplier(float Multiplier);
 
-	void DecreaseSpeedBy(float Percent);
 	bool InteractWithSprite(const sf::Sprite& Sprite) const;
 
 private:
-	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const;
+	bool IsNearlyToPoint(const sf::Vector2f& P1, const sf::Vector2f& P2) const; // TODO: move to Utils
 	sf::Vector2f Normalize(const sf::Vector2f& source) const;	 // TODO: move to Utils
 
 	template <typename T>

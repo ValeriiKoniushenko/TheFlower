@@ -55,6 +55,8 @@ private:
 	void SpawnNewSnakeEveryXSeconds(sf::RenderWindow& Window);
 	void CheckInteractWithFlower();
 	void DecreaseSpawnSpeedEveryXSeconds();
+	void SpeedUpAllSnakes();
+	void SpeedDownAllSnakes();
 
 	void CheckForDefeat();
 

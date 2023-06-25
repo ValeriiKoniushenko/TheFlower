@@ -36,7 +36,6 @@ public:
 	clock_t LastErase = 0;
 	__int32 StartSize = 2;
 	clock_t GrowthSpeed = 3;
-	clock_t SpeedUpEffectLength = 5;
 	float SpeedUpEffectStrength = 2.f;
 	clock_t EraseFrequency = 100;
 	clock_t GrowthFrequency = 3000;
@@ -48,4 +47,7 @@ public:
 	float DecreaseSpawnSpeedFor = 0.05f;
 	float SnakeSpawnerDecreaser = 1.f;
 	clock_t LastDecreaseSpawnSpeed = 0;
+	clock_t SpeedUpEffectTime = 5000;
+	bool HaveToSpeedUp = false;
+	clock_t LastSpeedUpEffect = 0;
 };
