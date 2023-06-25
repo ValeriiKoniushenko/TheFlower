@@ -22,8 +22,6 @@
 
 #include "GameProcessGameState.h"
 
-#include <random>
-
 void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
@@ -165,7 +163,6 @@ void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
 	Snake Snake_(SnakeConfig_.StartSize);
 	Snake_.SetTexture(SnakeTexture_);
 
-	std::default_random_engine generator(time(nullptr));
 	std::uniform_real_distribution<float> distributionByWidth(0.f, Window.getSize().x);
 	std::uniform_real_distribution<float> distributionByHeight(0.f, Window.getSize().y);
 	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});

@@ -33,6 +33,8 @@
 #include "SnakeConfig.h"
 #include "SnakePool.h"
 
+#include <random>
+
 class GameProcessGameState : public GameStateBase
 {
 public:
@@ -85,4 +87,6 @@ private:
 	sf::SoundBuffer SnakeSpawnSoundBuffer_;
 	sf::Sound PlantSound_;
 	sf::Sound SnakeSpawnSound_;
+
+	std::default_random_engine generator;
 };
