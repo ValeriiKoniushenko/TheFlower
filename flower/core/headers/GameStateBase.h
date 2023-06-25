@@ -24,9 +24,50 @@
 
 #include "SFML/Graphics.hpp"
 
+/**
+ * @brief the base class for working with a game state.
+ * @details for example you have a main menu and game process. Create two class and inherit from this one to create two game state.
+ * Also, you need to register new game state in the enum class CustomEvent - create new state and go to Program.cpp. After that
+ * open a function Program::ProcessCustomEvent and register your action like an answer for you Custom Event(e.g. Recreate game state
+ * to get new GameState)
+ * @code
+ * class MainMenuGameState final : public GameStateBase
+ * {
+ * public:
+ * 	MainMenuGameState() = default;
+ * 	~MainMenuGameState() = default;
+ * 	MainMenuGameState(MainMenuGameState&&) = default;
+ * 	MainMenuGameState(const MainMenuGameState&) = default;
+ * 	MainMenuGameState& operator=(MainMenuGameState&&) = default;
+ * 	MainMenuGameState& operator=(const MainMenuGameState&) = default;
+ *
+ * void Prepare() override;
+ * void Draw(sf::RenderWindow& Window) override;
+ * void UpdateUi(sf::RenderWindow& Window) override;
+ *
+ * protected:
+ * sf::Texture BackgroundTexture_;
+ * sf::Texture ButtonTexture_;
+ *
+ * Button StartButton_;
+ * Canvas BackgroundCanvas_;
+ * };
+ * @endcode
+ * @code
+ * if (Event == GameStateBase::CustomEvent::OpenGame)
+ * {
+ * 	GameState_.reset();
+ * 	GameState_ = std::make_unique<GameProcessGameState>();
+ * 	GameState_->Prepare();
+ * }
+ * @endcode
+ */
 class GameStateBase
 {
 public:
+	/**
+	 * @brief Register your own event in this enum class to use it
+	 */
 	enum class CustomEvent : __int8
 	{
 		None,
@@ -42,10 +83,25 @@ public:
 	GameStateBase& operator=(GameStateBase&&) = default;
 	GameStateBase& operator=(const GameStateBase&) = default;
 
+	/**
+	 * @brief call this function BEFORE all to prepare this object.
+	 * @details you can put in this function creating\loading of textures for scene objects.
+	 */
 	virtual void Prepare();
+
+	/**
+	 * @brief override this function to output all scene objects
+	 */
 	virtual void Draw(sf::RenderWindow& Window) = 0;
+
+	/**
+	 * @brief override this function to make a scene\state updater. Also, you can know this function by name 'Tick'
+	 */
 	virtual void UpdateUi(sf::RenderWindow& Window) = 0;
 
+	/**
+	 * @brief use this function to poll a one state-custom-event
+	 */
 	_NODISCARD CustomEvent PollEvent();
 
 protected:

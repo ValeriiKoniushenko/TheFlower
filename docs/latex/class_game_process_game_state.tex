@@ -1,0 +1,105 @@
+\doxysection{Game\+Process\+Game\+State Class Reference}
+\hypertarget{class_game_process_game_state}{}\label{class_game_process_game_state}\index{GameProcessGameState@{GameProcessGameState}}
+
+
+{\ttfamily \#include $<$Game\+Process\+Game\+State.\+h$>$}
+
+Inheritance diagram for Game\+Process\+Game\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_process_game_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56}{Prepare}} () override
+\begin{DoxyCompactList}\small\item\em call this function BEFORE all to prepare this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}{Draw}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}{Update\+Ui}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}{Game\+State\+Base}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}{\texorpdfstring{$\sim$}{\string~}\+Game\+State\+Base}} ()=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}{Game\+State\+Base}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}{Game\+State\+Base}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}{operator=}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}{operator=}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Prepare}} ()
+\begin{DoxyCompactList}\small\item\em call this function BEFORE all to prepare this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{Update\+Ui}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{Poll\+Event}} ()
+\begin{DoxyCompactList}\small\item\em use this function to poll a one state-\/custom-\/event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{Open\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{Close\+Game}}
+ \}
+\begin{DoxyCompactList}\small\item\em Register your own event in this enum class to use it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}{Main\+Font\+\_\+}}
+\item 
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a452934ab809df50e49b407e530487525}{Custom\+Event\+\_\+}} = \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{Custom\+Event\+::\+None}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}\label{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb} 
+\index{GameProcessGameState@{GameProcessGameState}!Draw@{Draw}}
+\index{Draw@{Draw}!GameProcessGameState@{GameProcessGameState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+Process\+Game\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to output all scene objects 
+
+
+
+Implements \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Game\+State\+Base}}.
+
+\Hypertarget{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56}\label{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56} 
+\index{GameProcessGameState@{GameProcessGameState}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!GameProcessGameState@{GameProcessGameState}}
+\doxysubsubsection{\texorpdfstring{Prepare()}{Prepare()}}
+{\footnotesize\ttfamily void Game\+Process\+Game\+State\+::\+Prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+call this function BEFORE all to prepare this object. 
+
+you can put in this function creating\textbackslash{}loading of textures for scene objects. 
+
+Reimplemented from \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Game\+State\+Base}}.
+
+\Hypertarget{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}\label{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66} 
+\index{GameProcessGameState@{GameProcessGameState}!UpdateUi@{UpdateUi}}
+\index{UpdateUi@{UpdateUi}!GameProcessGameState@{GameProcessGameState}}
+\doxysubsubsection{\texorpdfstring{UpdateUi()}{UpdateUi()}}
+{\footnotesize\ttfamily void Game\+Process\+Game\+State\+::\+Update\+Ui (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} 
+
+
+
+Implements \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{Game\+State\+Base}}.
+

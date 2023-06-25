@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ramusage_0',['RAMUsage',['../struct_raw_process_1_1_statistics.html#a1ad53abfc9f77dba6c188cbacdc9da4a',1,'RawProcess::Statistics']]]
+  ['erasefrequency_0',['EraseFrequency',['../struct_snake_config.html#a4efd3ff54f5255f9486a9066032c00a8',1,'SnakeConfig']]]
 ];

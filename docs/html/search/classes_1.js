@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memorytracker_0',['MemoryTracker',['../class_memory_tracker.html',1,'']]]
+  ['canvas_0',['Canvas',['../class_canvas.html',1,'']]]
 ];

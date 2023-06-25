@@ -1,0 +1,83 @@
+\doxysection{Snake.\+h}
+\hypertarget{_snake_8h_source}{}\label{_snake_8h_source}\index{flower/snake/headers/Snake.h@{flower/snake/headers/Snake.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}SceneObject.h"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_snake}{Snake}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_object}{SceneObject}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}(\_\_int32\ StartSize\ =\ 2);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}{\string~Snake}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_snake_a4d256c29fe1e6908513cf86ee7d58089}{Snake}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_snake}{Snake}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_snake_a726e8088f075b6dd0f5e78b095db93e3}{Snake}}(\mbox{\hyperlink{class_snake}{Snake}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}\&\ \mbox{\hyperlink{class_snake_a033186926d847bfeb564f0c7dd2a56d1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_snake}{Snake}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_snake}{Snake}}\&\ \mbox{\hyperlink{class_snake_a57f78e6d77c74d431a461e8ecad906d6}{operator=}}(\mbox{\hyperlink{class_snake}{Snake}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a200c0a51ce21c44e65607086bca32fd5}{Draw}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ \ \ \ \ boost::property\_tree::ptree\ \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{ToJSON}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3}{SetTexture}}(sf::Texture\&\ Texture);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_aebf84904546b29f2f1194fc44fc0e402}{SetPosition}}(sf::Vector2f\ NewPosition);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \_NODISCARD\ std::size\_t\ \mbox{\hyperlink{class_snake_a043e9626b7a7cb3162cecc3d7565501e}{Size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_ae383384501da0a7d72c9be9f832d8b60}{Update}}(sf::Window\&\ Window);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_snake_a0013f89e74c493fa9f8d04bdc243baa9}{Contains}}(sf::Vector2f\ Point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_snake_a7dc9351b4ddcc22f78d6539849aac454}{GapBetweenNodes}}\ =\ 50;\ \ \ \ \ \textcolor{comment}{//\ px}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a28f232f374daa0e58fd09cb4dc78e820}{Bobtail}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_adacf38866097765b296210c6a250eb8d}{Increase}}(\_\_int32\ MaxSize);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_ad3b7cace2c20c75202242c083ca0594b}{DecreaseSpeedBy}}(\textcolor{keywordtype}{float}\ Percent);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{InteractWithSprite}}(\textcolor{keyword}{const}\ sf::Sprite\&\ Sprite)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsNearlyToPoint(\textcolor{keyword}{const}\ sf::Vector2f\&\ P1,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ P2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ sf::Vector2f\ Normalize(\textcolor{keyword}{const}\ sf::Vector2f\&\ source)\ \textcolor{keyword}{const};\ \ \ \ \textcolor{comment}{//\ TODO:\ move\ to\ Utils}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00063\ \ \ \ \ T\ Vector2Distance(\textcolor{keyword}{const}\ sf::Vector2<T>\&\ A,\ \textcolor{keyword}{const}\ sf::Vector2<T>\&\ B)\ \ \ \ \textcolor{comment}{//\ TODO:\ move\ to\ Utils}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (fabs(sqrt(((A.x\ -\/\ B.x)\ *\ (A.x\ -\/\ B.x))\ +\ ((A.y\ -\/\ B.y)\ *\ (A.y\ -\/\ B.y)))));}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ sf::Texture*\ TextureP\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00070\ \ \ \ \ std::vector<sf::Sprite>\ Sprites\_;}
+\DoxyCodeLine{00071\ \ \ \ \ sf::Vector2f\ MoveToPoint;}
+\DoxyCodeLine{00072\ \ \ \ \ sf::Vector2f\ Direction;}
+\DoxyCodeLine{00073\ \ \ \ \ clock\_t\ LastUpdate\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ clock\_t\ UpdateFrequency\ =\ 8;\ \ \ \ \textcolor{comment}{//\ 1000ms\ /\ 120FPS\ =\ 8}}
+\DoxyCodeLine{00075\ \ \ \ \ std::default\_random\_engine\ generator;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ Speed\ =\ 1.f;}
+\DoxyCodeLine{00077\ \};}
+
+\end{DoxyCode}

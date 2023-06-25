@@ -1,0 +1,137 @@
+\doxysection{Button Class Reference}
+\hypertarget{class_button}{}\label{class_button}\index{Button@{Button}}
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+Inheritance diagram for Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_a72cf522f2f997a2e80f9dd828d2f350e}{\texorpdfstring{$\sim$}{\string~}\+Button}} () override=default
+\item 
+\+\_\+\+NODISCARD sf\+::\+Text \& \mbox{\hyperlink{class_button_ab31475ca125c3884720e1410575404e0}{Get\+Text}} ()
+\item 
+\+\_\+\+NODISCARD const sf\+::\+Text \& \mbox{\hyperlink{class_button_a2ea439441d94356811cf029bf05635f7}{Get\+Text}} () const
+\item 
+void \mbox{\hyperlink{class_button_a5550b909279fa37e4fa447ed98a54be0}{Update}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em call it every frame to update UI data. Also, you may know this function by name \textquotesingle{}Tick"{} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ab68779834ddc07b274d40da6b32687fc}{Draw}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{class_button_ab8074fae3f235196d1ae036bf8f42759}{Set\+Text\+Vertical\+Align}} (\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} Align)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} \mbox{\hyperlink{class_button_af04cfcfd4cca397d6d9146f7af48cf00}{Get\+Text\+Vertical\+Align}} () const
+\item 
+void \mbox{\hyperlink{class_button_a2d5dc5d874463782aadedf4509101d9b}{Set\+Text\+Horizontal\+Align}} (\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} Align)
+\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} \mbox{\hyperlink{class_button_a892988b13465f61a60c1c0d95b26a1fa}{Get\+Text\+Horizontal\+Align}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_widget}{Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_ad3efcf142654d910c3ff54435f5c9405}{\texorpdfstring{$\sim$}{\string~}\+Widget}} () override=default
+\item 
+void \mbox{\hyperlink{class_widget_a10f09f5bc9875123380a4679f49d6f58}{Set\+Name}} (const std\+::string \&Name)
+\begin{DoxyCompactList}\small\item\em you can set custom UI-\/object name. Use this function to do it \end{DoxyCompactList}\item 
+\+\_\+\+NODISCARD const std\+::string \& \mbox{\hyperlink{class_widget_a4404f86d8dd300750b4e66393fd0f331}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em you can get custom UI-\/object name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_abc8cbb21a506f219a3ba5afd7a495de6}{Set\+On\+Mouse\+Left\+Click\+Event\+Callback}} (std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ On\+Click)
+\item 
+void \mbox{\hyperlink{class_widget_a1729bddaef0e992fa03d7a5f478c20f4}{Set\+On\+Mouse\+Right\+Click\+Event\+Callback}} (std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ On\+Click)
+\item 
+virtual void \mbox{\hyperlink{class_widget_aa881ceb0d15cf344ec0922de05373c28}{Update}} (sf\+::\+Render\+Window \&Window)
+\begin{DoxyCompactList}\small\item\em call it every frame to update UI data. Also, you may know this function by name \textquotesingle{}Tick"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_widget}{Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{Center}}
+ \}
+\begin{DoxyCompactList}\small\item\em it serves for us to get more control over the Text in a widget \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_widget}{Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_a4be26cf371a7fd7e4abf1754267cf822}{Widget}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_widget}{Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ \mbox{\hyperlink{class_widget_ac73416db61bb7f0398778f03ddc41cd0}{On\+Left\+Click\+\_\+}}
+\item 
+std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ \mbox{\hyperlink{class_widget_a75a709a485e2393af1d0ce6f3a9d9e49}{On\+Right\+Click\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{class_widget_abf3ba62299745f1e2ee5b47a19629cf8}{Name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_a72cf522f2f997a2e80f9dd828d2f350e}\label{class_button_a72cf522f2f997a2e80f9dd828d2f350e} 
+\index{Button@{Button}!````~Button@{\texorpdfstring{$\sim$}{\string~}Button}}
+\index{````~Button@{\texorpdfstring{$\sim$}{\string~}Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Button()}{\string~Button()}}
+{\footnotesize\ttfamily Button\+::\texorpdfstring{$\sim$}{\string~}\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_ab68779834ddc07b274d40da6b32687fc}\label{class_button_ab68779834ddc07b274d40da6b32687fc} 
+\index{Button@{Button}!Draw@{Draw}}
+\index{Draw@{Draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Button\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_ab31475ca125c3884720e1410575404e0}\label{class_button_ab31475ca125c3884720e1410575404e0} 
+\index{Button@{Button}!GetText@{GetText}}
+\index{GetText@{GetText}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Text \& Button\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_a2ea439441d94356811cf029bf05635f7}\label{class_button_a2ea439441d94356811cf029bf05635f7} 
+\index{Button@{Button}!GetText@{GetText}}
+\index{GetText@{GetText}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const sf\+::\+Text \& Button\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_button_a892988b13465f61a60c1c0d95b26a1fa}\label{class_button_a892988b13465f61a60c1c0d95b26a1fa} 
+\index{Button@{Button}!GetTextHorizontalAlign@{GetTextHorizontalAlign}}
+\index{GetTextHorizontalAlign@{GetTextHorizontalAlign}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{GetTextHorizontalAlign()}{GetTextHorizontalAlign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Widget\+::\+Text\+Align}} Button\+::\+Get\+Text\+Horizontal\+Align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_button_af04cfcfd4cca397d6d9146f7af48cf00}\label{class_button_af04cfcfd4cca397d6d9146f7af48cf00} 
+\index{Button@{Button}!GetTextVerticalAlign@{GetTextVerticalAlign}}
+\index{GetTextVerticalAlign@{GetTextVerticalAlign}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{GetTextVerticalAlign()}{GetTextVerticalAlign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Widget\+::\+Text\+Align}} Button\+::\+Get\+Text\+Vertical\+Align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_button_a2d5dc5d874463782aadedf4509101d9b}\label{class_button_a2d5dc5d874463782aadedf4509101d9b} 
+\index{Button@{Button}!SetTextHorizontalAlign@{SetTextHorizontalAlign}}
+\index{SetTextHorizontalAlign@{SetTextHorizontalAlign}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{SetTextHorizontalAlign()}{SetTextHorizontalAlign()}}
+{\footnotesize\ttfamily void Button\+::\+Set\+Text\+Horizontal\+Align (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Widget\+::\+Text\+Align}}}]{Align }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_ab8074fae3f235196d1ae036bf8f42759}\label{class_button_ab8074fae3f235196d1ae036bf8f42759} 
+\index{Button@{Button}!SetTextVerticalAlign@{SetTextVerticalAlign}}
+\index{SetTextVerticalAlign@{SetTextVerticalAlign}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{SetTextVerticalAlign()}{SetTextVerticalAlign()}}
+{\footnotesize\ttfamily void Button\+::\+Set\+Text\+Vertical\+Align (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Widget\+::\+Text\+Align}}}]{Align }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_a5550b909279fa37e4fa447ed98a54be0}\label{class_button_a5550b909279fa37e4fa447ed98a54be0} 
+\index{Button@{Button}!Update@{Update}}
+\index{Update@{Update}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Button\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+call it every frame to update UI data. Also, you may know this function by name \textquotesingle{}Tick"{} 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_widget_aa881ceb0d15cf344ec0922de05373c28}{Widget}}.
+

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['taskmanager_0',['TaskManager',['../class_task_manager.html',1,'']]]
+  ['player_0',['Player',['../class_player.html',1,'']]],
+  ['program_1',['Program',['../class_program.html',1,'']]]
 ];

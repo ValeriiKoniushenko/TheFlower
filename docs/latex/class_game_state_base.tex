@@ -1,0 +1,231 @@
+\doxysection{Game\+State\+Base Class Reference}
+\hypertarget{class_game_state_base}{}\label{class_game_state_base}\index{GameStateBase@{GameStateBase}}
+
+
+the base class for working with a game state.  
+
+
+
+
+{\ttfamily \#include $<$Game\+State\+Base.\+h$>$}
+
+Inheritance diagram for Game\+State\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_state_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{Open\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{Close\+Game}}
+ \}
+\begin{DoxyCompactList}\small\item\em Register your own event in this enum class to use it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}{Game\+State\+Base}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}{\texorpdfstring{$\sim$}{\string~}\+Game\+State\+Base}} ()=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}{Game\+State\+Base}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}{Game\+State\+Base}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}{operator=}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}{operator=}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Prepare}} ()
+\begin{DoxyCompactList}\small\item\em call this function BEFORE all to prepare this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{Update\+Ui}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{Poll\+Event}} ()
+\begin{DoxyCompactList}\small\item\em use this function to poll a one state-\/custom-\/event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}{Main\+Font\+\_\+}}
+\item 
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a452934ab809df50e49b407e530487525}{Custom\+Event\+\_\+}} = \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{Custom\+Event\+::\+None}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+the base class for working with a game state. 
+
+for example you have a main menu and game process. Create two class and inherit from this one to create two game state. Also, you need to register new game state in the enum class Custom\+Event -\/ create new state and go to Program.\+cpp. After that open a function Program\+::\+Process\+Custom\+Event and register your action like an answer for you Custom Event(e.\+g. Recreate game state to get new Game\+State) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{\string~MainMenuGameState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}(\mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&\ operator=(\mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_main_menu_game_state}{MainMenuGameState}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Prepare()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ Draw(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ UpdateUi(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{sf::Texture\ BackgroundTexture\_;}
+\DoxyCodeLine{sf::Texture\ ButtonTexture\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_button}{Button}}\ StartButton\_;}
+\DoxyCodeLine{\mbox{\hyperlink{class_canvas}{Canvas}}\ BackgroundCanvas\_;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (Event\ ==\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{GameStateBase::CustomEvent::OpenGame}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ GameState\_.reset();}
+\DoxyCodeLine{\ \ \ \ GameState\_\ =\ std::make\_unique<GameProcessGameState>();}
+\DoxyCodeLine{\ \ \ \ GameState\_-\/>Prepare();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b} 
+\index{GameStateBase@{GameStateBase}!CustomEvent@{CustomEvent}}
+\index{CustomEvent@{CustomEvent}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{CustomEvent}{CustomEvent}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Game\+State\+Base\+::\+Custom\+Event}} \+: \+\_\+\+\_\+int8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Register your own event in this enum class to use it. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!None@{None}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpenGame@{OpenGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!OpenGame@{OpenGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf} 
+Open\+Game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CloseGame@{CloseGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!CloseGame@{CloseGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd} 
+Close\+Game&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}\label{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd} 
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{GameStateBase()}{GameStateBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Game\+State\+Base\+::\+Game\+State\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}\label{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57} 
+\index{GameStateBase@{GameStateBase}!````~GameStateBase@{\texorpdfstring{$\sim$}{\string~}GameStateBase}}
+\index{````~GameStateBase@{\texorpdfstring{$\sim$}{\string~}GameStateBase}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameStateBase()}{\string~GameStateBase()}}
+{\footnotesize\ttfamily virtual Game\+State\+Base\+::\texorpdfstring{$\sim$}{\string~}\+Game\+State\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}\label{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a} 
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{GameStateBase()}{GameStateBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Game\+State\+Base\+::\+Game\+State\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}\label{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903} 
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\index{GameStateBase@{GameStateBase}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{GameStateBase()}{GameStateBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Game\+State\+Base\+::\+Game\+State\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}\label{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683} 
+\index{GameStateBase@{GameStateBase}!Draw@{Draw}}
+\index{Draw@{Draw}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Game\+State\+Base\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+override this function to output all scene objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9}{Main\+Menu\+Game\+State}}.
+
+\Hypertarget{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}\label{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27} 
+\index{GameStateBase@{GameStateBase}!operator=@{operator=}}
+\index{operator=@{operator=}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& Game\+State\+Base\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}\label{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f} 
+\index{GameStateBase@{GameStateBase}!operator=@{operator=}}
+\index{operator=@{operator=}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& Game\+State\+Base\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}\label{class_game_state_base_a390838f324cd0ac1588402aff3cf471b} 
+\index{GameStateBase@{GameStateBase}!PollEvent@{PollEvent}}
+\index{PollEvent@{PollEvent}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{PollEvent()}{PollEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Game\+State\+Base\+::\+Custom\+Event}} Game\+State\+Base\+::\+Poll\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+use this function to poll a one state-\/custom-\/event 
+
+\Hypertarget{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}\label{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed} 
+\index{GameStateBase@{GameStateBase}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{Prepare()}{Prepare()}}
+{\footnotesize\ttfamily void Game\+State\+Base\+::\+Prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+call this function BEFORE all to prepare this object. 
+
+you can put in this function creating\textbackslash{}loading of textures for scene objects. 
+
+Reimplemented in \mbox{\hyperlink{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e}{Main\+Menu\+Game\+State}}.
+
+\Hypertarget{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}\label{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f} 
+\index{GameStateBase@{GameStateBase}!UpdateUi@{UpdateUi}}
+\index{UpdateUi@{UpdateUi}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{UpdateUi()}{UpdateUi()}}
+{\footnotesize\ttfamily virtual void Game\+State\+Base\+::\+Update\+Ui (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3}{Main\+Menu\+Game\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_state_base_a452934ab809df50e49b407e530487525}\label{class_game_state_base_a452934ab809df50e49b407e530487525} 
+\index{GameStateBase@{GameStateBase}!CustomEvent\_@{CustomEvent\_}}
+\index{CustomEvent\_@{CustomEvent\_}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{CustomEvent\_}{CustomEvent\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} Game\+State\+Base\+::\+Custom\+Event\+\_\+ = \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{Custom\+Event\+::\+None}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}\label{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc} 
+\index{GameStateBase@{GameStateBase}!MainFont\_@{MainFont\_}}
+\index{MainFont\_@{MainFont\_}!GameStateBase@{GameStateBase}}
+\doxysubsubsection{\texorpdfstring{MainFont\_}{MainFont\_}}
+{\footnotesize\ttfamily sf\+::\+Font Game\+State\+Base\+::\+Main\+Font\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+

@@ -74,15 +74,7 @@ void Program::CreateWindow()
 
 void Program::LifeCycle()
 {
-	if (dynamic_cast<MainMenuGameState*>(GameState_.get()))
-	{
-		GameState_->Draw(Window_);
-	}
-	else if (dynamic_cast<GameProcessGameState*>(GameState_.get()))
-	{
-		GameState_->Draw(Window_);
-	}
-
+	GameState_->Draw(Window_);
 	GameState_->UpdateUi(Window_);
 
 	ProcessCustomEvent();

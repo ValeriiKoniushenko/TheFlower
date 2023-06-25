@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['getcpuusage_0',['GetCpuUsage',['../class_c_p_u_tracker.html#a6d14abb9a340ca71f7c9a6de22569499',1,'CPUTracker']]],
-  ['getpriority_1',['GetPriority',['../class_c_p_u_tracker.html#ae5eff54689e2a0296e10e58e50e0ba9f',1,'CPUTracker']]],
-  ['getprocesses_2',['GetProcesses',['../class_task_manager.html#aafd0f77892bdd40752e536da6731e7c2',1,'TaskManager::GetProcesses()'],['../class_task_manager.html#a6baac0015d027bc1ad0a7cfa9134d44e',1,'TaskManager::GetProcesses() const']]],
-  ['getstatistics_3',['GetStatistics',['../class_raw_process.html#ac9d85d9a5b3c9f1da49bf61feccead18',1,'RawProcess']]]
+  ['end_0',['end',['../class_flower_pool.html#af2319e0f6ec226ca9e1fb5da7b99a075',1,'FlowerPool::end()'],['../class_snake_pool.html#a8d5da99fa613d202f648731a813e5c40',1,'SnakePool::end()']]],
+  ['end_1',['End',['../class_serializer.html#a7a70e90aef3092f7b1c1caad82bdea16',1,'Serializer']]],
+  ['erase_2',['Erase',['../class_flower_pool.html#ab3543eaf142c480034f77021949483f0',1,'FlowerPool']]]
 ];

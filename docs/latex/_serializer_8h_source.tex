@@ -1,0 +1,82 @@
+\doxysection{Serializer.\+h}
+\hypertarget{_serializer_8h_source}{}\label{_serializer_8h_source}\index{flower/utils/headers/Serializer.h@{flower/utils/headers/Serializer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Copyright\ (c)\ 2023\ Valerii\ Koniushenko}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <boost/property\_tree/json\_parser.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <boost/property\_tree/ptree.hpp>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_serializer}{Serializer}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_serializer}{Serializer}}(\textcolor{keyword}{const}\ std::string\&\ SaveFileName);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_serializer_a42a7d2d8e622ad1ef5f869813b498aa9}{\string~Serializer}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_serializer_a4326e962258cea5cfa300bff354c48f2}{Serializer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_serializer}{Serializer}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_serializer_a52c28cfb6bc8e38f9bb5c3d2948f1ecf}{Serializer}}(\mbox{\hyperlink{class_serializer}{Serializer}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_serializer}{Serializer}}\&\ \mbox{\hyperlink{class_serializer_a701b3e4ee171bf799a6592a75639132c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_serializer}{Serializer}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_serializer}{Serializer}}\&\ \mbox{\hyperlink{class_serializer_aab858e1ba37a42454fcddbbdbc4510d1}{operator=}}(\mbox{\hyperlink{class_serializer}{Serializer}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{AddToSerialize}}(\textcolor{keyword}{const}\ std::string\&\ Key,\ \textcolor{keyword}{const}\ T\&\ Value);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{AddToSerialize}}(\textcolor{keyword}{const}\ std::string\&\ Key,\ \textcolor{keyword}{const}\ boost::property\_tree::ptree\&\ PTree);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00056\ \ \ \ \ T\ \mbox{\hyperlink{class_serializer_a910b8cbbcdc4863b4dd5ba402aebb8e1}{GetFromSerializer}}(\textcolor{keyword}{const}\ std::string\&\ Key);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d5014ec}{Serialize}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_a4bff2b61a32446e8d144e9172d152bdb}{Deserialize}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ boost::property\_tree::ptree::iterator\ \mbox{\hyperlink{class_serializer_a399e22049e5915f97155f2b5feba5513}{Begin}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ boost::property\_tree::ptree::iterator\ \mbox{\hyperlink{class_serializer_a7a70e90aef3092f7b1c1caad82bdea16}{End}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::filesystem::path\ \mbox{\hyperlink{class_serializer_abebc13673816f1cc6c33dc4a2449822f}{SaveDirectory}}\ =\ \textcolor{stringliteral}{"{}save"{}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{class_serializer_ac0b70656331b0527460a86c2dbefceae}{GetSavePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ SaveFileName\_;}
+\DoxyCodeLine{00088\ \ \ \ \ boost::property\_tree::ptree\ PTree\_;}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{Serializer::AddToSerialize}}(\textcolor{keyword}{const}\ std::string\&\ Key,\ \textcolor{keyword}{const}\ T\&\ Value)}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ PTree\_.put(Key,\ Value);}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00098\ T\ \mbox{\hyperlink{class_serializer_a910b8cbbcdc4863b4dd5ba402aebb8e1}{Serializer::GetFromSerializer}}(\textcolor{keyword}{const}\ std::string\&\ Key)}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ PTree\_.get<T>(Key);}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}

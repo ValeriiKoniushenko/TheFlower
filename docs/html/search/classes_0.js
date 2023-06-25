@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cputracker_0',['CPUTracker',['../class_c_p_u_tracker.html',1,'']]]
+  ['button_0',['Button',['../class_button.html',1,'']]]
 ];

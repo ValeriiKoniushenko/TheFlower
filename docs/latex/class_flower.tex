@@ -1,0 +1,158 @@
+\doxysection{Flower Class Reference}
+\hypertarget{class_flower}{}\label{class_flower}\index{Flower@{Flower}}
+
+
+{\ttfamily \#include $<$Flower.\+h$>$}
+
+Inheritance diagram for Flower\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_flower}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_flower_a24f3f77559b3a76509febf7392413ff7}{Flower}} ()
+\item 
+\mbox{\hyperlink{class_flower_aec9d06ab8811948e9e7ebd018306a60e}{\texorpdfstring{$\sim$}{\string~}\+Flower}} () override=default
+\item 
+\mbox{\hyperlink{class_flower_afb38800452f3c369e33ec6c9c639b492}{Flower}} (const \mbox{\hyperlink{class_flower}{Flower}} \&)=default
+\item 
+\mbox{\hyperlink{class_flower_a89e0ed82b7ba2736937ab086ebaad10c}{Flower}} (\mbox{\hyperlink{class_flower}{Flower}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_flower}{Flower}} \& \mbox{\hyperlink{class_flower_af885661c31766acd255dc29c75854a0a}{operator=}} (const \mbox{\hyperlink{class_flower}{Flower}} \&)=default
+\item 
+\mbox{\hyperlink{class_flower}{Flower}} \& \mbox{\hyperlink{class_flower_a3c8445c37febdfb0a39845ec08dbcade}{operator=}} (\mbox{\hyperlink{class_flower}{Flower}} \&\&)=default
+\item 
+\+\_\+\+NODISCARD sf\+::\+Sprite \& \mbox{\hyperlink{class_flower_a624bd10512e6cb3f3551da556daeb411}{Get\+Main\+Sprite}} ()
+\item 
+\+\_\+\+NODISCARD const sf\+::\+Sprite \& \mbox{\hyperlink{class_flower_ab3b816a45799a7bd4d49709f0f18851e}{Get\+Main\+Sprite}} () const
+\item 
+void \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{Draw}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
+boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}{To\+JSON}} () const override
+\begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flower_a0c246497cbeeec4848d7bb90112f64f7}{Set\+Position}} (const sf\+::\+Vector2f \&Position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene_object}{Scene\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_object_a39ac215b0b6183ac251a26a522acde14}{Scene\+Object}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\texorpdfstring{$\sim$}{\string~}\+Scene\+Object}} ()=default
+\item 
+\mbox{\hyperlink{class_scene_object_a4de57bc818c89cf51d98d7e838373319}{Scene\+Object}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object_a0150c17dc859e3b00cc23dafe9fedd94}{Scene\+Object}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_ad5357c874f5f44b23fe1d35a55c821fd}{operator=}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_a35976647e2f5a9970445ca6502a12a44}{operator=}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
+virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+\begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}{Main\+Sprite\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_flower_a24f3f77559b3a76509febf7392413ff7}\label{class_flower_a24f3f77559b3a76509febf7392413ff7} 
+\index{Flower@{Flower}!Flower@{Flower}}
+\index{Flower@{Flower}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{Flower()}{Flower()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Flower\+::\+Flower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_aec9d06ab8811948e9e7ebd018306a60e}\label{class_flower_aec9d06ab8811948e9e7ebd018306a60e} 
+\index{Flower@{Flower}!````~Flower@{\texorpdfstring{$\sim$}{\string~}Flower}}
+\index{````~Flower@{\texorpdfstring{$\sim$}{\string~}Flower}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Flower()}{\string~Flower()}}
+{\footnotesize\ttfamily Flower\+::\texorpdfstring{$\sim$}{\string~}\+Flower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\Hypertarget{class_flower_afb38800452f3c369e33ec6c9c639b492}\label{class_flower_afb38800452f3c369e33ec6c9c639b492} 
+\index{Flower@{Flower}!Flower@{Flower}}
+\index{Flower@{Flower}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{Flower()}{Flower()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Flower\+::\+Flower (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flower}{Flower}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_flower_a89e0ed82b7ba2736937ab086ebaad10c}\label{class_flower_a89e0ed82b7ba2736937ab086ebaad10c} 
+\index{Flower@{Flower}!Flower@{Flower}}
+\index{Flower@{Flower}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{Flower()}{Flower()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Flower\+::\+Flower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flower}{Flower}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_flower_af9cc774170a040f4bf846fd3ad1b3239}\label{class_flower_af9cc774170a040f4bf846fd3ad1b3239} 
+\index{Flower@{Flower}!Draw@{Draw}}
+\index{Draw@{Draw}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Flower\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to Draw anything on the scene 
+
+
+
+Implements \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Scene\+Object}}.
+
+\Hypertarget{class_flower_a624bd10512e6cb3f3551da556daeb411}\label{class_flower_a624bd10512e6cb3f3551da556daeb411} 
+\index{Flower@{Flower}!GetMainSprite@{GetMainSprite}}
+\index{GetMainSprite@{GetMainSprite}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{GetMainSprite()}{GetMainSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Flower\+::\+Get\+Main\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_ab3b816a45799a7bd4d49709f0f18851e}\label{class_flower_ab3b816a45799a7bd4d49709f0f18851e} 
+\index{Flower@{Flower}!GetMainSprite@{GetMainSprite}}
+\index{GetMainSprite@{GetMainSprite}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{GetMainSprite()}{GetMainSprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Flower\+::\+Get\+Main\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_flower_af885661c31766acd255dc29c75854a0a}\label{class_flower_af885661c31766acd255dc29c75854a0a} 
+\index{Flower@{Flower}!operator=@{operator=}}
+\index{operator=@{operator=}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_flower}{Flower}} \& Flower\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flower}{Flower}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_flower_a3c8445c37febdfb0a39845ec08dbcade}\label{class_flower_a3c8445c37febdfb0a39845ec08dbcade} 
+\index{Flower@{Flower}!operator=@{operator=}}
+\index{operator=@{operator=}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_flower}{Flower}} \& Flower\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flower}{Flower}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_flower_a0c246497cbeeec4848d7bb90112f64f7}\label{class_flower_a0c246497cbeeec4848d7bb90112f64f7} 
+\index{Flower@{Flower}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Flower\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{Position }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}\label{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a} 
+\index{Flower@{Flower}!ToJSON@{ToJSON}}
+\index{ToJSON@{ToJSON}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{ToJSON()}{ToJSON()}}
+{\footnotesize\ttfamily boost\+::property\+\_\+tree\+::ptree Flower\+::\+To\+JSON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{Scene\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10}\label{class_flower_a5ad09759d1d0b9c0eebf73fe3e7d7f10} 
+\index{Flower@{Flower}!MainSprite\_@{MainSprite\_}}
+\index{MainSprite\_@{MainSprite\_}!Flower@{Flower}}
+\doxysubsubsection{\texorpdfstring{MainSprite\_}{MainSprite\_}}
+{\footnotesize\ttfamily sf\+::\+Sprite Flower\+::\+Main\+Sprite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+

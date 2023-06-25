@@ -27,9 +27,15 @@
 
 // TODO: Move it to UI lib
 
+/**
+ * @brief the main class for UI elements. Inherit from this class if you want to create new UI element.
+ */
 class Widget : public sf::Sprite
 {
 public:
+	/**
+	 * @brief it serves for us to get more control over the Text in a widget
+	 */
 	enum class TextAlign : __int8
 	{
 		Center	  // TODO: add 'left' 'right'
@@ -38,11 +44,22 @@ public:
 public:
 	~Widget() override = default;
 
+	/**
+	 * @brief you can set custom UI-object name. Use this function to do it
+	 */
 	void SetName(const std::string& Name);
+
+	/**
+	 * @brief you can get custom UI-object name
+	 */
 	_NODISCARD const std::string& GetName() const;
 
 	void SetOnMouseLeftClickEventCallback(std::function<void(const Widget&)> OnClick);
 	void SetOnMouseRightClickEventCallback(std::function<void(const Widget&)> OnClick);
+
+	/**
+	 * @brief call it every frame to update UI data. Also, you may know this function by name 'Tick"
+	 */
 	virtual void Update(sf::RenderWindow& Window);
 
 protected:

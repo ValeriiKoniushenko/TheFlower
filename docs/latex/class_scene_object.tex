@@ -1,0 +1,109 @@
+\doxysection{Scene\+Object Class Reference}
+\hypertarget{class_scene_object}{}\label{class_scene_object}\index{SceneObject@{SceneObject}}
+
+
+The base class for all objects on the scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Object.\+h$>$}
+
+Inheritance diagram for Scene\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_object_a39ac215b0b6183ac251a26a522acde14}{Scene\+Object}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\texorpdfstring{$\sim$}{\string~}\+Scene\+Object}} ()=default
+\item 
+\mbox{\hyperlink{class_scene_object_a4de57bc818c89cf51d98d7e838373319}{Scene\+Object}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object_a0150c17dc859e3b00cc23dafe9fedd94}{Scene\+Object}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_ad5357c874f5f44b23fe1d35a55c821fd}{operator=}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_a35976647e2f5a9970445ca6502a12a44}{operator=}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
+virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+\begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for all objects on the scene. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene_object_a39ac215b0b6183ac251a26a522acde14}\label{class_scene_object_a39ac215b0b6183ac251a26a522acde14} 
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{SceneObject()}{SceneObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Scene\+Object\+::\+Scene\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_scene_object_a0b8708ffea012cd61f583103bf84b531}\label{class_scene_object_a0b8708ffea012cd61f583103bf84b531} 
+\index{SceneObject@{SceneObject}!````~SceneObject@{\texorpdfstring{$\sim$}{\string~}SceneObject}}
+\index{````~SceneObject@{\texorpdfstring{$\sim$}{\string~}SceneObject}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SceneObject()}{\string~SceneObject()}}
+{\footnotesize\ttfamily virtual Scene\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Scene\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_scene_object_a4de57bc818c89cf51d98d7e838373319}\label{class_scene_object_a4de57bc818c89cf51d98d7e838373319} 
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{SceneObject()}{SceneObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Scene\+Object\+::\+Scene\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_scene_object_a0150c17dc859e3b00cc23dafe9fedd94}\label{class_scene_object_a0150c17dc859e3b00cc23dafe9fedd94} 
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\index{SceneObject@{SceneObject}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{SceneObject()}{SceneObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Scene\+Object\+::\+Scene\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene_object_ad281ada9a143d39e675700a9490e1e36}\label{class_scene_object_ad281ada9a143d39e675700a9490e1e36} 
+\index{SceneObject@{SceneObject}!Draw@{Draw}}
+\index{Draw@{Draw}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Scene\+Object\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+override this function to Draw anything on the scene 
+
+
+
+Implemented in \mbox{\hyperlink{class_flower_af9cc774170a040f4bf846fd3ad1b3239}{Flower}}, and \mbox{\hyperlink{class_snake_a200c0a51ce21c44e65607086bca32fd5}{Snake}}.
+
+\Hypertarget{class_scene_object_ad5357c874f5f44b23fe1d35a55c821fd}\label{class_scene_object_ad5357c874f5f44b23fe1d35a55c821fd} 
+\index{SceneObject@{SceneObject}!operator=@{operator=}}
+\index{operator=@{operator=}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& Scene\+Object\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_scene_object_a35976647e2f5a9970445ca6502a12a44}\label{class_scene_object_a35976647e2f5a9970445ca6502a12a44} 
+\index{SceneObject@{SceneObject}!operator=@{operator=}}
+\index{operator=@{operator=}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& Scene\+Object\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}\label{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3} 
+\index{SceneObject@{SceneObject}!ToJSON@{ToJSON}}
+\index{ToJSON@{ToJSON}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{ToJSON()}{ToJSON()}}
+{\footnotesize\ttfamily virtual boost\+::property\+\_\+tree\+::ptree Scene\+Object\+::\+To\+JSON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. 
+
+
+
+Implemented in \mbox{\hyperlink{class_flower_a95ad6ffe0d463d578cfcaa1c5f58577a}{Flower}}, and \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{Snake}}.
+

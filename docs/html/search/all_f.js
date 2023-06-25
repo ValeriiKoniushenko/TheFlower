@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['taskmanager_0',['TaskManager',['../class_task_manager.html',1,'TaskManager'],['../class_task_manager.html#ab1adaa0f5b87d8fb26c09e7883fdd9fe',1,'TaskManager::TaskManager()=default'],['../class_task_manager.html#aa507b7c7c7022cb35f6923b34d72e479',1,'TaskManager::TaskManager(const TaskManager &amp;)=delete'],['../class_task_manager.html#ae0eb341aea4d994c72e4267bb78d8658',1,'TaskManager::TaskManager(TaskManager &amp;&amp;)=delete']]],
-  ['tb_1',['Tb',['../namespace_utils.html#a1a8c1f8b95df0aff9510225425d2edecabd63cda5e59ddb168ec03847f26b831b',1,'Utils']]]
+  ['textalign_0',['TextAlign',['../class_widget.html#ae246d3061605efc705d64084ab3b1d3f',1,'Widget']]],
+  ['the_20flower_20game_1',['The Flower Game',['../index.html',1,'']]],
+  ['tojson_2',['ToJSON',['../class_scene_object.html#a10e0e63d1ba63b27cef7b256e28fb5d3',1,'SceneObject::ToJSON()'],['../class_flower.html#a95ad6ffe0d463d578cfcaa1c5f58577a',1,'Flower::ToJSON()'],['../class_snake.html#a80b2cb64073dc6c8b64b097d69383afb',1,'Snake::ToJSON()']]]
 ];

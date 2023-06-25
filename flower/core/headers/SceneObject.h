@@ -26,6 +26,9 @@
 #include "boost/property_tree/json_parser.hpp"
 #include "boost/property_tree/ptree.hpp"
 
+/**
+  * @brief The base class for all objects on the scene
+ */
 class SceneObject
 {
 public:
@@ -36,6 +39,13 @@ public:
 	SceneObject& operator=(const SceneObject&) = default;
 	SceneObject& operator=(SceneObject&&) = default;
 
+	/**
+ 	 * @brief override this function to Draw anything on the scene
+	 */
 	virtual void Draw(sf::RenderWindow& Window) = 0;
+
+	/**
+ 	 * @brief override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization.
+	 */
 	virtual boost::property_tree::ptree ToJSON() const = 0;
 };

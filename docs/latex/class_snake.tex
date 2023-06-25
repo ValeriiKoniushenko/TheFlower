@@ -1,0 +1,206 @@
+\doxysection{Snake Class Reference}
+\hypertarget{class_snake}{}\label{class_snake}\index{Snake@{Snake}}
+
+
+{\ttfamily \#include $<$Snake.\+h$>$}
+
+Inheritance diagram for Snake\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_snake}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_snake_af383084cb65b20ada0b007de8a4d9dbe}{Snake}} (\+\_\+\+\_\+int32 Start\+Size=2)
+\item 
+\mbox{\hyperlink{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}{\texorpdfstring{$\sim$}{\string~}\+Snake}} ()=default
+\item 
+\mbox{\hyperlink{class_snake_a4d256c29fe1e6908513cf86ee7d58089}{Snake}} (const \mbox{\hyperlink{class_snake}{Snake}} \&)=default
+\item 
+\mbox{\hyperlink{class_snake_a726e8088f075b6dd0f5e78b095db93e3}{Snake}} (\mbox{\hyperlink{class_snake}{Snake}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_snake}{Snake}} \& \mbox{\hyperlink{class_snake_a033186926d847bfeb564f0c7dd2a56d1}{operator=}} (const \mbox{\hyperlink{class_snake}{Snake}} \&)=default
+\item 
+\mbox{\hyperlink{class_snake}{Snake}} \& \mbox{\hyperlink{class_snake_a57f78e6d77c74d431a461e8ecad906d6}{operator=}} (\mbox{\hyperlink{class_snake}{Snake}} \&\&)=default
+\item 
+void \mbox{\hyperlink{class_snake_a200c0a51ce21c44e65607086bca32fd5}{Draw}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
+boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_snake_a80b2cb64073dc6c8b64b097d69383afb}{To\+JSON}} () const override
+\begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3}{Set\+Texture}} (sf\+::\+Texture \&Texture)
+\item 
+void \mbox{\hyperlink{class_snake_aebf84904546b29f2f1194fc44fc0e402}{Set\+Position}} (sf\+::\+Vector2f New\+Position)
+\item 
+\+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_snake_a043e9626b7a7cb3162cecc3d7565501e}{Size}} () const
+\item 
+void \mbox{\hyperlink{class_snake_ae383384501da0a7d72c9be9f832d8b60}{Update}} (sf\+::\+Window \&Window)
+\item 
+bool \mbox{\hyperlink{class_snake_a0013f89e74c493fa9f8d04bdc243baa9}{Contains}} (sf\+::\+Vector2f Point) const
+\item 
+void \mbox{\hyperlink{class_snake_a28f232f374daa0e58fd09cb4dc78e820}{Bobtail}} ()
+\item 
+void \mbox{\hyperlink{class_snake_adacf38866097765b296210c6a250eb8d}{Increase}} (\+\_\+\+\_\+int32 Max\+Size)
+\item 
+void \mbox{\hyperlink{class_snake_ad3b7cace2c20c75202242c083ca0594b}{Decrease\+Speed\+By}} (float Percent)
+\item 
+bool \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{Interact\+With\+Sprite}} (const sf\+::\+Sprite \&Sprite) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene_object}{Scene\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_object_a39ac215b0b6183ac251a26a522acde14}{Scene\+Object}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_scene_object_a0b8708ffea012cd61f583103bf84b531}{\texorpdfstring{$\sim$}{\string~}\+Scene\+Object}} ()=default
+\item 
+\mbox{\hyperlink{class_scene_object_a4de57bc818c89cf51d98d7e838373319}{Scene\+Object}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object_a0150c17dc859e3b00cc23dafe9fedd94}{Scene\+Object}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_ad5357c874f5f44b23fe1d35a55c821fd}{operator=}} (const \mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&)=default
+\item 
+\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \& \mbox{\hyperlink{class_scene_object_a35976647e2f5a9970445ca6502a12a44}{operator=}} (\mbox{\hyperlink{class_scene_object}{Scene\+Object}} \&\&)=default
+\item 
+virtual void \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to Draw anything on the scene \end{DoxyCompactList}\item 
+virtual boost\+::property\+\_\+tree\+::ptree \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{To\+JSON}} () const =0
+\begin{DoxyCompactList}\small\item\em override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \mbox{\hyperlink{class_snake_a7dc9351b4ddcc22f78d6539849aac454}{Gap\+Between\+Nodes}} = 50
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_snake_af383084cb65b20ada0b007de8a4d9dbe}\label{class_snake_af383084cb65b20ada0b007de8a4d9dbe} 
+\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Snake()}{Snake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int32}]{Start\+Size = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a}\label{class_snake_af2db8a219cf28b4ce82c3b5ae8ed112a} 
+\index{Snake@{Snake}!````~Snake@{\texorpdfstring{$\sim$}{\string~}Snake}}
+\index{````~Snake@{\texorpdfstring{$\sim$}{\string~}Snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Snake()}{\string~Snake()}}
+{\footnotesize\ttfamily Snake\+::\texorpdfstring{$\sim$}{\string~}\+Snake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_snake_a4d256c29fe1e6908513cf86ee7d58089}\label{class_snake_a4d256c29fe1e6908513cf86ee7d58089} 
+\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Snake()}{Snake()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_snake}{Snake}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_snake_a726e8088f075b6dd0f5e78b095db93e3}\label{class_snake_a726e8088f075b6dd0f5e78b095db93e3} 
+\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Snake()}{Snake()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_snake}{Snake}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_snake_a28f232f374daa0e58fd09cb4dc78e820}\label{class_snake_a28f232f374daa0e58fd09cb4dc78e820} 
+\index{Snake@{Snake}!Bobtail@{Bobtail}}
+\index{Bobtail@{Bobtail}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Bobtail()}{Bobtail()}}
+{\footnotesize\ttfamily void Snake\+::\+Bobtail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_a0013f89e74c493fa9f8d04bdc243baa9}\label{class_snake_a0013f89e74c493fa9f8d04bdc243baa9} 
+\index{Snake@{Snake}!Contains@{Contains}}
+\index{Contains@{Contains}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Snake\+::\+Contains (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{Point }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_snake_ad3b7cace2c20c75202242c083ca0594b}\label{class_snake_ad3b7cace2c20c75202242c083ca0594b} 
+\index{Snake@{Snake}!DecreaseSpeedBy@{DecreaseSpeedBy}}
+\index{DecreaseSpeedBy@{DecreaseSpeedBy}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{DecreaseSpeedBy()}{DecreaseSpeedBy()}}
+{\footnotesize\ttfamily void Snake\+::\+Decrease\+Speed\+By (\begin{DoxyParamCaption}\item[{float}]{Percent }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_a200c0a51ce21c44e65607086bca32fd5}\label{class_snake_a200c0a51ce21c44e65607086bca32fd5} 
+\index{Snake@{Snake}!Draw@{Draw}}
+\index{Draw@{Draw}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Snake\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to Draw anything on the scene 
+
+
+
+Implements \mbox{\hyperlink{class_scene_object_ad281ada9a143d39e675700a9490e1e36}{Scene\+Object}}.
+
+\Hypertarget{class_snake_adacf38866097765b296210c6a250eb8d}\label{class_snake_adacf38866097765b296210c6a250eb8d} 
+\index{Snake@{Snake}!Increase@{Increase}}
+\index{Increase@{Increase}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Increase()}{Increase()}}
+{\footnotesize\ttfamily void Snake\+::\+Increase (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int32}]{Max\+Size }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_ab264d6bad1305f85ff174514c8352ee4}\label{class_snake_ab264d6bad1305f85ff174514c8352ee4} 
+\index{Snake@{Snake}!InteractWithSprite@{InteractWithSprite}}
+\index{InteractWithSprite@{InteractWithSprite}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{InteractWithSprite()}{InteractWithSprite()}}
+{\footnotesize\ttfamily bool Snake\+::\+Interact\+With\+Sprite (\begin{DoxyParamCaption}\item[{const sf\+::\+Sprite \&}]{Sprite }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_snake_a033186926d847bfeb564f0c7dd2a56d1}\label{class_snake_a033186926d847bfeb564f0c7dd2a56d1} 
+\index{Snake@{Snake}!operator=@{operator=}}
+\index{operator=@{operator=}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_snake}{Snake}} \& Snake\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_snake}{Snake}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_snake_a57f78e6d77c74d431a461e8ecad906d6}\label{class_snake_a57f78e6d77c74d431a461e8ecad906d6} 
+\index{Snake@{Snake}!operator=@{operator=}}
+\index{operator=@{operator=}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_snake}{Snake}} \& Snake\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_snake}{Snake}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_snake_aebf84904546b29f2f1194fc44fc0e402}\label{class_snake_aebf84904546b29f2f1194fc44fc0e402} 
+\index{Snake@{Snake}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Snake\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{New\+Position }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3}\label{class_snake_a951a33663e58d3a4c7e1c8b9b18ef3e3} 
+\index{Snake@{Snake}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void Snake\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{Texture }\end{DoxyParamCaption})}
+
+\Hypertarget{class_snake_a043e9626b7a7cb3162cecc3d7565501e}\label{class_snake_a043e9626b7a7cb3162cecc3d7565501e} 
+\index{Snake@{Snake}!Size@{Size}}
+\index{Size@{Size}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Snake\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_snake_a80b2cb64073dc6c8b64b097d69383afb}\label{class_snake_a80b2cb64073dc6c8b64b097d69383afb} 
+\index{Snake@{Snake}!ToJSON@{ToJSON}}
+\index{ToJSON@{ToJSON}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{ToJSON()}{ToJSON()}}
+{\footnotesize\ttfamily boost\+::property\+\_\+tree\+::ptree Snake\+::\+To\+JSON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to get an ability cast your scene object to JSON format. It can be needed for a mechanism of serialization. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_object_a10e0e63d1ba63b27cef7b256e28fb5d3}{Scene\+Object}}.
+
+\Hypertarget{class_snake_ae383384501da0a7d72c9be9f832d8b60}\label{class_snake_ae383384501da0a7d72c9be9f832d8b60} 
+\index{Snake@{Snake}!Update@{Update}}
+\index{Update@{Update}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Snake\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Window \&}]{Window }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_snake_a7dc9351b4ddcc22f78d6539849aac454}\label{class_snake_a7dc9351b4ddcc22f78d6539849aac454} 
+\index{Snake@{Snake}!GapBetweenNodes@{GapBetweenNodes}}
+\index{GapBetweenNodes@{GapBetweenNodes}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{GapBetweenNodes}{GapBetweenNodes}}
+{\footnotesize\ttfamily constexpr float Snake\+::\+Gap\+Between\+Nodes = 50\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+

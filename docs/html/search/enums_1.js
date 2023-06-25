@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_0',['Unit',['../namespace_utils.html#a1a8c1f8b95df0aff9510225425d2edec',1,'Utils']]]
+  ['textalign_0',['TextAlign',['../class_widget.html#ae246d3061605efc705d64084ab3b1d3f',1,'Widget']]]
 ];

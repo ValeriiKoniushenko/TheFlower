@@ -1,0 +1,55 @@
+\doxysection{Snake\+Config.\+h}
+\hypertarget{_snake_config_8h_source}{}\label{_snake_config_8h_source}\index{flower/snake/headers/SnakeConfig.h@{flower/snake/headers/SnakeConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ SOFTWARE.}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Serializer.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_serializer}{Serializer}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_snake_config_a05d9d78e163a5ca8a58ab53df6061191}{SnakeConfig}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_snake_config_a71bc1cfd9f94d2c44739b806978b8463}{\string~SnakeConfig}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_snake_config_ac6ee212099d1140884a3e876ae8215f6}{SnakeConfig}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{struct_snake_config_a379ccee3da6c998a3b271a2be76eb797}{SnakeConfig}}(\mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&\ \mbox{\hyperlink{struct_snake_config_add05b99266617decbab03f49f4d6343c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&\ \mbox{\hyperlink{struct_snake_config_ae1591f6e7bd3243c1c159e370b4ad147}{operator=}}(\mbox{\hyperlink{struct_snake_config}{SnakeConfig}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_snake_config_a14b75d274bf72853ce0c222e5d5e4ec2}{Serialize}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_snake_config_a8d9e2bab4244463cffc8e0de8e5a956b}{Deserialize}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_ad2e1e62a4c7236ffe3cd413696198d87}{LastSpawnTime}}\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_a43dd0ff49b301c07b865477e81cdc2b2}{LastErase}}\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \_\_int32\ \mbox{\hyperlink{struct_snake_config_ac1a66705040ccb32ef1b944cf63ed2f3}{StartSize}}\ =\ 2;}
+\DoxyCodeLine{00038\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_ad811d90c9ff3e60e97d6cdd95c202c65}{GrowthSpeed}}\ =\ 3;}
+\DoxyCodeLine{00039\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_ac03a448cd651725ad2df33deb14b7b93}{SpeedUpEffectLength}}\ =\ 5;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_snake_config_ae09eb0e325e6db673bb3e04e9e31482a}{SpeedUpEffectStrength}}\ =\ 2.f;}
+\DoxyCodeLine{00041\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_a4efd3ff54f5255f9486a9066032c00a8}{EraseFrequency}}\ =\ 100;}
+\DoxyCodeLine{00042\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_a4c3d031203ce6fdd247ca9a0702d2378}{GrowthFrequency}}\ =\ 3000;}
+\DoxyCodeLine{00043\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_af9893cbab9072f3faabebe97f5079db0}{LastGrowth}}\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ \_\_int32\ \mbox{\hyperlink{struct_snake_config_ae9ea289f133818e3167c29d87473e3ea}{MaxSize}}\ =\ 5;}
+\DoxyCodeLine{00045\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_a4dbd1229ed92f1c727980bc917119e2c}{SpawnNewSnakeEveryXMs}}\ =\ 5000;}
+\DoxyCodeLine{00046\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_ab997082c041715effe4343def4f58775}{DecreaseSpeedEveryXMs}}\ =\ 5000;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_snake_config_a7adca09f9acbb9e9a9d1afb2fd617a0d}{DecreaseSpeedCounter}}\ =\ 0.05f;}
+\DoxyCodeLine{00048\ \ \ \ \ clock\_t\ \mbox{\hyperlink{struct_snake_config_a4ad7f167c831e2e3da6d7efc88ea079d}{LastDecreaseSpeed}}\ =\ 0;}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

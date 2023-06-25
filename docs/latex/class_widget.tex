@@ -1,0 +1,159 @@
+\doxysection{Widget Class Reference}
+\hypertarget{class_widget}{}\label{class_widget}\index{Widget@{Widget}}
+
+
+the main class for UI elements. Inherit from this class if you want to create new UI element.  
+
+
+
+
+{\ttfamily \#include $<$Widget.\+h$>$}
+
+Inheritance diagram for Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Text\+Align}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{Center}}
+ \}
+\begin{DoxyCompactList}\small\item\em it serves for us to get more control over the Text in a widget \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_ad3efcf142654d910c3ff54435f5c9405}{\texorpdfstring{$\sim$}{\string~}\+Widget}} () override=default
+\item 
+void \mbox{\hyperlink{class_widget_a10f09f5bc9875123380a4679f49d6f58}{Set\+Name}} (const std\+::string \&Name)
+\begin{DoxyCompactList}\small\item\em you can set custom UI-\/object name. Use this function to do it \end{DoxyCompactList}\item 
+\+\_\+\+NODISCARD const std\+::string \& \mbox{\hyperlink{class_widget_a4404f86d8dd300750b4e66393fd0f331}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em you can get custom UI-\/object name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_abc8cbb21a506f219a3ba5afd7a495de6}{Set\+On\+Mouse\+Left\+Click\+Event\+Callback}} (std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ On\+Click)
+\item 
+void \mbox{\hyperlink{class_widget_a1729bddaef0e992fa03d7a5f478c20f4}{Set\+On\+Mouse\+Right\+Click\+Event\+Callback}} (std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ On\+Click)
+\item 
+virtual void \mbox{\hyperlink{class_widget_aa881ceb0d15cf344ec0922de05373c28}{Update}} (sf\+::\+Render\+Window \&Window)
+\begin{DoxyCompactList}\small\item\em call it every frame to update UI data. Also, you may know this function by name \textquotesingle{}Tick"{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_a4be26cf371a7fd7e4abf1754267cf822}{Widget}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ \mbox{\hyperlink{class_widget_ac73416db61bb7f0398778f03ddc41cd0}{On\+Left\+Click\+\_\+}}
+\item 
+std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$ \mbox{\hyperlink{class_widget_a75a709a485e2393af1d0ce6f3a9d9e49}{On\+Right\+Click\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{class_widget_abf3ba62299745f1e2ee5b47a19629cf8}{Name\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+the main class for UI elements. Inherit from this class if you want to create new UI element. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_widget_ae246d3061605efc705d64084ab3b1d3f}\label{class_widget_ae246d3061605efc705d64084ab3b1d3f} 
+\index{Widget@{Widget}!TextAlign@{TextAlign}}
+\index{TextAlign@{TextAlign}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{TextAlign}{TextAlign}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{Widget\+::\+Text\+Align}} \+: \+\_\+\+\_\+int8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+it serves for us to get more control over the Text in a widget 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Center@{Center}!Widget@{Widget}}\index{Widget@{Widget}!Center@{Center}}}\Hypertarget{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}\label{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd} 
+Center&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_widget_ad3efcf142654d910c3ff54435f5c9405}\label{class_widget_ad3efcf142654d910c3ff54435f5c9405} 
+\index{Widget@{Widget}!````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}}
+\index{````~Widget@{\texorpdfstring{$\sim$}{\string~}Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Widget()}{\string~Widget()}}
+{\footnotesize\ttfamily Widget\+::\texorpdfstring{$\sim$}{\string~}\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\Hypertarget{class_widget_a4be26cf371a7fd7e4abf1754267cf822}\label{class_widget_a4be26cf371a7fd7e4abf1754267cf822} 
+\index{Widget@{Widget}!Widget@{Widget}}
+\index{Widget@{Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Widget()}{Widget()}}
+{\footnotesize\ttfamily Widget\+::\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_widget_a4404f86d8dd300750b4e66393fd0f331}\label{class_widget_a4404f86d8dd300750b4e66393fd0f331} 
+\index{Widget@{Widget}!GetName@{GetName}}
+\index{GetName@{GetName}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string \& Widget\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+you can get custom UI-\/object name 
+
+\Hypertarget{class_widget_a10f09f5bc9875123380a4679f49d6f58}\label{class_widget_a10f09f5bc9875123380a4679f49d6f58} 
+\index{Widget@{Widget}!SetName@{SetName}}
+\index{SetName@{SetName}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Widget\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Name }\end{DoxyParamCaption})}
+
+
+
+you can set custom UI-\/object name. Use this function to do it 
+
+\Hypertarget{class_widget_abc8cbb21a506f219a3ba5afd7a495de6}\label{class_widget_abc8cbb21a506f219a3ba5afd7a495de6} 
+\index{Widget@{Widget}!SetOnMouseLeftClickEventCallback@{SetOnMouseLeftClickEventCallback}}
+\index{SetOnMouseLeftClickEventCallback@{SetOnMouseLeftClickEventCallback}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{SetOnMouseLeftClickEventCallback()}{SetOnMouseLeftClickEventCallback()}}
+{\footnotesize\ttfamily void Widget\+::\+Set\+On\+Mouse\+Left\+Click\+Event\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$}]{On\+Click }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_a1729bddaef0e992fa03d7a5f478c20f4}\label{class_widget_a1729bddaef0e992fa03d7a5f478c20f4} 
+\index{Widget@{Widget}!SetOnMouseRightClickEventCallback@{SetOnMouseRightClickEventCallback}}
+\index{SetOnMouseRightClickEventCallback@{SetOnMouseRightClickEventCallback}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{SetOnMouseRightClickEventCallback()}{SetOnMouseRightClickEventCallback()}}
+{\footnotesize\ttfamily void Widget\+::\+Set\+On\+Mouse\+Right\+Click\+Event\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{class_widget}{Widget}} \&)$>$}]{On\+Click }\end{DoxyParamCaption})}
+
+\Hypertarget{class_widget_aa881ceb0d15cf344ec0922de05373c28}\label{class_widget_aa881ceb0d15cf344ec0922de05373c28} 
+\index{Widget@{Widget}!Update@{Update}}
+\index{Update@{Update}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Widget\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+call it every frame to update UI data. Also, you may know this function by name \textquotesingle{}Tick"{} 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_button_a5550b909279fa37e4fa447ed98a54be0}{Button}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_widget_abf3ba62299745f1e2ee5b47a19629cf8}\label{class_widget_abf3ba62299745f1e2ee5b47a19629cf8} 
+\index{Widget@{Widget}!Name\_@{Name\_}}
+\index{Name\_@{Name\_}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Name\_}{Name\_}}
+{\footnotesize\ttfamily std\+::string Widget\+::\+Name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_widget_ac73416db61bb7f0398778f03ddc41cd0}\label{class_widget_ac73416db61bb7f0398778f03ddc41cd0} 
+\index{Widget@{Widget}!OnLeftClick\_@{OnLeftClick\_}}
+\index{OnLeftClick\_@{OnLeftClick\_}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{OnLeftClick\_}{OnLeftClick\_}}
+{\footnotesize\ttfamily std\+::function$<$void(const \mbox{\hyperlink{class_widget}{Widget}}\&)$>$ Widget\+::\+On\+Left\+Click\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_widget_a75a709a485e2393af1d0ce6f3a9d9e49}\label{class_widget_a75a709a485e2393af1d0ce6f3a9d9e49} 
+\index{Widget@{Widget}!OnRightClick\_@{OnRightClick\_}}
+\index{OnRightClick\_@{OnRightClick\_}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{OnRightClick\_}{OnRightClick\_}}
+{\footnotesize\ttfamily std\+::function$<$void(const \mbox{\hyperlink{class_widget}{Widget}}\&)$>$ Widget\+::\+On\+Right\+Click\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+

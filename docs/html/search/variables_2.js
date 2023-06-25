@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['pathtoprocess_0',['PathToProcess',['../struct_raw_process_1_1_statistics.html#ab36fa74cbd162884367a2975878a6612',1,'RawProcess::Statistics']]],
-  ['pid_1',['PID',['../struct_raw_process_1_1_statistics.html#a0f3d6a2d96a43797874c9c46eb039f5b',1,'RawProcess::Statistics']]],
-  ['priority_2',['Priority',['../struct_raw_process_1_1_statistics.html#a5e8c655fd37efa027a006836f6f9addd',1,'RawProcess::Statistics']]]
+  ['decreasespeedcounter_0',['DecreaseSpeedCounter',['../struct_snake_config.html#a7adca09f9acbb9e9a9d1afb2fd617a0d',1,'SnakeConfig']]],
+  ['decreasespeedeveryxms_1',['DecreaseSpeedEveryXMs',['../struct_snake_config.html#ab997082c041715effe4343def4f58775',1,'SnakeConfig']]]
 ];

@@ -1,0 +1,194 @@
+\doxysection{Main\+Menu\+Game\+State Class Reference}
+\hypertarget{class_main_menu_game_state}{}\label{class_main_menu_game_state}\index{MainMenuGameState@{MainMenuGameState}}
+
+
+{\ttfamily \#include $<$Main\+Menu\+Game\+State.\+h$>$}
+
+Inheritance diagram for Main\+Menu\+Game\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_menu_game_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_menu_game_state_afd57b07b73be93d3e567c2c96350d174}{Main\+Menu\+Game\+State}} ()=default
+\item 
+\mbox{\hyperlink{class_main_menu_game_state_a6510df362d21b4c118fe2e115d0560b9}{\texorpdfstring{$\sim$}{\string~}\+Main\+Menu\+Game\+State}} ()=default
+\item 
+\mbox{\hyperlink{class_main_menu_game_state_ad96c8ebfb4a22186f4f0a4e2b874aa31}{Main\+Menu\+Game\+State}} (\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_main_menu_game_state_a904f557e2ea7669513ed8c2d1dd17f1e}{Main\+Menu\+Game\+State}} (const \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&)=default
+\item 
+\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \& \mbox{\hyperlink{class_main_menu_game_state_a34c783302d036303b2a23f8f36c64ac4}{operator=}} (\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \& \mbox{\hyperlink{class_main_menu_game_state_a42371e376df489a498147daa891518a3}{operator=}} (const \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&)=default
+\item 
+void \mbox{\hyperlink{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e}{Prepare}} () override
+\begin{DoxyCompactList}\small\item\em call this function BEFORE all to prepare this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9}{Draw}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3}{Update\+Ui}} (sf\+::\+Render\+Window \&Window) override
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}{Game\+State\+Base}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}{\texorpdfstring{$\sim$}{\string~}\+Game\+State\+Base}} ()=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}{Game\+State\+Base}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}{Game\+State\+Base}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}{operator=}} (\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \& \mbox{\hyperlink{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}{operator=}} (const \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}} \&)=default
+\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Prepare}} ()
+\begin{DoxyCompactList}\small\item\em call this function BEFORE all to prepare this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Draw}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to output all scene objects \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{Update\+Ui}} (sf\+::\+Render\+Window \&Window)=0
+\begin{DoxyCompactList}\small\item\em override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} \end{DoxyCompactList}\item 
+\+\_\+\+NODISCARD \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{Poll\+Event}} ()
+\begin{DoxyCompactList}\small\item\em use this function to poll a one state-\/custom-\/event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_game_state_a166d7c0cd5d8f15f29bc0629434be833}{Background\+Texture\+\_\+}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_game_state_aebd5955db07528e26227fe7569c1bd55}{Button\+Texture\+\_\+}}
+\item 
+\mbox{\hyperlink{class_button}{Button}} \mbox{\hyperlink{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d}{Start\+Button\+\_\+}}
+\item 
+\mbox{\hyperlink{class_canvas}{Canvas}} \mbox{\hyperlink{class_main_menu_game_state_a979d5c13a8173536777ea46b2dcc7954}{Background\+Canvas\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}{Main\+Font\+\_\+}}
+\item 
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \mbox{\hyperlink{class_game_state_base_a452934ab809df50e49b407e530487525}{Custom\+Event\+\_\+}} = \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{Custom\+Event\+::\+None}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{Open\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{Close\+Game}}
+ \}
+\begin{DoxyCompactList}\small\item\em Register your own event in this enum class to use it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_menu_game_state_afd57b07b73be93d3e567c2c96350d174}\label{class_main_menu_game_state_afd57b07b73be93d3e567c2c96350d174} 
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{MainMenuGameState()}{MainMenuGameState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Main\+Menu\+Game\+State\+::\+Main\+Menu\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_main_menu_game_state_a6510df362d21b4c118fe2e115d0560b9}\label{class_main_menu_game_state_a6510df362d21b4c118fe2e115d0560b9} 
+\index{MainMenuGameState@{MainMenuGameState}!````~MainMenuGameState@{\texorpdfstring{$\sim$}{\string~}MainMenuGameState}}
+\index{````~MainMenuGameState@{\texorpdfstring{$\sim$}{\string~}MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainMenuGameState()}{\string~MainMenuGameState()}}
+{\footnotesize\ttfamily Main\+Menu\+Game\+State\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Menu\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_main_menu_game_state_ad96c8ebfb4a22186f4f0a4e2b874aa31}\label{class_main_menu_game_state_ad96c8ebfb4a22186f4f0a4e2b874aa31} 
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{MainMenuGameState()}{MainMenuGameState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Main\+Menu\+Game\+State\+::\+Main\+Menu\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_main_menu_game_state_a904f557e2ea7669513ed8c2d1dd17f1e}\label{class_main_menu_game_state_a904f557e2ea7669513ed8c2d1dd17f1e} 
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\index{MainMenuGameState@{MainMenuGameState}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{MainMenuGameState()}{MainMenuGameState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Main\+Menu\+Game\+State\+::\+Main\+Menu\+Game\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9}\label{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9} 
+\index{MainMenuGameState@{MainMenuGameState}!Draw@{Draw}}
+\index{Draw@{Draw}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Main\+Menu\+Game\+State\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to output all scene objects 
+
+
+
+Implements \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Game\+State\+Base}}.
+
+\Hypertarget{class_main_menu_game_state_a42371e376df489a498147daa891518a3}\label{class_main_menu_game_state_a42371e376df489a498147daa891518a3} 
+\index{MainMenuGameState@{MainMenuGameState}!operator=@{operator=}}
+\index{operator=@{operator=}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \& Main\+Menu\+Game\+State\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_main_menu_game_state_a34c783302d036303b2a23f8f36c64ac4}\label{class_main_menu_game_state_a34c783302d036303b2a23f8f36c64ac4} 
+\index{MainMenuGameState@{MainMenuGameState}!operator=@{operator=}}
+\index{operator=@{operator=}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \& Main\+Menu\+Game\+State\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_menu_game_state}{Main\+Menu\+Game\+State}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e}\label{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e} 
+\index{MainMenuGameState@{MainMenuGameState}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{Prepare()}{Prepare()}}
+{\footnotesize\ttfamily void Main\+Menu\+Game\+State\+::\+Prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+call this function BEFORE all to prepare this object. 
+
+you can put in this function creating\textbackslash{}loading of textures for scene objects. 
+
+Reimplemented from \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Game\+State\+Base}}.
+
+\Hypertarget{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3}\label{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3} 
+\index{MainMenuGameState@{MainMenuGameState}!UpdateUi@{UpdateUi}}
+\index{UpdateUi@{UpdateUi}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{UpdateUi()}{UpdateUi()}}
+{\footnotesize\ttfamily void Main\+Menu\+Game\+State\+::\+Update\+Ui (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+override this function to make a scene\textbackslash{}state updater. Also, you can know this function by name \textquotesingle{}Tick\textquotesingle{} 
+
+
+
+Implements \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{Game\+State\+Base}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_menu_game_state_a979d5c13a8173536777ea46b2dcc7954}\label{class_main_menu_game_state_a979d5c13a8173536777ea46b2dcc7954} 
+\index{MainMenuGameState@{MainMenuGameState}!BackgroundCanvas\_@{BackgroundCanvas\_}}
+\index{BackgroundCanvas\_@{BackgroundCanvas\_}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{BackgroundCanvas\_}{BackgroundCanvas\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_canvas}{Canvas}} Main\+Menu\+Game\+State\+::\+Background\+Canvas\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_main_menu_game_state_a166d7c0cd5d8f15f29bc0629434be833}\label{class_main_menu_game_state_a166d7c0cd5d8f15f29bc0629434be833} 
+\index{MainMenuGameState@{MainMenuGameState}!BackgroundTexture\_@{BackgroundTexture\_}}
+\index{BackgroundTexture\_@{BackgroundTexture\_}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{BackgroundTexture\_}{BackgroundTexture\_}}
+{\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+Game\+State\+::\+Background\+Texture\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_main_menu_game_state_aebd5955db07528e26227fe7569c1bd55}\label{class_main_menu_game_state_aebd5955db07528e26227fe7569c1bd55} 
+\index{MainMenuGameState@{MainMenuGameState}!ButtonTexture\_@{ButtonTexture\_}}
+\index{ButtonTexture\_@{ButtonTexture\_}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{ButtonTexture\_}{ButtonTexture\_}}
+{\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+Game\+State\+::\+Button\+Texture\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d}\label{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d} 
+\index{MainMenuGameState@{MainMenuGameState}!StartButton\_@{StartButton\_}}
+\index{StartButton\_@{StartButton\_}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{StartButton\_}{StartButton\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_button}{Button}} Main\+Menu\+Game\+State\+::\+Start\+Button\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+

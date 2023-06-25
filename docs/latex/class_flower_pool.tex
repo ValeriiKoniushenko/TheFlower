@@ -1,0 +1,149 @@
+\doxysection{Flower\+Pool Class Reference}
+\hypertarget{class_flower_pool}{}\label{class_flower_pool}\index{FlowerPool@{FlowerPool}}
+
+
+{\ttfamily \#include $<$Flower\+Pool.\+h$>$}
+
+Inheritance diagram for Flower\+Pool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_flower_pool}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_flower_pool_a5fd600d4d4f61fd1c6d019390802b672}{Flower\+Pool}} ()
+\item 
+\mbox{\hyperlink{class_flower_pool_a1595f50b561af5370313e0af3a63091a}{\texorpdfstring{$\sim$}{\string~}\+Flower\+Pool}} () override
+\item 
+void \mbox{\hyperlink{class_flower_pool_a14059444b0563e7fe8069785037f399d}{Serialize}} () override
+\begin{DoxyCompactList}\small\item\em call this function using \textquotesingle{}super\textquotesingle{} AFTER your code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flower_pool_aadcf0fb8f169da250a3e599e08faeb2e}{Deserialize}} () override
+\begin{DoxyCompactList}\small\item\em call this function using \textquotesingle{}super\textquotesingle{} BEFORE your code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flower_pool_ada9184179951a60358dbe1f47a5a0783}{Push}} (const \mbox{\hyperlink{class_flower}{Flower}} \&New\+Flower)
+\item 
+\+\_\+\+NODISCARD std\+::size\+\_\+t \mbox{\hyperlink{class_flower_pool_aae85c7561c1c235515b240bf0913293b}{Size}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator \mbox{\hyperlink{class_flower_pool_ab3543eaf142c480034f77021949483f0}{Erase}} (const std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator \&It)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator \mbox{\hyperlink{class_flower_pool_a817577002528c9546f7190a802fb7631}{begin}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator \mbox{\hyperlink{class_flower_pool_af2319e0f6ec226ca9e1fb5da7b99a075}{end}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_serializer}{Serializer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serializer_aca36f48dd0e686c1ab3d51c2e2aaf7ca}{Serializer}} (const std\+::string \&Save\+File\+Name)
+\item 
+virtual \mbox{\hyperlink{class_serializer_a42a7d2d8e622ad1ef5f869813b498aa9}{\texorpdfstring{$\sim$}{\string~}\+Serializer}} ()
+\item 
+\mbox{\hyperlink{class_serializer_a4326e962258cea5cfa300bff354c48f2}{Serializer}} (const \mbox{\hyperlink{class_serializer}{Serializer}} \&)=default
+\item 
+\mbox{\hyperlink{class_serializer_a52c28cfb6bc8e38f9bb5c3d2948f1ecf}{Serializer}} (\mbox{\hyperlink{class_serializer}{Serializer}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_serializer}{Serializer}} \& \mbox{\hyperlink{class_serializer_a701b3e4ee171bf799a6592a75639132c}{operator=}} (const \mbox{\hyperlink{class_serializer}{Serializer}} \&)=default
+\item 
+\mbox{\hyperlink{class_serializer}{Serializer}} \& \mbox{\hyperlink{class_serializer_aab858e1ba37a42454fcddbbdbc4510d1}{operator=}} (\mbox{\hyperlink{class_serializer}{Serializer}} \&\&)=default
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{Add\+To\+Serialize}} (const std\+::string \&Key, const T \&Value)
+\begin{DoxyCompactList}\small\item\em Add this method in the overrided Serialize function to serialize custom data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serializer_aa9f89d1af72e6fdb89207325ae4af4fe}{Add\+To\+Serialize}} (const std\+::string \&Key, const boost\+::property\+\_\+tree\+::ptree \&PTree)
+\begin{DoxyCompactList}\small\item\em Add this method in the overrided Serialize function to serialize custom data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{class_serializer_a910b8cbbcdc4863b4dd5ba402aebb8e1}{Get\+From\+Serializer}} (const std\+::string \&Key)
+\item 
+virtual void \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d5014ec}{Serialize}} ()
+\begin{DoxyCompactList}\small\item\em call this function using \textquotesingle{}super\textquotesingle{} AFTER your code \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_serializer_a4bff2b61a32446e8d144e9172d152bdb}{Deserialize}} ()
+\begin{DoxyCompactList}\small\item\em call this function using \textquotesingle{}super\textquotesingle{} BEFORE your code \end{DoxyCompactList}\item 
+boost\+::property\+\_\+tree\+::ptree\+::iterator \mbox{\hyperlink{class_serializer_a399e22049e5915f97155f2b5feba5513}{Begin}} ()
+\begin{DoxyCompactList}\small\item\em use this method if you want to get the first element from a PTree \end{DoxyCompactList}\item 
+boost\+::property\+\_\+tree\+::ptree\+::iterator \mbox{\hyperlink{class_serializer_a7a70e90aef3092f7b1c1caad82bdea16}{End}} ()
+\begin{DoxyCompactList}\small\item\em use this method if you want to get the last element from a PTree \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_serializer}{Serializer}}}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::filesystem\+::path \mbox{\hyperlink{class_serializer_abebc13673816f1cc6c33dc4a2449822f}{Save\+Directory}} = \"{}save\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_serializer}{Serializer}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{class_serializer_ac0b70656331b0527460a86c2dbefceae}{Get\+Save\+Path}} () const
+\begin{DoxyCompactList}\small\item\em getting a path for saving data, e.\+g. \textquotesingle{}save/\+General.\+json\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_flower_pool_a5fd600d4d4f61fd1c6d019390802b672}\label{class_flower_pool_a5fd600d4d4f61fd1c6d019390802b672} 
+\index{FlowerPool@{FlowerPool}!FlowerPool@{FlowerPool}}
+\index{FlowerPool@{FlowerPool}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{FlowerPool()}{FlowerPool()}}
+{\footnotesize\ttfamily Flower\+Pool\+::\+Flower\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_pool_a1595f50b561af5370313e0af3a63091a}\label{class_flower_pool_a1595f50b561af5370313e0af3a63091a} 
+\index{FlowerPool@{FlowerPool}!````~FlowerPool@{\texorpdfstring{$\sim$}{\string~}FlowerPool}}
+\index{````~FlowerPool@{\texorpdfstring{$\sim$}{\string~}FlowerPool}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FlowerPool()}{\string~FlowerPool()}}
+{\footnotesize\ttfamily Flower\+Pool\+::\texorpdfstring{$\sim$}{\string~}\+Flower\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_flower_pool_a817577002528c9546f7190a802fb7631}\label{class_flower_pool_a817577002528c9546f7190a802fb7631} 
+\index{FlowerPool@{FlowerPool}!begin@{begin}}
+\index{begin@{begin}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator Flower\+Pool\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_pool_aadcf0fb8f169da250a3e599e08faeb2e}\label{class_flower_pool_aadcf0fb8f169da250a3e599e08faeb2e} 
+\index{FlowerPool@{FlowerPool}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void Flower\+Pool\+::\+Deserialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+call this function using \textquotesingle{}super\textquotesingle{} BEFORE your code 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_serializer_a4bff2b61a32446e8d144e9172d152bdb}{Serializer}}.
+
+\Hypertarget{class_flower_pool_af2319e0f6ec226ca9e1fb5da7b99a075}\label{class_flower_pool_af2319e0f6ec226ca9e1fb5da7b99a075} 
+\index{FlowerPool@{FlowerPool}!end@{end}}
+\index{end@{end}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator Flower\+Pool\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_pool_ab3543eaf142c480034f77021949483f0}\label{class_flower_pool_ab3543eaf142c480034f77021949483f0} 
+\index{FlowerPool@{FlowerPool}!Erase@{Erase}}
+\index{Erase@{Erase}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{Erase()}{Erase()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator Flower\+Pool\+::\+Erase (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_flower}{Flower}} $>$\+::iterator \&}]{It }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_pool_ada9184179951a60358dbe1f47a5a0783}\label{class_flower_pool_ada9184179951a60358dbe1f47a5a0783} 
+\index{FlowerPool@{FlowerPool}!Push@{Push}}
+\index{Push@{Push}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily void Flower\+Pool\+::\+Push (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_flower}{Flower}} \&}]{New\+Flower }\end{DoxyParamCaption})}
+
+\Hypertarget{class_flower_pool_a14059444b0563e7fe8069785037f399d}\label{class_flower_pool_a14059444b0563e7fe8069785037f399d} 
+\index{FlowerPool@{FlowerPool}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily void Flower\+Pool\+::\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+call this function using \textquotesingle{}super\textquotesingle{} AFTER your code 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d5014ec}{Serializer}}.
+
+\Hypertarget{class_flower_pool_aae85c7561c1c235515b240bf0913293b}\label{class_flower_pool_aae85c7561c1c235515b240bf0913293b} 
+\index{FlowerPool@{FlowerPool}!Size@{Size}}
+\index{Size@{Size}!FlowerPool@{FlowerPool}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Flower\+Pool\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
