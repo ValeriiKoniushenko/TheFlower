@@ -45,5 +45,6 @@ protected:
 	sf::Texture ButtonTexture_;
 
 	Button StartButton_;
+	Button ContinueButton_;
 	Canvas BackgroundCanvas_;
 };

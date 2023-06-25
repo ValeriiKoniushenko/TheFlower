@@ -75,7 +75,8 @@ public:
 		CloseGame,
 		DefeatMenu,
 		GoToMainMenu,
-		OpenGame
+		StartNewGame,
+		ContinueGame
 	};
 
 public:

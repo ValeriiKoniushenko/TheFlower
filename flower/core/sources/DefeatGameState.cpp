@@ -40,13 +40,9 @@ void DefeatGameState::Prepare()
 	GoToMainMenuButton_.GetText().setString("Go to main menu");
 	GoToMainMenuButton_.GetText().setFillColor(sf::Color::Black);
 	GoToMainMenuButton_.GetText().setCharacterSize(24);
-	GoToMainMenuButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) {
-			CustomEvent_ = CustomEvent::GoToMainMenu;
-		});
+	GoToMainMenuButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) { CustomEvent_ = CustomEvent::GoToMainMenu; });
 
 	BackgroundCanvas_.setTexture(BackgroundTexture_);
-
-
 }
 
 void DefeatGameState::Draw(sf::RenderWindow& Window)

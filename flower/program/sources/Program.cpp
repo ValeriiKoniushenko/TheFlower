@@ -88,15 +88,19 @@ void Program::ProcessCustomEvent()
 	{
 		GameState_.reset();
 
-		if (Event == GameStateBase::CustomEvent::OpenGame)
+		if (Event == GameStateBase::CustomEvent::ContinueGame)
 		{
 			GameState_ = std::make_unique<GameProcessGameState>();
 		}
-		if (Event == GameStateBase::CustomEvent::GoToMainMenu)
+		else if (Event == GameStateBase::CustomEvent::StartNewGame)
+		{
+			GameState_ = std::make_unique<GameProcessGameState>();
+		}
+		else if (Event == GameStateBase::CustomEvent::GoToMainMenu)
 		{
 			GameState_ = std::make_unique<MainMenuGameState>();
 		}
-		if (Event == GameStateBase::CustomEvent::DefeatMenu)
+		else if (Event == GameStateBase::CustomEvent::DefeatMenu)
 		{
 			GameState_ = std::make_unique<DefeatGameState>();
 		}

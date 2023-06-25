@@ -33,12 +33,19 @@ void MainMenuGameState::Prepare()
 	StartButton_.setTexture(ButtonTexture_);
 	StartButton_.setScale(.5f, .5f);
 	StartButton_.GetText().setFont(MainFont_);
-	StartButton_.GetText().setString("Start");
+	StartButton_.GetText().setString("New game");
 	StartButton_.GetText().setFillColor(sf::Color::Black);
 	StartButton_.GetText().setCharacterSize(24);
-	StartButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) {
-			CustomEvent_ = CustomEvent::OpenGame;
-		});
+	StartButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) { CustomEvent_ = CustomEvent::StartNewGame; });
+
+	ContinueButton_.setPosition(100.f, 200.f);
+	ContinueButton_.setTexture(ButtonTexture_);
+	ContinueButton_.setScale(.5f, .5f);
+	ContinueButton_.GetText().setFont(MainFont_);
+	ContinueButton_.GetText().setString("Continue");
+	ContinueButton_.GetText().setFillColor(sf::Color::Black);
+	ContinueButton_.GetText().setCharacterSize(24);
+	ContinueButton_.SetOnMouseLeftClickEventCallback([this](const Widget&) { CustomEvent_ = CustomEvent::ContinueGame; });
 
 	BackgroundCanvas_.setTexture(BackgroundTexture_);
 }
@@ -49,6 +56,7 @@ void MainMenuGameState::Draw(sf::RenderWindow& Window)
 
 	Window.draw(BackgroundCanvas_);
 	StartButton_.Draw(Window);
+	ContinueButton_.Draw(Window);
 
 	Window.display();
 }
@@ -56,4 +64,5 @@ void MainMenuGameState::Draw(sf::RenderWindow& Window)
 void MainMenuGameState::UpdateUi(sf::RenderWindow& Window)
 {
 	StartButton_.Update(Window);
+	ContinueButton_.Update(Window);
 }
