@@ -75,6 +75,7 @@ public:
 	 */
 	boost::property_tree::ptree::iterator End();
 
+	// TODO: add config directory
 	inline static const std::filesystem::path SaveDirectory = "save";
 
 protected:

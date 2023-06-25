@@ -28,6 +28,16 @@ void GameProcessGameState::Prepare()
 {
 	GameStateBase::Prepare();
 
+	BackgroundMusic_.openFromFile("assets/sounds/backgroundGame.wav");
+	PlantSoundBuffer_.loadFromFile("assets/sounds/plant.wav");
+	SnakeSpawnSoundBuffer_.loadFromFile("assets/sounds/snakeSpawn.wav");
+
+	PlantSound_.setBuffer(PlantSoundBuffer_);
+	SnakeSpawnSound_.setBuffer(SnakeSpawnSoundBuffer_);
+
+	BackgroundMusic_.setVolume(0.5f);
+	BackgroundMusic_.play();
+
 	FlowerTexture_.loadFromFile("assets/images/flower.png");
 	SnakeTexture_.loadFromFile("assets/images/snake.png");
 
@@ -138,6 +148,7 @@ void GameProcessGameState::SpawnFlowerAt(const sf::Vector2i& PositionAtWindow)
 		static_cast<float>(PositionAtWindow.y) - Flower_.GetMainSprite().getTextureRect().height / 2.f});
 
 	FlowerPool_.Push(Flower_);
+	PlantSound_.play();
 }
 
 void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
@@ -151,6 +162,7 @@ void GameProcessGameState::SpawnSnakeAtRandomPosition(sf::RenderWindow& Window)
 	Snake_.SetPosition({distributionByWidth(generator), distributionByHeight(generator)});
 
 	SnakePool_.Push(Snake_);
+	SnakeSpawnSound_.play();
 }
 
 void GameProcessGameState::AddMoneyEveryXSeconds()
@@ -271,6 +283,6 @@ void GameProcessGameState::ResetUserData()
 
 	boost::property_tree::ptree PTree;
 	boost::property_tree::read_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
-	PTree.put("money", 150); // TODO: remove a magic number -> move to config
+	PTree.put("money", 150);	// TODO: remove a magic number -> move to config
 	boost::property_tree::write_json(Serializer::SaveDirectory.string() + "/" + "Player.json", PTree);
 }

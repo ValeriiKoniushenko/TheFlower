@@ -28,6 +28,7 @@
 #include "GameStateBase.h"
 #include "Map.h"
 #include "Player.h"
+#include "SFML/Audio.hpp"
 #include "Snake.h"
 #include "SnakeConfig.h"
 #include "SnakePool.h"
@@ -76,4 +77,10 @@ private:
 	FlowerPool FlowerPool_;
 	Player Player_;
 	Map Map_;
+
+	sf::Music BackgroundMusic_;
+	sf::SoundBuffer PlantSoundBuffer_;
+	sf::SoundBuffer SnakeSpawnSoundBuffer_;
+	sf::Sound PlantSound_;
+	sf::Sound SnakeSpawnSound_;
 };

@@ -24,3 +24,7 @@ add_custom_command(TARGET TheFlower PRE_BUILD
    COMMAND ${CMAKE_COMMAND} -E make_directory  ${PROJECT_BINARY_DIR}/flower/program/assets
    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/assets ${PROJECT_BINARY_DIR}/flower/program/assets
 )
+
+add_custom_command(TARGET TheFlower PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/dependencies/SFML-2.6.0/extlibs/bin/x86/openal32.dll ${PROJECT_BINARY_DIR}/flower/program
+)
