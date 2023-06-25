@@ -31,32 +31,36 @@
 \DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_state_base}{GameStateBase}}}
 \DoxyCodeLine{00066\ \{}
 \DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ :\ \_\_int8}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}},}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{OpenGame}},}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{CloseGame}}}
-\DoxyCodeLine{00076\ \ \ \ \ \};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}{GameStateBase}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}{\string~GameStateBase}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}{GameStateBase}}(\mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}{GameStateBase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\ \mbox{\hyperlink{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}{operator=}}(\mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\ \mbox{\hyperlink{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Prepare}}();}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Draw}}(sf::RenderWindow\&\ Window)\ =\ 0;}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{UpdateUi}}(sf::RenderWindow\&\ Window)\ =\ 0;}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00105\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{PollEvent}}();}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00108\ \ \ \ \ sf::Font\ \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}{MainFont\_}};}
-\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ \mbox{\hyperlink{class_game_state_base_a452934ab809df50e49b407e530487525}{CustomEvent\_}}\ =\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{CustomEvent::None}};}
-\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ TODO:\ move\ it\ to\ *.data\ file\ and\ pull\ this\ data\ from\ that\ *.data\ file}}
+\DoxyCodeLine{00072\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ :\ \_\_int8}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{CloseGame}},}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234}{DefeatMenu}},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4}{GoToMainMenu}},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4}{StartNewGame}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948}{ContinueGame}}}
+\DoxyCodeLine{00080\ \ \ \ \ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_ad907f9cacc3081b07f57ad7554cd08fd}{GameStateBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_game_state_base_acd3018d92d252f1ddb55f0acf4325c57}{\string~GameStateBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a08ffe166b6663f71dd5780d5bd89cb5a}{GameStateBase}}(\mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a0b35bdb1343ed76cc7a0686bca798903}{GameStateBase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\ \mbox{\hyperlink{class_game_state_base_aa7f76a144f498db5e8c0d9f94235f77f}{operator=}}(\mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&\ \mbox{\hyperlink{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_state_base}{GameStateBase}}\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a5ac801431db04b5942dfb4043046f8ed}{Prepare}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a15e8aa7a7fc8c0e11e18168755866683}{Draw}}(sf::RenderWindow\&\ Window)\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}{UpdateUi}}(sf::RenderWindow\&\ Window)\ =\ 0;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ \mbox{\hyperlink{class_game_state_base_a390838f324cd0ac1588402aff3cf471b}{PollEvent}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00112\ \ \ \ \ sf::Font\ \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a5b7bc}{MainFont\_}};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{CustomEvent}}\ \mbox{\hyperlink{class_game_state_base_a452934ab809df50e49b407e530487525}{CustomEvent\_}}\ =\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{CustomEvent::None}};}
+\DoxyCodeLine{00114\ \};}
 
 \end{DoxyCode}

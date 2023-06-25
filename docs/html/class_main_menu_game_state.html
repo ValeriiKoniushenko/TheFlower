@@ -147,6 +147,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aebd5955db07528e26227fe7569c1bd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae496a84918d803be1296ed721a9d764d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_button.html">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_game_state.html#ae496a84918d803be1296ed721a9d764d">StartButton_</a></td></tr>
 <tr class="separator:ae496a84918d803be1296ed721a9d764d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea50318a3f36f0cf41e7aa9468e657a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_button.html">Button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_game_state.html#aea50318a3f36f0cf41e7aa9468e657a3">ContinueButton_</a></td></tr>
+<tr class="separator:aea50318a3f36f0cf41e7aa9468e657a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a979d5c13a8173536777ea46b2dcc7954"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_canvas.html">Canvas</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_game_state.html#a979d5c13a8173536777ea46b2dcc7954">BackgroundCanvas_</a></td></tr>
 <tr class="separator:a979d5c13a8173536777ea46b2dcc7954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_game_state_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_state_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_game_state_base.html">GameStateBase</a></td></tr>
@@ -158,9 +160,15 @@ Protected Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_game_state_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_game_state_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_game_state_base.html">GameStateBase</a></td></tr>
-<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf">OpenGame</a>
+<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
 , <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd">CloseGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234">DefeatMenu</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4">GoToMainMenu</a>
+, <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4">StartNewGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948">ContinueGame</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a628ffa0ffa2e3fe5a833fba45127637b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register your own event in this enum class to use it.  <a href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">More...</a><br /></td></tr>
 <tr class="separator:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -467,6 +475,28 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">sf::Texture MainMenuGameState::ButtonTexture_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea50318a3f36f0cf41e7aa9468e657a3" name="aea50318a3f36f0cf41e7aa9468e657a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea50318a3f36f0cf41e7aa9468e657a3">&#9670;&#160;</a></span>ContinueButton_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_button.html">Button</a> MainMenuGameState::ContinueButton_</td>
         </tr>
       </table>
   </td>

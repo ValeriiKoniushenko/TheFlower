@@ -69,8 +69,6 @@ clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a43dd0ff49b301c07b865477e81cdc
 \item 
 clock\+\_\+t \mbox{\hyperlink{struct_snake_config_ad811d90c9ff3e60e97d6cdd95c202c65}{Growth\+Speed}} = 3
 \item 
-clock\+\_\+t \mbox{\hyperlink{struct_snake_config_ac03a448cd651725ad2df33deb14b7b93}{Speed\+Up\+Effect\+Length}} = 5
-\item 
 float \mbox{\hyperlink{struct_snake_config_ae09eb0e325e6db673bb3e04e9e31482a}{Speed\+Up\+Effect\+Strength}} = 2.f
 \item 
 clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a4efd3ff54f5255f9486a9066032c00a8}{Erase\+Frequency}} = 100
@@ -83,11 +81,23 @@ clock\+\_\+t \mbox{\hyperlink{struct_snake_config_af9893cbab9072f3faabebe97f5079
 \item 
 clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a4dbd1229ed92f1c727980bc917119e2c}{Spawn\+New\+Snake\+Every\+XMs}} = 5000
 \item 
-clock\+\_\+t \mbox{\hyperlink{struct_snake_config_ab997082c041715effe4343def4f58775}{Decrease\+Speed\+Every\+XMs}} = 5000
-\item 
-float \mbox{\hyperlink{struct_snake_config_a7adca09f9acbb9e9a9d1afb2fd617a0d}{Decrease\+Speed\+Counter}} = 0.\+05f
+clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a11b7c74764465d9a5d999b8f36b0d01c}{Decrease\+Spawn\+Speed\+Every\+XMs}} = 5000
 \item 
 clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a4ad7f167c831e2e3da6d7efc88ea079d}{Last\+Decrease\+Speed}} = 0
+\item 
+float \mbox{\hyperlink{struct_snake_config_a0ed7a6db7172de8411edd255a7a687e7}{Decrease\+Spawn\+Speed\+For}} = 0.\+05f
+\item 
+float \mbox{\hyperlink{struct_snake_config_a85f3b55a7856d7a61236afb23df0f3d2}{Snake\+Spawner\+Decreaser}} = 1.f
+\item 
+clock\+\_\+t \mbox{\hyperlink{struct_snake_config_acd4856e5333a826bdce8bf3510a02759}{Last\+Decrease\+Spawn\+Speed}} = 0
+\item 
+clock\+\_\+t \mbox{\hyperlink{struct_snake_config_acabb45a2a7f9591b717c60be2a02bb1b}{Speed\+Up\+Effect\+Time}} = 5000
+\item 
+bool \mbox{\hyperlink{struct_snake_config_a6e6973b3089d88398e7f1fb347694e8a}{Have\+To\+Speed\+Up}} = false
+\item 
+clock\+\_\+t \mbox{\hyperlink{struct_snake_config_a9a18881175a898eaec0ac92828ef5998}{Last\+Speed\+Up\+Effect}} = 0
+\item 
+bool \mbox{\hyperlink{struct_snake_config_a0a2d3822f321a0366b2009d0b381da26}{Can\+Snake\+Bobtail}} = true
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_serializer}{Serializer}}}
@@ -173,17 +183,23 @@ Reimplemented from \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{struct_snake_config_a7adca09f9acbb9e9a9d1afb2fd617a0d}\label{struct_snake_config_a7adca09f9acbb9e9a9d1afb2fd617a0d} 
-\index{SnakeConfig@{SnakeConfig}!DecreaseSpeedCounter@{DecreaseSpeedCounter}}
-\index{DecreaseSpeedCounter@{DecreaseSpeedCounter}!SnakeConfig@{SnakeConfig}}
-\doxysubsubsection{\texorpdfstring{DecreaseSpeedCounter}{DecreaseSpeedCounter}}
-{\footnotesize\ttfamily float Snake\+Config\+::\+Decrease\+Speed\+Counter = 0.\+05f}
+\Hypertarget{struct_snake_config_a0a2d3822f321a0366b2009d0b381da26}\label{struct_snake_config_a0a2d3822f321a0366b2009d0b381da26} 
+\index{SnakeConfig@{SnakeConfig}!CanSnakeBobtail@{CanSnakeBobtail}}
+\index{CanSnakeBobtail@{CanSnakeBobtail}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{CanSnakeBobtail}{CanSnakeBobtail}}
+{\footnotesize\ttfamily bool Snake\+Config\+::\+Can\+Snake\+Bobtail = true}
 
-\Hypertarget{struct_snake_config_ab997082c041715effe4343def4f58775}\label{struct_snake_config_ab997082c041715effe4343def4f58775} 
-\index{SnakeConfig@{SnakeConfig}!DecreaseSpeedEveryXMs@{DecreaseSpeedEveryXMs}}
-\index{DecreaseSpeedEveryXMs@{DecreaseSpeedEveryXMs}!SnakeConfig@{SnakeConfig}}
-\doxysubsubsection{\texorpdfstring{DecreaseSpeedEveryXMs}{DecreaseSpeedEveryXMs}}
-{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Decrease\+Speed\+Every\+XMs = 5000}
+\Hypertarget{struct_snake_config_a11b7c74764465d9a5d999b8f36b0d01c}\label{struct_snake_config_a11b7c74764465d9a5d999b8f36b0d01c} 
+\index{SnakeConfig@{SnakeConfig}!DecreaseSpawnSpeedEveryXMs@{DecreaseSpawnSpeedEveryXMs}}
+\index{DecreaseSpawnSpeedEveryXMs@{DecreaseSpawnSpeedEveryXMs}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{DecreaseSpawnSpeedEveryXMs}{DecreaseSpawnSpeedEveryXMs}}
+{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Decrease\+Spawn\+Speed\+Every\+XMs = 5000}
+
+\Hypertarget{struct_snake_config_a0ed7a6db7172de8411edd255a7a687e7}\label{struct_snake_config_a0ed7a6db7172de8411edd255a7a687e7} 
+\index{SnakeConfig@{SnakeConfig}!DecreaseSpawnSpeedFor@{DecreaseSpawnSpeedFor}}
+\index{DecreaseSpawnSpeedFor@{DecreaseSpawnSpeedFor}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{DecreaseSpawnSpeedFor}{DecreaseSpawnSpeedFor}}
+{\footnotesize\ttfamily float Snake\+Config\+::\+Decrease\+Spawn\+Speed\+For = 0.\+05f}
 
 \Hypertarget{struct_snake_config_a4efd3ff54f5255f9486a9066032c00a8}\label{struct_snake_config_a4efd3ff54f5255f9486a9066032c00a8} 
 \index{SnakeConfig@{SnakeConfig}!EraseFrequency@{EraseFrequency}}
@@ -202,6 +218,18 @@ Reimplemented from \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d
 \index{GrowthSpeed@{GrowthSpeed}!SnakeConfig@{SnakeConfig}}
 \doxysubsubsection{\texorpdfstring{GrowthSpeed}{GrowthSpeed}}
 {\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Growth\+Speed = 3}
+
+\Hypertarget{struct_snake_config_a6e6973b3089d88398e7f1fb347694e8a}\label{struct_snake_config_a6e6973b3089d88398e7f1fb347694e8a} 
+\index{SnakeConfig@{SnakeConfig}!HaveToSpeedUp@{HaveToSpeedUp}}
+\index{HaveToSpeedUp@{HaveToSpeedUp}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{HaveToSpeedUp}{HaveToSpeedUp}}
+{\footnotesize\ttfamily bool Snake\+Config\+::\+Have\+To\+Speed\+Up = false}
+
+\Hypertarget{struct_snake_config_acd4856e5333a826bdce8bf3510a02759}\label{struct_snake_config_acd4856e5333a826bdce8bf3510a02759} 
+\index{SnakeConfig@{SnakeConfig}!LastDecreaseSpawnSpeed@{LastDecreaseSpawnSpeed}}
+\index{LastDecreaseSpawnSpeed@{LastDecreaseSpawnSpeed}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{LastDecreaseSpawnSpeed}{LastDecreaseSpawnSpeed}}
+{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Last\+Decrease\+Spawn\+Speed = 0}
 
 \Hypertarget{struct_snake_config_a4ad7f167c831e2e3da6d7efc88ea079d}\label{struct_snake_config_a4ad7f167c831e2e3da6d7efc88ea079d} 
 \index{SnakeConfig@{SnakeConfig}!LastDecreaseSpeed@{LastDecreaseSpeed}}
@@ -227,11 +255,23 @@ Reimplemented from \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d
 \doxysubsubsection{\texorpdfstring{LastSpawnTime}{LastSpawnTime}}
 {\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Last\+Spawn\+Time = 0}
 
+\Hypertarget{struct_snake_config_a9a18881175a898eaec0ac92828ef5998}\label{struct_snake_config_a9a18881175a898eaec0ac92828ef5998} 
+\index{SnakeConfig@{SnakeConfig}!LastSpeedUpEffect@{LastSpeedUpEffect}}
+\index{LastSpeedUpEffect@{LastSpeedUpEffect}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{LastSpeedUpEffect}{LastSpeedUpEffect}}
+{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Last\+Speed\+Up\+Effect = 0}
+
 \Hypertarget{struct_snake_config_ae9ea289f133818e3167c29d87473e3ea}\label{struct_snake_config_ae9ea289f133818e3167c29d87473e3ea} 
 \index{SnakeConfig@{SnakeConfig}!MaxSize@{MaxSize}}
 \index{MaxSize@{MaxSize}!SnakeConfig@{SnakeConfig}}
 \doxysubsubsection{\texorpdfstring{MaxSize}{MaxSize}}
 {\footnotesize\ttfamily \+\_\+\+\_\+int32 Snake\+Config\+::\+Max\+Size = 5}
+
+\Hypertarget{struct_snake_config_a85f3b55a7856d7a61236afb23df0f3d2}\label{struct_snake_config_a85f3b55a7856d7a61236afb23df0f3d2} 
+\index{SnakeConfig@{SnakeConfig}!SnakeSpawnerDecreaser@{SnakeSpawnerDecreaser}}
+\index{SnakeSpawnerDecreaser@{SnakeSpawnerDecreaser}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{SnakeSpawnerDecreaser}{SnakeSpawnerDecreaser}}
+{\footnotesize\ttfamily float Snake\+Config\+::\+Snake\+Spawner\+Decreaser = 1.f}
 
 \Hypertarget{struct_snake_config_a4dbd1229ed92f1c727980bc917119e2c}\label{struct_snake_config_a4dbd1229ed92f1c727980bc917119e2c} 
 \index{SnakeConfig@{SnakeConfig}!SpawnNewSnakeEveryXMs@{SpawnNewSnakeEveryXMs}}
@@ -239,17 +279,17 @@ Reimplemented from \mbox{\hyperlink{class_serializer_a0d25ba7124bac77109b3251d0d
 \doxysubsubsection{\texorpdfstring{SpawnNewSnakeEveryXMs}{SpawnNewSnakeEveryXMs}}
 {\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Spawn\+New\+Snake\+Every\+XMs = 5000}
 
-\Hypertarget{struct_snake_config_ac03a448cd651725ad2df33deb14b7b93}\label{struct_snake_config_ac03a448cd651725ad2df33deb14b7b93} 
-\index{SnakeConfig@{SnakeConfig}!SpeedUpEffectLength@{SpeedUpEffectLength}}
-\index{SpeedUpEffectLength@{SpeedUpEffectLength}!SnakeConfig@{SnakeConfig}}
-\doxysubsubsection{\texorpdfstring{SpeedUpEffectLength}{SpeedUpEffectLength}}
-{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Speed\+Up\+Effect\+Length = 5}
-
 \Hypertarget{struct_snake_config_ae09eb0e325e6db673bb3e04e9e31482a}\label{struct_snake_config_ae09eb0e325e6db673bb3e04e9e31482a} 
 \index{SnakeConfig@{SnakeConfig}!SpeedUpEffectStrength@{SpeedUpEffectStrength}}
 \index{SpeedUpEffectStrength@{SpeedUpEffectStrength}!SnakeConfig@{SnakeConfig}}
 \doxysubsubsection{\texorpdfstring{SpeedUpEffectStrength}{SpeedUpEffectStrength}}
 {\footnotesize\ttfamily float Snake\+Config\+::\+Speed\+Up\+Effect\+Strength = 2.f}
+
+\Hypertarget{struct_snake_config_acabb45a2a7f9591b717c60be2a02bb1b}\label{struct_snake_config_acabb45a2a7f9591b717c60be2a02bb1b} 
+\index{SnakeConfig@{SnakeConfig}!SpeedUpEffectTime@{SpeedUpEffectTime}}
+\index{SpeedUpEffectTime@{SpeedUpEffectTime}!SnakeConfig@{SnakeConfig}}
+\doxysubsubsection{\texorpdfstring{SpeedUpEffectTime}{SpeedUpEffectTime}}
+{\footnotesize\ttfamily clock\+\_\+t Snake\+Config\+::\+Speed\+Up\+Effect\+Time = 5000}
 
 \Hypertarget{struct_snake_config_ac1a66705040ccb32ef1b944cf63ed2f3}\label{struct_snake_config_ac1a66705040ccb32ef1b944cf63ed2f3} 
 \index{SnakeConfig@{SnakeConfig}!StartSize@{StartSize}}

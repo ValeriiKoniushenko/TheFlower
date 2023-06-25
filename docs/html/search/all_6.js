@@ -12,6 +12,8 @@ var searchData=
   ['gettext_9',['GetText',['../class_button.html#ab31475ca125c3884720e1410575404e0',1,'Button::GetText()'],['../class_button.html#a2ea439441d94356811cf029bf05635f7',1,'Button::GetText() const']]],
   ['gettexthorizontalalign_10',['GetTextHorizontalAlign',['../class_button.html#a892988b13465f61a60c1c0d95b26a1fa',1,'Button']]],
   ['gettextverticalalign_11',['GetTextVerticalAlign',['../class_button.html#af04cfcfd4cca397d6d9146f7af48cf00',1,'Button']]],
-  ['growthfrequency_12',['GrowthFrequency',['../struct_snake_config.html#a4c3d031203ce6fdd247ca9a0702d2378',1,'SnakeConfig']]],
-  ['growthspeed_13',['GrowthSpeed',['../struct_snake_config.html#ad811d90c9ff3e60e97d6cdd95c202c65',1,'SnakeConfig']]]
+  ['gotomainmenu_12',['GoToMainMenu',['../class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4',1,'GameStateBase']]],
+  ['gotomainmenubutton_5f_13',['GoToMainMenuButton_',['../class_defeat_game_state.html#ae8ead8e76e4f8f6e237bc9fa4e20bbe1',1,'DefeatGameState']]],
+  ['growthfrequency_14',['GrowthFrequency',['../struct_snake_config.html#a4c3d031203ce6fdd247ca9a0702d2378',1,'SnakeConfig']]],
+  ['growthspeed_15',['GrowthSpeed',['../struct_snake_config.html#ad811d90c9ff3e60e97d6cdd95c202c65',1,'SnakeConfig']]]
 ];

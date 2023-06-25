@@ -55,29 +55,19 @@
 \DoxyCodeLine{00051\ }
 \DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_a28f232f374daa0e58fd09cb4dc78e820}{Bobtail}}();}
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_adacf38866097765b296210c6a250eb8d}{Increase}}(\_\_int32\ MaxSize);}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_ad3b7cace2c20c75202242c083ca0594b}{DecreaseSpeedBy}}(\textcolor{keywordtype}{float}\ Percent);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_snake_ad2a94b16085c8c16d1437063f0a8dfc4}{SetSpeedMultiplier}}(\textcolor{keywordtype}{float}\ Multiplier);}
+\DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_snake_ab264d6bad1305f85ff174514c8352ee4}{InteractWithSprite}}(\textcolor{keyword}{const}\ sf::Sprite\&\ Sprite)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsNearlyToPoint(\textcolor{keyword}{const}\ sf::Vector2f\&\ P1,\ \textcolor{keyword}{const}\ sf::Vector2f\&\ P2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00060\ \ \ \ \ sf::Vector2f\ Normalize(\textcolor{keyword}{const}\ sf::Vector2f\&\ source)\ \textcolor{keyword}{const};\ \ \ \ \textcolor{comment}{//\ TODO:\ move\ to\ Utils}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00063\ \ \ \ \ T\ Vector2Distance(\textcolor{keyword}{const}\ sf::Vector2<T>\&\ A,\ \textcolor{keyword}{const}\ sf::Vector2<T>\&\ B)\ \ \ \ \textcolor{comment}{//\ TODO:\ move\ to\ Utils}}
-\DoxyCodeLine{00064\ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (fabs(sqrt(((A.x\ -\/\ B.x)\ *\ (A.x\ -\/\ B.x))\ +\ ((A.y\ -\/\ B.y)\ *\ (A.y\ -\/\ B.y)))));}
-\DoxyCodeLine{00066\ \ \ \ \ \}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00069\ \ \ \ \ sf::Texture*\ TextureP\_\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00070\ \ \ \ \ std::vector<sf::Sprite>\ Sprites\_;}
-\DoxyCodeLine{00071\ \ \ \ \ sf::Vector2f\ MoveToPoint;}
-\DoxyCodeLine{00072\ \ \ \ \ sf::Vector2f\ Direction;}
-\DoxyCodeLine{00073\ \ \ \ \ clock\_t\ LastUpdate\ =\ 0;}
-\DoxyCodeLine{00074\ \ \ \ \ clock\_t\ UpdateFrequency\ =\ 8;\ \ \ \ \textcolor{comment}{//\ 1000ms\ /\ 120FPS\ =\ 8}}
-\DoxyCodeLine{00075\ \ \ \ \ std::default\_random\_engine\ generator;}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ Speed\ =\ 1.f;}
-\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00059\ \ \ \ \ sf::Texture*\ TextureP\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<sf::Sprite>\ Sprites\_;}
+\DoxyCodeLine{00061\ \ \ \ \ sf::Vector2f\ MoveToPoint;}
+\DoxyCodeLine{00062\ \ \ \ \ sf::Vector2f\ Direction;}
+\DoxyCodeLine{00063\ \ \ \ \ clock\_t\ LastUpdate\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ clock\_t\ UpdateFrequency\ =\ 8;\ \ \ \ \textcolor{comment}{//\ 1000ms\ /\ 120FPS\ =\ 8}}
+\DoxyCodeLine{00065\ \ \ \ \ std::default\_random\_engine\ generator;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ Speed\ =\ 1.f;}
+\DoxyCodeLine{00067\ \};}
 
 \end{DoxyCode}

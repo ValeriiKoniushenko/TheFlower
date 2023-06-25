@@ -90,16 +90,23 @@ Inheritance diagram for GameStateBase:</div>
  <div class="center">
   <img src="class_game_state_base.png" usemap="#GameStateBase_map" alt=""/>
   <map id="GameStateBase_map" name="GameStateBase_map">
-<area href="class_game_process_game_state.html" alt="GameProcessGameState" shape="rect" coords="0,56,150,80"/>
-<area href="class_main_menu_game_state.html" alt="MainMenuGameState" shape="rect" coords="160,56,310,80"/>
+<area href="class_defeat_game_state.html" alt="DefeatGameState" shape="rect" coords="0,56,150,80"/>
+<area href="class_game_process_game_state.html" alt="GameProcessGameState" shape="rect" coords="160,56,310,80"/>
+<area href="class_main_menu_game_state.html" alt="MainMenuGameState" shape="rect" coords="320,56,470,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf">OpenGame</a>
+<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
 , <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd">CloseGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234">DefeatMenu</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4">GoToMainMenu</a>
+, <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4">StartNewGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948">ContinueGame</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a628ffa0ffa2e3fe5a833fba45127637b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register your own event in this enum class to use it.  <a href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">More...</a><br /></td></tr>
 <tr class="separator:a628ffa0ffa2e3fe5a833fba45127637b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,17 +168,16 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a class="code hl_class" href="class_button.html">Button</a> StartButton_;</div>
 <div class="line"><a class="code hl_class" href="class_canvas.html">Canvas</a> BackgroundCanvas_;</div>
 <div class="line">};</div>
-<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition</b> Button.h:30</div></div>
-<div class="ttc" id="aclass_canvas_html"><div class="ttname"><a href="class_canvas.html">Canvas</a></div><div class="ttdef"><b>Definition</b> Canvas.h:30</div></div>
+<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition</b> Button.h:28</div></div>
+<div class="ttc" id="aclass_canvas_html"><div class="ttname"><a href="class_canvas.html">Canvas</a></div><div class="ttdef"><b>Definition</b> Canvas.h:28</div></div>
 <div class="ttc" id="aclass_game_state_base_html"><div class="ttname"><a href="class_game_state_base.html">GameStateBase</a></div><div class="ttdoc">the base class for working with a game state.</div><div class="ttdef"><b>Definition</b> GameStateBase.h:66</div></div>
 <div class="ttc" id="aclass_main_menu_game_state_html"><div class="ttname"><a href="class_main_menu_game_state.html">MainMenuGameState</a></div><div class="ttdef"><b>Definition</b> MainMenuGameState.h:30</div></div>
-</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keywordflow">if</span> (Event == <a class="code hl_enumvalue" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf">GameStateBase::CustomEvent::OpenGame</a>)</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keywordflow">if</span> (Event == GameStateBase::CustomEvent::OpenGame)</div>
 <div class="line">{</div>
 <div class="line">    GameState_.reset();</div>
 <div class="line">    GameState_ = std::make_unique&lt;GameProcessGameState&gt;();</div>
 <div class="line">    GameState_-&gt;Prepare();</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_game_state_base_html_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf"><div class="ttname"><a href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf">GameStateBase::CustomEvent::OpenGame</a></div><div class="ttdeci">@ OpenGame</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a628ffa0ffa2e3fe5a833fba45127637b" name="a628ffa0ffa2e3fe5a833fba45127637b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a628ffa0ffa2e3fe5a833fba45127637b">&#9670;&#160;</a></span>CustomEvent</h2>
@@ -196,8 +202,11 @@ Protected Attributes</h2></td></tr>
 <p>Register your own event in this enum class to use it. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754" name="a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf" name="a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf"></a>OpenGame&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd" name="a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd"></a>CloseGame&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234" name="a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234"></a>DefeatMenu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4" name="a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4"></a>GoToMainMenu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4" name="a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4"></a>StartNewGame&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948" name="a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948"></a>ContinueGame&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -332,7 +341,7 @@ Protected Attributes</h2></td></tr>
 
 <p>override this function to output all scene objects </p>
 
-<p>Implemented in <a class="el" href="class_game_process_game_state.html#af9a8715ffe1f7fbd1d8998e3f05633cb">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a307f63f6217c66816e1e81f924301fd9">MainMenuGameState</a>.</p>
+<p>Implemented in <a class="el" href="class_defeat_game_state.html#a7bbce3dfeecb9a08c9dcc1811ceb7bb9">DefeatGameState</a>, <a class="el" href="class_game_process_game_state.html#af9a8715ffe1f7fbd1d8998e3f05633cb">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a307f63f6217c66816e1e81f924301fd9">MainMenuGameState</a>.</p>
 
 </div>
 </div>
@@ -433,7 +442,7 @@ Protected Attributes</h2></td></tr>
 <p>call this function BEFORE all to prepare this object. </p>
 <p>you can put in this function creating\loading of textures for scene objects. </p>
 
-<p>Reimplemented in <a class="el" href="class_game_process_game_state.html#abc3fc19b0b44d51a692bd009085c7d56">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a0cf8e3e5d9de672b497b2e1d151b9e6e">MainMenuGameState</a>.</p>
+<p>Reimplemented in <a class="el" href="class_defeat_game_state.html#a04e6ed8200cb698a6cf82b74192b9aa1">DefeatGameState</a>, <a class="el" href="class_game_process_game_state.html#abc3fc19b0b44d51a692bd009085c7d56">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a0cf8e3e5d9de672b497b2e1d151b9e6e">MainMenuGameState</a>.</p>
 
 </div>
 </div>
@@ -463,7 +472,7 @@ Protected Attributes</h2></td></tr>
 
 <p>override this function to make a scene\state updater. Also, you can know this function by name 'Tick' </p>
 
-<p>Implemented in <a class="el" href="class_game_process_game_state.html#ae456826d522ac2ccbaab7268a7917f66">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a4a19a0613a4918440b1055d03d2f9dc3">MainMenuGameState</a>.</p>
+<p>Implemented in <a class="el" href="class_defeat_game_state.html#ab33581c46ee2f6553586d10da0fd503f">DefeatGameState</a>, <a class="el" href="class_game_process_game_state.html#ae456826d522ac2ccbaab7268a7917f66">GameProcessGameState</a>, and <a class="el" href="class_main_menu_game_state.html#a4a19a0613a4918440b1055d03d2f9dc3">MainMenuGameState</a>.</p>
 
 </div>
 </div>

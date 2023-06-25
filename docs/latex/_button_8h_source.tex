@@ -1,5 +1,5 @@
 \doxysection{Button.\+h}
-\hypertarget{_button_8h_source}{}\label{_button_8h_source}\index{flower/core/headers/Button.h@{flower/core/headers/Button.h}}
+\hypertarget{_button_8h_source}{}\label{_button_8h_source}\index{flower/ui/headers/Button.h@{flower/ui/headers/Button.h}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//\ MIT\ License}}
@@ -28,28 +28,26 @@
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Widget.h"{}}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{comment}{//\ TODO:\ Move\ it\ to\ UI\ lib}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button}{Button}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_widget}{Widget}}}
-\DoxyCodeLine{00030\ \{}
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_button_a72cf522f2f997a2e80f9dd828d2f350e}{\string~Button}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \_NODISCARD\ sf::Text\&\ \mbox{\hyperlink{class_button_ab31475ca125c3884720e1410575404e0}{GetText}}();}
-\DoxyCodeLine{00035\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ sf::Text\&\ \mbox{\hyperlink{class_button_ab31475ca125c3884720e1410575404e0}{GetText}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a5550b909279fa37e4fa447ed98a54be0}{Update}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_ab68779834ddc07b274d40da6b32687fc}{Draw}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_ab8074fae3f235196d1ae036bf8f42759}{SetTextVerticalAlign}}(\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ Align);}
-\DoxyCodeLine{00040\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ \mbox{\hyperlink{class_button_af04cfcfd4cca397d6d9146f7af48cf00}{GetTextVerticalAlign}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a2d5dc5d874463782aadedf4509101d9b}{SetTextHorizontalAlign}}(\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ Align);}
-\DoxyCodeLine{00043\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ \mbox{\hyperlink{class_button_a892988b13465f61a60c1c0d95b26a1fa}{GetTextHorizontalAlign}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00046\ \ \ \ \ sf::Text\ Text\_;}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ VerticalAlign\_\ =\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{TextAlign::Center}};}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ HorizontalAlign\_\ =\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{TextAlign::Center}};}
-\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button}{Button}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_widget}{Widget}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_button_a72cf522f2f997a2e80f9dd828d2f350e}{\string~Button}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \_NODISCARD\ sf::Text\&\ \mbox{\hyperlink{class_button_ab31475ca125c3884720e1410575404e0}{GetText}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \_NODISCARD\ \textcolor{keyword}{const}\ sf::Text\&\ \mbox{\hyperlink{class_button_ab31475ca125c3884720e1410575404e0}{GetText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a5550b909279fa37e4fa447ed98a54be0}{Update}}(sf::RenderWindow\&\ Window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_ab68779834ddc07b274d40da6b32687fc}{Draw}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_ab8074fae3f235196d1ae036bf8f42759}{SetTextVerticalAlign}}(\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ Align);}
+\DoxyCodeLine{00038\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ \mbox{\hyperlink{class_button_af04cfcfd4cca397d6d9146f7af48cf00}{GetTextVerticalAlign}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a2d5dc5d874463782aadedf4509101d9b}{SetTextHorizontalAlign}}(\mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ Align);}
+\DoxyCodeLine{00041\ \ \ \ \ \_NODISCARD\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ \mbox{\hyperlink{class_button_a892988b13465f61a60c1c0d95b26a1fa}{GetTextHorizontalAlign}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ sf::Text\ Text\_;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ VerticalAlign\_\ =\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{TextAlign::Center}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3f}{TextAlign}}\ HorizontalAlign\_\ =\ \mbox{\hyperlink{class_widget_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd}{TextAlign::Center}};}
+\DoxyCodeLine{00047\ \};}
 
 \end{DoxyCode}

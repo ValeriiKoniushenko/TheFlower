@@ -18,9 +18,14 @@ Inheritance diagram for Game\+State\+Base\+:\begin{figure}[H]
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
-, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{Open\+Game}}
+enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \newline
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
 , \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{Close\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234}{Defeat\+Menu}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4}{Go\+To\+Main\+Menu}}
+, \newline
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4}{Start\+New\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948}{Continue\+Game}}
  \}
 \begin{DoxyCompactList}\small\item\em Register your own event in this enum class to use it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
@@ -85,7 +90,7 @@ for example you have a main menu and game process. Create two class and inherit 
 \end{DoxyCode}
  
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}\ (Event\ ==\ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{GameStateBase::CustomEvent::OpenGame}})}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (Event\ ==\ GameStateBase::CustomEvent::OpenGame)}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ GameState\_.reset();}
 \DoxyCodeLine{\ \ \ \ GameState\_\ =\ std::make\_unique<GameProcessGameState>();}
@@ -111,12 +116,24 @@ Register your own event in this enum class to use it.
 None&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OpenGame@{OpenGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!OpenGame@{OpenGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf} 
-Open\+Game&\\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CloseGame@{CloseGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!CloseGame@{CloseGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd} 
 Close\+Game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DefeatMenu@{DefeatMenu}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!DefeatMenu@{DefeatMenu}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234} 
+Defeat\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GoToMainMenu@{GoToMainMenu}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!GoToMainMenu@{GoToMainMenu}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4} 
+Go\+To\+Main\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StartNewGame@{StartNewGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!StartNewGame@{StartNewGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4} 
+Start\+New\+Game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ContinueGame@{ContinueGame}!GameStateBase@{GameStateBase}}\index{GameStateBase@{GameStateBase}!ContinueGame@{ContinueGame}}}\Hypertarget{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948}\label{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948} 
+Continue\+Game&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -162,7 +179,7 @@ override this function to output all scene objects
 
 
 
-Implemented in \mbox{\hyperlink{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9}{Main\+Menu\+Game\+State}}.
+Implemented in \mbox{\hyperlink{class_defeat_game_state_a7bbce3dfeecb9a08c9dcc1811ceb7bb9}{Defeat\+Game\+State}}, \mbox{\hyperlink{class_game_process_game_state_af9a8715ffe1f7fbd1d8998e3f05633cb}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a307f63f6217c66816e1e81f924301fd9}{Main\+Menu\+Game\+State}}.
 
 \Hypertarget{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27}\label{class_game_state_base_a422f57a3246a77c72e979fdfebce0e27} 
 \index{GameStateBase@{GameStateBase}!operator=@{operator=}}
@@ -198,7 +215,7 @@ call this function BEFORE all to prepare this object.
 
 you can put in this function creating\textbackslash{}loading of textures for scene objects. 
 
-Reimplemented in \mbox{\hyperlink{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e}{Main\+Menu\+Game\+State}}.
+Reimplemented in \mbox{\hyperlink{class_defeat_game_state_a04e6ed8200cb698a6cf82b74192b9aa1}{Defeat\+Game\+State}}, \mbox{\hyperlink{class_game_process_game_state_abc3fc19b0b44d51a692bd009085c7d56}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a0cf8e3e5d9de672b497b2e1d151b9e6e}{Main\+Menu\+Game\+State}}.
 
 \Hypertarget{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f}\label{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f841f} 
 \index{GameStateBase@{GameStateBase}!UpdateUi@{UpdateUi}}
@@ -212,7 +229,7 @@ override this function to make a scene\textbackslash{}state updater. Also, you c
 
 
 
-Implemented in \mbox{\hyperlink{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3}{Main\+Menu\+Game\+State}}.
+Implemented in \mbox{\hyperlink{class_defeat_game_state_ab33581c46ee2f6553586d10da0fd503f}{Defeat\+Game\+State}}, \mbox{\hyperlink{class_game_process_game_state_ae456826d522ac2ccbaab7268a7917f66}{Game\+Process\+Game\+State}}, and \mbox{\hyperlink{class_main_menu_game_state_a4a19a0613a4918440b1055d03d2f9dc3}{Main\+Menu\+Game\+State}}.
 
 
 

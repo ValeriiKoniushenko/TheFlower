@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['lastdecreasespeed_0',['LastDecreaseSpeed',['../struct_snake_config.html#a4ad7f167c831e2e3da6d7efc88ea079d',1,'SnakeConfig']]],
-  ['lasterase_1',['LastErase',['../struct_snake_config.html#a43dd0ff49b301c07b865477e81cdc2b2',1,'SnakeConfig']]],
-  ['lastgrowth_2',['LastGrowth',['../struct_snake_config.html#af9893cbab9072f3faabebe97f5079db0',1,'SnakeConfig']]],
-  ['lastplant_3',['LastPlant',['../struct_flower_config.html#a87881b9655d41809c3c4ea1200c05a8f',1,'FlowerConfig']]],
-  ['lastspawntime_4',['LastSpawnTime',['../struct_snake_config.html#ad2e1e62a4c7236ffe3cd413696198d87',1,'SnakeConfig']]]
+  ['incomeamount_0',['IncomeAmount',['../struct_flower_config.html#abf9b10d535d0168a979154d435be0282',1,'FlowerConfig']]],
+  ['incomefrequency_1',['IncomeFrequency',['../struct_flower_config.html#a459844978ea63f01fc7f8abde3eb2ac4',1,'FlowerConfig']]],
+  ['increase_2',['Increase',['../class_snake.html#adacf38866097765b296210c6a250eb8d',1,'Snake']]],
+  ['interactwithsprite_3',['InteractWithSprite',['../class_snake.html#ab264d6bad1305f85ff174514c8352ee4',1,'Snake']]],
+  ['isnearlytopoint_4',['IsNearlyToPoint',['../namespace_math.html#ab209290ce92b81602720ba919d3fb57c',1,'Math']]]
 ];

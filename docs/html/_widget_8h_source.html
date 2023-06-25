@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TheFlower: flower/core/headers/Widget.h Source File</title>
+<title>TheFlower: flower/ui/headers/Widget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d7bd2ef61433be3b74e1f54e7382705a.html">flower</a></li><li class="navelem"><a class="el" href="dir_3f31c22c3c8ca7ba7f9330a06e42424f.html">core</a></li><li class="navelem"><a class="el" href="dir_91d251d41472d09c6c39fa96816c2dbb.html">headers</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d7bd2ef61433be3b74e1f54e7382705a.html">flower</a></li><li class="navelem"><a class="el" href="dir_425f0aaf2ac79a7080a86ab031a3d694.html">ui</a></li><li class="navelem"><a class="el" href="dir_300d5a420d1a40a4c27ab5428fc024ad.html">headers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -105,48 +105,46 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// TODO: Move it to UI lib</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_widget.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="class_widget.html">Widget</a> : <span class="keyword">public</span> sf::Sprite</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">   39</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> : __int8</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">Center</a>    <span class="comment">// TODO: add &#39;left&#39; &#39;right&#39;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_widget.html#ad3efcf142654d910c3ff54435f5c9405">   45</a></span>    <a class="code hl_function" href="class_widget.html#ad3efcf142654d910c3ff54435f5c9405">~Widget</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#a10f09f5bc9875123380a4679f49d6f58">SetName</a>(<span class="keyword">const</span> std::string&amp; Name);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    _NODISCARD <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_widget.html#a4404f86d8dd300750b4e66393fd0f331">GetName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#abc8cbb21a506f219a3ba5afd7a495de6">SetOnMouseLeftClickEventCallback</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; OnClick);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#a1729bddaef0e992fa03d7a5f478c20f4">SetOnMouseRightClickEventCallback</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; OnClick);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#aa881ceb0d15cf344ec0922de05373c28">Update</a>(sf::RenderWindow&amp; Window);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_widget.html#a4be26cf371a7fd7e4abf1754267cf822">   66</a></span>    <a class="code hl_function" href="class_widget.html#a4be26cf371a7fd7e4abf1754267cf822">Widget</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">   69</a></span>    std::function&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; <a class="code hl_variable" href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">OnLeftClick_</a>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">   70</a></span>    std::function&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; <a class="code hl_variable" href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">OnRightClick_</a>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">   71</a></span>    std::string <a class="code hl_variable" href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">Name_</a>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
-<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdoc">the main class for UI elements. Inherit from this class if you want to create new UI element.</div><div class="ttdef"><b>Definition</b> Widget.h:34</div></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_widget.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_widget.html">Widget</a> : <span class="keyword">public</span> sf::Sprite</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">   37</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> : __int8</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">Center</a>    <span class="comment">// TODO: add &#39;left&#39; &#39;right&#39;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_widget.html#ad3efcf142654d910c3ff54435f5c9405">   43</a></span>    <a class="code hl_function" href="class_widget.html#ad3efcf142654d910c3ff54435f5c9405">~Widget</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#a10f09f5bc9875123380a4679f49d6f58">SetName</a>(<span class="keyword">const</span> std::string&amp; Name);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    _NODISCARD <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_widget.html#a4404f86d8dd300750b4e66393fd0f331">GetName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#abc8cbb21a506f219a3ba5afd7a495de6">SetOnMouseLeftClickEventCallback</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; OnClick);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#a1729bddaef0e992fa03d7a5f478c20f4">SetOnMouseRightClickEventCallback</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; OnClick);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_widget.html#aa881ceb0d15cf344ec0922de05373c28">Update</a>(sf::RenderWindow&amp; Window);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_widget.html#a4be26cf371a7fd7e4abf1754267cf822">   64</a></span>    <a class="code hl_function" href="class_widget.html#a4be26cf371a7fd7e4abf1754267cf822">Widget</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">   67</a></span>    std::function&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; <a class="code hl_variable" href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">OnLeftClick_</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">   68</a></span>    std::function&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="class_widget.html">Widget</a>&amp;)&gt; <a class="code hl_variable" href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">OnRightClick_</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">   69</a></span>    std::string <a class="code hl_variable" href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">Name_</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdoc">the main class for UI elements. Inherit from this class if you want to create new UI element.</div><div class="ttdef"><b>Definition</b> Widget.h:32</div></div>
 <div class="ttc" id="aclass_widget_html_a10f09f5bc9875123380a4679f49d6f58"><div class="ttname"><a href="class_widget.html#a10f09f5bc9875123380a4679f49d6f58">Widget::SetName</a></div><div class="ttdeci">void SetName(const std::string &amp;Name)</div><div class="ttdoc">you can set custom UI-object name. Use this function to do it</div><div class="ttdef"><b>Definition</b> Widget.cpp:25</div></div>
 <div class="ttc" id="aclass_widget_html_a1729bddaef0e992fa03d7a5f478c20f4"><div class="ttname"><a href="class_widget.html#a1729bddaef0e992fa03d7a5f478c20f4">Widget::SetOnMouseRightClickEventCallback</a></div><div class="ttdeci">void SetOnMouseRightClickEventCallback(std::function&lt; void(const Widget &amp;)&gt; OnClick)</div><div class="ttdef"><b>Definition</b> Widget.cpp:40</div></div>
 <div class="ttc" id="aclass_widget_html_a4404f86d8dd300750b4e66393fd0f331"><div class="ttname"><a href="class_widget.html#a4404f86d8dd300750b4e66393fd0f331">Widget::GetName</a></div><div class="ttdeci">_NODISCARD const std::string &amp; GetName() const</div><div class="ttdoc">you can get custom UI-object name</div><div class="ttdef"><b>Definition</b> Widget.cpp:30</div></div>
 <div class="ttc" id="aclass_widget_html_a4be26cf371a7fd7e4abf1754267cf822"><div class="ttname"><a href="class_widget.html#a4be26cf371a7fd7e4abf1754267cf822">Widget::Widget</a></div><div class="ttdeci">Widget()=default</div></div>
-<div class="ttc" id="aclass_widget_html_a75a709a485e2393af1d0ce6f3a9d9e49"><div class="ttname"><a href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">Widget::OnRightClick_</a></div><div class="ttdeci">std::function&lt; void(const Widget &amp;)&gt; OnRightClick_</div><div class="ttdef"><b>Definition</b> Widget.h:70</div></div>
+<div class="ttc" id="aclass_widget_html_a75a709a485e2393af1d0ce6f3a9d9e49"><div class="ttname"><a href="class_widget.html#a75a709a485e2393af1d0ce6f3a9d9e49">Widget::OnRightClick_</a></div><div class="ttdeci">std::function&lt; void(const Widget &amp;)&gt; OnRightClick_</div><div class="ttdef"><b>Definition</b> Widget.h:68</div></div>
 <div class="ttc" id="aclass_widget_html_aa881ceb0d15cf344ec0922de05373c28"><div class="ttname"><a href="class_widget.html#aa881ceb0d15cf344ec0922de05373c28">Widget::Update</a></div><div class="ttdeci">virtual void Update(sf::RenderWindow &amp;Window)</div><div class="ttdoc">call it every frame to update UI data. Also, you may know this function by name 'Tick&quot;</div><div class="ttdef"><b>Definition</b> Widget.cpp:45</div></div>
 <div class="ttc" id="aclass_widget_html_abc8cbb21a506f219a3ba5afd7a495de6"><div class="ttname"><a href="class_widget.html#abc8cbb21a506f219a3ba5afd7a495de6">Widget::SetOnMouseLeftClickEventCallback</a></div><div class="ttdeci">void SetOnMouseLeftClickEventCallback(std::function&lt; void(const Widget &amp;)&gt; OnClick)</div><div class="ttdef"><b>Definition</b> Widget.cpp:35</div></div>
-<div class="ttc" id="aclass_widget_html_abf3ba62299745f1e2ee5b47a19629cf8"><div class="ttname"><a href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">Widget::Name_</a></div><div class="ttdeci">std::string Name_</div><div class="ttdef"><b>Definition</b> Widget.h:71</div></div>
-<div class="ttc" id="aclass_widget_html_ac73416db61bb7f0398778f03ddc41cd0"><div class="ttname"><a href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">Widget::OnLeftClick_</a></div><div class="ttdeci">std::function&lt; void(const Widget &amp;)&gt; OnLeftClick_</div><div class="ttdef"><b>Definition</b> Widget.h:69</div></div>
+<div class="ttc" id="aclass_widget_html_abf3ba62299745f1e2ee5b47a19629cf8"><div class="ttname"><a href="class_widget.html#abf3ba62299745f1e2ee5b47a19629cf8">Widget::Name_</a></div><div class="ttdeci">std::string Name_</div><div class="ttdef"><b>Definition</b> Widget.h:69</div></div>
+<div class="ttc" id="aclass_widget_html_ac73416db61bb7f0398778f03ddc41cd0"><div class="ttname"><a href="class_widget.html#ac73416db61bb7f0398778f03ddc41cd0">Widget::OnLeftClick_</a></div><div class="ttdeci">std::function&lt; void(const Widget &amp;)&gt; OnLeftClick_</div><div class="ttdef"><b>Definition</b> Widget.h:67</div></div>
 <div class="ttc" id="aclass_widget_html_ad3efcf142654d910c3ff54435f5c9405"><div class="ttname"><a href="class_widget.html#ad3efcf142654d910c3ff54435f5c9405">Widget::~Widget</a></div><div class="ttdeci">~Widget() override=default</div></div>
-<div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3f"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">Widget::TextAlign</a></div><div class="ttdeci">TextAlign</div><div class="ttdoc">it serves for us to get more control over the Text in a widget</div><div class="ttdef"><b>Definition</b> Widget.h:40</div></div>
+<div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3f"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">Widget::TextAlign</a></div><div class="ttdeci">TextAlign</div><div class="ttdoc">it serves for us to get more control over the Text in a widget</div><div class="ttdef"><b>Definition</b> Widget.h:38</div></div>
 <div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">Widget::TextAlign::Center</a></div><div class="ttdeci">@ Center</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

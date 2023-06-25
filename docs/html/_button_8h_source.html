@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TheFlower: flower/core/headers/Button.h Source File</title>
+<title>TheFlower: flower/ui/headers/Button.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d7bd2ef61433be3b74e1f54e7382705a.html">flower</a></li><li class="navelem"><a class="el" href="dir_3f31c22c3c8ca7ba7f9330a06e42424f.html">core</a></li><li class="navelem"><a class="el" href="dir_91d251d41472d09c6c39fa96816c2dbb.html">headers</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d7bd2ef61433be3b74e1f54e7382705a.html">flower</a></li><li class="navelem"><a class="el" href="dir_425f0aaf2ac79a7080a86ab031a3d694.html">ui</a></li><li class="navelem"><a class="el" href="dir_300d5a420d1a40a4c27ab5428fc024ad.html">headers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,30 +104,28 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;Widget.h&quot;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// TODO: Move it to UI lib</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_button.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_button.html">Button</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_widget.html">Widget</a></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_button.html#a72cf522f2f997a2e80f9dd828d2f350e">   32</a></span>    <a class="code hl_function" href="class_button.html#a72cf522f2f997a2e80f9dd828d2f350e">~Button</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    _NODISCARD sf::Text&amp; <a class="code hl_function" href="class_button.html#ab31475ca125c3884720e1410575404e0">GetText</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    _NODISCARD <span class="keyword">const</span> sf::Text&amp; <a class="code hl_function" href="class_button.html#ab31475ca125c3884720e1410575404e0">GetText</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a5550b909279fa37e4fa447ed98a54be0">Update</a>(sf::RenderWindow&amp; Window) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#ab68779834ddc07b274d40da6b32687fc">Draw</a>(sf::RenderWindow&amp; window);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#ab8074fae3f235196d1ae036bf8f42759">SetTextVerticalAlign</a>(<a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> Align);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    _NODISCARD <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> <a class="code hl_function" href="class_button.html#af04cfcfd4cca397d6d9146f7af48cf00">GetTextVerticalAlign</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a2d5dc5d874463782aadedf4509101d9b">SetTextHorizontalAlign</a>(<a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> Align);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    _NODISCARD <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> <a class="code hl_function" href="class_button.html#a892988b13465f61a60c1c0d95b26a1fa">GetTextHorizontalAlign</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    sf::Text Text_;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> VerticalAlign_ = <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">TextAlign::Center</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> HorizontalAlign_ = <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">TextAlign::Center</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
-<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition</b> Button.h:30</div></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_button.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="class_button.html">Button</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_widget.html">Widget</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_button.html#a72cf522f2f997a2e80f9dd828d2f350e">   30</a></span>    <a class="code hl_function" href="class_button.html#a72cf522f2f997a2e80f9dd828d2f350e">~Button</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    _NODISCARD sf::Text&amp; <a class="code hl_function" href="class_button.html#ab31475ca125c3884720e1410575404e0">GetText</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    _NODISCARD <span class="keyword">const</span> sf::Text&amp; <a class="code hl_function" href="class_button.html#ab31475ca125c3884720e1410575404e0">GetText</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a5550b909279fa37e4fa447ed98a54be0">Update</a>(sf::RenderWindow&amp; Window) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#ab68779834ddc07b274d40da6b32687fc">Draw</a>(sf::RenderWindow&amp; window);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#ab8074fae3f235196d1ae036bf8f42759">SetTextVerticalAlign</a>(<a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> Align);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _NODISCARD <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> <a class="code hl_function" href="class_button.html#af04cfcfd4cca397d6d9146f7af48cf00">GetTextVerticalAlign</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a2d5dc5d874463782aadedf4509101d9b">SetTextHorizontalAlign</a>(<a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> Align);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    _NODISCARD <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> <a class="code hl_function" href="class_button.html#a892988b13465f61a60c1c0d95b26a1fa">GetTextHorizontalAlign</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    sf::Text Text_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> VerticalAlign_ = <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">TextAlign::Center</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_enumeration" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">TextAlign</a> HorizontalAlign_ = <a class="code hl_enumvalue" href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">TextAlign::Center</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition</b> Button.h:28</div></div>
 <div class="ttc" id="aclass_button_html_a2d5dc5d874463782aadedf4509101d9b"><div class="ttname"><a href="class_button.html#a2d5dc5d874463782aadedf4509101d9b">Button::SetTextHorizontalAlign</a></div><div class="ttdeci">void SetTextHorizontalAlign(TextAlign Align)</div><div class="ttdef"><b>Definition</b> Button.cpp:68</div></div>
 <div class="ttc" id="aclass_button_html_a5550b909279fa37e4fa447ed98a54be0"><div class="ttname"><a href="class_button.html#a5550b909279fa37e4fa447ed98a54be0">Button::Update</a></div><div class="ttdeci">void Update(sf::RenderWindow &amp;Window) override</div><div class="ttdoc">call it every frame to update UI data. Also, you may know this function by name 'Tick&quot;</div><div class="ttdef"><b>Definition</b> Button.cpp:35</div></div>
 <div class="ttc" id="aclass_button_html_a72cf522f2f997a2e80f9dd828d2f350e"><div class="ttname"><a href="class_button.html#a72cf522f2f997a2e80f9dd828d2f350e">Button::~Button</a></div><div class="ttdeci">~Button() override=default</div></div>
@@ -136,8 +134,8 @@ $(function() {
 <div class="ttc" id="aclass_button_html_ab68779834ddc07b274d40da6b32687fc"><div class="ttname"><a href="class_button.html#ab68779834ddc07b274d40da6b32687fc">Button::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;window)</div><div class="ttdef"><b>Definition</b> Button.cpp:57</div></div>
 <div class="ttc" id="aclass_button_html_ab8074fae3f235196d1ae036bf8f42759"><div class="ttname"><a href="class_button.html#ab8074fae3f235196d1ae036bf8f42759">Button::SetTextVerticalAlign</a></div><div class="ttdeci">void SetTextVerticalAlign(TextAlign Align)</div><div class="ttdef"><b>Definition</b> Button.cpp:63</div></div>
 <div class="ttc" id="aclass_button_html_af04cfcfd4cca397d6d9146f7af48cf00"><div class="ttname"><a href="class_button.html#af04cfcfd4cca397d6d9146f7af48cf00">Button::GetTextVerticalAlign</a></div><div class="ttdeci">_NODISCARD TextAlign GetTextVerticalAlign() const</div><div class="ttdef"><b>Definition</b> Button.cpp:73</div></div>
-<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdoc">the main class for UI elements. Inherit from this class if you want to create new UI element.</div><div class="ttdef"><b>Definition</b> Widget.h:34</div></div>
-<div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3f"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">Widget::TextAlign</a></div><div class="ttdeci">TextAlign</div><div class="ttdoc">it serves for us to get more control over the Text in a widget</div><div class="ttdef"><b>Definition</b> Widget.h:40</div></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="class_widget.html">Widget</a></div><div class="ttdoc">the main class for UI elements. Inherit from this class if you want to create new UI element.</div><div class="ttdef"><b>Definition</b> Widget.h:32</div></div>
+<div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3f"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3f">Widget::TextAlign</a></div><div class="ttdeci">TextAlign</div><div class="ttdoc">it serves for us to get more control over the Text in a widget</div><div class="ttdef"><b>Definition</b> Widget.h:38</div></div>
 <div class="ttc" id="aclass_widget_html_ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd"><div class="ttname"><a href="class_widget.html#ae246d3061605efc705d64084ab3b1d3fa4f1f6016fc9f3f2353c0cc7c67b292bd">Widget::TextAlign::Center</a></div><div class="ttdeci">@ Center</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -100,6 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae456826d522ac2ccbaab7268a7917f66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_process_game_state.html#ae456826d522ac2ccbaab7268a7917f66">UpdateUi</a> (sf::RenderWindow &amp;Window) override</td></tr>
 <tr class="memdesc:ae456826d522ac2ccbaab7268a7917f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">override this function to make a scene\state updater. Also, you can know this function by name 'Tick'  <br /></td></tr>
 <tr class="separator:ae456826d522ac2ccbaab7268a7917f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0242200cccaee92c613fde8e3146b41b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_process_game_state.html#a0242200cccaee92c613fde8e3146b41b">ResetUserData</a> ()</td></tr>
+<tr class="separator:a0242200cccaee92c613fde8e3146b41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_state_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_state_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_state_base.html">GameStateBase</a></td></tr>
 <tr class="memitem:ad907f9cacc3081b07f57ad7554cd08fd inherit pub_methods_class_game_state_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#ad907f9cacc3081b07f57ad7554cd08fd">GameStateBase</a> ()=default</td></tr>
 <tr class="separator:ad907f9cacc3081b07f57ad7554cd08fd inherit pub_methods_class_game_state_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,9 +131,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_game_state_base"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_game_state_base')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_game_state_base.html">GameStateBase</a></td></tr>
-<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf">OpenGame</a>
+<tr class="memitem:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">CustomEvent</a> : __int8 { <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754">None</a>
 , <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd">CloseGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234">DefeatMenu</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4">GoToMainMenu</a>
+, <br />
+&#160;&#160;<a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4">StartNewGame</a>
+, <a class="el" href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948">ContinueGame</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a628ffa0ffa2e3fe5a833fba45127637b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register your own event in this enum class to use it.  <a href="class_game_state_base.html#a628ffa0ffa2e3fe5a833fba45127637b">More...</a><br /></td></tr>
 <tr class="separator:a628ffa0ffa2e3fe5a833fba45127637b inherit pub_types_class_game_state_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +207,23 @@ Additional Inherited Members</h2></td></tr>
 <p>you can put in this function creating\loading of textures for scene objects. </p>
 
 <p>Reimplemented from <a class="el" href="class_game_state_base.html#a5ac801431db04b5942dfb4043046f8ed">GameStateBase</a>.</p>
+
+</div>
+</div>
+<a id="a0242200cccaee92c613fde8e3146b41b" name="a0242200cccaee92c613fde8e3146b41b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0242200cccaee92c613fde8e3146b41b">&#9670;&#160;</a></span>ResetUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameProcessGameState::ResetUserData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

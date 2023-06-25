@@ -63,6 +63,8 @@ sf\+::\+Texture \mbox{\hyperlink{class_main_menu_game_state_aebd5955db07528e2622
 \item 
 \mbox{\hyperlink{class_button}{Button}} \mbox{\hyperlink{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d}{Start\+Button\+\_\+}}
 \item 
+\mbox{\hyperlink{class_button}{Button}} \mbox{\hyperlink{class_main_menu_game_state_aea50318a3f36f0cf41e7aa9468e657a3}{Continue\+Button\+\_\+}}
+\item 
 \mbox{\hyperlink{class_canvas}{Canvas}} \mbox{\hyperlink{class_main_menu_game_state_a979d5c13a8173536777ea46b2dcc7954}{Background\+Canvas\+\_\+}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
@@ -76,9 +78,14 @@ sf\+::\+Font \mbox{\hyperlink{class_game_state_base_ae4eb676f4e7808b83b1798c247a
 \doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_state_base}{Game\+State\+Base}}}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
-, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6826fc064fcc28d8c7ca54943c5eeebf}{Open\+Game}}
+enum class \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637b}{Custom\+Event}} \+: \+\_\+\+\_\+int8 \{ \newline
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6adf97f83acf6453d4a6a4b1070f3754}{None}}
 , \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637baadbc2e089aec0921b3838f6ca3a67fcd}{Close\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba6f69ea69f5367502456586ae25a7a234}{Defeat\+Menu}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba1f238663d8aaa14427722d63075673c4}{Go\+To\+Main\+Menu}}
+, \newline
+\mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba2e361f33ac61c34927db3cd4d11dbaf4}{Start\+New\+Game}}
+, \mbox{\hyperlink{class_game_state_base_a628ffa0ffa2e3fe5a833fba45127637ba5d3313060b4af773c4a9625ad9eee948}{Continue\+Game}}
  \}
 \begin{DoxyCompactList}\small\item\em Register your own event in this enum class to use it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -185,6 +192,12 @@ Implements \mbox{\hyperlink{class_game_state_base_a5d81e563dfba1c53eea68c2ccc3f8
 \index{ButtonTexture\_@{ButtonTexture\_}!MainMenuGameState@{MainMenuGameState}}
 \doxysubsubsection{\texorpdfstring{ButtonTexture\_}{ButtonTexture\_}}
 {\footnotesize\ttfamily sf\+::\+Texture Main\+Menu\+Game\+State\+::\+Button\+Texture\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_main_menu_game_state_aea50318a3f36f0cf41e7aa9468e657a3}\label{class_main_menu_game_state_aea50318a3f36f0cf41e7aa9468e657a3} 
+\index{MainMenuGameState@{MainMenuGameState}!ContinueButton\_@{ContinueButton\_}}
+\index{ContinueButton\_@{ContinueButton\_}!MainMenuGameState@{MainMenuGameState}}
+\doxysubsubsection{\texorpdfstring{ContinueButton\_}{ContinueButton\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_button}{Button}} Main\+Menu\+Game\+State\+::\+Continue\+Button\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \Hypertarget{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d}\label{class_main_menu_game_state_ae496a84918d803be1296ed721a9d764d} 
 \index{MainMenuGameState@{MainMenuGameState}!StartButton\_@{StartButton\_}}

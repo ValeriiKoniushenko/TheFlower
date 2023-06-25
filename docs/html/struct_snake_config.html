@@ -156,8 +156,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ac1a66705040ccb32ef1b944cf63ed2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad811d90c9ff3e60e97d6cdd95c202c65"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#ad811d90c9ff3e60e97d6cdd95c202c65">GrowthSpeed</a> = 3</td></tr>
 <tr class="separator:ad811d90c9ff3e60e97d6cdd95c202c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac03a448cd651725ad2df33deb14b7b93"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#ac03a448cd651725ad2df33deb14b7b93">SpeedUpEffectLength</a> = 5</td></tr>
-<tr class="separator:ac03a448cd651725ad2df33deb14b7b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae09eb0e325e6db673bb3e04e9e31482a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#ae09eb0e325e6db673bb3e04e9e31482a">SpeedUpEffectStrength</a> = 2.f</td></tr>
 <tr class="separator:ae09eb0e325e6db673bb3e04e9e31482a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4efd3ff54f5255f9486a9066032c00a8"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a4efd3ff54f5255f9486a9066032c00a8">EraseFrequency</a> = 100</td></tr>
@@ -170,12 +168,24 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ae9ea289f133818e3167c29d87473e3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbd1229ed92f1c727980bc917119e2c"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a4dbd1229ed92f1c727980bc917119e2c">SpawnNewSnakeEveryXMs</a> = 5000</td></tr>
 <tr class="separator:a4dbd1229ed92f1c727980bc917119e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab997082c041715effe4343def4f58775"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#ab997082c041715effe4343def4f58775">DecreaseSpeedEveryXMs</a> = 5000</td></tr>
-<tr class="separator:ab997082c041715effe4343def4f58775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7adca09f9acbb9e9a9d1afb2fd617a0d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a7adca09f9acbb9e9a9d1afb2fd617a0d">DecreaseSpeedCounter</a> = 0.05f</td></tr>
-<tr class="separator:a7adca09f9acbb9e9a9d1afb2fd617a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b7c74764465d9a5d999b8f36b0d01c"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a11b7c74764465d9a5d999b8f36b0d01c">DecreaseSpawnSpeedEveryXMs</a> = 5000</td></tr>
+<tr class="separator:a11b7c74764465d9a5d999b8f36b0d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ad7f167c831e2e3da6d7efc88ea079d"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a4ad7f167c831e2e3da6d7efc88ea079d">LastDecreaseSpeed</a> = 0</td></tr>
 <tr class="separator:a4ad7f167c831e2e3da6d7efc88ea079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed7a6db7172de8411edd255a7a687e7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a0ed7a6db7172de8411edd255a7a687e7">DecreaseSpawnSpeedFor</a> = 0.05f</td></tr>
+<tr class="separator:a0ed7a6db7172de8411edd255a7a687e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f3b55a7856d7a61236afb23df0f3d2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a85f3b55a7856d7a61236afb23df0f3d2">SnakeSpawnerDecreaser</a> = 1.f</td></tr>
+<tr class="separator:a85f3b55a7856d7a61236afb23df0f3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4856e5333a826bdce8bf3510a02759"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#acd4856e5333a826bdce8bf3510a02759">LastDecreaseSpawnSpeed</a> = 0</td></tr>
+<tr class="separator:acd4856e5333a826bdce8bf3510a02759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabb45a2a7f9591b717c60be2a02bb1b"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#acabb45a2a7f9591b717c60be2a02bb1b">SpeedUpEffectTime</a> = 5000</td></tr>
+<tr class="separator:acabb45a2a7f9591b717c60be2a02bb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6973b3089d88398e7f1fb347694e8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a6e6973b3089d88398e7f1fb347694e8a">HaveToSpeedUp</a> = false</td></tr>
+<tr class="separator:a6e6973b3089d88398e7f1fb347694e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a18881175a898eaec0ac92828ef5998"><td class="memItemLeft" align="right" valign="top">clock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a9a18881175a898eaec0ac92828ef5998">LastSpeedUpEffect</a> = 0</td></tr>
+<tr class="separator:a9a18881175a898eaec0ac92828ef5998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2d3822f321a0366b2009d0b381da26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_snake_config.html#a0a2d3822f321a0366b2009d0b381da26">CanSnakeBobtail</a> = true</td></tr>
+<tr class="separator:a0a2d3822f321a0366b2009d0b381da26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -394,28 +404,42 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7adca09f9acbb9e9a9d1afb2fd617a0d" name="a7adca09f9acbb9e9a9d1afb2fd617a0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7adca09f9acbb9e9a9d1afb2fd617a0d">&#9670;&#160;</a></span>DecreaseSpeedCounter</h2>
+<a id="a0a2d3822f321a0366b2009d0b381da26" name="a0a2d3822f321a0366b2009d0b381da26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2d3822f321a0366b2009d0b381da26">&#9670;&#160;</a></span>CanSnakeBobtail</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float SnakeConfig::DecreaseSpeedCounter = 0.05f</td>
+          <td class="memname">bool SnakeConfig::CanSnakeBobtail = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab997082c041715effe4343def4f58775" name="ab997082c041715effe4343def4f58775"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab997082c041715effe4343def4f58775">&#9670;&#160;</a></span>DecreaseSpeedEveryXMs</h2>
+<a id="a11b7c74764465d9a5d999b8f36b0d01c" name="a11b7c74764465d9a5d999b8f36b0d01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b7c74764465d9a5d999b8f36b0d01c">&#9670;&#160;</a></span>DecreaseSpawnSpeedEveryXMs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">clock_t SnakeConfig::DecreaseSpeedEveryXMs = 5000</td>
+          <td class="memname">clock_t SnakeConfig::DecreaseSpawnSpeedEveryXMs = 5000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ed7a6db7172de8411edd255a7a687e7" name="a0ed7a6db7172de8411edd255a7a687e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed7a6db7172de8411edd255a7a687e7">&#9670;&#160;</a></span>DecreaseSpawnSpeedFor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SnakeConfig::DecreaseSpawnSpeedFor = 0.05f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -458,6 +482,34 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">clock_t SnakeConfig::GrowthSpeed = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e6973b3089d88398e7f1fb347694e8a" name="a6e6973b3089d88398e7f1fb347694e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6973b3089d88398e7f1fb347694e8a">&#9670;&#160;</a></span>HaveToSpeedUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SnakeConfig::HaveToSpeedUp = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd4856e5333a826bdce8bf3510a02759" name="acd4856e5333a826bdce8bf3510a02759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4856e5333a826bdce8bf3510a02759">&#9670;&#160;</a></span>LastDecreaseSpawnSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clock_t SnakeConfig::LastDecreaseSpawnSpeed = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -520,6 +572,20 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a9a18881175a898eaec0ac92828ef5998" name="a9a18881175a898eaec0ac92828ef5998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a18881175a898eaec0ac92828ef5998">&#9670;&#160;</a></span>LastSpeedUpEffect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clock_t SnakeConfig::LastSpeedUpEffect = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae9ea289f133818e3167c29d87473e3ea" name="ae9ea289f133818e3167c29d87473e3ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9ea289f133818e3167c29d87473e3ea">&#9670;&#160;</a></span>MaxSize</h2>
 
@@ -528,6 +594,20 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">__int32 SnakeConfig::MaxSize = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85f3b55a7856d7a61236afb23df0f3d2" name="a85f3b55a7856d7a61236afb23df0f3d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f3b55a7856d7a61236afb23df0f3d2">&#9670;&#160;</a></span>SnakeSpawnerDecreaser</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SnakeConfig::SnakeSpawnerDecreaser = 1.f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -548,20 +628,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac03a448cd651725ad2df33deb14b7b93" name="ac03a448cd651725ad2df33deb14b7b93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac03a448cd651725ad2df33deb14b7b93">&#9670;&#160;</a></span>SpeedUpEffectLength</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">clock_t SnakeConfig::SpeedUpEffectLength = 5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae09eb0e325e6db673bb3e04e9e31482a" name="ae09eb0e325e6db673bb3e04e9e31482a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae09eb0e325e6db673bb3e04e9e31482a">&#9670;&#160;</a></span>SpeedUpEffectStrength</h2>
 
@@ -570,6 +636,20 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">float SnakeConfig::SpeedUpEffectStrength = 2.f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acabb45a2a7f9591b717c60be2a02bb1b" name="acabb45a2a7f9591b717c60be2a02bb1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabb45a2a7f9591b717c60be2a02bb1b">&#9670;&#160;</a></span>SpeedUpEffectTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">clock_t SnakeConfig::SpeedUpEffectTime = 5000</td>
         </tr>
       </table>
 </div><div class="memdoc">

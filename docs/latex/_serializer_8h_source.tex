@@ -57,26 +57,27 @@
 \DoxyCodeLine{00072\ }
 \DoxyCodeLine{00076\ \ \ \ \ boost::property\_tree::ptree::iterator\ \mbox{\hyperlink{class_serializer_a7a70e90aef3092f7b1c1caad82bdea16}{End}}();}
 \DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::filesystem::path\ \mbox{\hyperlink{class_serializer_abebc13673816f1cc6c33dc4a2449822f}{SaveDirectory}}\ =\ \textcolor{stringliteral}{"{}save"{}};}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00084\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{class_serializer_ac0b70656331b0527460a86c2dbefceae}{GetSavePath}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00087\ \ \ \ \ std::string\ SaveFileName\_;}
-\DoxyCodeLine{00088\ \ \ \ \ boost::property\_tree::ptree\ PTree\_;}
-\DoxyCodeLine{00089\ \};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{Serializer::AddToSerialize}}(\textcolor{keyword}{const}\ std::string\&\ Key,\ \textcolor{keyword}{const}\ T\&\ Value)}
-\DoxyCodeLine{00093\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ PTree\_.put(Key,\ Value);}
-\DoxyCodeLine{00095\ \}}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00098\ T\ \mbox{\hyperlink{class_serializer_a910b8cbbcdc4863b4dd5ba402aebb8e1}{Serializer::GetFromSerializer}}(\textcolor{keyword}{const}\ std::string\&\ Key)}
-\DoxyCodeLine{00099\ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ PTree\_.get<T>(Key);}
-\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ TODO:\ add\ config\ directory}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::filesystem::path\ \mbox{\hyperlink{class_serializer_abebc13673816f1cc6c33dc4a2449822f}{SaveDirectory}}\ =\ \textcolor{stringliteral}{"{}save"{}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00085\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{class_serializer_ac0b70656331b0527460a86c2dbefceae}{GetSavePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ std::string\ SaveFileName\_;}
+\DoxyCodeLine{00089\ \ \ \ \ boost::property\_tree::ptree\ PTree\_;}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serializer_af9b8669d72f99915c88f634d62f7e4a2}{Serializer::AddToSerialize}}(\textcolor{keyword}{const}\ std::string\&\ Key,\ \textcolor{keyword}{const}\ T\&\ Value)}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ PTree\_.put(Key,\ Value);}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00099\ T\ \mbox{\hyperlink{class_serializer_a910b8cbbcdc4863b4dd5ba402aebb8e1}{Serializer::GetFromSerializer}}(\textcolor{keyword}{const}\ std::string\&\ Key)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ PTree\_.get<T>(Key);}
+\DoxyCodeLine{00102\ \}}
 
 \end{DoxyCode}
