@@ -27,7 +27,10 @@ I have created a game about flowers and snakes. We should survive! Plant a flowe
 - Wrote GTest-s for testing core parts of the game
 - Supporting of GameStates
 - Implemented main UI features: Widget, Canvas, Button
-- Implemented a game economic: we can plant every 0.5 second one Flower and get 5 coins per 3 seconds 
+- Implemented a game economic: we can plant every 0.5 second one Flower and get 5 coins per 3 seconds
+- Non-discreet world
+- Scalable architecture
+- Supportable
 
 # 📞 Feedback & Contacts
 You can send me e-mail: Valerii.Koniushenko@gmail.com or try to find me in telegram: @markmoran24

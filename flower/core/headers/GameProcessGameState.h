@@ -59,6 +59,7 @@ private:
 	void DecreaseSpawnSpeedEveryXSeconds();
 	void SpeedUpAllSnakes();
 	void SpeedDownAllSnakes();
+	void WorkingWithSpeedUpEffect();
 
 	void CheckForDefeat();
 

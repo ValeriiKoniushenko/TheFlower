@@ -50,4 +50,5 @@ public:
 	clock_t SpeedUpEffectTime = 5000;
 	bool HaveToSpeedUp = false;
 	clock_t LastSpeedUpEffect = 0;
+	bool CanSnakeBobtail = true;
 };

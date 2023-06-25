@@ -63,4 +63,5 @@ void SnakeConfig::Deserialize()
 	SpeedUpEffectTime = GetFromSerializer<decltype(SpeedUpEffectTime)>("SpeedUpEffectTime");
 	HaveToSpeedUp = false;
 	LastSpeedUpEffect = 0;
+	CanSnakeBobtail = true;
 }

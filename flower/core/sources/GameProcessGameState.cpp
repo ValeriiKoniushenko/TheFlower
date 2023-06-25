@@ -104,15 +104,7 @@ void GameProcessGameState::UpdateUi(sf::RenderWindow& Window)
 	DecreaseSpawnSpeedEveryXSeconds();
 	CheckInteractWithFlower();
 	CheckForDefeat();
-
-	if (SnakeConfig_.HaveToSpeedUp)
-	{
-		if (clock() - SnakeConfig_.LastSpeedUpEffect > SnakeConfig_.SpeedUpEffectTime)
-		{
-			SpeedDownAllSnakes();
-			SnakeConfig_.HaveToSpeedUp = false;
-		}
-	}
+	WorkingWithSpeedUpEffect();
 }
 
 bool GameProcessGameState::HaveToPlant(sf::RenderWindow& Window)
@@ -192,7 +184,7 @@ void GameProcessGameState::UpdateSnakes(sf::RenderWindow& Window)
 
 void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window)
 {
-	if (clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	   // TODO: change to Timer
+	if (SnakeConfig_.CanSnakeBobtail)
 	{
 		sf::Mouse Mouse;
 		sf::Vector2i MousePosition = Mouse.getPosition(Window);
@@ -206,8 +198,13 @@ void GameProcessGameState::DecreaseSnakeLengthIfClicked(sf::RenderWindow& Window
 				}
 			}
 		}
-
+		SnakeConfig_.CanSnakeBobtail = false;
 		SnakeConfig_.LastErase = clock();
+	}
+
+	if (!SnakeConfig_.CanSnakeBobtail && clock() - SnakeConfig_.LastErase > SnakeConfig_.EraseFrequency)	   // TODO: change to Timer
+	{
+		SnakeConfig_.CanSnakeBobtail = true;
 	}
 }
 
@@ -306,5 +303,17 @@ void GameProcessGameState::SpeedDownAllSnakes()
 	for (Snake& Snake_ : SnakePool_)
 	{
 		Snake_.SetSpeedMultiplier(1.f);
+	}
+}
+
+void GameProcessGameState::WorkingWithSpeedUpEffect()
+{
+	if (SnakeConfig_.HaveToSpeedUp)
+	{
+		if (clock() - SnakeConfig_.LastSpeedUpEffect > SnakeConfig_.SpeedUpEffectTime)
+		{
+			SpeedDownAllSnakes();
+			SnakeConfig_.HaveToSpeedUp = false;
+		}
 	}
 }
