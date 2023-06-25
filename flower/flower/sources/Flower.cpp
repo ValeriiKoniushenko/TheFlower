@@ -35,6 +35,7 @@ const sf::Sprite& Flower::GetMainSprite() const
 void Flower::Draw(sf::RenderWindow& Window)
 {
 	Window.draw(MainSprite_);
+	ClockAnimation_.Play(Window);
 }
 
 boost::property_tree::ptree Flower::ToJSON() const
@@ -49,4 +50,27 @@ boost::property_tree::ptree Flower::ToJSON() const
 void Flower::SetPosition(const sf::Vector2f& Position)
 {
 	MainSprite_.setPosition(Position);
+}
+
+void Flower::SetClockTexture(sf::Texture& Texture)
+{
+	ClockAnimation_.SetTexture(Texture);
+}
+
+void Flower::AlignClock(float OffsetX, float OffsetY)
+{
+	sf::Vector2f NewPosition = MainSprite_.getPosition();
+	NewPosition.x += static_cast<float>(MainSprite_.getGlobalBounds().width - ClockAnimation_.GetTextureWidth()) / 2.f + OffsetX;
+	NewPosition.y += -static_cast<float>(ClockAnimation_.GetTextureHeight()) + OffsetY;
+
+	ClockAnimation_.SetPosition(NewPosition);
+}
+
+void Flower::Prepare()
+{
+	ClockAnimation_.SetMode(Animation::Mode::Infinity);
+	ClockAnimation_.SetFrameCount(18);
+	ClockAnimation_.SetStartRect({0, 0, 32, 32});
+	ClockAnimation_.SetDelayBetweenFrames(166);
+	ClockAnimation_.SetDirection({32, 0});
 }

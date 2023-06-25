@@ -1,9 +1,11 @@
 add_library(
     Ui STATIC
+    headers/Animation.h
     headers/Button.h
     headers/Canvas.h
     headers/Widget.h
 
+    sources/Animation.cpp
     sources/Button.cpp
     sources/Canvas.cpp
     sources/Widget.cpp

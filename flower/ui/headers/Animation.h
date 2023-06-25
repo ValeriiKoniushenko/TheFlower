@@ -20,35 +20,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#pragma once
-
-#include "Animation.h"
 #include "SFML/Graphics.hpp"
-#include "SceneObject.h"
-#include "Serializer.h"
 
-class Flower : public SceneObject
+class Animation
 {
 public:
-	Flower() = default;
-	~Flower() override = default;
-	Flower(const Flower&) = default;
-	Flower(Flower&&) = default;
-	Flower& operator=(const Flower&) = default;
-	Flower& operator=(Flower&&) = default;
+	enum class Mode : __int8
+	{
+		Finite,
+		Infinity
+	};
 
-	_NODISCARD sf::Sprite& GetMainSprite();
-	_NODISCARD const sf::Sprite& GetMainSprite() const;
-
-	void Prepare();
-	void Draw(sf::RenderWindow& Window) override;
-	boost::property_tree::ptree ToJSON() const override;
-
+	void SetTexture(sf::Texture& Texture);
+	void Play(sf::RenderWindow& Window);
+	void SetStartRect(const sf::IntRect& Rect);
+	void SetDirection(const sf::Vector2i& Direction);
+	void SetDelayBetweenFrames(clock_t Delay);
+	void SetMode(Mode NewMode);
+	void SetFrameCount(__int8 Count);
+	_NODISCARD Mode GetMode() const;
+	_NODISCARD float GetTextureWidth() const;
+	_NODISCARD float GetTextureHeight() const;
 	void SetPosition(const sf::Vector2f& Position);
-	void SetClockTexture(sf::Texture& Texture);
-	void AlignClock(float OffsetX = 0.f, float OffsetY = 0.f);
 
-protected:
-	sf::Sprite MainSprite_;
-	Animation ClockAnimation_;
+private:
+	void Update(sf::RenderWindow& Window);
+
+private:
+	sf::Sprite Sprite_;
+	Mode Mode_ = Mode::Finite;
+	clock_t DelayBetweenFrames_ = 0;
+	sf::Vector2i Direction_;
+	sf::IntRect StartRect_;
+	__int8 FramesCount_ = 0;
+	__int8 CurrentFrame_ = 0;
+	clock_t LastDraw_ = 0;
+	bool IsEnd = false;
 };

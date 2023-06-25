@@ -67,6 +67,7 @@ private:
 	sf::Texture MapBackgroundTexture_;
 	sf::Texture FlowerTexture_;
 	sf::Texture SnakeTexture_;
+	sf::Texture ClockTexture_;
 
 	// TODO: move to a common widget
 	sf::Texture CoinTexture_;

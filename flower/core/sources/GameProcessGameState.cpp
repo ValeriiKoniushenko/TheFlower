@@ -33,11 +33,15 @@ void GameProcessGameState::Prepare()
 	PlantSound_.setBuffer(PlantSoundBuffer_);
 	SnakeSpawnSound_.setBuffer(SnakeSpawnSoundBuffer_);
 
-	BackgroundMusic_.setVolume(0.5f);
+	BackgroundMusic_.setVolume(0.8f);
 	BackgroundMusic_.play();
 
 	FlowerTexture_.loadFromFile("assets/images/flower.png");
 	SnakeTexture_.loadFromFile("assets/images/snake.png");
+	ClockTexture_.loadFromFile("assets/images/clock.png");
+	MapBackgroundTexture_.loadFromFile("assets/images/grass.jpg");
+
+	MapBackgroundTexture_.setRepeated(true);
 
 	SnakePool_.Deserialize();
 	FlowerPool_.Deserialize();
@@ -45,14 +49,14 @@ void GameProcessGameState::Prepare()
 	for (Flower& Flower_ : FlowerPool_)
 	{
 		Flower_.GetMainSprite().setTexture(FlowerTexture_);
+		Flower_.SetClockTexture(ClockTexture_);
+		Flower_.Prepare();
+		Flower_.AlignClock(-10.f);
 	}
 	SnakeConfig_.Deserialize();
 	FlowerConfig_.Deserialize();
 	Player_.Deserialize();
 	Map_.Deserialize();
-
-	MapBackgroundTexture_.loadFromFile("assets/images/grass.jpg");
-	MapBackgroundTexture_.setRepeated(true);
 
 	CoinTexture_.loadFromFile("assets/images/coin.png");
 	Coin_.setTexture(CoinTexture_);
@@ -141,9 +145,13 @@ void GameProcessGameState::SpawnFlowerAt(const sf::Vector2i& PositionAtWindow)
 {
 	Flower Flower_;
 	Flower_.GetMainSprite().setTexture(FlowerTexture_);
+	Flower_.SetClockTexture(ClockTexture_);
+	Flower_.Prepare();
+
 	Flower_.SetPosition(
 		{static_cast<float>(PositionAtWindow.x) - static_cast<float>(Flower_.GetMainSprite().getTextureRect().width) / 2.f,
 			static_cast<float>(PositionAtWindow.y) - static_cast<float>(Flower_.GetMainSprite().getTextureRect().height) / 2.f});
+	Flower_.AlignClock(-10.f);
 
 	FlowerPool_.Push(Flower_);
 	PlantSound_.play();
